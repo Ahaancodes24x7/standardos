@@ -1,50 +1,80 @@
 # STANDARDOS
 
-**From Specifications to Certainty.**
+<div align="center">
 
-STANDARDOS is a standards intelligence platform for procurement and compliance teams. It analyzes procurement specifications and tender documents, maps the applicable Indian Standards (BIS), detects compliance gaps and conflicts, and generates evidence-backed corrections — with clause-level citations back to the source standard.
+### From Specifications to Certainty.
 
-## Tech stack
+**AI-powered Standards & Procurement Intelligence**
 
-- [TanStack Start](https://tanstack.com/start) (React 19, file-based routing, SSR)
-- [Supabase](https://supabase.com) (auth, Postgres, storage)
-- [Drizzle ORM](https://orm.drizzle.team) for schema/migrations
-- Tailwind CSS v4
-- Vite
+[![Status](https://img.shields.io/badge/Status-Prototype-orange)]()
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)]()
+[![Next.js](https://img.shields.io/badge/Next.js-React-black)]()
+[![FastAPI](https://img.shields.io/badge/FastAPI-Python-009688)]()
+[![AI](https://img.shields.io/badge/AI-NLP%20%7C%20Semantic%20Search-purple)]()
 
-## Getting started
+</div>
 
-Requires [Bun](https://bun.sh).
+---
 
-```sh
-bun install
-bun run dev
-```
+## Table of Contents
 
-The app runs at `http://localhost:3000` by default.
+- [Overview](#overview)
+- [The Problem](#the-problem)
+- [Our Solution](#our-solution)
+- [How STANDARDOS Works](#how-standardos-works)
+- [Core Features](#core-features)
+- [What Makes STANDARDOS Different](#what-makes-standardos-different)
+- [System Architecture](#system-architecture)
+- [AI Pipeline](#ai-pipeline)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Environment Variables](#environment-variables)
+- [Running the Project](#running-the-project)
+- [Example Workflow](#example-workflow)
+- [Use Cases](#use-cases)
+- [Innovation](#innovation)
+- [Data & Standards Governance](#data--standards-governance)
+- [Human-in-the-Loop](#human-in-the-loop)
+- [Roadmap](#roadmap)
+- [Future Scope](#future-scope)
+- [Contributing](#contributing)
+- [Disclaimer](#disclaimer)
+- [License](#license)
+- [Team](#team)
 
-### Environment variables
+---
 
-Copy `.env` and fill in your own Supabase project values:
+# Overview
 
-```
-SUPABASE_PROJECT_ID=
-SUPABASE_URL=
-SUPABASE_PUBLISHABLE_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
-VITE_SUPABASE_PROJECT_ID=
-VITE_SUPABASE_URL=
-VITE_SUPABASE_PUBLISHABLE_KEY=
-```
+**STANDARDOS** is an AI-powered procurement specification intelligence platform designed to help organizations understand, map, audit, and improve technical procurement specifications against relevant Indian Standards.
 
-Server-side jobs and migrations additionally use `CRON_SECRET` / `CRON_SECRET_PREVIOUS` (scheduled request auth) and `DB_MIGRATION_URL` (Drizzle migrations).
+Procurement documents often contain requirements that are not independent.
 
-## Scripts
+A single product specification can depend on:
 
-| Command | Description |
-| --- | --- |
-| `bun run dev` | Start the dev server |
-| `bun run build` | Production build |
-| `bun run preview` | Preview the production build locally |
-| `bun run lint` | Run ESLint |
-| `bun run format` | Format the codebase with Prettier |
+- Product standards
+- Test methods
+- Safety standards
+- Installation standards
+- Terminology standards
+- Normative references
+- Certification requirements
+- Amendments and newer versions
+
+STANDARDOS transforms these relationships into a structured intelligence workflow.
+
+Instead of treating standards as isolated documents, STANDARDOS models them as a connected system:
+
+```text
+Requirements
+     ↓
+Indian Standards
+     ↓
+Normative References
+     ↓
+Testing
+     ↓
+Certification
+     ↓
+Compliance
