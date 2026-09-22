@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { AuthForm } from "@/components/auth-form";
+export const Route=createFileRoute("/login")({head:()=>({meta:[{title:"Sign in — StandardOS"},{name:"description",content:"Sign in to your StandardOS procurement workspace."},{property:"og:title",content:"Sign in — StandardOS"},{property:"og:description",content:"Access saved standards searches and evidence."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <AuthForm mode="login"/>});

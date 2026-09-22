@@ -1,0 +1,3 @@
+import { Link } from "@tanstack/react-router";
+import { cn } from "@/lib/utils";
+export function Brand({compact=false,className}:{compact?:boolean;className?:string}){return <Link to="/" className={cn("group flex items-center gap-2.5",className)} aria-label="STANDARDOS home"><img src="/logo-mark.png" alt="" width={32} height={39} className="h-8 w-auto shrink-0 transition-transform duration-300 ease-out group-hover:scale-110"/>{!compact&&<span><span className="block text-[15px] font-extrabold tracking-[.08em] text-primary">STANDARDOS</span><span className="block text-[8px] font-semibold uppercase tracking-[.16em] text-muted-foreground">Specifications to certainty</span></span>}</Link>}

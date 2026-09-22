@@ -1,0 +1,12 @@
+import { QueryClient,QueryClientProvider } from "@tanstack/react-query";
+import { Outlet,Link,createRootRouteWithContext,useRouter,HeadContent,Scripts } from "@tanstack/react-router";
+import { useEffect,type ReactNode } from "react";
+import appCss from "../styles.css?url";
+import { AuthProvider } from "@/contexts/auth-context";
+import { Button } from "@/components/ui/button";
+import { Toaster } from "@/components/ui/sonner";
+function NotFound(){return <main className="grid min-h-screen place-items-center px-6 text-center"><div><p className="eyebrow">Error 404</p><h1 className="page-title mt-3">This page is off the map.</h1><p className="mt-4 text-muted-foreground">Return to STANDARDOS and continue your standards review.</p><Button asChild className="mt-7"><Link to="/">Return home</Link></Button></div></main>}
+function ErrorView({error,reset}:{error:Error;reset:()=>void}){const router=useRouter();useEffect(()=>console.error(error),[error]);return <main className="grid min-h-screen place-items-center px-6 text-center"><div><p className="eyebrow">Unable to load</p><h1 className="section-title mt-3">Something interrupted this view.</h1><p className="mt-4 text-muted-foreground">Try again without losing your work.</p><Button className="mt-7" onClick={()=>{router.invalidate();reset()}}>Try again</Button></div></main>}
+export const Route=createRootRouteWithContext<{queryClient:QueryClient}>()({head:()=>({meta:[{charSet:"utf-8"},{name:"viewport",content:"width=device-width, initial-scale=1"},{title:"STANDARDOS — Specifications to Certainty"},{name:"description",content:"Standards intelligence for procurement teams."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}],links:[{rel:"stylesheet",href:appCss},{rel:"icon",href:"/favicon.ico"},{rel:"preconnect",href:"https://fonts.googleapis.com"},{rel:"preconnect",href:"https://fonts.gstatic.com",crossOrigin:"anonymous"},{rel:"stylesheet",href:"https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"}]}),shellComponent:RootShell,component:Root,notFoundComponent:NotFound,errorComponent:ErrorView});
+function RootShell({children}:{children:ReactNode}){return <html lang="en"><head><HeadContent/></head><body>{children}<Scripts/></body></html>}
+function Root(){const {queryClient}=Route.useRouteContext();return <QueryClientProvider client={queryClient}><AuthProvider><Outlet/><Toaster richColors position="top-right"/></AuthProvider></QueryClientProvider>}
