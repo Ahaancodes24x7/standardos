@@ -1,0 +1,32 @@
+[project]
+name = "standardos-backend"
+version = "2.0.0"
+description = "StandardOS API: FastAPI + PostgreSQL service around the standardos-aiml engine."
+requires-python = ">=3.12"
+dependencies = [
+    "standardos-aiml[llm]",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "sqlalchemy>=2.0.30",
+    "psycopg[binary]>=3.2",
+    "alembic>=1.13",
+    "pydantic>=2.8",
+    "pydantic-settings>=2.4",
+    "itsdangerous>=2.2",
+    "python-multipart>=0.0.9",
+    "email-validator>=2.2",
+]
+
+[tool.uv.sources]
+standardos-aiml = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

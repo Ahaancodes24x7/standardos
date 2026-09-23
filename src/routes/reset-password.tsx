@@ -1,11 +1,91 @@
-import { createFileRoute,Link,useNavigate } from "@tanstack/react-router";
-import { useState,type FormEvent } from "react";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useState, type FormEvent } from "react";
 import { Brand } from "@/components/brand";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { resetPasswordFn } from "@/server/auth";
-export const Route=createFileRoute("/reset-password")({component:ResetPassword});
-function ResetPassword(){const navigate=useNavigate();const [done,setDone]=useState(false);const [error,setError]=useState("");const [loading,setLoading]=useState(false);
- const submit=async(e:FormEvent<HTMLFormElement>)=>{e.preventDefault();setError("");const token=typeof window!=="undefined"?new URLSearchParams(window.location.search).get("token"):null;if(!token){setError("This reset link is missing its token.");return}const fd=new FormData(e.currentTarget);const password=String(fd.get("password")??"");const confirm=String(fd.get("confirm")??"");if(password!==confirm){setError("Passwords do not match.");return}setLoading(true);try{await resetPasswordFn({data:{token,password}});setDone(true)}catch(err){setError(err instanceof Error?err.message:"Something went wrong. Please try again.")}finally{setLoading(false)}};
- return <main className="site-container grid min-h-screen place-items-center py-10"><div className="w-full max-w-md glass-panel p-7"><Brand/><p className="eyebrow mt-10">Account recovery</p><h1 className="mt-3 font-display text-4xl text-primary">Choose a new password.</h1>{done?<div className="mt-6 grid gap-4"><p className="text-sm leading-6 text-muted-foreground">Your password has been updated.</p><Button onClick={()=>void navigate({to:"/login"})}>Sign in</Button></div>:<form onSubmit={submit} className="mt-7 grid gap-4"><div className="grid gap-2"><Label htmlFor="password">New password</Label><Input id="password" name="password" type="password" required minLength={8} maxLength={72}/></div><div className="grid gap-2"><Label htmlFor="confirm">Confirm password</Label><Input id="confirm" name="confirm" type="password" required minLength={8} maxLength={72}/></div>{error&&<p className="text-sm text-destructive">{error}</p>}<Button type="submit" disabled={loading}>{loading?"Please wait…":"Update password"}</Button></form>}<Link to="/login" className="mt-6 block text-sm font-bold text-accent-foreground">Back to sign in</Link></div></main>}
+import { resetPassword } from "@/services/auth";
+export const Route = createFileRoute("/reset-password")({ component: ResetPassword });
+function ResetPassword() {
+  const navigate = useNavigate();
+  const [done, setDone] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError("");
+    const token =
+      typeof window !== "undefined"
+        ? new URLSearchParams(window.location.search).get("token")
+        : null;
+    if (!token) {
+      setError("This reset link is missing its token.");
+      return;
+    }
+    const fd = new FormData(e.currentTarget);
+    const password = String(fd.get("password") ?? "");
+    const confirm = String(fd.get("confirm") ?? "");
+    if (password !== confirm) {
+      setError("Passwords do not match.");
+      return;
+    }
+    setLoading(true);
+    try {
+      await resetPassword(token, password);
+      setDone(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+  return (
+    <main className="site-container grid min-h-screen place-items-center py-10">
+      <div className="w-full max-w-md glass-panel p-7">
+        <Brand />
+        <p className="eyebrow mt-10">Account recovery</p>
+        <h1 className="mt-3 font-display text-4xl text-primary">Choose a new password.</h1>
+        {done ? (
+          <div className="mt-6 grid gap-4">
+            <p className="text-sm leading-6 text-muted-foreground">
+              Your password has been updated.
+            </p>
+            <Button onClick={() => void navigate({ to: "/login" })}>Sign in</Button>
+          </div>
+        ) : (
+          <form onSubmit={submit} className="mt-7 grid gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="password">New password</Label>
+              <Input
+                id="password"
+                name="password"
+                type="password"
+                required
+                minLength={8}
+                maxLength={72}
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="confirm">Confirm password</Label>
+              <Input
+                id="confirm"
+                name="confirm"
+                type="password"
+                required
+                minLength={8}
+                maxLength={72}
+              />
+            </div>
+            {error && <p className="text-sm text-destructive">{error}</p>}
+            <Button type="submit" disabled={loading}>
+              {loading ? "Please wait…" : "Update password"}
+            </Button>
+          </form>
+        )}
+        <Link to="/login" className="mt-6 block text-sm font-bold text-accent-foreground">
+          Back to sign in
+        </Link>
+      </div>
+    </main>
+  );
+}

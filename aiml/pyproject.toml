@@ -1,0 +1,29 @@
+[project]
+name = "standardos-aiml"
+version = "2.0.0"
+description = "StandardOS intelligence engine: requirement extraction, standards retrieval, knowledge graph and compliance reasoning."
+requires-python = ">=3.12"
+dependencies = [
+    "pypdf>=5.0",
+    "mammoth>=1.8",
+]
+
+[project.optional-dependencies]
+# Optional LLM copy-editing of repair wording (off by default).
+llm = ["anthropic>=0.70"]
+# Optional learned requirement classifier.
+ml = ["scikit-learn>=1.5", "numpy>=1.26", "joblib>=1.4"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["standardos_aiml"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"standardos_aiml/standards/data/seed_corpus.json" = "standardos_aiml/standards/data/seed_corpus.json"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

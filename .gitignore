@@ -35,3 +35,11 @@ src/routeTree.gen.ts
 
 .env
 .env.local
+
+# Python (aiml/, backend/)
+.venv
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/

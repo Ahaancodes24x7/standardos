@@ -1,0 +1,38 @@
+KARNATAKA PUBLIC WORKS, PORTS AND INLAND WATER TRANSPORT DEPARTMENT
+Electrical Sub-Division, Dharwad
+Short Tender Notification No. EE/PWD/DWD/ELE/09/2026-27
+Name of work: Internal electrification of the 120-bed girls' hostel block at Government Polytechnic, Dharwad.
+Estimated cost: Rs. 38.4 lakhs
+Class of contractor: Class I electrical contractor licensed by the Government of Karnataka
+
+GENERAL
+1. The contractor shall possess a valid electrical contractor licence and shall employ a licensed supervisor on the work.
+2. The work shall be carried out as per the Karnataka PWD Schedule of Rates 2025-26 and IS 732:1989.
+3. The contractor shall obtain approval of the Electrical Inspectorate before energisation.
+
+WIRING
+4. Wiring shall be concealed in rigid PVC conduits of 1.5 mm wall thickness.
+5. Wires shall be 1100 V grade, FR PVC insulated, single core, stranded copper conductor, conforming to IS 694.
+6. Lighting circuits shall be wired with 1.5 sq mm and power circuits with 4 sq mm conductors.
+7. Separate protective earth conductor of the same size as the phase conductor shall be run along with each circuit.
+8. Wires shall be ISI marked and of approved make.
+9. Switches and sockets shall be of modular type, 6 A and 16 A as required.
+
+DISTRIBUTION BOARDS AND PROTECTION
+10. Distribution boards shall be double door, powder coated, of suitable size.
+11. MCBs shall conform to IS 8828 and shall have a breaking capacity of 10 kA.
+12. RCCBs with 30 mA sensitivity shall be provided on each floor distribution board.
+13. The main incomer to the building shall be a 100 A, 4 pole MCCB with 25 kA breaking capacity.
+
+EARTHING
+14. Earthing shall be done as per IS 3043.
+15. Two pipe earth electrodes shall be provided for the building distribution board.
+16. The earth resistance shall not exceed 2 ohm.
+
+TESTING AND COMPLETION
+17. On completion, the installation shall be tested and the test results recorded in the prescribed form.
+18. Insulation resistance of the installation shall not be less than 1 MΩ.
+19. Completion drawings showing the wiring layout shall be submitted in triplicate.
+20. The defects liability period shall be 12 months from the date of completion.
+
+Note: Specification items not covered above shall be as per the relevant IS and the directions of the Engineer-in-charge.

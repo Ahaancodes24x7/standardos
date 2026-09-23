@@ -1,0 +1,576 @@
+{
+  "description": "Requirement identification, classification and attribute extraction. Each document lists the gold requirements (verbatim substrings); every other line is a non-requirement (heading, boilerplate, note, permission, scope statement). Attribute values are in canonical units (V, A, W, VA, Hz, mm, mm2, MPa, m3/h, mg/L, NTU, %, degC, kg/m3, rpm, dB, ratio, pH). Labelled by the StandardOS authors; see eval/README.md for annotation guidelines and known limitations.",
+  "documents": [
+    {
+      "id": "rq-1",
+      "split": "dev",
+      "text": "TENDER NO. PWD/EL/2026/112\nSECTION 4 — TECHNICAL SPECIFICATION\n4.1 General\n4.1.1 The feeder pillar shall be of outdoor type, fabricated from 2 mm CRCA sheet.\n4.1.2 Degree of protection shall be IP55.\n4.1.3 The bidder should furnish drawings for approval within 15 days.\n4.2 Electrical\n4.2.1 Rated voltage: 415 V\n4.2.2 Busbars shall be rated for 400 A continuous current.\n4.2.3 Short circuit withstand: 35 kA for 1 s.\nNote: Drawings are indicative only.\n4.2.4 Earthing terminals shall be provided at two points.",
+      "requirements": [
+        {
+          "text": "The feeder pillar shall be of outdoor type, fabricated from 2 mm CRCA sheet.",
+          "category": "material",
+          "attributes": []
+        },
+        {
+          "text": "Degree of protection shall be IP55.",
+          "category": "environmental",
+          "attributes": [
+            {
+              "parameter": "ip_rating",
+              "text": "IP55"
+            }
+          ]
+        },
+        {
+          "text": "The bidder should furnish drawings for approval within 15 days.",
+          "category": "documentation",
+          "attributes": []
+        },
+        {
+          "text": "Rated voltage: 415 V",
+          "category": "electrical",
+          "attributes": [
+            {
+              "parameter": "rated_voltage",
+              "value": 415
+            }
+          ]
+        },
+        {
+          "text": "Busbars shall be rated for 400 A continuous current.",
+          "category": "electrical",
+          "attributes": [
+            {
+              "parameter": "rated_current",
+              "value": 400
+            }
+          ]
+        },
+        {
+          "text": "Short circuit withstand: 35 kA for 1 s.",
+          "category": "electrical",
+          "attributes": [
+            {
+              "parameter": "short_circuit_rating",
+              "value": 35000
+            }
+          ]
+        },
+        {
+          "text": "Earthing terminals shall be provided at two points.",
+          "category": "safety",
+          "attributes": []
+        }
+      ]
+    },
+    {
+      "id": "rq-2",
+      "split": "dev",
+      "text": "SCHEDULE OF TECHNICAL REQUIREMENTS\n1. The treatment plant shall produce 2 MLD of potable water.\n2. Treated water pH: 7.0 to 8.5\n3. Residual chlorine at the farthest point shall be at least 0.2 mg/l.\n4. Turbidity of treated water shall not be more than 1 NTU.\n5. The contractor may use locally available sand for filter media if approved.\n6. Operation and maintenance manuals shall be submitted in triplicate.\nThe plant is located near the river.",
+      "requirements": [
+        {
+          "text": "The treatment plant shall produce 2 MLD of potable water.",
+          "category": "performance",
+          "attributes": []
+        },
+        {
+          "text": "Treated water pH: 7.0 to 8.5",
+          "category": "quality",
+          "attributes": [
+            {
+              "parameter": "ph",
+              "value": 7
+            }
+          ]
+        },
+        {
+          "text": "Residual chlorine at the farthest point shall be at least 0.2 mg/l.",
+          "category": "quality",
+          "attributes": []
+        },
+        {
+          "text": "Turbidity of treated water shall not be more than 1 NTU.",
+          "category": "quality",
+          "attributes": [
+            {
+              "parameter": "turbidity",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "text": "Operation and maintenance manuals shall be submitted in triplicate.",
+          "category": "documentation",
+          "attributes": []
+        }
+      ]
+    },
+    {
+      "id": "rq-3",
+      "split": "dev",
+      "text": "PARTICULAR SPECIFICATIONS — CIVIL WORKS\na) Concrete for the raft foundation shall be M30 grade.\nb) Reinforcement: Fe 550D TMT bars.\nc) Minimum cement content shall be 320 kg/m3.\nd) Curing shall be continued for at least 10 days.\ne) Formwork shall be removed only after approval of the Engineer.\nf) Slump of concrete: 75 mm to 100 mm\nThe work is to be completed within 9 months.",
+      "requirements": [
+        {
+          "text": "Concrete for the raft foundation shall be M30 grade.",
+          "category": "material",
+          "attributes": [
+            {
+              "parameter": "concrete_grade",
+              "value": 30
+            }
+          ]
+        },
+        {
+          "text": "Reinforcement: Fe 550D TMT bars.",
+          "category": "material",
+          "attributes": [
+            {
+              "parameter": "steel_grade",
+              "text": "Fe 550D"
+            }
+          ]
+        },
+        {
+          "text": "Minimum cement content shall be 320 kg/m3.",
+          "category": "material",
+          "attributes": [
+            {
+              "parameter": "cement_content",
+              "value": 320
+            }
+          ]
+        },
+        {
+          "text": "Curing shall be continued for at least 10 days.",
+          "category": "installation",
+          "attributes": []
+        },
+        {
+          "text": "Formwork shall be removed only after approval of the Engineer.",
+          "category": "installation",
+          "attributes": []
+        },
+        {
+          "text": "Slump of concrete: 75 mm to 100 mm",
+          "category": "performance",
+          "attributes": []
+        },
+        {
+          "text": "The work is to be completed within 9 months.",
+          "category": "general",
+          "attributes": []
+        }
+      ]
+    },
+    {
+      "id": "rq-4",
+      "split": "dev",
+      "text": "MOTOR DATA SHEET\nType: Squirrel cage induction motor\nRated output: 55 kW\nSupply: 415 V ± 10 %, 50 Hz ± 5 %\nEfficiency class: IE3\nInsulation: Class F with temperature rise limited to Class B\nDuty: S1\nMounting: Foot mounted, B3\nPainting: As per manufacturer's standard",
+      "requirements": [
+        {
+          "text": "Type: Squirrel cage induction motor",
+          "category": "general",
+          "attributes": []
+        },
+        {
+          "text": "Rated output: 55 kW",
+          "category": "performance",
+          "attributes": [
+            {
+              "parameter": "rated_power",
+              "value": 55000
+            }
+          ]
+        },
+        {
+          "text": "Supply: 415 V ± 10 %, 50 Hz ± 5 %",
+          "category": "electrical",
+          "attributes": [
+            {
+              "parameter": "rated_voltage",
+              "value": 415
+            },
+            {
+              "parameter": "voltage_variation",
+              "value": 10
+            },
+            {
+              "parameter": "frequency",
+              "value": 50
+            },
+            {
+              "parameter": "frequency_variation",
+              "value": 5
+            }
+          ]
+        },
+        {
+          "text": "Efficiency class: IE3",
+          "category": "performance",
+          "attributes": [
+            {
+              "parameter": "efficiency_class",
+              "text": "IE3"
+            }
+          ]
+        },
+        {
+          "text": "Insulation: Class F with temperature rise limited to Class B",
+          "category": "electrical",
+          "attributes": [
+            {
+              "parameter": "insulation_class",
+              "text": "Class F"
+            }
+          ]
+        },
+        {
+          "text": "Duty: S1",
+          "category": "performance",
+          "attributes": [
+            {
+              "parameter": "duty_type",
+              "text": "S1"
+            }
+          ]
+        },
+        {
+          "text": "Mounting: Foot mounted, B3",
+          "category": "installation",
+          "attributes": []
+        },
+        {
+          "text": "Painting: As per manufacturer's standard",
+          "category": "general",
+          "attributes": []
+        }
+      ]
+    },
+    {
+      "id": "rq-5",
+      "split": "test",
+      "text": "TECHNICAL SPECIFICATION FOR LT CABLES\n1.0 SCOPE\n1.1 This specification covers supply of LT XLPE cables.\n2.0 REQUIREMENTS\n2.1 Cables shall be 1.1 kV grade, XLPE insulated, PVC sheathed and armoured.\n2.2 Conductor shall be stranded aluminium of size 240 sq mm.\n2.3 The maximum conductor temperature shall be 90 °C under normal operation.\n2.4 Cable drums shall be marked with the manufacturer's name and year of manufacture.\n2.5 Test certificates shall be furnished with each consignment.\nPage 2 of 5",
+      "requirements": [
+        {
+          "text": "Cables shall be 1.1 kV grade, XLPE insulated, PVC sheathed and armoured.",
+          "category": "electrical",
+          "attributes": [
+            {
+              "parameter": "rated_voltage",
+              "value": 1100
+            },
+            {
+              "parameter": "insulation_material",
+              "text": "XLPE"
+            }
+          ]
+        },
+        {
+          "text": "Conductor shall be stranded aluminium of size 240 sq mm.",
+          "category": "material",
+          "attributes": [
+            {
+              "parameter": "conductor_material",
+              "text": "aluminium"
+            },
+            {
+              "parameter": "conductor_size",
+              "value": 240
+            }
+          ]
+        },
+        {
+          "text": "The maximum conductor temperature shall be 90 °C under normal operation.",
+          "category": "electrical",
+          "attributes": [
+            {
+              "parameter": "conductor_temperature",
+              "value": 90
+            }
+          ]
+        },
+        {
+          "text": "Cable drums shall be marked with the manufacturer's name and year of manufacture.",
+          "category": "documentation",
+          "attributes": []
+        },
+        {
+          "text": "Test certificates shall be furnished with each consignment.",
+          "category": "certification",
+          "attributes": [
+            {
+              "parameter": "conformity_evidence",
+              "text": "test certificates"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rq-6",
+      "split": "test",
+      "text": "PUMPING MACHINERY\n(i) Pumps shall be horizontal split casing type suitable for raw water.\n(ii) Each pump shall deliver 450 m3/hr against a total head of 35 m.\n(iii) Pump speed shall not exceed 1500 rpm.\n(iv) The pump efficiency at duty point shall not be less than 80 %.\n(v) Noise level at 1 m distance shall not exceed 85 dB(A).\n(vi) The Engineer's decision shall be final.",
+      "requirements": [
+        {
+          "text": "Pumps shall be horizontal split casing type suitable for raw water.",
+          "category": "performance",
+          "attributes": []
+        },
+        {
+          "text": "Each pump shall deliver 450 m3/hr against a total head of 35 m.",
+          "category": "performance",
+          "attributes": [
+            {
+              "parameter": "flow_rate",
+              "value": 450
+            },
+            {
+              "parameter": "pump_head",
+              "value": 35000
+            }
+          ]
+        },
+        {
+          "text": "Pump speed shall not exceed 1500 rpm.",
+          "category": "performance",
+          "attributes": [
+            {
+              "parameter": "speed",
+              "value": 1500
+            }
+          ]
+        },
+        {
+          "text": "The pump efficiency at duty point shall not be less than 80 %.",
+          "category": "performance",
+          "attributes": [
+            {
+              "parameter": "efficiency",
+              "value": 80
+            }
+          ]
+        },
+        {
+          "text": "Noise level at 1 m distance shall not exceed 85 dB(A).",
+          "category": "environmental",
+          "attributes": [
+            {
+              "parameter": "noise_level",
+              "value": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rq-7",
+      "split": "test",
+      "text": "QUALITY OF TREATED WATER\nTreated water shall meet the following limits:\n- pH: 6.5 – 8.5\n- Total hardness (as CaCO3): 200 mg/l max\n- Iron: 0.3 mg/l max\n- Chloride: not more than 250 mg/l\n- E. coli: shall not be detectable in any 100 ml sample\nSampling shall be done weekly.",
+      "requirements": [
+        {
+          "text": "Treated water shall meet the following limits:",
+          "category": "quality",
+          "attributes": []
+        },
+        {
+          "text": "pH: 6.5 – 8.5",
+          "category": "quality",
+          "attributes": [
+            {
+              "parameter": "ph",
+              "value": 6.5
+            }
+          ]
+        },
+        {
+          "text": "Total hardness (as CaCO3): 200 mg/l max",
+          "category": "quality",
+          "attributes": [
+            {
+              "parameter": "total_hardness",
+              "value": 200
+            }
+          ]
+        },
+        {
+          "text": "Iron: 0.3 mg/l max",
+          "category": "quality",
+          "attributes": []
+        },
+        {
+          "text": "Chloride: not more than 250 mg/l",
+          "category": "quality",
+          "attributes": [
+            {
+              "parameter": "chloride",
+              "value": 250
+            }
+          ]
+        },
+        {
+          "text": "E. coli: shall not be detectable in any 100 ml sample",
+          "category": "quality",
+          "attributes": [
+            {
+              "parameter": "bacteriological_quality"
+            }
+          ]
+        },
+        {
+          "text": "Sampling shall be done weekly.",
+          "category": "testing",
+          "attributes": []
+        }
+      ]
+    },
+    {
+      "id": "rq-8",
+      "split": "test",
+      "text": "DISTRIBUTION TRANSFORMER — 630 kVA\nThe transformer shall be of 630 kVA rating, 11/0.433 kV, Dyn11 vector group.\nTemperature rise of oil shall not exceed 35 °C over an ambient of 50 °C.\nNo-load losses and load losses shall be guaranteed values.\nThe transformer tank shall be painted with epoxy paint.\nDelivery period: 12 weeks",
+      "requirements": [
+        {
+          "text": "The transformer shall be of 630 kVA rating, 11/0.433 kV, Dyn11 vector group.",
+          "category": "electrical",
+          "attributes": [
+            {
+              "parameter": "apparent_power",
+              "value": 630000
+            }
+          ]
+        },
+        {
+          "text": "Temperature rise of oil shall not exceed 35 °C over an ambient of 50 °C.",
+          "category": "environmental",
+          "attributes": [
+            {
+              "parameter": "ambient_temperature",
+              "value": 50
+            }
+          ]
+        },
+        {
+          "text": "No-load losses and load losses shall be guaranteed values.",
+          "category": "performance",
+          "attributes": []
+        },
+        {
+          "text": "The transformer tank shall be painted with epoxy paint.",
+          "category": "material",
+          "attributes": []
+        },
+        {
+          "text": "Delivery period: 12 weeks",
+          "category": "general",
+          "attributes": []
+        }
+      ]
+    },
+    {
+      "id": "rq-h1",
+      "split": "heldout",
+      "text": "SPECIFICATION FOR STREET LIGHTING\nClause 5 — Luminaires\n5.1 Luminaires shall be LED type with a minimum efficacy of 110 lm/W.\n5.2 The luminaire housing shall have ingress protection of IP66.\n5.3 Luminaires shall operate on 230 V ± 10 %, 50 Hz single phase supply.\n5.4 The supplier shall provide a warranty of 5 years.\n5.5 Poles shall be hot dip galvanised.\nPhotometric reports shall be submitted along with the bid.",
+      "requirements": [
+        {
+          "text": "Luminaires shall be LED type with a minimum efficacy of 110 lm/W.",
+          "category": "performance",
+          "attributes": []
+        },
+        {
+          "text": "The luminaire housing shall have ingress protection of IP66.",
+          "category": "environmental",
+          "attributes": [
+            {
+              "parameter": "ip_rating",
+              "text": "IP66"
+            }
+          ]
+        },
+        {
+          "text": "Luminaires shall operate on 230 V ± 10 %, 50 Hz single phase supply.",
+          "category": "electrical",
+          "attributes": [
+            {
+              "parameter": "rated_voltage",
+              "value": 230
+            },
+            {
+              "parameter": "voltage_variation",
+              "value": 10
+            },
+            {
+              "parameter": "frequency",
+              "value": 50
+            }
+          ]
+        },
+        {
+          "text": "The supplier shall provide a warranty of 5 years.",
+          "category": "general",
+          "attributes": []
+        },
+        {
+          "text": "Poles shall be hot dip galvanised.",
+          "category": "material",
+          "attributes": []
+        },
+        {
+          "text": "Photometric reports shall be submitted along with the bid.",
+          "category": "documentation",
+          "attributes": []
+        }
+      ]
+    },
+    {
+      "id": "rq-h2",
+      "split": "heldout",
+      "text": "RCC WATER TANK — DESIGN DATA\nDesign shall be based on IS 3370 for liquid retaining structures.\nGrade of concrete: M30\nClear cover: 40 mm\nMaximum crack width shall be limited to 0.2 mm.\nReinforcement shall be Fe 500D.\nThe tank shall be tested for water tightness before commissioning.",
+      "requirements": [
+        {
+          "text": "Design shall be based on IS 3370 for liquid retaining structures.",
+          "category": "general",
+          "attributes": []
+        },
+        {
+          "text": "Grade of concrete: M30",
+          "category": "material",
+          "attributes": [
+            {
+              "parameter": "concrete_grade",
+              "value": 30
+            }
+          ]
+        },
+        {
+          "text": "Clear cover: 40 mm",
+          "category": "dimensional",
+          "attributes": [
+            {
+              "parameter": "nominal_cover",
+              "value": 40
+            }
+          ]
+        },
+        {
+          "text": "Maximum crack width shall be limited to 0.2 mm.",
+          "category": "dimensional",
+          "attributes": []
+        },
+        {
+          "text": "Reinforcement shall be Fe 500D.",
+          "category": "material",
+          "attributes": [
+            {
+              "parameter": "steel_grade",
+              "text": "Fe 500D"
+            }
+          ]
+        },
+        {
+          "text": "The tank shall be tested for water tightness before commissioning.",
+          "category": "testing",
+          "attributes": []
+        }
+      ]
+    }
+  ]
+}

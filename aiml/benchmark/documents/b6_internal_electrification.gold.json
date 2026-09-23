@@ -1,0 +1,38 @@
+{
+  "id": "b6",
+  "name": "Internal electrification, girls' hostel — Karnataka PWD STN 09/2026-27",
+  "organization": "Karnataka PWD Electrical Sub-Division, Dharwad (benchmark)",
+  "domain": "building services — wiring, distribution boards, protection, earthing",
+  "notes": "Planted (all common in real schedules): wiring code cited as IS 732:1989; MCBs to withdrawn IS 8828; '1100 V grade' building wires against IS 694, which covers up to 450/750 V; no earthing arrangement; testing on completion with no method; wire test method (IS 10810) not named; 'of suitable size' is unmeasurable. ISI marking is required, so no certification finding.",
+  "requirements": [
+    {"text": "The contractor shall possess a valid electrical contractor licence and shall employ a licensed supervisor on the work.", "category": "general", "attributes": []},
+    {"text": "The work shall be carried out as per the Karnataka PWD Schedule of Rates 2025-26 and IS 732:1989.", "category": "general", "attributes": []},
+    {"text": "The contractor shall obtain approval of the Electrical Inspectorate before energisation.", "category": "general", "attributes": []},
+    {"text": "Wiring shall be concealed in rigid PVC conduits of 1.5 mm wall thickness.", "category": "installation", "attributes": []},
+    {"text": "Wires shall be 1100 V grade, FR PVC insulated, single core, stranded copper conductor, conforming to IS 694.", "category": "electrical", "attributes": [{"parameter": "rated_voltage", "value": 1100}, {"parameter": "conductor_material", "text": "copper"}, {"parameter": "insulation_material", "text": "PVC"}]},
+    {"text": "Lighting circuits shall be wired with 1.5 sq mm and power circuits with 4 sq mm conductors.", "category": "dimensional", "attributes": [{"parameter": "conductor_size", "value": 1.5}, {"parameter": "conductor_size", "value": 4}]},
+    {"text": "Separate protective earth conductor of the same size as the phase conductor shall be run along with each circuit.", "category": "safety", "attributes": []},
+    {"text": "Wires shall be ISI marked and of approved make.", "category": "certification", "attributes": [{"parameter": "conformity_evidence"}]},
+    {"text": "Switches and sockets shall be of modular type, 6 A and 16 A as required.", "category": "electrical", "attributes": [{"parameter": "rated_current", "value": 16}]},
+    {"text": "Distribution boards shall be double door, powder coated, of suitable size.", "category": "general", "attributes": []},
+    {"text": "MCBs shall conform to IS 8828 and shall have a breaking capacity of 10 kA.", "category": "electrical", "attributes": [{"parameter": "short_circuit_rating", "value": 10000}]},
+    {"text": "RCCBs with 30 mA sensitivity shall be provided on each floor distribution board.", "category": "safety", "attributes": []},
+    {"text": "The main incomer to the building shall be a 100 A, 4 pole MCCB with 25 kA breaking capacity.", "category": "electrical", "attributes": [{"parameter": "rated_current", "value": 100}, {"parameter": "short_circuit_rating", "value": 25000}]},
+    {"text": "Earthing shall be done as per IS 3043.", "category": "safety", "attributes": []},
+    {"text": "Two pipe earth electrodes shall be provided for the building distribution board.", "category": "safety", "attributes": []},
+    {"text": "The earth resistance shall not exceed 2 ohm.", "category": "safety", "attributes": [{"parameter": "earth_resistance", "value": 2}]},
+    {"text": "On completion, the installation shall be tested and the test results recorded in the prescribed form.", "category": "testing", "attributes": []},
+    {"text": "Insulation resistance of the installation shall not be less than 1 MΩ.", "category": "testing", "attributes": []},
+    {"text": "Completion drawings showing the wiring layout shall be submitted in triplicate.", "category": "documentation", "attributes": []},
+    {"text": "The defects liability period shall be 12 months from the date of completion.", "category": "general", "attributes": []}
+  ],
+  "findings": [
+    {"group": "outdated", "standardId": "is-732-2019", "why": "IS 732:1989 has been revised as IS 732:2019."},
+    {"group": "outdated", "standardId": "is-iec-60898-1-2002", "why": "IS 8828 is superseded by IS/IEC 60898-1."},
+    {"group": "conflict", "standardId": "is-694-2010", "parameter": "rated_voltage", "why": "IS 694 covers cables up to 450/750 V; 1100 V grade wires fall under IS 1554 (Part 1)."},
+    {"group": "dependency", "standardId": "is-10810", "why": "Test method for the wires (IS 10810) is not specified."},
+    {"group": "gap", "parameter": "earthing_system", "why": "Earthing arrangement (TN-S, TT, ...) is not stated."},
+    {"group": "gap", "parameter": "test_method", "why": "Completion testing is required but no method or acceptance criteria per IS 732 are given."},
+    {"group": "gap", "why": "'Of suitable size' for distribution boards is not measurable."}
+  ]
+}

@@ -1,0 +1,25 @@
+# uv workspace for the Python services. `uv sync --all-packages --all-extras`
+# creates one .venv with the AI/ML engine (aiml/) and the FastAPI backend
+# (backend/). The frontend (TanStack Start) is managed separately with Bun.
+[project]
+name = "standardos"
+version = "2.0.0"
+requires-python = ">=3.12"
+dependencies = ["standardos-aiml", "standardos-backend"]
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["aiml", "backend"]
+
+[tool.uv.sources]
+standardos-aiml = { workspace = true }
+standardos-backend = { workspace = true }
+
+[dependency-groups]
+dev = ["pytest>=8.3", "httpx>=0.27", "ruff>=0.6"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"

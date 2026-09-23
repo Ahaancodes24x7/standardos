@@ -1,6 +1,152 @@
 import { useState } from "react";
-import { Check,Edit3,RotateCcw,X } from "lucide-react";
-import type { Repair } from "@/data/demo";
+import { Check, Edit3, RotateCcw, X } from "lucide-react";
+import type { Repair, RepairStatus } from "@/lib/contracts";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-export function RepairPanel({repairs}:{repairs:Repair[]}){const [states,setStates]=useState<Record<string,"pending"|"accepted"|"rejected">>({});const [edits,setEdits]=useState<Record<string,string>>({});return <div className="grid gap-8">{repairs.map((repair,index)=>{const state=states[repair.id]??"pending";return <article key={repair.id} className="border-t border-border pt-7"><div className="flex justify-between gap-3"><p className="eyebrow">Correction {String(index+1).padStart(2,"0")}</p>{state!=="pending"&&<span className={`text-xs font-bold uppercase ${state==="accepted"?"text-success-foreground":"text-destructive"}`}>{state}</span>}</div><div className="mt-5 grid gap-6 lg:grid-cols-2"><div><p className="text-xs font-bold uppercase text-muted-foreground">Original</p><p className="mt-2 text-sm leading-6 text-muted-foreground line-through decoration-destructive/40">{repair.original}</p></div><div><p className="text-xs font-bold uppercase text-accent-foreground">Recommended</p>{edits[repair.id]!==undefined?<Textarea value={edits[repair.id]} onChange={(event)=>setEdits({...edits,[repair.id]:event.target.value})} className="mt-2 min-h-28"/>:<p className="mt-2 text-sm font-medium leading-6 text-primary">{repair.recommended}</p>}</div></div><div className="mt-5 grid gap-3 border-l-2 border-accent pl-4 text-sm sm:grid-cols-2"><p><b className="text-primary">Evidence</b><br/><span className="text-muted-foreground">{repair.evidence}</span></p><p><b className="text-primary">Reason</b><br/><span className="text-muted-foreground">{repair.reason}</span></p></div><div className="mt-5 flex flex-wrap gap-2">{state==="pending"?<><Button size="sm" onClick={()=>setStates({...states,[repair.id]:"accepted"})}><Check/>Accept change</Button><Button size="sm" variant="outline" onClick={()=>setStates({...states,[repair.id]:"rejected"})}><X/>Reject</Button><Button size="sm" variant="ghost" onClick={()=>setEdits({...edits,[repair.id]:repair.recommended})}><Edit3/>Edit</Button></>:<Button size="sm" variant="ghost" onClick={()=>setStates({...states,[repair.id]:"pending"})}><RotateCcw/>Undo decision</Button>}</div></article>})}</div>}
+
+type OnDecide = (repair: Repair, decision: RepairStatus, text?: string) => Promise<void>;
+
+export function RepairPanel({ repairs, onDecide }: { repairs: Repair[]; onDecide?: OnDecide }) {
+  const [states, setStates] = useState<Record<string, RepairStatus>>(() =>
+    Object.fromEntries(repairs.map((r) => [r.id, r.status ?? "pending"])),
+  );
+  const [edits, setEdits] = useState<Record<string, string>>({});
+  const [busy, setBusy] = useState<string | null>(null);
+
+  const decide = async (repair: Repair, decision: RepairStatus, text?: string) => {
+    setBusy(repair.id);
+    try {
+      await onDecide?.(repair, decision, text);
+      setStates((s) => ({ ...s, [repair.id]: decision }));
+      if (decision !== "edited") setEdits(({ [repair.id]: _dropped, ...rest }) => rest);
+    } finally {
+      setBusy(null);
+    }
+  };
+
+  return (
+    <div className="grid gap-8">
+      {repairs.map((repair, index) => {
+        const state = states[repair.id] ?? "pending";
+        const editing = edits[repair.id] !== undefined;
+        const shown =
+          state === "edited" && repair.finalText && !editing
+            ? repair.finalText
+            : repair.recommended;
+        return (
+          <article key={repair.id} className="border-t border-border pt-7">
+            <div className="flex justify-between gap-3">
+              <p className="eyebrow">Correction {String(index + 1).padStart(2, "0")}</p>
+              {state !== "pending" && (
+                <span
+                  className={`text-xs font-bold uppercase ${state === "rejected" ? "text-destructive" : "text-success-foreground"}`}
+                >
+                  {state}
+                </span>
+              )}
+            </div>
+            <div className="mt-5 grid gap-6 lg:grid-cols-2">
+              <div>
+                <p className="text-xs font-bold uppercase text-muted-foreground">Original</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground line-through decoration-destructive/40">
+                  {repair.original}
+                </p>
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase text-accent-foreground">Recommended</p>
+                {editing ? (
+                  <Textarea
+                    value={edits[repair.id]}
+                    onChange={(event) => setEdits({ ...edits, [repair.id]: event.target.value })}
+                    className="mt-2 min-h-28"
+                  />
+                ) : (
+                  <p className="mt-2 text-sm font-medium leading-6 text-primary">{shown}</p>
+                )}
+              </div>
+            </div>
+            <div className="mt-5 grid gap-3 border-l-2 border-accent pl-4 text-sm sm:grid-cols-2">
+              <p>
+                <b className="text-primary">Evidence</b>
+                <br />
+                <span className="text-muted-foreground">{repair.evidence}</span>
+              </p>
+              <p>
+                <b className="text-primary">Reason</b>
+                <br />
+                <span className="text-muted-foreground">{repair.reason}</span>
+              </p>
+            </div>
+            {repair.provenance && (
+              <p className="mt-3 text-[11px] text-muted-foreground">
+                Generated by {repair.provenance.component}@{repair.provenance.componentVersion} (
+                {repair.provenance.method}
+                {repair.provenance.model ? `, ${repair.provenance.model}` : ""}). Not applied until
+                a reviewer accepts it.
+              </p>
+            )}
+            <div className="mt-5 flex flex-wrap gap-2">
+              {editing ? (
+                <>
+                  <Button
+                    size="sm"
+                    disabled={busy === repair.id || !edits[repair.id]?.trim()}
+                    onClick={() => decide(repair, "edited", edits[repair.id])}
+                  >
+                    <Check />
+                    Save edited text
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={() => setEdits(({ [repair.id]: _dropped, ...rest }) => rest)}
+                  >
+                    Cancel
+                  </Button>
+                </>
+              ) : state === "pending" ? (
+                <>
+                  <Button
+                    size="sm"
+                    disabled={busy === repair.id}
+                    onClick={() => decide(repair, "accepted")}
+                  >
+                    <Check />
+                    Accept change
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    disabled={busy === repair.id}
+                    onClick={() => decide(repair, "rejected")}
+                  >
+                    <X />
+                    Reject
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={() => setEdits({ ...edits, [repair.id]: repair.recommended })}
+                  >
+                    <Edit3 />
+                    Edit
+                  </Button>
+                </>
+              ) : (
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  disabled={busy === repair.id}
+                  onClick={() => decide(repair, "pending")}
+                >
+                  <RotateCcw />
+                  Undo decision
+                </Button>
+              )}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  );
+}

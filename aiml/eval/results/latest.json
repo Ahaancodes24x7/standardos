@@ -1,0 +1,948 @@
+{
+  "dev": {
+    "split": "dev",
+    "corpusVersion": "seed-6ada30cf",
+    "requirements": {
+      "documents": 4,
+      "identification": {
+        "precision": 1.0,
+        "recall": 0.852,
+        "f1": 0.92,
+        "tp": 23,
+        "fp": 0,
+        "fn": 4
+      },
+      "classification": {
+        "accuracy": 0.826,
+        "macroF1": 0.711,
+        "n": 23,
+        "errors": [
+          [
+            "performance",
+            "quality"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "performance",
+            "dimensional"
+          ]
+        ]
+      },
+      "attributes": {
+        "precision": 1.0,
+        "recall": 0.941,
+        "f1": 0.97,
+        "tp": 16,
+        "fp": 0,
+        "fn": 1
+      },
+      "misses": [
+        "rq-4: Type: Squirrel cage induction motor",
+        "rq-4: Insulation: Class F with temperature rise limited to Class B",
+        "rq-4: Mounting: Foot mounted, B3",
+        "rq-4: Painting: As per manufacturer's standard"
+      ],
+      "spurious": []
+    },
+    "retrieval": {
+      "bm25": {
+        "queries": 25,
+        "standard": {
+          "recallAt1": 1.0,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 1.0,
+          "ndcgAt5": 0.978
+        },
+        "clause": {
+          "recallAt1": 0.88,
+          "recallAt3": 1.0,
+          "mrr": 0.94
+        },
+        "misses": []
+      },
+      "bm25+thesaurus": {
+        "queries": 25,
+        "standard": {
+          "recallAt1": 0.96,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.98,
+          "ndcgAt5": 0.965
+        },
+        "clause": {
+          "recallAt1": 0.84,
+          "recallAt3": 1.0,
+          "mrr": 0.913
+        },
+        "misses": [
+          "q23: expected is-456-2000, got is-1786-2008, is-456-2000, is-2062-2011"
+        ]
+      },
+      "bm25+rerank": {
+        "queries": 25,
+        "standard": {
+          "recallAt1": 0.96,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.98,
+          "ndcgAt5": 0.968
+        },
+        "clause": {
+          "recallAt1": 0.96,
+          "recallAt3": 0.96,
+          "mrr": 0.96
+        },
+        "misses": [
+          "q17: expected is-2026-1-2011, got is-1180-1-2014, is-2026-1-2011, is-4029-2010"
+        ]
+      },
+      "bm25+thesaurus+rerank": {
+        "queries": 25,
+        "standard": {
+          "recallAt1": 0.96,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.98,
+          "ndcgAt5": 0.968
+        },
+        "clause": {
+          "recallAt1": 0.96,
+          "recallAt3": 0.96,
+          "mrr": 0.96
+        },
+        "misses": [
+          "q17: expected is-2026-1-2011, got is-1180-1-2014, is-2026-1-2011, is-4029-2010"
+        ]
+      }
+    },
+    "resolution": {
+      "cases": 17,
+      "accuracy": 1.0,
+      "editionAccuracy": 1.0,
+      "errors": []
+    },
+    "relations": {
+      "sentences": 20,
+      "typedRelation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 27,
+        "fp": 0,
+        "fn": 0
+      },
+      "wrongTypeOnCorrectTarget": 0,
+      "errors": []
+    },
+    "graph": {
+      "extractedEdges": 37,
+      "curatedEdges": 40,
+      "textSupportedCurated": 31,
+      "typed": {
+        "precision": 0.784,
+        "recall": 0.806,
+        "f1": 0.795,
+        "tp": 29,
+        "fp": 8,
+        "fn": 7
+      },
+      "untypedPairPrecision": 0.973,
+      "recallOverAllCurated": 0.725,
+      "unmatched": [
+        "REQUIRES is-iec-61439-1-2020 → is-iec-60529-2001 (conformity cue \"in accordance with\")",
+        "SUPERSEDES is-iec-61439-2-2020 → is-8623-1-1993 (supersession cue \"Superseded\" (coordinated reference))",
+        "REQUIRES is-732-2019 → is-12640-1-2016 (conformity cue \"conform to\")",
+        "REQUIRES is-732-2019 → is-694-2010 (conformity cue \"conforming to\")",
+        "REQUIRES is-732-2019 → is-1554-1-1988 (conformity cue \"conforming to\" (coordinated reference))",
+        "REQUIRES is-732-2019 → is-iec-60898-1-2002 (conformity cue \"conform to\")",
+        "REQUIRES is-325-1996 → is-iec-60529-2001 (conformity cue \"in accordance with\")",
+        "REFERENCES is-10262-2019 → is-456-2000 (bare mention)"
+      ]
+    },
+    "reasoning": {
+      "specs": 4,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 9,
+        "fp": 0,
+        "fn": 0
+      },
+      "byGroup": {
+        "conflict": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "gap": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "dependency": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "outdated": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "certification": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "meanLatencyMs": 10.223,
+      "errors": []
+    }
+  },
+  "test": {
+    "split": "test",
+    "corpusVersion": "seed-6ada30cf",
+    "requirements": {
+      "documents": 4,
+      "identification": {
+        "precision": 0.917,
+        "recall": 1.0,
+        "f1": 0.957,
+        "tp": 22,
+        "fp": 2,
+        "fn": 0
+      },
+      "classification": {
+        "accuracy": 0.682,
+        "macroF1": 0.563,
+        "n": 22,
+        "errors": [
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "electrical",
+            "environmental"
+          ],
+          [
+            "documentation",
+            "electrical"
+          ],
+          [
+            "performance",
+            "general"
+          ],
+          [
+            "environmental",
+            "dimensional"
+          ],
+          [
+            "quality",
+            "general"
+          ],
+          [
+            "material",
+            "electrical"
+          ]
+        ]
+      },
+      "attributes": {
+        "precision": 0.941,
+        "recall": 0.941,
+        "f1": 0.941,
+        "tp": 16,
+        "fp": 1,
+        "fn": 1
+      },
+      "misses": [],
+      "spurious": [
+        "rq-6: The Engineer's decision shall be final.",
+        "rq-8: DISTRIBUTION TRANSFORMER – 630 kVA"
+      ]
+    },
+    "retrieval": {
+      "bm25": {
+        "queries": 25,
+        "standard": {
+          "recallAt1": 0.96,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.98,
+          "ndcgAt5": 0.99
+        },
+        "clause": {
+          "recallAt1": 0.96,
+          "recallAt3": 1.0,
+          "mrr": 0.98
+        },
+        "misses": [
+          "q29: expected is-516-1-1-2021, got is-456-2000, is-516-1-1-2021, is-516-1959"
+        ]
+      },
+      "bm25+thesaurus": {
+        "queries": 25,
+        "standard": {
+          "recallAt1": 0.92,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.96,
+          "ndcgAt5": 0.977
+        },
+        "clause": {
+          "recallAt1": 0.92,
+          "recallAt3": 1.0,
+          "mrr": 0.96
+        },
+        "misses": [
+          "q29: expected is-516-1-1-2021, got is-456-2000, is-516-1-1-2021, is-516-1959",
+          "q41: expected is-10810, got is-694-2010, is-10810, is-7098-1-1988"
+        ]
+      },
+      "bm25+rerank": {
+        "queries": 25,
+        "standard": {
+          "recallAt1": 0.96,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.98,
+          "ndcgAt5": 0.971
+        },
+        "clause": {
+          "recallAt1": 1.0,
+          "recallAt3": 1.0,
+          "mrr": 1.0
+        },
+        "misses": [
+          "q29: expected is-516-1-1-2021, got is-456-2000, is-516-1-1-2021, is-516-1959"
+        ]
+      },
+      "bm25+thesaurus+rerank": {
+        "queries": 25,
+        "standard": {
+          "recallAt1": 0.96,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.98,
+          "ndcgAt5": 0.971
+        },
+        "clause": {
+          "recallAt1": 1.0,
+          "recallAt3": 1.0,
+          "mrr": 1.0
+        },
+        "misses": [
+          "q29: expected is-516-1-1-2021, got is-456-2000, is-516-1-1-2021, is-516-1959"
+        ]
+      }
+    },
+    "resolution": {
+      "cases": 17,
+      "accuracy": 1.0,
+      "editionAccuracy": 1.0,
+      "errors": []
+    },
+    "relations": {
+      "sentences": 18,
+      "typedRelation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 22,
+        "fp": 0,
+        "fn": 0
+      },
+      "wrongTypeOnCorrectTarget": 0,
+      "errors": []
+    },
+    "graph": {
+      "extractedEdges": 37,
+      "curatedEdges": 40,
+      "textSupportedCurated": 31,
+      "typed": {
+        "precision": 0.784,
+        "recall": 0.806,
+        "f1": 0.795,
+        "tp": 29,
+        "fp": 8,
+        "fn": 7
+      },
+      "untypedPairPrecision": 0.973,
+      "recallOverAllCurated": 0.725,
+      "unmatched": [
+        "REQUIRES is-iec-61439-1-2020 → is-iec-60529-2001 (conformity cue \"in accordance with\")",
+        "SUPERSEDES is-iec-61439-2-2020 → is-8623-1-1993 (supersession cue \"Superseded\" (coordinated reference))",
+        "REQUIRES is-732-2019 → is-12640-1-2016 (conformity cue \"conform to\")",
+        "REQUIRES is-732-2019 → is-694-2010 (conformity cue \"conforming to\")",
+        "REQUIRES is-732-2019 → is-1554-1-1988 (conformity cue \"conforming to\" (coordinated reference))",
+        "REQUIRES is-732-2019 → is-iec-60898-1-2002 (conformity cue \"conform to\")",
+        "REQUIRES is-325-1996 → is-iec-60529-2001 (conformity cue \"in accordance with\")",
+        "REFERENCES is-10262-2019 → is-456-2000 (bare mention)"
+      ]
+    },
+    "reasoning": {
+      "specs": 4,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 12,
+        "fp": 0,
+        "fn": 0
+      },
+      "byGroup": {
+        "conflict": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0
+        },
+        "gap": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "dependency": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "outdated": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "certification": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "meanLatencyMs": 9.309,
+      "errors": []
+    }
+  },
+  "heldout": {
+    "split": "heldout",
+    "corpusVersion": "seed-6ada30cf",
+    "requirements": {
+      "documents": 2,
+      "identification": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 12,
+        "fp": 0,
+        "fn": 0
+      },
+      "classification": {
+        "accuracy": 0.917,
+        "macroF1": 0.85,
+        "n": 12,
+        "errors": [
+          [
+            "performance",
+            "general"
+          ]
+        ]
+      },
+      "attributes": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 7,
+        "fp": 0,
+        "fn": 0
+      },
+      "misses": [],
+      "spurious": []
+    },
+    "retrieval": {
+      "bm25": {
+        "queries": 15,
+        "standard": {
+          "recallAt1": 1.0,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 1.0,
+          "ndcgAt5": 0.995
+        },
+        "clause": {
+          "recallAt1": 0.8,
+          "recallAt3": 0.867,
+          "mrr": 0.863
+        },
+        "misses": []
+      },
+      "bm25+thesaurus": {
+        "queries": 15,
+        "standard": {
+          "recallAt1": 0.867,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.933,
+          "ndcgAt5": 0.964
+        },
+        "clause": {
+          "recallAt1": 0.667,
+          "recallAt3": 0.933,
+          "mrr": 0.817
+        },
+        "misses": [
+          "h14: expected is-269-2015, got is-8112-1989, is-269-2015, is-12269-1987",
+          "h15: expected is-8130-2013, got is-694-2010, is-8130-2013, is-1554-1-1988"
+        ]
+      },
+      "bm25+rerank": {
+        "queries": 15,
+        "standard": {
+          "recallAt1": 0.933,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.956,
+          "ndcgAt5": 0.972
+        },
+        "clause": {
+          "recallAt1": 0.933,
+          "recallAt3": 1.0,
+          "mrr": 0.956
+        },
+        "misses": [
+          "h15: expected is-8130-2013, got is-694-2010, is-1554-1-1988, is-8130-2013"
+        ]
+      },
+      "bm25+thesaurus+rerank": {
+        "queries": 15,
+        "standard": {
+          "recallAt1": 0.933,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.956,
+          "ndcgAt5": 0.967
+        },
+        "clause": {
+          "recallAt1": 0.933,
+          "recallAt3": 1.0,
+          "mrr": 0.956
+        },
+        "misses": [
+          "h15: expected is-8130-2013, got is-694-2010, is-1554-1-1988, is-8130-2013"
+        ]
+      }
+    },
+    "resolution": {
+      "cases": 8,
+      "accuracy": 1.0,
+      "editionAccuracy": 1.0,
+      "errors": []
+    },
+    "relations": {
+      "sentences": 12,
+      "typedRelation": {
+        "precision": 0.938,
+        "recall": 0.938,
+        "f1": 0.938,
+        "tp": 15,
+        "fp": 1,
+        "fn": 1
+      },
+      "wrongTypeOnCorrectTarget": 1,
+      "errors": [
+        "y11: predicted REFERENCES IS 3025 (Part 10); gold TESTED_BY IS 3025 (Part 10)"
+      ]
+    },
+    "graph": {
+      "extractedEdges": 37,
+      "curatedEdges": 40,
+      "textSupportedCurated": 31,
+      "typed": {
+        "precision": 0.784,
+        "recall": 0.806,
+        "f1": 0.795,
+        "tp": 29,
+        "fp": 8,
+        "fn": 7
+      },
+      "untypedPairPrecision": 0.973,
+      "recallOverAllCurated": 0.725,
+      "unmatched": [
+        "REQUIRES is-iec-61439-1-2020 → is-iec-60529-2001 (conformity cue \"in accordance with\")",
+        "SUPERSEDES is-iec-61439-2-2020 → is-8623-1-1993 (supersession cue \"Superseded\" (coordinated reference))",
+        "REQUIRES is-732-2019 → is-12640-1-2016 (conformity cue \"conform to\")",
+        "REQUIRES is-732-2019 → is-694-2010 (conformity cue \"conforming to\")",
+        "REQUIRES is-732-2019 → is-1554-1-1988 (conformity cue \"conforming to\" (coordinated reference))",
+        "REQUIRES is-732-2019 → is-iec-60898-1-2002 (conformity cue \"conform to\")",
+        "REQUIRES is-325-1996 → is-iec-60529-2001 (conformity cue \"in accordance with\")",
+        "REFERENCES is-10262-2019 → is-456-2000 (bare mention)"
+      ]
+    },
+    "reasoning": {
+      "specs": 3,
+      "overall": {
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.933,
+        "tp": 7,
+        "fp": 0,
+        "fn": 1
+      },
+      "byGroup": {
+        "conflict": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "gap": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "dependency": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.667,
+          "tp": 1,
+          "fp": 0,
+          "fn": 1
+        },
+        "outdated": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "certification": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "meanLatencyMs": 10.612,
+      "errors": [
+        "t1: missed dependency is-iec-61439-1-2020"
+      ]
+    }
+  },
+  "all": {
+    "split": "all",
+    "corpusVersion": "seed-6ada30cf",
+    "requirements": {
+      "documents": 10,
+      "identification": {
+        "precision": 0.966,
+        "recall": 0.934,
+        "f1": 0.95,
+        "tp": 57,
+        "fp": 2,
+        "fn": 4
+      },
+      "classification": {
+        "accuracy": 0.789,
+        "macroF1": 0.766,
+        "n": 57,
+        "errors": [
+          [
+            "performance",
+            "quality"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "performance",
+            "dimensional"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "electrical",
+            "environmental"
+          ],
+          [
+            "documentation",
+            "electrical"
+          ],
+          [
+            "performance",
+            "general"
+          ],
+          [
+            "environmental",
+            "dimensional"
+          ],
+          [
+            "quality",
+            "general"
+          ],
+          [
+            "material",
+            "electrical"
+          ],
+          [
+            "performance",
+            "general"
+          ]
+        ]
+      },
+      "attributes": {
+        "precision": 0.975,
+        "recall": 0.951,
+        "f1": 0.963,
+        "tp": 39,
+        "fp": 1,
+        "fn": 2
+      },
+      "misses": [
+        "rq-4: Type: Squirrel cage induction motor",
+        "rq-4: Insulation: Class F with temperature rise limited to Class B",
+        "rq-4: Mounting: Foot mounted, B3",
+        "rq-4: Painting: As per manufacturer's standard"
+      ],
+      "spurious": [
+        "rq-6: The Engineer's decision shall be final.",
+        "rq-8: DISTRIBUTION TRANSFORMER – 630 kVA"
+      ]
+    },
+    "retrieval": {
+      "bm25": {
+        "queries": 65,
+        "standard": {
+          "recallAt1": 0.985,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.992,
+          "ndcgAt5": 0.987
+        },
+        "clause": {
+          "recallAt1": 0.892,
+          "recallAt3": 0.969,
+          "mrr": 0.938
+        },
+        "misses": [
+          "q29: expected is-516-1-1-2021, got is-456-2000, is-516-1-1-2021, is-516-1959"
+        ]
+      },
+      "bm25+thesaurus": {
+        "queries": 65,
+        "standard": {
+          "recallAt1": 0.923,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.962,
+          "ndcgAt5": 0.969
+        },
+        "clause": {
+          "recallAt1": 0.831,
+          "recallAt3": 0.985,
+          "mrr": 0.909
+        },
+        "misses": [
+          "q23: expected is-456-2000, got is-1786-2008, is-456-2000, is-2062-2011",
+          "q29: expected is-516-1-1-2021, got is-456-2000, is-516-1-1-2021, is-516-1959",
+          "q41: expected is-10810, got is-694-2010, is-10810, is-7098-1-1988",
+          "h14: expected is-269-2015, got is-8112-1989, is-269-2015, is-12269-1987",
+          "h15: expected is-8130-2013, got is-694-2010, is-8130-2013, is-1554-1-1988"
+        ]
+      },
+      "bm25+rerank": {
+        "queries": 65,
+        "standard": {
+          "recallAt1": 0.954,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.974,
+          "ndcgAt5": 0.97
+        },
+        "clause": {
+          "recallAt1": 0.969,
+          "recallAt3": 0.985,
+          "mrr": 0.974
+        },
+        "misses": [
+          "q17: expected is-2026-1-2011, got is-1180-1-2014, is-2026-1-2011, is-4029-2010",
+          "q29: expected is-516-1-1-2021, got is-456-2000, is-516-1-1-2021, is-516-1959",
+          "h15: expected is-8130-2013, got is-694-2010, is-1554-1-1988, is-8130-2013"
+        ]
+      },
+      "bm25+thesaurus+rerank": {
+        "queries": 65,
+        "standard": {
+          "recallAt1": 0.954,
+          "recallAt3": 1.0,
+          "recallAt5": 1.0,
+          "mrr": 0.974,
+          "ndcgAt5": 0.969
+        },
+        "clause": {
+          "recallAt1": 0.969,
+          "recallAt3": 0.985,
+          "mrr": 0.974
+        },
+        "misses": [
+          "q17: expected is-2026-1-2011, got is-1180-1-2014, is-2026-1-2011, is-4029-2010",
+          "q29: expected is-516-1-1-2021, got is-456-2000, is-516-1-1-2021, is-516-1959",
+          "h15: expected is-8130-2013, got is-694-2010, is-1554-1-1988, is-8130-2013"
+        ]
+      }
+    },
+    "resolution": {
+      "cases": 42,
+      "accuracy": 1.0,
+      "editionAccuracy": 1.0,
+      "errors": []
+    },
+    "relations": {
+      "sentences": 50,
+      "typedRelation": {
+        "precision": 0.985,
+        "recall": 0.985,
+        "f1": 0.985,
+        "tp": 64,
+        "fp": 1,
+        "fn": 1
+      },
+      "wrongTypeOnCorrectTarget": 1,
+      "errors": [
+        "y11: predicted REFERENCES IS 3025 (Part 10); gold TESTED_BY IS 3025 (Part 10)"
+      ]
+    },
+    "graph": {
+      "extractedEdges": 37,
+      "curatedEdges": 40,
+      "textSupportedCurated": 31,
+      "typed": {
+        "precision": 0.784,
+        "recall": 0.806,
+        "f1": 0.795,
+        "tp": 29,
+        "fp": 8,
+        "fn": 7
+      },
+      "untypedPairPrecision": 0.973,
+      "recallOverAllCurated": 0.725,
+      "unmatched": [
+        "REQUIRES is-iec-61439-1-2020 → is-iec-60529-2001 (conformity cue \"in accordance with\")",
+        "SUPERSEDES is-iec-61439-2-2020 → is-8623-1-1993 (supersession cue \"Superseded\" (coordinated reference))",
+        "REQUIRES is-732-2019 → is-12640-1-2016 (conformity cue \"conform to\")",
+        "REQUIRES is-732-2019 → is-694-2010 (conformity cue \"conforming to\")",
+        "REQUIRES is-732-2019 → is-1554-1-1988 (conformity cue \"conforming to\" (coordinated reference))",
+        "REQUIRES is-732-2019 → is-iec-60898-1-2002 (conformity cue \"conform to\")",
+        "REQUIRES is-325-1996 → is-iec-60529-2001 (conformity cue \"in accordance with\")",
+        "REFERENCES is-10262-2019 → is-456-2000 (bare mention)"
+      ]
+    },
+    "reasoning": {
+      "specs": 11,
+      "overall": {
+        "precision": 1.0,
+        "recall": 0.966,
+        "f1": 0.982,
+        "tp": 28,
+        "fp": 0,
+        "fn": 1
+      },
+      "byGroup": {
+        "conflict": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 9,
+          "fp": 0,
+          "fn": 0
+        },
+        "gap": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0
+        },
+        "dependency": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.889,
+          "tp": 4,
+          "fp": 0,
+          "fn": 1
+        },
+        "outdated": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 7,
+          "fp": 0,
+          "fn": 0
+        },
+        "certification": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "meanLatencyMs": 10.732,
+      "errors": [
+        "t1: missed dependency is-iec-61439-1-2020"
+      ]
+    }
+  }
+}

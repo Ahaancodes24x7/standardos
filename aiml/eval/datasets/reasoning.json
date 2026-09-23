@@ -1,0 +1,199 @@
+{
+  "description": "End-to-end compliance reasoning. Each specification lists the problems a qualified reviewer should be told about. `group` is conflict | gap | dependency | outdated | certification; `standardId` and `parameter` narrow the match when given. A predicted finding matches a gold item when the group agrees and every field given in the gold item agrees. Verified findings are not scored.",
+  "specs": [
+    {
+      "id": "s1",
+      "split": "dev",
+      "text": "1. Three phase induction motors shall conform to IS 325.\n2. Rated output: 30 kW.\n3. Motors shall operate satisfactorily on 415 V ± 10 % and 50 Hz ± 5 % supply.\n4. The motors shall be of efficiency class IE3 as per IS 12615.\n5. Degree of protection: IP55.\n6. Routine tests shall be carried out as per IS 4029 and test certificates furnished.\n7. Motors shall bear the ISI mark.",
+      "gold": []
+    },
+    {
+      "id": "s2",
+      "split": "dev",
+      "text": "1. LT panels shall conform to IS 8623.\n2. Ambient temperature for design: 50 °C.\n3. Rated voltage 415 V, rated current 1600 A.\n4. Short circuit rating of busbars: 50 kA for 1 s.\n5. Enclosure degree of protection shall be IP54.\n6. Panels shall be installed at an altitude of 2500 m above mean sea level.",
+      "gold": [
+        {
+          "group": "outdated",
+          "standardId": "is-iec-61439-1-2020"
+        },
+        {
+          "group": "conflict",
+          "standardId": "is-iec-61439-1-2020",
+          "parameter": "ambient_temperature"
+        },
+        {
+          "group": "conflict",
+          "standardId": "is-iec-61439-1-2020",
+          "parameter": "altitude"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "split": "dev",
+      "text": "1. Submersible pumpsets for borewells shall conform to IS 8034.\n2. Discharge: 15 m3/h at a total head of 60 m.\n3. Overall efficiency of the pumpset shall be not less than 45 %.\n4. Pumpsets shall bear the BIS Standard Mark.",
+      "gold": []
+    },
+    {
+      "id": "s4",
+      "split": "dev",
+      "text": "1. All RCC work shall conform to IS 456:2000.\n2. Exposure condition: moderate.\n3. Grade of concrete shall be M20 for all structural members.\n4. Clear cover to reinforcement shall be 30 mm.\n5. Reinforcement shall be Fe 500 conforming to IS 1786:1985.\n6. Cement shall be PPC.",
+      "gold": [
+        {
+          "group": "conflict",
+          "standardId": "is-456-2000",
+          "parameter": "concrete_grade"
+        },
+        {
+          "group": "outdated",
+          "standardId": "is-1786-2008"
+        },
+        {
+          "group": "outdated",
+          "standardId": "is-456-2000"
+        },
+        {
+          "group": "dependency",
+          "standardId": "is-383-2016"
+        },
+        {
+          "group": "dependency",
+          "standardId": "is-516-1-1-2021"
+        },
+        {
+          "group": "certification"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "split": "test",
+      "text": "1. Power cables shall be 3.5 core, 185 sq mm aluminium conductor, XLPE insulated, armoured, conforming to IS 7098 (Part 1).\n2. Cables shall be suitable for an 11 kV system.\n3. Control cables shall be PVC insulated conforming to IS 1554 (Part 1):1988.\n4. Cables shall be tested in accordance with IS 10810.",
+      "gold": [
+        {
+          "group": "conflict",
+          "parameter": "rated_voltage"
+        },
+        {
+          "group": "certification"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "split": "test",
+      "text": "1. Water supplied shall conform to IS 10500:2012.\n2. Turbidity shall not exceed 5 NTU.\n3. Fluoride shall not exceed 1.5 mg/l.\n4. Water shall be tested in an accredited laboratory as per IS 3025 and IS 1622.",
+      "gold": [
+        {
+          "group": "conflict",
+          "standardId": "is-10500-2012",
+          "parameter": "turbidity"
+        },
+        {
+          "group": "conflict",
+          "standardId": "is-10500-2012",
+          "parameter": "fluoride"
+        },
+        {
+          "group": "outdated",
+          "standardId": "is-10500-2012"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "split": "test",
+      "text": "1. Wiring shall be carried out as per IS 732:1989.\n2. MCBs shall conform to IS 8828.\n3. RCCBs of 30 mA sensitivity shall be provided for socket outlet circuits.\n4. Earthing shall be done as per IS 3043.",
+      "gold": [
+        {
+          "group": "outdated",
+          "standardId": "is-732-2019"
+        },
+        {
+          "group": "outdated",
+          "standardId": "is-iec-60898-1-2002"
+        },
+        {
+          "group": "gap",
+          "parameter": "earthing_system"
+        },
+        {
+          "group": "gap",
+          "parameter": "test_method"
+        },
+        {
+          "group": "certification"
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "split": "test",
+      "text": "1. Distribution transformers shall conform to IS 1180 (Part 1):2014.\n2. Rating: 3150 kVA, 33/0.433 kV.\n3. Transformers shall meet energy efficiency level 2.\n4. Type test reports from a NABL accredited laboratory shall be submitted.",
+      "gold": [
+        {
+          "group": "conflict",
+          "standardId": "is-1180-1-2014",
+          "parameter": "apparent_power"
+        },
+        {
+          "group": "dependency",
+          "standardId": "is-2026-1-2011"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "split": "heldout",
+      "text": "1. Panels shall conform to IS/IEC 61439-2:2020.\n2. Rated voltage: 415 V, 3 phase, 50 Hz.\n3. Main busbar rating: 2000 A.\n4. Short-time withstand current: 50 kA for 1 second.\n5. Degree of protection: IP42.\n6. Ambient temperature: 45 °C.",
+      "gold": [
+        {
+          "group": "conflict",
+          "parameter": "ambient_temperature"
+        },
+        {
+          "group": "dependency",
+          "standardId": "is-iec-61439-1-2020"
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "split": "heldout",
+      "text": "1. Pumps shall conform to IS 1520.\n2. Each pump shall deliver 100 m3/h at 40 m total head.\n3. Pump efficiency at the duty point shall not be less than 70 %.\n4. The pump shall be driven by a 22 kW motor conforming to IS 325 with IE2 efficiency.\n5. Pumps shall be tested as per IS 9137.",
+      "gold": [
+        {
+          "group": "certification"
+        },
+        {
+          "group": "dependency",
+          "standardId": "is-4029-2010"
+        },
+        {
+          "group": "gap",
+          "parameter": "ip_rating"
+        },
+        {
+          "group": "gap",
+          "parameter": "rated_voltage"
+        }
+      ]
+    },
+    {
+      "id": "t3",
+      "split": "heldout",
+      "text": "1. Treated water shall conform to IS 10500.\n2. pH shall be between 6.0 and 8.0.\n3. Nitrate shall not exceed 45 mg/l.\n4. Samples shall be tested as per IS 3025 and IS 1622.",
+      "gold": [
+        {
+          "group": "conflict",
+          "standardId": "is-10500-2012",
+          "parameter": "ph"
+        },
+        {
+          "group": "outdated",
+          "standardId": "is-10500-2012"
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,65 @@
-import { createFileRoute,Link } from "@tanstack/react-router";
-import { useState,type FormEvent } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState, type FormEvent } from "react";
 import { Brand } from "@/components/brand";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { requestPasswordResetFn } from "@/server/auth";
-export const Route=createFileRoute("/forgot-password")({component:Forgot});
-function Forgot(){const [sent,setSent]=useState(false);const [resetUrl,setResetUrl]=useState<string|null>(null);const [error,setError]=useState("");const submit=async(e:FormEvent<HTMLFormElement>)=>{e.preventDefault();const email=String(new FormData(e.currentTarget).get("email"));try{const result=await requestPasswordResetFn({data:{email}});setResetUrl(result.resetUrl??null);setSent(true)}catch(err){setError(err instanceof Error?err.message:"Something went wrong. Please try again.")}};return <main className="site-container grid min-h-screen place-items-center py-10"><div className="w-full max-w-md glass-panel p-7"><Brand/><p className="eyebrow mt-10">Account recovery</p><h1 className="mt-3 font-display text-4xl text-primary">Reset your password.</h1>{sent?<div className="mt-6 grid gap-4"><p className="text-sm leading-6 text-muted-foreground">If that email has an account, a reset link has been created.</p>{resetUrl&&<div className="border-l-2 border-accent bg-accent/5 px-3 py-2 text-sm"><p className="font-semibold text-primary">No email service is configured yet — here's your link:</p><a href={resetUrl} className="mt-1 block break-all font-mono text-xs text-accent-foreground hover:underline">{resetUrl}</a></div>}</div>:<form onSubmit={submit} className="mt-7 grid gap-4"><div className="grid gap-2"><Label htmlFor="email">Work email</Label><Input id="email" name="email" type="email" required/></div>{error&&<p className="text-sm text-destructive">{error}</p>}<Button>Send reset link</Button></form>}<Link to="/login" className="mt-6 block text-sm font-bold text-accent-foreground">Back to sign in</Link></div></main>}
+import { requestPasswordReset } from "@/services/auth";
+export const Route = createFileRoute("/forgot-password")({ component: Forgot });
+function Forgot() {
+  const [sent, setSent] = useState(false);
+  const [resetUrl, setResetUrl] = useState<string | null>(null);
+  const [error, setError] = useState("");
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const email = String(new FormData(e.currentTarget).get("email"));
+    try {
+      const result = await requestPasswordReset(email);
+      setResetUrl(result.resetUrl ?? null);
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    }
+  };
+  return (
+    <main className="site-container grid min-h-screen place-items-center py-10">
+      <div className="w-full max-w-md glass-panel p-7">
+        <Brand />
+        <p className="eyebrow mt-10">Account recovery</p>
+        <h1 className="mt-3 font-display text-4xl text-primary">Reset your password.</h1>
+        {sent ? (
+          <div className="mt-6 grid gap-4">
+            <p className="text-sm leading-6 text-muted-foreground">
+              If that email has an account, a reset link has been created.
+            </p>
+            {resetUrl && (
+              <div className="border-l-2 border-accent bg-accent/5 px-3 py-2 text-sm">
+                <p className="font-semibold text-primary">
+                  No email service is configured yet — here's your link:
+                </p>
+                <a
+                  href={resetUrl}
+                  className="mt-1 block break-all font-mono text-xs text-accent-foreground hover:underline"
+                >
+                  {resetUrl}
+                </a>
+              </div>
+            )}
+          </div>
+        ) : (
+          <form onSubmit={submit} className="mt-7 grid gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="email">Work email</Label>
+              <Input id="email" name="email" type="email" required />
+            </div>
+            {error && <p className="text-sm text-destructive">{error}</p>}
+            <Button>Send reset link</Button>
+          </form>
+        )}
+        <Link to="/login" className="mt-6 block text-sm font-bold text-accent-foreground">
+          Back to sign in
+        </Link>
+      </div>
+    </main>
+  );
+}

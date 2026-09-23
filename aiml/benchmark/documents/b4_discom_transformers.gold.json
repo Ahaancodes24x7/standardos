@@ -1,0 +1,42 @@
+{
+  "id": "b4",
+  "name": "630 kVA distribution transformers, 11 kV cables and LT breakers — MVVNL enquiry 41/2026-27",
+  "organization": "MVVNL Materials Management (benchmark)",
+  "domain": "power distribution — transformers, MV cables, LV circuit breakers",
+  "notes": "Planted: 11 kV cables specified against IS 7098 (Part 1), which covers up to 1.1 kV; routine tests to the 1977 edition of IS 2026 (Part 1); superseded IS 13947 (Part 2) for ACBs; no-load losses 'as low as possible' is unmeasurable; cable test method not named. NABL type-test reports are required, so no certification finding.",
+  "requirements": [
+    {"text": "Standard: The transformers shall conform to IS 1180 (Part 1):2014 with latest amendments.", "category": "general", "attributes": []},
+    {"text": "Type: Outdoor, three phase, oil immersed, naturally cooled (ONAN), copper wound.", "category": "general", "attributes": []},
+    {"text": "Rating: 630 kVA, 11/0.433 kV, Dyn11 vector group.", "category": "electrical", "attributes": [{"parameter": "apparent_power", "value": 630000}]},
+    {"text": "The transformers shall meet energy efficiency level 2 as specified in IS 1180 (Part 1).", "category": "performance", "attributes": [{"parameter": "efficiency_class", "text": "Level 2"}]},
+    {"text": "Maximum total losses at 50 % and 100 % loading shall not exceed the values specified in the standard for the offered efficiency level.", "category": "performance", "attributes": []},
+    {"text": "Temperature rise of top oil shall not exceed 35 °C and of winding 40 °C over an ambient of 50 °C.", "category": "environmental", "attributes": [{"parameter": "ambient_temperature", "value": 50}]},
+    {"text": "Off-circuit tap changer with taps from +2.5 % to -5 % in steps of 2.5 % shall be provided on the HV side.", "category": "electrical", "attributes": []},
+    {"text": "The tank shall be of welded mild steel construction and shall be painted with epoxy based paint.", "category": "material", "attributes": []},
+    {"text": "Each transformer shall be provided with a rating and diagram plate of anodised aluminium.", "category": "documentation", "attributes": []},
+    {"text": "The no-load losses shall be as low as possible.", "category": "performance", "attributes": []},
+    {"text": "Rated power: 630 kVA", "category": "electrical", "attributes": [{"parameter": "apparent_power", "value": 630000}]},
+    {"text": "Rated HV voltage: 11 kV", "category": "electrical", "attributes": [{"parameter": "rated_voltage", "value": 11000}]},
+    {"text": "Rated LV voltage: 433 V", "category": "electrical", "attributes": [{"parameter": "rated_voltage", "value": 433}]},
+    {"text": "Frequency: 50 Hz", "category": "electrical", "attributes": [{"parameter": "frequency", "value": 50}]},
+    {"text": "Cooling: ONAN", "category": "general", "attributes": []},
+    {"text": "Energy efficiency level: Level 2", "category": "performance", "attributes": [{"parameter": "efficiency_class", "text": "Level 2"}]},
+    {"text": "All routine tests shall be carried out on each transformer as per IS 2026 (Part 1):1977.", "category": "testing", "attributes": []},
+    {"text": "Type test reports of the offered design from a NABL accredited laboratory, not older than five years, shall be submitted with the bid.", "category": "certification", "attributes": [{"parameter": "conformity_evidence"}]},
+    {"text": "11 kV (E) grade, 3 core, 240 sq mm aluminium conductor, XLPE insulated, armoured cables conforming to IS 7098 (Part 1) shall be supplied.", "category": "electrical", "attributes": [{"parameter": "rated_voltage", "value": 11000}, {"parameter": "conductor_size", "value": 240}, {"parameter": "conductor_material", "text": "aluminium"}, {"parameter": "insulation_material", "text": "XLPE"}]},
+    {"text": "Cables shall be supplied in non-returnable wooden drums of 250 m length.", "category": "general", "attributes": []},
+    {"text": "Each drum shall be marked with the manufacturer's name, size, voltage grade and year of manufacture.", "category": "documentation", "attributes": []},
+    {"text": "LT air circuit breakers of 1000 A rating shall conform to IS 13947 (Part 2):1993.", "category": "electrical", "attributes": [{"parameter": "rated_current", "value": 1000}]},
+    {"text": "The rated service short circuit breaking capacity shall be 50 kA.", "category": "electrical", "attributes": [{"parameter": "short_circuit_rating", "value": 50000}]},
+    {"text": "Breakers shall be provided with thermal-magnetic release and shunt trip.", "category": "electrical", "attributes": []},
+    {"text": "Delivery shall be completed within 120 days from the date of purchase order.", "category": "general", "attributes": []},
+    {"text": "The transformers shall be guaranteed for 60 months from the date of commissioning.", "category": "general", "attributes": []}
+  ],
+  "findings": [
+    {"group": "conflict", "standardId": "is-7098-1-1988", "parameter": "rated_voltage", "why": "11 kV cables cannot conform to IS 7098 (Part 1), which covers working voltages up to 1.1 kV."},
+    {"group": "outdated", "standardId": "is-2026-1-2011", "why": "Routine tests cite the 1977 edition; the current edition is IS 2026 (Part 1):2011."},
+    {"group": "outdated", "standardId": "is-iec-60947-2-2003", "why": "IS 13947 (Part 2):1993 is superseded by IS/IEC 60947-2."},
+    {"group": "dependency", "standardId": "is-10810", "why": "Test method for the cables (IS 10810) is not specified."},
+    {"group": "gap", "why": "'No-load losses shall be as low as possible' is not measurable."}
+  ]
+}

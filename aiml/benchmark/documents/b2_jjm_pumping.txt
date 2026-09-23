@@ -1,0 +1,65 @@
+GOVERNMENT OF RAJASTHAN
+PUBLIC HEALTH ENGINEERING DEPARTMENT — JAL JEEVAN MISSION
+NIT No. PHED/JJM/NGR/23/2026-27 dated 02.10.2026
+Name of work: Supply, installation and commissioning of borewell submersible pumpsets, starter panels and associated works including water quality testing for 34 villages of Nagaur district (single village schemes).
+Tender fee: Rs. 1,000/- (non-refundable)
+Bid security: 2 % of the estimated cost
+
+PART A — GENERAL CONDITIONS
+A1. The tender documents may be downloaded from the e-procurement portal of the State Government.
+A2. The bidder must be registered with the Department in the appropriate class.
+A3. Rates quoted shall be inclusive of all taxes, freight, insurance and transit risks.
+A4. The Department reserves the right to accept or reject any bid without assigning any reason.
+
+PART B — TECHNICAL SPECIFICATIONS
+
+B1. SUBMERSIBLE PUMPSETS
+B1.1 Borewell submersible pumpsets shall conform to IS 8034:2018 and shall bear the BIS Standard Mark.
+B1.2 The pumpsets shall be suitable for 150 mm (6 inch) borewells.
+B1.3 Each pumpset shall deliver 18 m3/h against a total head of 90 m.
+B1.4 The overall efficiency of the pumpset at the duty point shall be not less than 52 %.
+B1.5 Motors shall be water filled, wet type, conforming to IS 9283:2013.
+B1.6 The motor shall be suitable for operation on 415 V ± 10 %, 50 Hz, 3 phase supply.
+B1.7 Rated output of the motor shall be 11 kW.
+B1.8 Impellers and diffusers shall be of stainless steel.
+B1.9 A non-return valve shall be provided at the delivery of each pumpset.
+
+TECHNICAL DATA SHEET — SUBMERSIBLE PUMPSET
+Discharge at duty point: 5 lps
+Total head at duty point: 90 m
+Motor rating: 11 kW
+Speed: 2900 rpm
+Borewell size: 150 mm
+
+B2. SUBMERSIBLE CABLES
+B2.1 Submersible flat cables shall be 3 core, 10 sq mm, copper conductor, PVC insulated and PVC sheathed, conforming to IS 694:2010.
+B2.2 Cables shall be tested in accordance with IS 10810.
+B2.3 Cable joints shall be made watertight using vulcanising tape and shall be tested before lowering the pumpset.
+
+B3. STARTER AND CONTROL PANEL
+B3.1 Each pumpset shall be provided with a fully automatic star-delta starter housed in a sheet steel enclosure with IP55 degree of protection.
+B3.2 The starter shall have single phasing preventer, dry run protection and overload relay.
+B3.3 The panel shall be suitable for outdoor mounting on a concrete plinth.
+B3.4 Earthing of the panel and pumpset shall be done with two separate earth pits.
+
+B4. WATER QUALITY
+B4.1 Water supplied through the scheme shall conform to IS 10500:2012.
+B4.2 Total dissolved solids of the supplied water shall not exceed 500 mg/l.
+B4.3 Fluoride in the supplied water shall not exceed 1.5 mg/l.
+B4.4 Nitrate shall not exceed 45 mg/l.
+B4.5 Arsenic content shall not exceed 0.05 mg/l.
+B4.6 pH of water shall be in the range of 6.5 to 8.5.
+B4.7 Water samples shall be collected before commissioning and tested in a NABL accredited laboratory as per IS 3025.
+B4.8 Test reports shall be submitted to the Engineer-in-charge for each source.
+
+B5. INSPECTION AND WARRANTY
+B5.1 Pumpsets shall be inspected by the Department's authorised representative at the manufacturer's works.
+B5.2 The contractor shall operate and maintain the scheme for a period of 12 months after commissioning.
+B5.3 Pumpsets and starters shall carry a warranty of 24 months from the date of commissioning.
+
+BILL OF QUANTITIES (abstract)
+Item | Description | Unit | Quantity
+1 | Submersible pumpset 11 kW, 18 m3/h at 90 m | No. | 34
+2 | 3C x 10 sq mm submersible flat cable | m | 3400
+3 | Automatic star-delta starter | No. | 34
+Note: The quantities are approximate and may vary during execution.

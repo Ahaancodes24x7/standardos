@@ -1,0 +1,56 @@
+MAHARASHTRA JEEVAN PRADHIKARAN
+Augmentation of Water Supply Scheme, Satara — Raw Water Pumping Station at Kanher Dam
+Tender No. MJP/SAT/E-12/2026-27
+Name of work: Design, supply, erection, testing and commissioning of horizontal centrifugal pumping machinery with motors, including 12 months trial run.
+
+1 SCOPE
+1.1 The scope covers three (2 working + 1 standby) horizontal split casing centrifugal pumpsets with motors, suction and delivery valves, and electrical control.
+
+2 DESIGN DATA
+2.1 Each pump shall deliver 450 m3/h against a total head of 42 m.
+2.2 The pump efficiency at the duty point shall not be less than 80 %.
+2.3 The pump speed shall not exceed 1500 rpm.
+2.4 Pumps shall conform to IS 1520:1980.
+2.5 The pumps shall be capable of continuous operation over the range of 80 % to 110 % of the duty point discharge.
+2.6 Noise level at 1 m from the pumpset shall not exceed 85 dB(A).
+
+PUMP DATA SHEET
+Type: Horizontal split casing, single stage, double suction
+Discharge: 450 m3/h
+Total head: 42 m
+Pump efficiency at duty point: 80 % (minimum)
+Speed: 1480 rpm
+
+3 MATERIALS OF CONSTRUCTION
+3.1 Casing shall be of cast iron and impeller shall be of bronze.
+3.2 The shaft shall be of stainless steel with replaceable shaft sleeves.
+
+4 DRIVE MOTORS
+4.1 Each pump shall be driven by a 75 kW, squirrel cage induction motor conforming to IS 325:1996.
+4.2 The motors shall be suitable for 415 V ± 10 % and 50 Hz ± 5 %, 3 phase supply.
+4.3 The motors shall be of efficiency class IE3 as per IS 12615:2018.
+4.4 Degree of protection of the motor enclosure shall be IP55.
+4.5 Motors shall have class F insulation with temperature rise limited to class B and shall be suitable for S1 duty.
+4.6 Motors shall be suitable for star-delta starting.
+
+5 TESTS AND INSPECTION
+5.1 Pumps shall be tested at the manufacturer's works in accordance with IS 9137 in the presence of the Engineer.
+5.2 Routine tests on motors shall be carried out as per IS 4029 and test certificates shall be furnished.
+5.3 Pumps and motors shall bear the ISI mark.
+5.4 After erection, the pumpsets shall be run continuously for 72 hours as a site performance test.
+
+6 ELECTRICAL AND EARTHING
+6.1 Earthing of motors and panels shall be done in accordance with IS 3043:2018 and the earth resistance shall not exceed 1 ohm.
+6.2 Power cables from the panel to the motors shall be 1.1 kV grade XLPE insulated armoured aluminium conductor cables conforming to IS 7098 (Part 1) and tested as per IS 10810.
+
+7 DOCUMENTS
+7.1 The contractor shall submit pump performance curves, general arrangement drawings and motor data sheets for approval.
+7.2 Operation and maintenance manuals in English and Marathi shall be supplied in triplicate.
+
+8 TRIAL RUN
+8.1 The contractor shall operate the pumping station for a trial period of 12 months after commissioning.
+8.2 During the trial run the contractor shall provide one operator and one helper in each shift.
+
+Notes:
+1. Bidders are advised to visit the site before quoting.
+2. All dimensions are in mm unless otherwise stated.

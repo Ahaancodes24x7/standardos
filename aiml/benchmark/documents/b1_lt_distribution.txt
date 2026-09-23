@@ -1,0 +1,82 @@
+CENTRAL PUBLIC WORKS DEPARTMENT
+OFFICE OF THE EXECUTIVE ENGINEER (ELECTRICAL), EASTERN ELECTRICAL DIVISION
+NOTICE INVITING e-TENDER No. 14/EE(E)/EED/2026-27
+Name of work: Supply, installation, testing and commissioning of LT electrical distribution system for the new academic block at Bhubaneswar campus.
+Estimated cost put to tender: Rs. 1,84,62,000/-
+Earnest Money Deposit: Rs. 3,69,240/-
+Period of completion: 9 (nine) months
+Last date and time of bid submission: 18.11.2026 up to 15:00 hrs
+
+SECTION 1 — INSTRUCTIONS TO BIDDERS
+1.1 The bidder shall submit the EMD in the form of an online payment or bank guarantee from a scheduled bank.
+1.2 The bid shall remain valid for 90 days from the date of opening of the technical bid.
+1.3 Bidders shall have completed at least one similar work of value not less than Rs. 1.47 crore during the last seven years.
+1.4 Conditional bids will be summarily rejected.
+
+SECTION 2 — SCOPE OF WORK
+2.1 This specification covers design, supply, installation, testing and commissioning of the main LT panel, sub-distribution boards, power cables, earthing and associated works.
+2.2 The work shall be executed in accordance with CPWD General Specifications for Electrical Works (Part I Internal and Part II External), as amended up to date.
+
+SECTION 3 — SITE CONDITIONS
+3.1 The equipment shall be designed for a maximum ambient temperature of 50 °C and relative humidity up to 95 %.
+3.2 The site is located at an altitude of less than 1000 m above mean sea level.
+3.3 The area falls under seismic zone III.
+
+SECTION 4 — MAIN LT PANEL
+4.1 The main LT panel shall be of cubicle type, floor mounted, totally enclosed and fabricated from CRCA sheet steel of 2 mm thickness.
+4.2 The panel shall conform to IS/IEC 61439-1:2020 and IS/IEC 61439-2:2020.
+4.3 The panel shall have Form 3b internal separation.
+4.4 The degree of protection of the panel enclosure shall be IP54.
+4.5 The main busbars shall be of electrolytic grade aluminium alloy and shall be rated for 2500 A continuous current.
+4.6 The busbars and the panel shall withstand a short circuit current of 50 kA for 1 second.
+4.7 Incomers shall be 2500 A, 4 pole, electrically operated air circuit breakers conforming to IS/IEC 60947-2:2003 with microprocessor based release.
+4.8 Outgoing feeders shall be provided with MCCBs of 50 kA breaking capacity conforming to IS/IEC 60947-2.
+4.9 Metering shall include multifunction meters of accuracy class 0.5 with RS-485 communication port.
+
+GUARANTEED TECHNICAL PARTICULARS — MAIN LT PANEL (to be filled by the bidder)
+Rated operational voltage: 415 V, 3 phase, 4 wire
+Rated frequency: 50 Hz
+Design ambient temperature: 45 °C
+Rated current of main busbars: 2500 A
+Rated short-time withstand current: 50 kA for 1 s
+Degree of protection: IP54
+Form of separation: Form 3b
+
+SECTION 5 — SUB-DISTRIBUTION BOARDS AND PROTECTIVE DEVICES
+5.1 Sub-distribution boards shall be double door, dust and vermin proof, with IP43 degree of protection.
+5.2 Miniature circuit breakers shall conform to IS/IEC 60898-1 and shall have a breaking capacity of 10 kA.
+5.3 RCCBs with rated residual operating current of 30 mA shall be provided for all socket outlet circuits and shall conform to IS 12640 (Part 1).
+5.4 All protective devices shall be of the same make in a distribution board.
+
+SECTION 6 — POWER CABLES
+6.1 Power cables shall be 1.1 kV grade, 3.5 core, aluminium conductor, XLPE insulated, armoured and PVC sheathed, conforming to IS 7098 (Part 1):1988.
+6.2 The main incoming cable shall be of 300 sq mm size and run in two parallel runs.
+6.3 Cables shall be laid in RCC trenches or on perforated cable trays as shown in the drawings.
+6.4 Cable ends shall be terminated using double compression glands and crimped aluminium lugs.
+6.5 All cables shall be tested for insulation resistance before and after laying.
+
+SECTION 7 — EARTHING
+7.1 Earthing shall be carried out in accordance with IS 3043:1987.
+7.2 The system shall be TN-S earthing arrangement.
+7.3 Four numbers of pipe earth electrodes shall be provided for the LT panel.
+7.4 The combined earth resistance shall not exceed 1 ohm.
+7.5 Two separate and distinct earth connections shall be provided for each panel and distribution board.
+
+SECTION 8 — TESTING, INSPECTION AND DOCUMENTATION
+8.1 The LT panel shall be inspected at the manufacturer's works before dispatch.
+8.2 Type test certificates of the panel from a NABL accredited laboratory shall be submitted along with the technical bid.
+8.3 Routine verification of the assemblies shall be carried out as per IS/IEC 61439-1.
+8.4 The contractor shall submit shop drawings for approval within 21 days of award of work.
+8.5 Three sets of as-built drawings and operation and maintenance manuals shall be handed over on completion.
+8.6 The complete installation shall be guaranteed against defects for a period of 12 months from the date of handing over.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Main LT panel as per specification | Set | 1
+2 | Sub-distribution board, 12 way TPN | No. | 14
+3 | 3.5C x 300 sq mm XLPE armoured cable | m | 480
+4 | Pipe earth electrode | Set | 4
+
+Note: Approved makes — ACB/MCCB: L&T, Siemens, Schneider; Cables: Polycab, KEI, Havells.
+Note: Drawings are indicative only and shall be verified at site.
+Page 1 of 1

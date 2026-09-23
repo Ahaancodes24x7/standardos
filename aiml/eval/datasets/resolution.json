@@ -1,0 +1,299 @@
+{
+  "description": "Entity resolution of standard citations. Each case embeds a citation in a sentence; `expected` is the corpus id (null = not in corpus) and `edition` the expected relation of the cited edition to the corpus record.",
+  "cases": [
+    {
+      "id": "r1",
+      "split": "dev",
+      "text": "Wiring as per IS 732:2019.",
+      "expected": "is-732-2019",
+      "edition": "current"
+    },
+    {
+      "id": "r2",
+      "split": "dev",
+      "text": "Wiring as per IS:732-2019.",
+      "expected": "is-732-2019",
+      "edition": "current"
+    },
+    {
+      "id": "r3",
+      "split": "dev",
+      "text": "Wiring as per IS 732.",
+      "expected": "is-732-2019",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r4",
+      "split": "dev",
+      "text": "Wiring as per IS 732:1989.",
+      "expected": "is-732-2019",
+      "edition": "older"
+    },
+    {
+      "id": "r5",
+      "split": "dev",
+      "text": "Earthing to I.S. 3043.",
+      "expected": "is-3043-2018",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r6",
+      "split": "dev",
+      "text": "Earthing to IS-3043 : 1987.",
+      "expected": "is-3043-2018",
+      "edition": "older"
+    },
+    {
+      "id": "r7",
+      "split": "dev",
+      "text": "Cables to IS 1554 (Part 1):1988.",
+      "expected": "is-1554-1-1988",
+      "edition": "current"
+    },
+    {
+      "id": "r8",
+      "split": "dev",
+      "text": "Cables to IS 1554 (Pt. 1).",
+      "expected": "is-1554-1-1988",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r9",
+      "split": "dev",
+      "text": "Cables to IS 1554-1.",
+      "expected": "is-1554-1-1988",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r10",
+      "split": "dev",
+      "text": "Cables to IS 1554.",
+      "expected": "is-1554-1-1988",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r11",
+      "split": "dev",
+      "text": "Assemblies to IS/IEC 61439-1:2020.",
+      "expected": "is-iec-61439-1-2020",
+      "edition": "current"
+    },
+    {
+      "id": "r12",
+      "split": "dev",
+      "text": "Assemblies to IS / IEC 61439-2.",
+      "expected": "is-iec-61439-2-2020",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r13",
+      "split": "dev",
+      "text": "Assemblies to IEC 61439-1.",
+      "expected": "is-iec-61439-1-2020",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r14",
+      "split": "dev",
+      "text": "IP code per IEC 60529.",
+      "expected": "is-iec-60529-2001",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r15",
+      "split": "dev",
+      "text": "Switchboards to IS 8623:1993.",
+      "expected": "is-8623-1-1993",
+      "edition": "current"
+    },
+    {
+      "id": "r16",
+      "split": "dev",
+      "text": "MCBs to IS 8828.",
+      "expected": "is-8828-1996",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r17",
+      "split": "dev",
+      "text": "Breakers to IS 13947 (Part 2).",
+      "expected": "is-13947-2-1993",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r18",
+      "split": "test",
+      "text": "Tests per IS 10810 (Part 5).",
+      "expected": "is-10810",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r19",
+      "split": "test",
+      "text": "Analysis per IS 3025 (Part 11).",
+      "expected": "is-3025",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r20",
+      "split": "test",
+      "text": "Cube tests per IS 516.",
+      "expected": "is-516-1959",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r21",
+      "split": "test",
+      "text": "Cube tests per IS 516 (Part 1/Sec 1):2021.",
+      "expected": "is-516-1-1-2021",
+      "edition": "current"
+    },
+    {
+      "id": "r22",
+      "split": "test",
+      "text": "Concrete to IS 456:2000.",
+      "expected": "is-456-2000",
+      "edition": "current"
+    },
+    {
+      "id": "r23",
+      "split": "test",
+      "text": "Water to IS 10500:1991.",
+      "expected": "is-10500-2012",
+      "edition": "older"
+    },
+    {
+      "id": "r24",
+      "split": "test",
+      "text": "Cement to IS 269:2015.",
+      "expected": "is-269-2015",
+      "edition": "current"
+    },
+    {
+      "id": "r25",
+      "split": "test",
+      "text": "Cement to IS 269:1989.",
+      "expected": "is-269-2015",
+      "edition": "older"
+    },
+    {
+      "id": "r26",
+      "split": "test",
+      "text": "Cement to IS 8112.",
+      "expected": "is-8112-1989",
+      "edition": "unspecified"
+    },
+    {
+      "id": "r27",
+      "split": "test",
+      "text": "Cement to IS 12269:1987.",
+      "expected": "is-12269-1987",
+      "edition": "current"
+    },
+    {
+      "id": "r28",
+      "split": "test",
+      "text": "Bars to IS 1786:1985.",
+      "expected": "is-1786-2008",
+      "edition": "older"
+    },
+    {
+      "id": "r29",
+      "split": "test",
+      "text": "Aggregates to IS 383:1970.",
+      "expected": "is-383-2016",
+      "edition": "older"
+    },
+    {
+      "id": "r30",
+      "split": "test",
+      "text": "Motors to IS 12615:2011.",
+      "expected": "is-12615-2018",
+      "edition": "older"
+    },
+    {
+      "id": "r31",
+      "split": "test",
+      "text": "Extinguishers to IS 2190.",
+      "expected": null,
+      "edition": "unknown"
+    },
+    {
+      "id": "r32",
+      "split": "test",
+      "text": "Transformers to IS 1180 (Part 1):2014.",
+      "expected": "is-1180-1-2014",
+      "edition": "current"
+    },
+    {
+      "id": "r33",
+      "split": "test",
+      "text": "Wires to IS 694:2020.",
+      "expected": "is-694-2010",
+      "edition": "newer"
+    },
+    {
+      "id": "r34",
+      "split": "test",
+      "text": "Transformers to IS 2026 (Part 1).",
+      "expected": "is-2026-1-2011",
+      "edition": "unspecified"
+    },
+    {
+      "id": "z1",
+      "split": "heldout",
+      "text": "Bars to IS 1786 : 2008.",
+      "expected": "is-1786-2008",
+      "edition": "current"
+    },
+    {
+      "id": "z2",
+      "split": "heldout",
+      "text": "Bars to IS1786.",
+      "expected": "is-1786-2008",
+      "edition": "unspecified"
+    },
+    {
+      "id": "z3",
+      "split": "heldout",
+      "text": "Enclosures to IS/IEC 60529:2001.",
+      "expected": "is-iec-60529-2001",
+      "edition": "current"
+    },
+    {
+      "id": "z4",
+      "split": "heldout",
+      "text": "Water to IS 10500 : 2012.",
+      "expected": "is-10500-2012",
+      "edition": "current"
+    },
+    {
+      "id": "z5",
+      "split": "heldout",
+      "text": "Breakers to IEC 60898-1.",
+      "expected": "is-iec-60898-1-2002",
+      "edition": "unspecified"
+    },
+    {
+      "id": "z6",
+      "split": "heldout",
+      "text": "Transformers to IS 1180-1:2014.",
+      "expected": "is-1180-1-2014",
+      "edition": "current"
+    },
+    {
+      "id": "z7",
+      "split": "heldout",
+      "text": "Concrete to IS 456:1978.",
+      "expected": "is-456-2000",
+      "edition": "older"
+    },
+    {
+      "id": "z8",
+      "split": "heldout",
+      "text": "Pipes to IS 15000.",
+      "expected": null,
+      "edition": "unknown"
+    }
+  ]
+}

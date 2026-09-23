@@ -1,0 +1,771 @@
+{
+  "description": "Standard and clause retrieval for single requirements written without explicit standard citations. `standards` maps standard id → graded relevance (2 = governing, 1 = acceptable/related). `clauses` lists relevant clause ids. Labelled by the StandardOS authors from domain knowledge; see eval/README.md.",
+  "queries": [
+    {
+      "id": "q1",
+      "split": "dev",
+      "text": "Panels shall be suitable for continuous operation at an ambient air temperature of 45 °C.",
+      "standards": {
+        "is-iec-61439-1-2020": 2,
+        "is-iec-61439-2-2020": 1
+      },
+      "clauses": [
+        "is-iec-61439-1-2020#service-conditions"
+      ]
+    },
+    {
+      "id": "q2",
+      "split": "dev",
+      "text": "The switchboard enclosure shall be dust and splash protected.",
+      "standards": {
+        "is-iec-60529-2001": 2,
+        "is-iec-61439-1-2020": 2
+      },
+      "clauses": [
+        "is-iec-61439-1-2020#ip",
+        "is-iec-60529-2001#code"
+      ]
+    },
+    {
+      "id": "q3",
+      "split": "dev",
+      "text": "Each LT panel shall withstand a fault level of 50 kA for 1 second.",
+      "standards": {
+        "is-iec-61439-1-2020": 2,
+        "is-iec-61439-2-2020": 1
+      },
+      "clauses": [
+        "is-iec-61439-1-2020#short-circuit"
+      ]
+    },
+    {
+      "id": "q4",
+      "split": "dev",
+      "text": "Motor control centre with Form 3b internal separation of functional units.",
+      "standards": {
+        "is-iec-61439-2-2020": 2,
+        "is-iec-61439-1-2020": 1
+      },
+      "clauses": [
+        "is-iec-61439-2-2020#forms"
+      ]
+    },
+    {
+      "id": "q5",
+      "split": "dev",
+      "text": "All final circuits feeding socket outlets shall have residual current protection of 30 mA sensitivity.",
+      "standards": {
+        "is-12640-1-2016": 2,
+        "is-732-2019": 2
+      },
+      "clauses": [
+        "is-732-2019#rcd",
+        "is-12640-1-2016#sensitivity"
+      ]
+    },
+    {
+      "id": "q6",
+      "split": "dev",
+      "text": "The earth pit resistance shall be measured and shall not exceed 1 ohm.",
+      "standards": {
+        "is-3043-2018": 2
+      },
+      "clauses": [
+        "is-3043-2018#measurement",
+        "is-3043-2018#electrodes"
+      ]
+    },
+    {
+      "id": "q7",
+      "split": "dev",
+      "text": "Grounding conductors shall maintain continuity across hinged doors.",
+      "standards": {
+        "is-3043-2018": 2,
+        "is-iec-61439-1-2020": 1
+      },
+      "clauses": [
+        "is-3043-2018#continuity"
+      ]
+    },
+    {
+      "id": "q8",
+      "split": "dev",
+      "text": "Building wires shall be 1.5 sq mm copper, PVC insulated, 450/750 V grade.",
+      "standards": {
+        "is-694-2010": 2
+      },
+      "clauses": [
+        "is-694-2010#voltage",
+        "is-694-2010#conductors"
+      ]
+    },
+    {
+      "id": "q9",
+      "split": "dev",
+      "text": "LT power cables shall be armoured, aluminium conductor, 1.1 kV grade, heavy duty.",
+      "standards": {
+        "is-1554-1-1988": 2,
+        "is-7098-1-1988": 1
+      },
+      "clauses": [
+        "is-1554-1-1988#voltage"
+      ]
+    },
+    {
+      "id": "q10",
+      "split": "dev",
+      "text": "Cables shall be XLPE insulated and suitable for a conductor temperature of 90 °C.",
+      "standards": {
+        "is-7098-1-1988": 2
+      },
+      "clauses": [
+        "is-7098-1-1988#voltage"
+      ]
+    },
+    {
+      "id": "q11",
+      "split": "dev",
+      "text": "Miniature circuit breakers with C-curve tripping characteristic and 10 kA breaking capacity.",
+      "standards": {
+        "is-iec-60898-1-2002": 2
+      },
+      "clauses": [
+        "is-iec-60898-1-2002#ratings"
+      ]
+    },
+    {
+      "id": "q12",
+      "split": "dev",
+      "text": "The incomer shall be a moulded case circuit breaker with service breaking capacity equal to the ultimate breaking capacity.",
+      "standards": {
+        "is-iec-60947-2-2003": 2
+      },
+      "clauses": [
+        "is-iec-60947-2-2003#ratings"
+      ]
+    },
+    {
+      "id": "q13",
+      "split": "dev",
+      "text": "Induction motors shall deliver rated output under supply voltage variation of ±10 %.",
+      "standards": {
+        "is-325-1996": 2
+      },
+      "clauses": [
+        "is-325-1996#variation"
+      ]
+    },
+    {
+      "id": "q14",
+      "split": "dev",
+      "text": "Motors shall be of premium efficiency IE3 class.",
+      "standards": {
+        "is-12615-2018": 2,
+        "is-325-1996": 1
+      },
+      "clauses": [
+        "is-12615-2018#classes",
+        "is-325-1996#efficiency"
+      ]
+    },
+    {
+      "id": "q15",
+      "split": "dev",
+      "text": "Routine tests on motors including no-load and locked rotor tests shall be witnessed.",
+      "standards": {
+        "is-4029-2010": 2,
+        "is-325-1996": 1
+      },
+      "clauses": [
+        "is-4029-2010#methods"
+      ]
+    },
+    {
+      "id": "q16",
+      "split": "dev",
+      "text": "Distribution transformer of 250 kVA, 11/0.433 kV, energy efficiency level 2.",
+      "standards": {
+        "is-1180-1-2014": 2
+      },
+      "clauses": [
+        "is-1180-1-2014#efficiency",
+        "is-1180-1-2014#ratings"
+      ]
+    },
+    {
+      "id": "q17",
+      "split": "dev",
+      "text": "Transformer routine tests shall include winding resistance and impedance measurement.",
+      "standards": {
+        "is-2026-1-2011": 2,
+        "is-1180-1-2014": 1
+      },
+      "clauses": [
+        "is-2026-1-2011#tests",
+        "is-1180-1-2014#tests"
+      ]
+    },
+    {
+      "id": "q18",
+      "split": "dev",
+      "text": "Clear water centrifugal pump with guaranteed discharge and head at the duty point.",
+      "standards": {
+        "is-1520-1980": 2,
+        "is-8034-2018": 1
+      },
+      "clauses": [
+        "is-1520-1980#performance"
+      ]
+    },
+    {
+      "id": "q19",
+      "split": "dev",
+      "text": "Pump acceptance test tolerances shall be as per Class C.",
+      "standards": {
+        "is-9137-1978": 2
+      },
+      "clauses": [
+        "is-9137-1978#procedure"
+      ]
+    },
+    {
+      "id": "q20",
+      "split": "dev",
+      "text": "Borewell submersible pumpset with overall efficiency declared at the duty point.",
+      "standards": {
+        "is-8034-2018": 2
+      },
+      "clauses": [
+        "is-8034-2018#performance"
+      ]
+    },
+    {
+      "id": "q21",
+      "split": "dev",
+      "text": "The motor of the submersible pumpset shall be water-filled.",
+      "standards": {
+        "is-9283-2013": 2,
+        "is-8034-2018": 1
+      },
+      "clauses": [
+        "is-9283-2013#general",
+        "is-8034-2018#motor"
+      ]
+    },
+    {
+      "id": "q22",
+      "split": "dev",
+      "text": "Concrete for foundations exposed to seawater spray shall be of adequate durability.",
+      "standards": {
+        "is-456-2000": 2
+      },
+      "clauses": [
+        "is-456-2000#exposure",
+        "is-456-2000#min-grade"
+      ]
+    },
+    {
+      "id": "q23",
+      "split": "dev",
+      "text": "Minimum cover to main reinforcement shall be 40 mm.",
+      "standards": {
+        "is-456-2000": 2
+      },
+      "clauses": [
+        "is-456-2000#cover"
+      ]
+    },
+    {
+      "id": "q24",
+      "split": "dev",
+      "text": "Maximum free water cement ratio of 0.45.",
+      "standards": {
+        "is-456-2000": 2,
+        "is-10262-2019": 1
+      },
+      "clauses": [
+        "is-456-2000#wc-ratio"
+      ]
+    },
+    {
+      "id": "q25",
+      "split": "dev",
+      "text": "Mix design shall be carried out to achieve the target mean strength.",
+      "standards": {
+        "is-10262-2019": 2,
+        "is-456-2000": 1
+      },
+      "clauses": [
+        "is-10262-2019#procedure",
+        "is-456-2000#mix-design"
+      ]
+    },
+    {
+      "id": "q26",
+      "split": "test",
+      "text": "Fine aggregate shall conform to grading zone II and be free from silt and clay.",
+      "standards": {
+        "is-383-2016": 2
+      },
+      "clauses": [
+        "is-383-2016#grading",
+        "is-383-2016#deleterious"
+      ]
+    },
+    {
+      "id": "q27",
+      "split": "test",
+      "text": "TMT bars of grade Fe 500D with minimum elongation of 16 %.",
+      "standards": {
+        "is-1786-2008": 2
+      },
+      "clauses": [
+        "is-1786-2008#elongation",
+        "is-1786-2008#grades"
+      ]
+    },
+    {
+      "id": "q28",
+      "split": "test",
+      "text": "53 grade ordinary Portland cement shall be used.",
+      "standards": {
+        "is-269-2015": 2,
+        "is-12269-1987": 1
+      },
+      "clauses": [
+        "is-269-2015#grades"
+      ]
+    },
+    {
+      "id": "q29",
+      "split": "test",
+      "text": "Concrete cubes shall be tested for compressive strength at 28 days.",
+      "standards": {
+        "is-516-1-1-2021": 2,
+        "is-456-2000": 1,
+        "is-516-1959": 1
+      },
+      "clauses": [
+        "is-516-1-1-2021#compressive",
+        "is-456-2000#sampling"
+      ]
+    },
+    {
+      "id": "q30",
+      "split": "test",
+      "text": "Structural steel sections of grade E250 for the pump house roof trusses.",
+      "standards": {
+        "is-2062-2011": 2
+      },
+      "clauses": [
+        "is-2062-2011#grades"
+      ]
+    },
+    {
+      "id": "q31",
+      "split": "test",
+      "text": "Potable water supplied shall have pH within 6.5 to 8.5.",
+      "standards": {
+        "is-10500-2012": 2
+      },
+      "clauses": [
+        "is-10500-2012#ph"
+      ]
+    },
+    {
+      "id": "q32",
+      "split": "test",
+      "text": "Total dissolved solids in treated water shall not exceed 500 mg/l.",
+      "standards": {
+        "is-10500-2012": 2
+      },
+      "clauses": [
+        "is-10500-2012#tds"
+      ]
+    },
+    {
+      "id": "q33",
+      "split": "test",
+      "text": "Fluoride content of drinking water shall be below 1 mg/L.",
+      "standards": {
+        "is-10500-2012": 2
+      },
+      "clauses": [
+        "is-10500-2012#fluoride"
+      ]
+    },
+    {
+      "id": "q34",
+      "split": "test",
+      "text": "Coliform bacteria shall be absent in treated water samples.",
+      "standards": {
+        "is-10500-2012": 2,
+        "is-1622-1981": 1
+      },
+      "clauses": [
+        "is-10500-2012#bacteriological"
+      ]
+    },
+    {
+      "id": "q35",
+      "split": "test",
+      "text": "Physico-chemical analysis of water samples shall follow standard methods.",
+      "standards": {
+        "is-3025": 2,
+        "is-10500-2012": 1
+      },
+      "clauses": [
+        "is-3025#series",
+        "is-10500-2012#methods"
+      ]
+    },
+    {
+      "id": "q36",
+      "split": "test",
+      "text": "Samples for bacteriological examination shall be collected in sterile bottles.",
+      "standards": {
+        "is-1622-1981": 2
+      },
+      "clauses": [
+        "is-1622-1981#sampling"
+      ]
+    },
+    {
+      "id": "q37",
+      "split": "test",
+      "text": "Bottled drinking water supplied at site offices shall carry the ISI mark.",
+      "standards": {
+        "is-14543-2016": 2
+      },
+      "clauses": [
+        "is-14543-2016#certification"
+      ]
+    },
+    {
+      "id": "q38",
+      "split": "test",
+      "text": "The installation shall be tested for insulation resistance and polarity before energisation.",
+      "standards": {
+        "is-732-2019": 2
+      },
+      "clauses": [
+        "is-732-2019#verification"
+      ]
+    },
+    {
+      "id": "q39",
+      "split": "test",
+      "text": "Each circuit shall be protected against overload by a device coordinated with the cable ampacity.",
+      "standards": {
+        "is-732-2019": 2
+      },
+      "clauses": [
+        "is-732-2019#overcurrent"
+      ]
+    },
+    {
+      "id": "q40",
+      "split": "test",
+      "text": "Conductors shall be stranded annealed copper with maximum DC resistance at 20 °C as specified.",
+      "standards": {
+        "is-8130-2013": 2,
+        "is-1554-1-1988": 1,
+        "is-694-2010": 1
+      },
+      "clauses": [
+        "is-8130-2013#resistance"
+      ]
+    },
+    {
+      "id": "q41",
+      "split": "test",
+      "text": "High voltage test on cables shall be carried out as per the relevant methods of test.",
+      "standards": {
+        "is-10810": 2,
+        "is-1554-1-1988": 1
+      },
+      "clauses": [
+        "is-10810#series"
+      ]
+    },
+    {
+      "id": "q42",
+      "split": "test",
+      "text": "Nitrate concentration in supplied water shall not exceed 45 mg/l.",
+      "standards": {
+        "is-10500-2012": 2
+      },
+      "clauses": [
+        "is-10500-2012#nitrate"
+      ]
+    },
+    {
+      "id": "q43",
+      "split": "test",
+      "text": "Degree of protection of the motor terminal box shall be IP55.",
+      "standards": {
+        "is-iec-60529-2001": 2,
+        "is-325-1996": 2
+      },
+      "clauses": [
+        "is-325-1996#enclosure",
+        "is-iec-60529-2001#code"
+      ]
+    },
+    {
+      "id": "q44",
+      "split": "test",
+      "text": "The panel shall be suitable for installation at an altitude of 1500 m above mean sea level.",
+      "standards": {
+        "is-iec-61439-1-2020": 2
+      },
+      "clauses": [
+        "is-iec-61439-1-2020#humidity-altitude"
+      ]
+    },
+    {
+      "id": "q45",
+      "split": "test",
+      "text": "The earthing system shall be TN-S with a separate protective conductor.",
+      "standards": {
+        "is-3043-2018": 2,
+        "is-732-2019": 1
+      },
+      "clauses": [
+        "is-3043-2018#systems"
+      ]
+    },
+    {
+      "id": "q46",
+      "split": "test",
+      "text": "Outdoor oil filled transformer rating shall not exceed 2500 kVA.",
+      "standards": {
+        "is-1180-1-2014": 2
+      },
+      "clauses": [
+        "is-1180-1-2014#ratings"
+      ]
+    },
+    {
+      "id": "q47",
+      "split": "test",
+      "text": "Total hardness as CaCO3 shall be limited to 200 mg/l.",
+      "standards": {
+        "is-10500-2012": 2
+      },
+      "clauses": [
+        "is-10500-2012#hardness"
+      ]
+    },
+    {
+      "id": "q48",
+      "split": "test",
+      "text": "Manufactured sand may be used as fine aggregate.",
+      "standards": {
+        "is-383-2016": 2
+      },
+      "clauses": [
+        "is-383-2016#grading"
+      ]
+    },
+    {
+      "id": "q49",
+      "split": "test",
+      "text": "The pump impeller shall be of bronze and the shaft of stainless steel.",
+      "standards": {
+        "is-1520-1980": 2
+      },
+      "clauses": [
+        "is-1520-1980#materials"
+      ]
+    },
+    {
+      "id": "q50",
+      "split": "test",
+      "text": "Arsenic in water shall not exceed 0.01 mg/l.",
+      "standards": {
+        "is-10500-2012": 2
+      },
+      "clauses": [
+        "is-10500-2012#arsenic"
+      ]
+    },
+    {
+      "id": "h1",
+      "split": "heldout",
+      "text": "Three phase squirrel cage motors rated 7.5 kW for driving blowers.",
+      "standards": {
+        "is-325-1996": 2,
+        "is-12615-2018": 1
+      },
+      "clauses": [
+        "is-325-1996#rating-plate"
+      ]
+    },
+    {
+      "id": "h2",
+      "split": "heldout",
+      "text": "The distribution board shall be suitable for a site temperature of 50 degC.",
+      "standards": {
+        "is-iec-61439-1-2020": 2
+      },
+      "clauses": [
+        "is-iec-61439-1-2020#service-conditions"
+      ]
+    },
+    {
+      "id": "h3",
+      "split": "heldout",
+      "text": "Earth electrodes shall be copper bonded rods driven to a depth of 3 m.",
+      "standards": {
+        "is-3043-2018": 2
+      },
+      "clauses": [
+        "is-3043-2018#electrodes"
+      ]
+    },
+    {
+      "id": "h4",
+      "split": "heldout",
+      "text": "Armoured cables with crosslinked polyethylene insulation for 1100 V.",
+      "standards": {
+        "is-7098-1-1988": 2,
+        "is-1554-1-1988": 1
+      },
+      "clauses": [
+        "is-7098-1-1988#voltage"
+      ]
+    },
+    {
+      "id": "h5",
+      "split": "heldout",
+      "text": "Lighting circuits shall be protected by MCBs of type B.",
+      "standards": {
+        "is-iec-60898-1-2002": 2,
+        "is-732-2019": 1
+      },
+      "clauses": [
+        "is-iec-60898-1-2002#ratings"
+      ]
+    },
+    {
+      "id": "h6",
+      "split": "heldout",
+      "text": "Oil immersed transformer losses shall not exceed the energy efficiency level 3 limits.",
+      "standards": {
+        "is-1180-1-2014": 2
+      },
+      "clauses": [
+        "is-1180-1-2014#efficiency"
+      ]
+    },
+    {
+      "id": "h7",
+      "split": "heldout",
+      "text": "The monoblock pump shall be performance tested at the works.",
+      "standards": {
+        "is-9137-1978": 2,
+        "is-1520-1980": 1
+      },
+      "clauses": [
+        "is-9137-1978#procedure"
+      ]
+    },
+    {
+      "id": "h8",
+      "split": "heldout",
+      "text": "Concrete in contact with aggressive groundwater shall be designed for severe exposure.",
+      "standards": {
+        "is-456-2000": 2
+      },
+      "clauses": [
+        "is-456-2000#exposure"
+      ]
+    },
+    {
+      "id": "h9",
+      "split": "heldout",
+      "text": "Ready mixed concrete shall achieve a characteristic compressive strength of 25 N/mm2 at 28 days.",
+      "standards": {
+        "is-456-2000": 2,
+        "is-516-1-1-2021": 1
+      },
+      "clauses": [
+        "is-456-2000#min-grade",
+        "is-456-2000#sampling"
+      ]
+    },
+    {
+      "id": "h10",
+      "split": "heldout",
+      "text": "Chloride in potable water shall not exceed 250 mg/l.",
+      "standards": {
+        "is-10500-2012": 2
+      },
+      "clauses": [
+        "is-10500-2012#chloride"
+      ]
+    },
+    {
+      "id": "h11",
+      "split": "heldout",
+      "text": "The water treatment plant laboratory shall analyse turbidity daily using standard test methods.",
+      "standards": {
+        "is-3025": 2,
+        "is-10500-2012": 1
+      },
+      "clauses": [
+        "is-3025#series"
+      ]
+    },
+    {
+      "id": "h12",
+      "split": "heldout",
+      "text": "Reinforcing bars shall have a proof stress of not less than 500 N/mm2.",
+      "standards": {
+        "is-1786-2008": 2
+      },
+      "clauses": [
+        "is-1786-2008#grades",
+        "is-1786-2008#elongation"
+      ]
+    },
+    {
+      "id": "h13",
+      "split": "heldout",
+      "text": "The wiring installation shall have earth leakage protection for bathrooms.",
+      "standards": {
+        "is-732-2019": 2,
+        "is-12640-1-2016": 2
+      },
+      "clauses": [
+        "is-732-2019#rcd",
+        "is-12640-1-2016#sensitivity"
+      ]
+    },
+    {
+      "id": "h14",
+      "split": "heldout",
+      "text": "Portland cement of 43 grade shall be used for plastering.",
+      "standards": {
+        "is-269-2015": 2,
+        "is-8112-1989": 1
+      },
+      "clauses": [
+        "is-269-2015#grades"
+      ]
+    },
+    {
+      "id": "h15",
+      "split": "heldout",
+      "text": "The conductor of flexible cords shall be class 5 annealed copper.",
+      "standards": {
+        "is-8130-2013": 2,
+        "is-694-2010": 1
+      },
+      "clauses": [
+        "is-8130-2013#resistance"
+      ]
+    }
+  ]
+}

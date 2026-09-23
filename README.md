@@ -7,9 +7,7 @@
 **AI-powered Standards & Procurement Intelligence**
 
 [![Status](https://img.shields.io/badge/Status-Prototype-orange)]()
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)]()
-[![Next.js](https://img.shields.io/badge/Next.js-React-black)]()
-[![FastAPI](https://img.shields.io/badge/FastAPI-Python-009688)]()
+[![Stack](https://img.shields.io/badge/Stack-TanStack%20Start%20%7C%20FastAPI%20%7C%20Python%20%7C%20Postgres-black)]()
 [![AI](https://img.shields.io/badge/AI-NLP%20%7C%20Semantic%20Search-purple)]()
 
 </div>
@@ -456,13 +454,13 @@ Understand → Connect → Reason → Audit → Repair
 System Architecture
 ┌─────────────────────────────────────────────┐
 │              STANDARDOS FRONTEND             │
-│                   Next.js                    │
+│           TanStack Start (React)            │
 └──────────────────────┬──────────────────────┘
                        │
                        ↓
 ┌─────────────────────────────────────────────┐
 │                 API LAYER                    │
-│                  FastAPI                     │
+│      FastAPI (Python) + PostgreSQL          │
 └──────────────────────┬──────────────────────┘
                        │
         ┌──────────────┼──────────────┐
@@ -536,143 +534,96 @@ AI Pipeline
                        ↓
              Specification Repair
 Technology Stack
-Frontend
-Next.js
-React
-TypeScript
-Tailwind CSS
-Backend
-Python
-FastAPI
-AI / NLP
-Natural Language Processing
-Semantic embeddings
-Vector similarity
-LLM-assisted extraction
-Retrieval-Augmented Generation
-Structured generation
-Knowledge Representation
-Requirement graphs
-Standards dependency graphs
-Relationship mapping
-Rule-based reasoning
-Constraint validation
-Data Layer
 
-Designed to support:
+What this repository actually contains. The design rationale for each choice, and what is not built yet, are in [docs/INTELLIGENCE.md](docs/INTELLIGENCE.md).
 
-Standards metadata
-Document metadata
-Embeddings
-Requirements
-Graph relationships
-Version information
-Audit results
+| Layer | Technology |
+| --- | --- |
+| Frontend | TanStack Start (React 19, file-based routing, SSR), Tailwind CSS, Radix UI. `/api/*` is forwarded to FastAPI by a gateway route, so the browser uses a single origin. |
+| Backend API | **FastAPI** (Python 3.12) in `backend/`: auth (signed HTTP-only session cookie, scrypt hashes), uploads, analysis runs, review/repair decisions, audit trail, standards search and graph, change impact |
+| Database | **PostgreSQL** via SQLAlchemy 2 + psycopg 3; schema migrations with **Alembic** (documents, runs, requirements, standards graph, findings, evidence, repairs, audit trail) |
+| Jobs | Postgres-backed run queue: FastAPI background task executes the run, atomic claim, stage heartbeat, cron sweeper re-queues stalled runs |
+| AI/ML engine | **Python package `standardos_aiml`** in `aiml/`, no web or database dependencies |
+| Document parsing | pypdf for PDF, mammoth for DOCX, UTF-8/Windows-1252 for TXT. OCR is not implemented. |
+| NLP | Deterministic requirement identification, unit-normalised quantity parsing, entity and standard-reference extraction, lexicon classification |
+| Retrieval | Fielded BM25 over standard clauses + interpretable feature re-ranker (in-memory) |
+| Knowledge graph | Typed relationships in Postgres + in-memory traversal (supersession, REQUIRES, TESTED_BY, …) |
+| Reasoning | Interval constraint checks, purchaser checklists, dependency/version/certification rules, evidence-grounded repair templates |
+| LLM (optional) | Claude (`claude-opus-5`) for repair wording only, off by default, with every rewrite checked for changed facts |
+| Tests / evaluation | pytest (engine unit tests, eval regression gate, API integration tests on Postgres); gold datasets in `aiml/eval/`; tender-realistic benchmark in `aiml/benchmark/` |
+
 Project Structure
-standardos/
-│
-├── frontend/
-│   ├── components/
-│   ├── pages/
-│   ├── public/
-│   ├── styles/
-│   └── ...
-│
-├── backend/
-│   ├── api/
-│   ├── models/
-│   ├── services/
-│   ├── retrieval/
-│   ├── reasoning/
-│   └── ...
-│
-├── data/
-│   └── ...
-│
-├── docs/
-│   └── ...
-│
-├── .gitignore
-├── README.md
-└── ...
 
-The project structure may evolve as development continues.
+```text
+aiml/                      AI/ML engine (Python)
+  standardos_aiml/           ingest/ nlp/ standards/ reasoning/ pipeline.py llm_repair.py
+  standardos_aiml/standards/data/seed_corpus.json   curated standards corpus (seed)
+  eval/                      gold datasets, harness (python -m eval.run), results
+  benchmark/                 6 tender-realistic specs + 50 queries, runner, results
+  tests/                     unit tests + evaluation regression gate
+backend/                   FastAPI service (Python)
+  app/                       main.py, routers/, models.py, store.py (runs/persistence), view.py, corpus.py, security.py
+  alembic/                   migrations (baseline = the previous Drizzle schema)
+  scripts/seed_standards.py  load the standards corpus into Postgres
+  tests/                     API integration tests against Postgres
+src/                       Frontend (TanStack Start)
+  routes/                    pages, plus routes/api/$.ts (gateway to FastAPI)
+  services/                  analysis.ts, auth.ts — the only modules that call the API
+  lib/                       api.ts (HTTP client), contracts.ts (API types), report.ts
+  components/                UI
+pyproject.toml             uv workspace (aiml + backend)
+docs/INTELLIGENCE.md       Architecture, decisions, implemented vs. future work
+```
 
 Installation
-Prerequisites
 
-Make sure the following are installed:
+Prerequisites: [uv](https://docs.astral.sh/uv/) (Python 3.12+), Bun 1.2+, Node.js 22+, PostgreSQL 14+.
 
-Git
-Node.js 18+
-npm
-Python 3.10+
-pip
-Clone the Repository
-git clone https://github.com/Ahaancodes24x7/standardos.git
-cd standardos
-Backend Setup
+```bash
+uv sync --all-packages --all-extras   # Python: engine + API (+ dev tools) into .venv
+bun install                           # Frontend
+cp .env.example .env                  # set DATABASE_URL and SESSION_SECRET
+bun run db:migrate                    # alembic upgrade head (adopts an existing Drizzle-created schema)
+bun run db:seed                       # load the standards corpus
+```
 
-Navigate to the backend:
-
-cd backend
-
-Create a virtual environment:
-
-python -m venv venv
-Windows
-venv\Scripts\activate
-macOS / Linux
-source venv/bin/activate
-
-Install dependencies:
-
-pip install -r requirements.txt
-Frontend Setup
-
-Open a new terminal and navigate to the frontend:
-
-cd frontend
-
-Install dependencies:
-
-npm install
 Environment Variables
 
-Create a .env file locally.
-
-Example:
-
-API_URL=http://localhost:8000
-
-DATABASE_URL=
-
-OPENAI_API_KEY=
-GOOGLE_API_KEY=
-
-NEXT_PUBLIC_API_URL=http://localhost:8000
+| Variable | Purpose |
+| --- | --- |
+| `DATABASE_URL` | Postgres connection string (required for accounts and saved analyses) |
+| `DATABASE_POOL_MAX` | Optional max connections per API process |
+| `DB_MIGRATION_URL` | Optional direct connection for Alembic; **takes precedence over `DATABASE_URL` for migrations** |
+| `SESSION_SECRET` | 32+ random characters to sign the session cookie (required) |
+| `SESSION_COOKIE_SECURE` | `true` when served over HTTPS |
+| `CRON_SECRET` | Bearer token for `GET /api/cron/analysis-sweeper` |
+| `STANDARDOS_LLM_REPAIR` | `on` enables optional LLM wording of repairs (default off) |
+| `ANTHROPIC_API_KEY` | Credentials for the above |
+| `API_INTERNAL_URL` | Where the frontend gateway and SSR reach FastAPI (default `http://127.0.0.1:8000`) |
+| `VITE_API_URL` | Optional: browser calls a separately hosted API directly (then set `CORS_ORIGINS`) |
 
 Do not commit .env files or API keys.
 
-A .env.example file should be used to document required variables without exposing secrets.
-
 Running the Project
-Start Backend
 
-From the backend directory:
+```bash
+bun run api:dev             # FastAPI on :8000 (docs at http://localhost:8000/api/docs)
+bun run dev                 # frontend on :3000 (its /api/* is forwarded to FastAPI)
+bun run test                # pytest: engine, eval gate, API integration (needs TEST_DATABASE_URL)
+bun run eval                # component evaluation → aiml/eval/results/latest.md
+bun run benchmark           # tender-realistic benchmark → aiml/benchmark/results/latest.md
+bun run build && bun run preview
+```
 
-uvicorn main:app --reload
+API integration tests run against a real Postgres named by `TEST_DATABASE_URL` and are skipped without it; never point it at a database you want to keep. Without a database the demo workspace ("Explore demo") still works: it runs the real pipeline over bundled synthetic sample specifications and saves nothing.
 
-The API will run locally on:
+Current results (details and caveats in the linked reports):
 
-http://localhost:8000
-Start Frontend
-
-From the frontend directory:
-
-npm run dev
-
-The frontend will run on the local development server.
+| Measure | Result |
+| --- | --- |
+| Component eval (held-out split) | identical to the TypeScript engine it replaces: requirement F1 100%, standard R@1 93.3%, reasoning F1 93.3% ([aiml/eval/results/latest.md](aiml/eval/results/latest.md)) |
+| Benchmark, 6 tender-realistic specs (TXT) | requirement identification F1 94.4%, attribute F1 96.3%, classification accuracy 69.2%, compliance findings P/R 67.6% / 92.0% ([aiml/benchmark/results/latest.md](aiml/benchmark/results/latest.md)) |
+| Benchmark retrieval, 50 queries | standard R@1 88.0%, R@3 98.0%; clause R@1 86.0% |
 
 Example Workflow
 
@@ -1164,6 +1115,4 @@ From Specifications to Certainty.
 
 AI-powered Standards & Procurement Intelligence
 
-</div> ```
-
-One important thing: before you commit this, replace the Project Structure, Installation, and API details with your actual folder/file names if they differ. The README should never claim an endpoint or feature that isn't actually in the repo.
+</div>

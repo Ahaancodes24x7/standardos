@@ -1,0 +1,3527 @@
+{
+ "standards": [
+  {
+   "id": "is-iec-61439-1-2020",
+   "designation": "IS/IEC 61439-1",
+   "year": 2020,
+   "number": "IS/IEC 61439-1:2020",
+   "title": "Low-voltage switchgear and controlgear assemblies — Part 1: General rules",
+   "scope": "General rules, service conditions, construction requirements and design/routine verification for low-voltage switchgear and controlgear assemblies (panels, switchboards, distribution boards).",
+   "category": "Electrical",
+   "kind": "specification",
+   "status": "current",
+   "keywords": [
+    "switchgear",
+    "controlgear",
+    "assembly",
+    "panel",
+    "switchboard",
+    "distribution board",
+    "low voltage",
+    "service conditions",
+    "enclosure",
+    "temperature rise",
+    "short-circuit withstand",
+    "busbar"
+   ],
+   "aliases": [
+    "IEC 61439-1"
+   ],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Medium"
+   },
+   "clauses": [
+    {
+     "id": "is-iec-61439-1-2020#service-conditions",
+     "standardId": "is-iec-61439-1-2020",
+     "ref": null,
+     "heading": "Normal service conditions",
+     "text": "Assemblies are designed for normal indoor service conditions: ambient air temperature not exceeding +40 °C with a 24-hour average not exceeding +35 °C, and not below -5 °C. Conditions outside these limits are special service conditions that must be agreed between user and manufacturer and verified.",
+     "constraints": [
+      {
+       "parameter": "ambient_temperature",
+       "dimension": "temperature",
+       "unit": "degC",
+       "min": -5,
+       "max": 40,
+       "condition": "normal indoor service conditions; higher values are special service conditions requiring agreement and verification"
+      }
+     ]
+    },
+    {
+     "id": "is-iec-61439-1-2020#humidity-altitude",
+     "standardId": "is-iec-61439-1-2020",
+     "ref": null,
+     "heading": "Humidity and altitude",
+     "text": "Relative humidity is limited to 50 % at +40 °C (higher humidity is permitted at lower temperatures) and the installation altitude should not exceed 2 000 m for normal service; above this, derating and special agreement apply.",
+     "constraints": [
+      {
+       "parameter": "altitude",
+       "dimension": "length",
+       "unit": "mm",
+       "min": null,
+       "max": 2000000,
+       "condition": "normal service conditions; higher altitudes need dielectric and thermal derating"
+      }
+     ]
+    },
+    {
+     "id": "is-iec-61439-1-2020#ip",
+     "standardId": "is-iec-61439-1-2020",
+     "ref": null,
+     "heading": "Degree of protection",
+     "text": "The degree of protection of the enclosure against access to hazardous parts, ingress of solid foreign objects and water is declared as an IP code in accordance with IS/IEC 60529.",
+     "constraints": []
+    },
+    {
+     "id": "is-iec-61439-1-2020#short-circuit",
+     "standardId": "is-iec-61439-1-2020",
+     "ref": null,
+     "heading": "Short-circuit withstand strength",
+     "text": "The assembly manufacturer states the short-circuit withstand ratings (rated short-time withstand current, rated peak withstand current or rated conditional short-circuit current) of the assembly and its circuits, and these are verified.",
+     "constraints": []
+    },
+    {
+     "id": "is-iec-61439-1-2020#ratings",
+     "standardId": "is-iec-61439-1-2020",
+     "ref": null,
+     "heading": "Electrical ratings",
+     "text": "The user specifies the rated voltage of the assembly and the rated current of the assembly and of each circuit; these define the verification basis for temperature rise and dielectric properties.",
+     "constraints": []
+    },
+    {
+     "id": "is-iec-61439-1-2020#design-verification",
+     "standardId": "is-iec-61439-1-2020",
+     "ref": null,
+     "heading": "Design verification",
+     "text": "Design verification by test, comparison with a verified reference design or assessment covers temperature rise, dielectric properties, short-circuit withstand strength, effectiveness of the protective circuit and degree of protection.",
+     "constraints": []
+    },
+    {
+     "id": "is-iec-61439-1-2020#routine-verification",
+     "standardId": "is-iec-61439-1-2020",
+     "ref": null,
+     "heading": "Routine verification",
+     "text": "Each assembly undergoes routine verification of wiring, electrical operation, insulation and protective-circuit continuity before dispatch.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "rated_voltage",
+     "label": "Rated voltage of the assembly",
+     "rationale": "The rated voltage fixes the dielectric verification basis for the assembly.",
+     "severity": "high",
+     "repairTemplate": "The assembly shall have a rated operational voltage of [value] V, 3-phase, 50 Hz, in accordance with {standard}.",
+     "clauseId": "is-iec-61439-1-2020#ratings"
+    },
+    {
+     "parameter": "rated_current",
+     "label": "Rated current of the assembly and circuits",
+     "rationale": "Temperature-rise verification depends on the declared rated currents.",
+     "severity": "medium",
+     "repairTemplate": "The rated current of the assembly and of each outgoing circuit shall be stated in the schedule of quantities and verified in accordance with {standard}.",
+     "clauseId": "is-iec-61439-1-2020#ratings"
+    },
+    {
+     "parameter": "short_circuit_rating",
+     "label": "Short-circuit withstand rating",
+     "rationale": "The prospective fault level at the point of installation determines the required short-circuit withstand strength.",
+     "severity": "high",
+     "repairTemplate": "The assembly shall have a rated short-time withstand current of not less than [value] kA for 1 s, verified in accordance with {standard}.",
+     "clauseId": "is-iec-61439-1-2020#short-circuit"
+    },
+    {
+     "parameter": "ip_rating",
+     "label": "Degree of protection (IP code)",
+     "rationale": "The standard requires the enclosure's degree of protection to be declared as an IP code.",
+     "severity": "medium",
+     "repairTemplate": "The enclosure shall provide a minimum degree of protection of IP[XX] in accordance with IS/IEC 60529, as required by {standard}.",
+     "clauseId": "is-iec-61439-1-2020#ip"
+    },
+    {
+     "parameter": "test_method",
+     "label": "Design and routine verification",
+     "rationale": "The standard itself obliges design and routine verification, so a silent specification still imports it; but where tests are required only vaguely, the specification should name the verification records to be furnished.",
+     "severity": "low",
+     "repairTemplate": "Each assembly shall undergo routine verification, and design verification records shall be furnished for the offered design, in accordance with {standard}.",
+     "clauseId": "is-iec-61439-1-2020#routine-verification"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-iec-61439-2-2020",
+   "designation": "IS/IEC 61439-2",
+   "year": 2020,
+   "number": "IS/IEC 61439-2:2020",
+   "title": "Low-voltage switchgear and controlgear assemblies — Part 2: Power switchgear and controlgear assemblies",
+   "scope": "Specific requirements for power switchgear and controlgear assemblies (PSC-assemblies) such as power control centres and motor control centres; to be read with Part 1.",
+   "category": "Electrical",
+   "kind": "specification",
+   "status": "current",
+   "keywords": [
+    "power control centre",
+    "pcc",
+    "motor control centre",
+    "mcc",
+    "psc assembly",
+    "switchgear",
+    "panel",
+    "switchboard"
+   ],
+   "aliases": [
+    "IEC 61439-2"
+   ],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Medium"
+   },
+   "clauses": [
+    {
+     "id": "is-iec-61439-2-2020#scope",
+     "standardId": "is-iec-61439-2-2020",
+     "ref": null,
+     "heading": "Scope and relationship to Part 1",
+     "text": "This part applies to power switchgear and controlgear assemblies and shall be read in conjunction with IS/IEC 61439-1, whose general rules apply unless modified here.",
+     "constraints": []
+    },
+    {
+     "id": "is-iec-61439-2-2020#forms",
+     "standardId": "is-iec-61439-2-2020",
+     "ref": null,
+     "heading": "Forms of internal separation",
+     "text": "Internal separation of functional units, terminals and busbars is classified by forms (Form 1 to Form 4) agreed between user and manufacturer.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-8623-1-1993",
+   "designation": "IS 8623 (Part 1)",
+   "year": 1993,
+   "number": "IS 8623 (Part 1):1993",
+   "title": "Low-voltage switchgear and controlgear assemblies — Part 1: Requirements for type-tested and partially type-tested assemblies",
+   "scope": "Former Indian Standard for type-tested and partially type-tested LV assemblies, replaced by the IS/IEC 61439 series.",
+   "category": "Electrical",
+   "kind": "specification",
+   "status": "superseded",
+   "keywords": [
+    "switchgear",
+    "assembly",
+    "type-tested",
+    "panel",
+    "switchboard"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-8623-1-1993#status",
+     "standardId": "is-8623-1-1993",
+     "ref": null,
+     "heading": "Status",
+     "text": "Superseded; low-voltage assemblies are now covered by IS/IEC 61439-1 and the relevant assembly part such as IS/IEC 61439-2.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-iec-60529-2001",
+   "designation": "IS/IEC 60529",
+   "year": 2001,
+   "number": "IS/IEC 60529:2001",
+   "title": "Degrees of protection provided by enclosures (IP Code)",
+   "scope": "Classification of degrees of protection provided by enclosures of electrical equipment against access to hazardous parts, ingress of solid foreign objects and ingress of water, with the corresponding tests.",
+   "category": "Electrical",
+   "kind": "test_method",
+   "status": "current",
+   "keywords": [
+    "ip",
+    "ingress protection",
+    "enclosure",
+    "degree of protection",
+    "dust",
+    "water",
+    "splash",
+    "jet",
+    "weatherproof",
+    "dustproof"
+   ],
+   "aliases": [
+    "IEC 60529",
+    "IP code"
+   ],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-iec-60529-2001#code",
+     "standardId": "is-iec-60529-2001",
+     "ref": null,
+     "heading": "Arrangement of the IP code",
+     "text": "The IP code is the letters IP followed by a first characteristic numeral (0–6) for protection against solid foreign objects and access to hazardous parts and a second characteristic numeral (0–8) for protection against ingress of water.",
+     "constraints": []
+    },
+    {
+     "id": "is-iec-60529-2001#tests",
+     "standardId": "is-iec-60529-2001",
+     "ref": null,
+     "heading": "Tests for the characteristic numerals",
+     "text": "Verification tests are specified for each numeral, for example dust-chamber tests for first numerals 5 and 6 and water-jet tests for second numerals 5 and 6.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-732-2019",
+   "designation": "IS 732",
+   "year": 2019,
+   "number": "IS 732:2019",
+   "title": "Code of practice for electrical wiring installations",
+   "scope": "Design, selection, erection, inspection and testing of low-voltage electrical wiring installations in buildings.",
+   "category": "Electrical",
+   "kind": "code_of_practice",
+   "status": "current",
+   "keywords": [
+    "wiring",
+    "installation",
+    "building",
+    "circuit",
+    "overcurrent",
+    "protection",
+    "socket outlet",
+    "distribution",
+    "cable",
+    "earthing",
+    "inspection",
+    "testing"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards",
+     "Central Electricity Authority"
+    ],
+    "relevance": "Medium"
+   },
+   "clauses": [
+    {
+     "id": "is-732-2019#overcurrent",
+     "standardId": "is-732-2019",
+     "ref": null,
+     "heading": "Protection against overcurrent",
+     "text": "Every circuit shall be protected against overload and short-circuit current by a protective device co-ordinated with the current-carrying capacity of the circuit conductors.",
+     "constraints": []
+    },
+    {
+     "id": "is-732-2019#earthing",
+     "standardId": "is-732-2019",
+     "ref": null,
+     "heading": "Protective earthing and bonding",
+     "text": "Protective earthing and equipotential bonding of exposed conductive parts shall be provided, with earthing arrangements designed in accordance with IS 3043.",
+     "constraints": []
+    },
+    {
+     "id": "is-732-2019#rcd",
+     "standardId": "is-732-2019",
+     "ref": null,
+     "heading": "Additional protection by RCDs",
+     "text": "Additional protection by residual current devices with a rated residual operating current not exceeding 30 mA is required for specified final circuits such as socket-outlet circuits; such devices conform to IS 12640 (Part 1).",
+     "constraints": []
+    },
+    {
+     "id": "is-732-2019#cables",
+     "standardId": "is-732-2019",
+     "ref": null,
+     "heading": "Selection of cables",
+     "text": "Cables are selected for voltage, current-carrying capacity and installation method; PVC-insulated cables conforming to IS 694 or IS 1554 (Part 1) are commonly used.",
+     "constraints": []
+    },
+    {
+     "id": "is-732-2019#breakers",
+     "standardId": "is-732-2019",
+     "ref": null,
+     "heading": "Protective devices",
+     "text": "Miniature circuit-breakers used for final circuit protection conform to IS/IEC 60898-1.",
+     "constraints": []
+    },
+    {
+     "id": "is-732-2019#verification",
+     "standardId": "is-732-2019",
+     "ref": null,
+     "heading": "Inspection and testing",
+     "text": "Every installation shall be inspected and tested on completion and before being energised, including continuity of protective conductors, insulation resistance, polarity and earth electrode resistance.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "earthing_system",
+     "label": "Earthing arrangement",
+     "rationale": "The code requires protective earthing designed to IS 3043; the specification should state the earthing arrangement.",
+     "severity": "medium",
+     "repairTemplate": "The installation shall be earthed with a [TN-S / TT] earthing arrangement designed and tested in accordance with IS 3043 and {standard}.",
+     "clauseId": "is-732-2019#earthing"
+    },
+    {
+     "parameter": "test_method",
+     "label": "Inspection and testing on completion",
+     "rationale": "The code requires inspection and testing before energisation; the specification should require the test records.",
+     "severity": "medium",
+     "repairTemplate": "On completion, the installation shall be inspected and tested in accordance with {standard}, and the test records shall be submitted before energisation.",
+     "clauseId": "is-732-2019#verification"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-3043-2018",
+   "designation": "IS 3043",
+   "year": 2018,
+   "number": "IS 3043:2018",
+   "title": "Code of practice for earthing",
+   "scope": "Guidance on system and equipment earthing, earth electrodes, protective conductors and measurement of earth resistance for electrical installations.",
+   "category": "Electrical",
+   "kind": "code_of_practice",
+   "status": "current",
+   "keywords": [
+    "earthing",
+    "grounding",
+    "earth electrode",
+    "earth pit",
+    "protective conductor",
+    "earth continuity",
+    "earth resistance",
+    "soil resistivity",
+    "bonding",
+    "tn-s",
+    "tt"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-3043-2018#systems",
+     "standardId": "is-3043-2018",
+     "ref": null,
+     "heading": "System earthing arrangements",
+     "text": "Describes TN, TT and IT system earthing arrangements and the selection of an arrangement for an installation.",
+     "constraints": []
+    },
+    {
+     "id": "is-3043-2018#electrodes",
+     "standardId": "is-3043-2018",
+     "ref": null,
+     "heading": "Earth electrodes",
+     "text": "Covers design of pipe, plate, rod and strip earth electrodes, their resistance and the influence of soil resistivity and moisture.",
+     "constraints": []
+    },
+    {
+     "id": "is-3043-2018#continuity",
+     "standardId": "is-3043-2018",
+     "ref": null,
+     "heading": "Protective conductors and earth continuity",
+     "text": "Protective conductors shall be sized to carry the prospective earth-fault current without damage and earth continuity shall be maintained across removable and hinged parts.",
+     "constraints": []
+    },
+    {
+     "id": "is-3043-2018#measurement",
+     "standardId": "is-3043-2018",
+     "ref": null,
+     "heading": "Measurement of earth resistance",
+     "text": "Earth electrode resistance and soil resistivity are measured, for example by the fall-of-potential method, and recorded.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "earthing_system",
+     "label": "Earthing arrangement",
+     "rationale": "The system earthing arrangement determines protective conductor sizing and fault disconnection.",
+     "severity": "medium",
+     "repairTemplate": "The earthing arrangement shall be [TN-S / TT], designed in accordance with {standard}.",
+     "clauseId": "is-3043-2018#systems"
+    },
+    {
+     "parameter": "earth_resistance",
+     "label": "Target earth electrode resistance",
+     "rationale": "A target earth resistance and its measurement method are needed to verify the earthing system.",
+     "severity": "medium",
+     "repairTemplate": "The combined earth electrode resistance shall not exceed [value] Ω, measured by the fall-of-potential method in accordance with {standard}.",
+     "clauseId": "is-3043-2018#measurement"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-694-2010",
+   "designation": "IS 694",
+   "year": 2010,
+   "number": "IS 694:2010",
+   "title": "Polyvinyl chloride insulated unsheathed and sheathed cables/cords with rigid and flexible conductor for rated voltages up to and including 450/750 V",
+   "scope": "PVC-insulated building wires and flexible cords for fixed wiring and appliances, rated up to 450/750 V.",
+   "category": "Electrical",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "pvc",
+    "insulated",
+    "wire",
+    "building wire",
+    "flexible cord",
+    "cable",
+    "450/750 v",
+    "copper",
+    "aluminium"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-694-2010#voltage",
+     "standardId": "is-694-2010",
+     "ref": null,
+     "heading": "Rated voltage",
+     "text": "Covers cables with rated voltages up to and including 450/750 V; the maximum conductor operating temperature for normal PVC insulation is 70 °C.",
+     "constraints": [
+      {
+       "parameter": "rated_voltage",
+       "dimension": "voltage",
+       "unit": "V",
+       "min": null,
+       "max": 750,
+       "condition": "450/750 V rating; use IS 1554 (Part 1) or IS 7098 (Part 1) cables for 1 100 V circuits"
+      },
+      {
+       "parameter": "conductor_temperature",
+       "dimension": "temperature",
+       "unit": "degC",
+       "min": null,
+       "max": 70,
+       "condition": "normal PVC insulation"
+      }
+     ]
+    },
+    {
+     "id": "is-694-2010#conductors",
+     "standardId": "is-694-2010",
+     "ref": null,
+     "heading": "Conductors",
+     "text": "Conductors are plain or tinned annealed copper or aluminium conforming to IS 8130.",
+     "constraints": []
+    },
+    {
+     "id": "is-694-2010#tests",
+     "standardId": "is-694-2010",
+     "ref": null,
+     "heading": "Tests",
+     "text": "Type, acceptance and routine tests shall be carried out in accordance with the relevant parts of IS 10810.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "conductor_size",
+     "label": "Conductor cross-section",
+     "rationale": "Cable size must be specified for current-carrying capacity and voltage drop.",
+     "severity": "high",
+     "repairTemplate": "Cables shall have [n] cores of [value] mm² [copper/aluminium] conductor conforming to {standard}.",
+     "clauseId": "is-694-2010#conductors"
+    },
+    {
+     "parameter": "conductor_material",
+     "label": "Conductor material",
+     "rationale": "Copper and aluminium conductors have different ratings and terminations.",
+     "severity": "medium",
+     "repairTemplate": "Conductors shall be of [copper/aluminium] conforming to IS 8130, as required by {standard}.",
+     "clauseId": "is-694-2010#conductors"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-1554-1-1988",
+   "designation": "IS 1554 (Part 1)",
+   "year": 1988,
+   "number": "IS 1554 (Part 1):1988",
+   "title": "PVC insulated (heavy duty) electric cables — Part 1: For working voltages up to and including 1 100 V",
+   "scope": "PVC-insulated, PVC-sheathed armoured and unarmoured heavy-duty power and control cables for working voltages up to and including 1 100 V.",
+   "category": "Electrical",
+   "kind": "product",
+   "status": "reaffirmed",
+   "keywords": [
+    "pvc",
+    "power cable",
+    "armoured",
+    "heavy duty",
+    "1100 v",
+    "1.1 kv",
+    "lt cable",
+    "copper",
+    "aluminium",
+    "control cable"
+   ],
+   "aliases": [
+    "IS 1554-1"
+   ],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-1554-1-1988#voltage",
+     "standardId": "is-1554-1-1988",
+     "ref": null,
+     "heading": "Voltage grade",
+     "text": "Applies to cables for working voltages up to and including 1 100 V; the maximum conductor temperature in normal operation for PVC insulation is 70 °C.",
+     "constraints": [
+      {
+       "parameter": "rated_voltage",
+       "dimension": "voltage",
+       "unit": "V",
+       "min": null,
+       "max": 1100,
+       "condition": "1 100 V grade"
+      },
+      {
+       "parameter": "conductor_temperature",
+       "dimension": "temperature",
+       "unit": "degC",
+       "min": null,
+       "max": 70,
+       "condition": "normal operation, PVC insulation"
+      }
+     ]
+    },
+    {
+     "id": "is-1554-1-1988#conductors",
+     "standardId": "is-1554-1-1988",
+     "ref": null,
+     "heading": "Conductors",
+     "text": "Conductors are of annealed copper or aluminium conforming to IS 8130.",
+     "constraints": []
+    },
+    {
+     "id": "is-1554-1-1988#tests",
+     "standardId": "is-1554-1-1988",
+     "ref": null,
+     "heading": "Tests",
+     "text": "Type, acceptance and routine tests shall be carried out in accordance with the relevant parts of IS 10810.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "conductor_size",
+     "label": "Conductor cross-section and number of cores",
+     "rationale": "Cable size and cores must be specified for current rating and voltage drop.",
+     "severity": "high",
+     "repairTemplate": "Cables shall be [n]-core, [value] mm² [copper/aluminium] conductor, PVC insulated, armoured, 1 100 V grade conforming to {standard}.",
+     "clauseId": "is-1554-1-1988#conductors"
+    },
+    {
+     "parameter": "conductor_material",
+     "label": "Conductor material",
+     "rationale": "Copper and aluminium conductors have different ratings.",
+     "severity": "medium",
+     "repairTemplate": "Conductors shall be of [copper/aluminium] conforming to IS 8130, as required by {standard}.",
+     "clauseId": "is-1554-1-1988#conductors"
+    },
+    {
+     "parameter": "test_method",
+     "label": "Cable test requirements",
+     "rationale": "Acceptance and routine tests are defined through IS 10810.",
+     "severity": "medium",
+     "repairTemplate": "Cables shall be subjected to acceptance and routine tests in accordance with {standard} and the relevant parts of IS 10810.",
+     "clauseId": "is-1554-1-1988#tests"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-7098-1-1988",
+   "designation": "IS 7098 (Part 1)",
+   "year": 1988,
+   "number": "IS 7098 (Part 1):1988",
+   "title": "Crosslinked polyethylene insulated PVC sheathed cables — Part 1: For working voltage up to and including 1 100 V",
+   "scope": "XLPE-insulated, PVC-sheathed power cables for working voltages up to and including 1 100 V.",
+   "category": "Electrical",
+   "kind": "product",
+   "status": "reaffirmed",
+   "keywords": [
+    "xlpe",
+    "crosslinked polyethylene",
+    "power cable",
+    "armoured",
+    "1100 v",
+    "1.1 kv",
+    "lt cable"
+   ],
+   "aliases": [
+    "IS 7098-1"
+   ],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-7098-1-1988#voltage",
+     "standardId": "is-7098-1-1988",
+     "ref": null,
+     "heading": "Voltage grade and temperature",
+     "text": "Applies to cables up to and including 1 100 V; XLPE insulation permits a maximum conductor temperature of 90 °C in normal operation.",
+     "constraints": [
+      {
+       "parameter": "rated_voltage",
+       "dimension": "voltage",
+       "unit": "V",
+       "min": null,
+       "max": 1100,
+       "condition": "1 100 V grade"
+      },
+      {
+       "parameter": "conductor_temperature",
+       "dimension": "temperature",
+       "unit": "degC",
+       "min": null,
+       "max": 90,
+       "condition": "normal operation, XLPE insulation"
+      }
+     ]
+    },
+    {
+     "id": "is-7098-1-1988#conductors",
+     "standardId": "is-7098-1-1988",
+     "ref": null,
+     "heading": "Conductors",
+     "text": "Conductors are of copper or aluminium conforming to IS 8130.",
+     "constraints": []
+    },
+    {
+     "id": "is-7098-1-1988#tests",
+     "standardId": "is-7098-1-1988",
+     "ref": null,
+     "heading": "Tests",
+     "text": "Tests shall be carried out in accordance with the relevant parts of IS 10810.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "conductor_size",
+     "label": "Conductor cross-section",
+     "rationale": "Cable size must be specified.",
+     "severity": "high",
+     "repairTemplate": "Cables shall be [n]-core, [value] mm² [copper/aluminium], XLPE insulated, 1 100 V grade conforming to {standard}.",
+     "clauseId": "is-7098-1-1988#conductors"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-8130-2013",
+   "designation": "IS 8130",
+   "year": 2013,
+   "number": "IS 8130:2013",
+   "title": "Conductors for insulated electric cables and flexible cords",
+   "scope": "Classes, sizes and maximum resistance of copper and aluminium conductors used in insulated cables and flexible cords.",
+   "category": "Electrical",
+   "kind": "specification",
+   "status": "current",
+   "keywords": [
+    "conductor",
+    "copper",
+    "aluminium",
+    "stranded",
+    "resistance",
+    "class 2",
+    "class 5"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-8130-2013#resistance",
+     "standardId": "is-8130-2013",
+     "ref": null,
+     "heading": "Conductor resistance",
+     "text": "The d.c. resistance of each conductor at 20 °C shall not exceed the maximum value specified for its nominal cross-sectional area and class.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-10810",
+   "designation": "IS 10810",
+   "year": 1984,
+   "number": "IS 10810 (series)",
+   "title": "Methods of test for cables (all parts)",
+   "scope": "Multi-part series of test methods for electric cables, including conductor resistance, insulation resistance, high-voltage and armour tests.",
+   "category": "Electrical",
+   "kind": "test_method",
+   "status": "current",
+   "keywords": [
+    "cable test",
+    "insulation resistance",
+    "high voltage test",
+    "conductor resistance",
+    "methods of test",
+    "cables"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-10810#series",
+     "standardId": "is-10810",
+     "ref": null,
+     "heading": "Test methods",
+     "text": "Specifies methods of test for cables such as conductor resistance, insulation resistance, high-voltage withstand and armour resistance, referenced by cable product standards.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Multi-part series; individual parts have different publication years. Year shown is nominal."
+   }
+  },
+  {
+   "id": "is-iec-60898-1-2002",
+   "designation": "IS/IEC 60898-1",
+   "year": 2002,
+   "number": "IS/IEC 60898-1:2002",
+   "title": "Electrical accessories — Circuit-breakers for overcurrent protection for household and similar installations — Part 1: Circuit-breakers for a.c. operation",
+   "scope": "Miniature circuit-breakers for a.c. overcurrent protection in household and similar installations.",
+   "category": "Electrical",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "mcb",
+    "miniature circuit breaker",
+    "circuit breaker",
+    "overcurrent",
+    "tripping characteristic",
+    "breaking capacity",
+    "b curve",
+    "c curve"
+   ],
+   "aliases": [
+    "IEC 60898-1"
+   ],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-iec-60898-1-2002#ratings",
+     "standardId": "is-iec-60898-1-2002",
+     "ref": null,
+     "heading": "Ratings and tripping characteristics",
+     "text": "Circuit-breakers are characterised by rated current, rated short-circuit capacity and instantaneous tripping type B, C or D.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "rated_current",
+     "label": "Rated current",
+     "rationale": "The MCB rating must be co-ordinated with the protected circuit.",
+     "severity": "medium",
+     "repairTemplate": "MCBs shall be rated [value] A, type [B/C] tripping characteristic, conforming to {standard}.",
+     "clauseId": "is-iec-60898-1-2002#ratings"
+    },
+    {
+     "parameter": "short_circuit_rating",
+     "label": "Rated short-circuit capacity",
+     "rationale": "Breaking capacity must exceed the prospective fault current.",
+     "severity": "high",
+     "repairTemplate": "MCBs shall have a rated short-circuit capacity of not less than [value] kA in accordance with {standard}.",
+     "clauseId": "is-iec-60898-1-2002#ratings"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-8828-1996",
+   "designation": "IS 8828",
+   "year": 1996,
+   "number": "IS 8828:1996",
+   "title": "Electrical accessories — Circuit-breakers for overcurrent protection for household and similar installations",
+   "scope": "Former Indian Standard for miniature circuit-breakers, replaced by IS/IEC 60898-1.",
+   "category": "Electrical",
+   "kind": "product",
+   "status": "superseded",
+   "keywords": [
+    "mcb",
+    "miniature circuit breaker",
+    "circuit breaker"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-8828-1996#status",
+     "standardId": "is-8828-1996",
+     "ref": null,
+     "heading": "Status",
+     "text": "Superseded; miniature circuit-breakers are now covered by IS/IEC 60898-1.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-iec-60947-2-2003",
+   "designation": "IS/IEC 60947-2",
+   "year": 2003,
+   "number": "IS/IEC 60947-2:2003",
+   "title": "Low-voltage switchgear and controlgear — Part 2: Circuit-breakers",
+   "scope": "Circuit-breakers (including MCCBs and ACBs) for low-voltage industrial circuits.",
+   "category": "Electrical",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "mccb",
+    "acb",
+    "circuit breaker",
+    "moulded case",
+    "air circuit breaker",
+    "breaking capacity",
+    "icu",
+    "ics"
+   ],
+   "aliases": [
+    "IEC 60947-2"
+   ],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-iec-60947-2-2003#ratings",
+     "standardId": "is-iec-60947-2-2003",
+     "ref": null,
+     "heading": "Short-circuit breaking capacities",
+     "text": "Circuit-breakers are rated for ultimate (Icu) and service (Ics) short-circuit breaking capacity, which must be adequate for the prospective fault current.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "short_circuit_rating",
+     "label": "Breaking capacity",
+     "rationale": "Breaking capacity must exceed the prospective fault current at the point of installation.",
+     "severity": "high",
+     "repairTemplate": "Circuit-breakers shall have a rated service short-circuit breaking capacity (Ics) of not less than [value] kA in accordance with {standard}.",
+     "clauseId": "is-iec-60947-2-2003#ratings"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Edition year not verified."
+   }
+  },
+  {
+   "id": "is-13947-2-1993",
+   "designation": "IS 13947 (Part 2)",
+   "year": 1993,
+   "number": "IS 13947 (Part 2):1993",
+   "title": "Low-voltage switchgear and controlgear — Part 2: Circuit-breakers",
+   "scope": "Former Indian Standard for LV circuit-breakers, replaced by IS/IEC 60947-2.",
+   "category": "Electrical",
+   "kind": "product",
+   "status": "superseded",
+   "keywords": [
+    "circuit breaker",
+    "mccb",
+    "acb"
+   ],
+   "aliases": [
+    "IS 13947-2"
+   ],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-13947-2-1993#status",
+     "standardId": "is-13947-2-1993",
+     "ref": null,
+     "heading": "Status",
+     "text": "Superseded; LV circuit-breakers are now covered by IS/IEC 60947-2.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-12640-1-2016",
+   "designation": "IS 12640 (Part 1)",
+   "year": 2016,
+   "number": "IS 12640 (Part 1):2016",
+   "title": "Residual current operated circuit-breakers without integral overcurrent protection for household and similar uses (RCCBs) — Part 1: General rules",
+   "scope": "Residual current operated circuit-breakers (RCCBs) for household and similar installations.",
+   "category": "Electrical",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "rccb",
+    "rcd",
+    "residual current",
+    "earth leakage",
+    "elcb",
+    "30 ma",
+    "shock protection"
+   ],
+   "aliases": [
+    "IS 12640-1"
+   ],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-12640-1-2016#sensitivity",
+     "standardId": "is-12640-1-2016",
+     "ref": null,
+     "heading": "Rated residual operating current",
+     "text": "RCCBs are characterised by rated current and rated residual operating current, e.g. 30 mA for additional protection against electric shock.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-325-1996",
+   "designation": "IS 325",
+   "year": 1996,
+   "number": "IS 325:1996",
+   "title": "Three-phase induction motors — Specification",
+   "scope": "Three-phase squirrel-cage and slip-ring induction motors for general purposes, including rating, performance, tolerances and tests.",
+   "category": "Mechanical & Electrical",
+   "kind": "product",
+   "status": "reaffirmed",
+   "keywords": [
+    "induction motor",
+    "motor",
+    "three phase",
+    "squirrel cage",
+    "rated output",
+    "kw",
+    "duty",
+    "insulation class",
+    "rating plate",
+    "frame"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-325-1996#variation",
+     "standardId": "is-325-1996",
+     "ref": null,
+     "heading": "Voltage and frequency variation",
+     "text": "Motors shall deliver rated output with a supply voltage variation of ±10 %, a frequency variation of ±5 %, and a combined variation (sum of absolute percentages) not exceeding 10 %.",
+     "constraints": [
+      {
+       "parameter": "voltage_variation",
+       "dimension": "percent",
+       "unit": "%",
+       "min": null,
+       "max": 10,
+       "condition": "rated output within ±10 % voltage variation"
+      },
+      {
+       "parameter": "frequency_variation",
+       "dimension": "percent",
+       "unit": "%",
+       "min": null,
+       "max": 5,
+       "condition": "rated output within ±5 % frequency variation"
+      }
+     ]
+    },
+    {
+     "id": "is-325-1996#rating-plate",
+     "standardId": "is-325-1996",
+     "ref": null,
+     "heading": "Rating and rating plate",
+     "text": "The rating plate states rated output, voltage, current, frequency, speed, duty type, insulation class and degree of protection.",
+     "constraints": []
+    },
+    {
+     "id": "is-325-1996#efficiency",
+     "standardId": "is-325-1996",
+     "ref": null,
+     "heading": "Efficiency",
+     "text": "Energy-efficiency classes of motors are specified by IS 12615; the purchaser states the required class.",
+     "constraints": []
+    },
+    {
+     "id": "is-325-1996#enclosure",
+     "standardId": "is-325-1996",
+     "ref": null,
+     "heading": "Degree of protection",
+     "text": "The degree of protection of the motor enclosure is designated by the IP code in accordance with IS/IEC 60529.",
+     "constraints": []
+    },
+    {
+     "id": "is-325-1996#tests",
+     "standardId": "is-325-1996",
+     "ref": null,
+     "heading": "Tests",
+     "text": "Type and routine tests are carried out following the methods of IS 4029.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "rated_power",
+     "label": "Rated output (kW)",
+     "rationale": "The motor output must be specified to size the drive.",
+     "severity": "high",
+     "repairTemplate": "The motor shall have a rated output of [value] kW, conforming to {standard}.",
+     "clauseId": "is-325-1996#rating-plate"
+    },
+    {
+     "parameter": "rated_voltage",
+     "label": "Rated voltage",
+     "rationale": "Rated supply voltage fixes the winding design.",
+     "severity": "high",
+     "repairTemplate": "The motor shall be rated for 415 V ±10 %, 3-phase, 50 Hz ±5 % supply in accordance with {standard}.",
+     "clauseId": "is-325-1996#rating-plate"
+    },
+    {
+     "parameter": "efficiency_class",
+     "label": "Efficiency class",
+     "rationale": "The standard expects the purchaser to state the IE efficiency class (IS 12615).",
+     "severity": "medium",
+     "repairTemplate": "The motor shall meet efficiency class IE[2/3] in accordance with IS 12615, in addition to {standard}.",
+     "clauseId": "is-325-1996#efficiency"
+    },
+    {
+     "parameter": "ip_rating",
+     "label": "Degree of protection",
+     "rationale": "The enclosure protection must suit the installation environment.",
+     "severity": "medium",
+     "repairTemplate": "The motor enclosure shall have a degree of protection of IP55 (or as required by the site) in accordance with IS/IEC 60529.",
+     "clauseId": "is-325-1996#enclosure"
+    },
+    {
+     "parameter": "test_method",
+     "label": "Test requirements",
+     "rationale": "Routine and type tests follow IS 4029.",
+     "severity": "medium",
+     "repairTemplate": "Routine tests shall be carried out on each motor and type-test reports furnished, in accordance with {standard} and IS 4029.",
+     "clauseId": "is-325-1996#tests"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-12615-2018",
+   "designation": "IS 12615",
+   "year": 2018,
+   "number": "IS 12615:2018",
+   "title": "Line operated three phase a.c. motors (IE code) — Efficiency classes and performance specification",
+   "scope": "Efficiency classes (IE2, IE3, IE4) and performance requirements for line-operated three-phase induction motors.",
+   "category": "Mechanical & Electrical",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "energy efficient motor",
+    "ie2",
+    "ie3",
+    "ie4",
+    "efficiency class",
+    "premium efficiency",
+    "induction motor",
+    "motor efficiency"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-12615-2018#classes",
+     "standardId": "is-12615-2018",
+     "ref": null,
+     "heading": "Efficiency classes",
+     "text": "Defines efficiency classes IE2, IE3 and IE4 with minimum nominal full-load efficiency values by rated output and number of poles; a motor is marked with its IE class.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "efficiency_class",
+     "label": "Efficiency class (IE code)",
+     "rationale": "An energy-efficiency requirement is only measurable when the IE class is stated.",
+     "severity": "high",
+     "repairTemplate": "The motor shall be of efficiency class IE[2/3] in accordance with {standard}, with the nominal efficiency declared on the rating plate.",
+     "clauseId": "is-12615-2018#classes"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-4029-2010",
+   "designation": "IS 4029",
+   "year": 2010,
+   "number": "IS 4029:2010",
+   "title": "Guide for testing three-phase induction motors",
+   "scope": "Methods for type and routine testing of three-phase induction motors (no-load, locked-rotor, temperature-rise, efficiency determination).",
+   "category": "Mechanical & Electrical",
+   "kind": "test_method",
+   "status": "current",
+   "keywords": [
+    "motor testing",
+    "no-load test",
+    "locked rotor",
+    "temperature rise",
+    "routine test",
+    "type test",
+    "induction motor"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-4029-2010#methods",
+     "standardId": "is-4029-2010",
+     "ref": null,
+     "heading": "Test methods",
+     "text": "Describes routine and type test procedures for three-phase induction motors, including insulation resistance, no-load, locked-rotor, temperature-rise and efficiency tests.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-1180-1-2014",
+   "designation": "IS 1180 (Part 1)",
+   "year": 2014,
+   "number": "IS 1180 (Part 1):2014",
+   "title": "Outdoor type oil immersed distribution transformers up to and including 2 500 kVA, 33 kV — Specification — Part 1: Mineral oil immersed",
+   "scope": "Outdoor mineral-oil-immersed distribution transformers up to 2 500 kVA and 33 kV, including ratings, energy-efficiency levels, losses and tests.",
+   "category": "Electrical",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "distribution transformer",
+    "transformer",
+    "kva",
+    "oil immersed",
+    "energy efficiency level",
+    "losses",
+    "vector group",
+    "11 kv",
+    "33 kv"
+   ],
+   "aliases": [
+    "IS 1180-1"
+   ],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-1180-1-2014#ratings",
+     "standardId": "is-1180-1-2014",
+     "ref": null,
+     "heading": "Ratings and limits",
+     "text": "Covers distribution transformers with ratings up to and including 2 500 kVA and highest voltage up to 33 kV, with standard ratings and voltage ratios.",
+     "constraints": [
+      {
+       "parameter": "apparent_power",
+       "dimension": "apparent_power",
+       "unit": "VA",
+       "min": null,
+       "max": 2500000,
+       "condition": "scope limit of the standard"
+      },
+      {
+       "parameter": "rated_voltage",
+       "dimension": "voltage",
+       "unit": "V",
+       "min": null,
+       "max": 33000,
+       "condition": "scope limit (highest voltage 33 kV)"
+      }
+     ]
+    },
+    {
+     "id": "is-1180-1-2014#efficiency",
+     "standardId": "is-1180-1-2014",
+     "ref": null,
+     "heading": "Energy efficiency levels",
+     "text": "Maximum total losses at 50 % and 100 % load are specified by energy efficiency level; the purchaser states the required level.",
+     "constraints": []
+    },
+    {
+     "id": "is-1180-1-2014#tests",
+     "standardId": "is-1180-1-2014",
+     "ref": null,
+     "heading": "Tests",
+     "text": "Routine, type and special tests are carried out in accordance with IS 2026.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "apparent_power",
+     "label": "Rated power (kVA)",
+     "rationale": "The kVA rating must be specified.",
+     "severity": "high",
+     "repairTemplate": "The transformer shall be rated [value] kVA, [HV]/433 V, conforming to {standard}.",
+     "clauseId": "is-1180-1-2014#ratings"
+    },
+    {
+     "parameter": "efficiency_class",
+     "label": "Energy efficiency level",
+     "rationale": "Loss limits depend on the energy efficiency level stated by the purchaser.",
+     "severity": "medium",
+     "repairTemplate": "The transformer shall meet Energy Efficiency Level [1/2/3] loss limits of {standard}.",
+     "clauseId": "is-1180-1-2014#efficiency"
+    },
+    {
+     "parameter": "test_method",
+     "label": "Test requirements",
+     "rationale": "Tests follow IS 2026.",
+     "severity": "medium",
+     "repairTemplate": "Routine tests shall be carried out on each transformer and type-test reports furnished in accordance with {standard} and IS 2026.",
+     "clauseId": "is-1180-1-2014#tests"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-2026-1-2011",
+   "designation": "IS 2026 (Part 1)",
+   "year": 2011,
+   "number": "IS 2026 (Part 1):2011",
+   "title": "Power transformers — Part 1: General",
+   "scope": "General requirements, ratings and tests for power transformers.",
+   "category": "Electrical",
+   "kind": "specification",
+   "status": "current",
+   "keywords": [
+    "power transformer",
+    "transformer tests",
+    "routine test",
+    "type test",
+    "losses",
+    "impedance"
+   ],
+   "aliases": [
+    "IS 2026-1"
+   ],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-2026-1-2011#tests",
+     "standardId": "is-2026-1-2011",
+     "ref": null,
+     "heading": "Tests",
+     "text": "Specifies routine, type and special tests for transformers, such as winding resistance, ratio, impedance, losses and dielectric tests.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-1520-1980",
+   "designation": "IS 1520",
+   "year": 1980,
+   "number": "IS 1520:1980",
+   "title": "Horizontal centrifugal pumps for clear, cold water",
+   "scope": "Horizontal centrifugal pumps for clear, cold, fresh water, including performance, materials and tests.",
+   "category": "Mechanical",
+   "kind": "product",
+   "status": "reaffirmed",
+   "keywords": [
+    "centrifugal pump",
+    "horizontal pump",
+    "pump",
+    "clear water",
+    "cold water",
+    "discharge",
+    "head",
+    "duty point",
+    "impeller"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-1520-1980#performance",
+     "standardId": "is-1520-1980",
+     "ref": null,
+     "heading": "Performance at the duty point",
+     "text": "Pump performance is specified at a guaranteed duty point in terms of discharge, total head and pump efficiency, with tolerances applied at acceptance.",
+     "constraints": []
+    },
+    {
+     "id": "is-1520-1980#materials",
+     "standardId": "is-1520-1980",
+     "ref": null,
+     "heading": "Materials of construction",
+     "text": "Materials of the casing, impeller and shaft are specified for clear, cold water service.",
+     "constraints": []
+    },
+    {
+     "id": "is-1520-1980#tests",
+     "standardId": "is-1520-1980",
+     "ref": null,
+     "heading": "Tests",
+     "text": "Performance tests are conducted in accordance with IS 9137.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "flow_rate",
+     "label": "Discharge at duty point",
+     "rationale": "Performance is guaranteed at a stated duty point.",
+     "severity": "high",
+     "repairTemplate": "The pump shall deliver [value] m³/h at the duty point, in accordance with {standard}.",
+     "clauseId": "is-1520-1980#performance"
+    },
+    {
+     "parameter": "pump_head",
+     "label": "Total head at duty point",
+     "rationale": "The total head at the duty point defines the pump selection.",
+     "severity": "high",
+     "repairTemplate": "The pump shall develop a total head of [value] m at the rated discharge, in accordance with {standard}.",
+     "clauseId": "is-1520-1980#performance"
+    },
+    {
+     "parameter": "efficiency",
+     "label": "Guaranteed efficiency at duty point",
+     "rationale": "An efficiency requirement is only verifiable as a guaranteed value at the duty point.",
+     "severity": "medium",
+     "repairTemplate": "The pump efficiency at the duty point shall not be less than [value] %, verified by test in accordance with IS 9137.",
+     "clauseId": "is-1520-1980#performance"
+    },
+    {
+     "parameter": "test_method",
+     "label": "Performance test",
+     "rationale": "Acceptance of the duty point requires a performance test to IS 9137.",
+     "severity": "medium",
+     "repairTemplate": "Each pump shall be performance-tested in accordance with IS 9137 and the test certificate submitted.",
+     "clauseId": "is-1520-1980#tests"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-9137-1978",
+   "designation": "IS 9137",
+   "year": 1978,
+   "number": "IS 9137:1978",
+   "title": "Code for acceptance tests for centrifugal, mixed flow and axial pumps — Class C",
+   "scope": "Acceptance test procedures, measurement methods and tolerances for centrifugal, mixed-flow and axial pumps.",
+   "category": "Mechanical",
+   "kind": "test_method",
+   "status": "reaffirmed",
+   "keywords": [
+    "pump test",
+    "acceptance test",
+    "performance test",
+    "centrifugal",
+    "mixed flow",
+    "axial",
+    "tolerance",
+    "duty point"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-9137-1978#procedure",
+     "standardId": "is-9137-1978",
+     "ref": null,
+     "heading": "Acceptance test procedure",
+     "text": "Specifies measurement of discharge, head, speed and power input and the tolerances for verifying guaranteed pump performance.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-8034-2018",
+   "designation": "IS 8034",
+   "year": 2018,
+   "number": "IS 8034:2018",
+   "title": "Submersible pumpsets — Specification",
+   "scope": "Submersible pumpsets for clear, cold water from bore wells, including performance, materials, motor and tests.",
+   "category": "Mechanical",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "submersible pump",
+    "submersible pumpset",
+    "borewell",
+    "bore well",
+    "pump",
+    "discharge",
+    "head",
+    "overall efficiency"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-8034-2018#performance",
+     "standardId": "is-8034-2018",
+     "ref": null,
+     "heading": "Performance",
+     "text": "Performance is declared at the duty point as discharge, total head, power input and overall pumpset efficiency, with tolerances at acceptance.",
+     "constraints": []
+    },
+    {
+     "id": "is-8034-2018#motor",
+     "standardId": "is-8034-2018",
+     "ref": null,
+     "heading": "Motor",
+     "text": "The motor of the pumpset conforms to IS 9283.",
+     "constraints": []
+    },
+    {
+     "id": "is-8034-2018#tests",
+     "standardId": "is-8034-2018",
+     "ref": null,
+     "heading": "Tests",
+     "text": "Type and routine tests are specified for the pumpset; performance testing practice follows IS 9137.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "flow_rate",
+     "label": "Discharge at duty point",
+     "rationale": "Performance is declared at a duty point.",
+     "severity": "high",
+     "repairTemplate": "The pumpset shall deliver [value] m³/h at the duty point, in accordance with {standard}.",
+     "clauseId": "is-8034-2018#performance"
+    },
+    {
+     "parameter": "pump_head",
+     "label": "Total head at duty point",
+     "rationale": "The total head defines pump selection.",
+     "severity": "high",
+     "repairTemplate": "The pumpset shall develop a total head of [value] m at the rated discharge, in accordance with {standard}.",
+     "clauseId": "is-8034-2018#performance"
+    },
+    {
+     "parameter": "efficiency",
+     "label": "Overall efficiency at duty point",
+     "rationale": "Overall pumpset efficiency is the measurable energy requirement.",
+     "severity": "medium",
+     "repairTemplate": "The overall pumpset efficiency at the duty point shall not be less than [value] %, in accordance with {standard}.",
+     "clauseId": "is-8034-2018#performance"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Edition year not verified."
+   }
+  },
+  {
+   "id": "is-9283-2013",
+   "designation": "IS 9283",
+   "year": 2013,
+   "number": "IS 9283:2013",
+   "title": "Motors for submersible pumpsets — Specification",
+   "scope": "Three-phase and single-phase motors for submersible pumpsets.",
+   "category": "Mechanical & Electrical",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "submersible motor",
+    "motor",
+    "pumpset",
+    "water filled",
+    "oil filled"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-9283-2013#general",
+     "standardId": "is-9283-2013",
+     "ref": null,
+     "heading": "Motor requirements",
+     "text": "Specifies ratings, performance, construction and tests of motors for submersible pumpsets.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Edition year not verified."
+   }
+  },
+  {
+   "id": "is-456-2000",
+   "designation": "IS 456",
+   "year": 2000,
+   "number": "IS 456:2000",
+   "title": "Plain and reinforced concrete — Code of practice",
+   "scope": "Design and construction of plain and reinforced concrete structures, including materials, durability, workmanship, sampling and acceptance.",
+   "category": "Civil",
+   "kind": "code_of_practice",
+   "status": "amended",
+   "keywords": [
+    "concrete",
+    "reinforced concrete",
+    "rcc",
+    "pcc",
+    "durability",
+    "exposure",
+    "cover",
+    "reinforcement",
+    "detailing",
+    "grade",
+    "water-cement ratio",
+    "cement content",
+    "cube",
+    "curing",
+    "formwork"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards",
+     "CPWD"
+    ],
+    "relevance": "Medium"
+   },
+   "clauses": [
+    {
+     "id": "is-456-2000#exposure",
+     "standardId": "is-456-2000",
+     "ref": "8.2.2.1, Table 3",
+     "heading": "Environmental exposure conditions",
+     "text": "The general environment to which concrete is exposed is classified as mild, moderate, severe, very severe or extreme, and the design exposure condition governs durability requirements.",
+     "constraints": []
+    },
+    {
+     "id": "is-456-2000#min-grade",
+     "standardId": "is-456-2000",
+     "ref": "8.2.4.1, Table 5",
+     "heading": "Minimum grade of concrete for durability",
+     "text": "For reinforced concrete the minimum grade depends on exposure: mild M 20, moderate M 25, severe M 30, very severe M 35, extreme M 40.",
+     "constraints": [
+      {
+       "parameter": "concrete_grade",
+       "dimension": "pressure",
+       "unit": "MPa",
+       "min": 20,
+       "max": null,
+       "condition": "reinforced concrete, mild exposure",
+       "qualifier": "exposure_condition=mild"
+      },
+      {
+       "parameter": "concrete_grade",
+       "dimension": "pressure",
+       "unit": "MPa",
+       "min": 25,
+       "max": null,
+       "condition": "reinforced concrete, moderate exposure",
+       "qualifier": "exposure_condition=moderate"
+      },
+      {
+       "parameter": "concrete_grade",
+       "dimension": "pressure",
+       "unit": "MPa",
+       "min": 30,
+       "max": null,
+       "condition": "reinforced concrete, severe exposure",
+       "qualifier": "exposure_condition=severe"
+      },
+      {
+       "parameter": "concrete_grade",
+       "dimension": "pressure",
+       "unit": "MPa",
+       "min": 35,
+       "max": null,
+       "condition": "reinforced concrete, very severe exposure",
+       "qualifier": "exposure_condition=very severe"
+      },
+      {
+       "parameter": "concrete_grade",
+       "dimension": "pressure",
+       "unit": "MPa",
+       "min": 40,
+       "max": null,
+       "condition": "reinforced concrete, extreme exposure",
+       "qualifier": "exposure_condition=extreme"
+      }
+     ]
+    },
+    {
+     "id": "is-456-2000#wc-ratio",
+     "standardId": "is-456-2000",
+     "ref": "8.2.4.1, Table 5",
+     "heading": "Maximum free water–cement ratio",
+     "text": "Maximum free water–cement ratio for reinforced concrete: mild 0.55, moderate 0.50, severe 0.45, very severe 0.45, extreme 0.40.",
+     "constraints": [
+      {
+       "parameter": "water_cement_ratio",
+       "dimension": "ratio",
+       "unit": "ratio",
+       "min": null,
+       "max": 0.55,
+       "condition": "reinforced concrete, mild exposure",
+       "qualifier": "exposure_condition=mild"
+      },
+      {
+       "parameter": "water_cement_ratio",
+       "dimension": "ratio",
+       "unit": "ratio",
+       "min": null,
+       "max": 0.5,
+       "condition": "reinforced concrete, moderate exposure",
+       "qualifier": "exposure_condition=moderate"
+      },
+      {
+       "parameter": "water_cement_ratio",
+       "dimension": "ratio",
+       "unit": "ratio",
+       "min": null,
+       "max": 0.45,
+       "condition": "reinforced concrete, severe exposure",
+       "qualifier": "exposure_condition=severe"
+      },
+      {
+       "parameter": "water_cement_ratio",
+       "dimension": "ratio",
+       "unit": "ratio",
+       "min": null,
+       "max": 0.45,
+       "condition": "reinforced concrete, very severe exposure",
+       "qualifier": "exposure_condition=very severe"
+      },
+      {
+       "parameter": "water_cement_ratio",
+       "dimension": "ratio",
+       "unit": "ratio",
+       "min": null,
+       "max": 0.4,
+       "condition": "reinforced concrete, extreme exposure",
+       "qualifier": "exposure_condition=extreme"
+      }
+     ]
+    },
+    {
+     "id": "is-456-2000#cement-content",
+     "standardId": "is-456-2000",
+     "ref": "8.2.4.1, Table 5",
+     "heading": "Minimum cement content",
+     "text": "Minimum cement content for reinforced concrete: mild 300, moderate 300, severe 320, very severe 340, extreme 360 kg/m³ (adjusted for aggregate size).",
+     "constraints": [
+      {
+       "parameter": "cement_content",
+       "dimension": "density",
+       "unit": "kg/m3",
+       "min": 300,
+       "max": null,
+       "condition": "reinforced concrete, mild exposure, 20 mm aggregate",
+       "qualifier": "exposure_condition=mild"
+      },
+      {
+       "parameter": "cement_content",
+       "dimension": "density",
+       "unit": "kg/m3",
+       "min": 300,
+       "max": null,
+       "condition": "reinforced concrete, moderate exposure, 20 mm aggregate",
+       "qualifier": "exposure_condition=moderate"
+      },
+      {
+       "parameter": "cement_content",
+       "dimension": "density",
+       "unit": "kg/m3",
+       "min": 320,
+       "max": null,
+       "condition": "reinforced concrete, severe exposure, 20 mm aggregate",
+       "qualifier": "exposure_condition=severe"
+      },
+      {
+       "parameter": "cement_content",
+       "dimension": "density",
+       "unit": "kg/m3",
+       "min": 340,
+       "max": null,
+       "condition": "reinforced concrete, very severe exposure, 20 mm aggregate",
+       "qualifier": "exposure_condition=very severe"
+      },
+      {
+       "parameter": "cement_content",
+       "dimension": "density",
+       "unit": "kg/m3",
+       "min": 360,
+       "max": null,
+       "condition": "reinforced concrete, extreme exposure, 20 mm aggregate",
+       "qualifier": "exposure_condition=extreme"
+      }
+     ]
+    },
+    {
+     "id": "is-456-2000#cover",
+     "standardId": "is-456-2000",
+     "ref": "26.4.2, Table 16",
+     "heading": "Nominal cover to meet durability requirements",
+     "text": "Nominal cover to reinforcement for durability: mild 20 mm, moderate 30 mm, severe 45 mm, very severe 50 mm, extreme 75 mm (with limited reductions permitted by the table notes).",
+     "constraints": [
+      {
+       "parameter": "nominal_cover",
+       "dimension": "length",
+       "unit": "mm",
+       "min": 20,
+       "max": null,
+       "condition": "mild exposure (table notes permit limited reductions)",
+       "qualifier": "exposure_condition=mild"
+      },
+      {
+       "parameter": "nominal_cover",
+       "dimension": "length",
+       "unit": "mm",
+       "min": 30,
+       "max": null,
+       "condition": "moderate exposure (table notes permit limited reductions)",
+       "qualifier": "exposure_condition=moderate"
+      },
+      {
+       "parameter": "nominal_cover",
+       "dimension": "length",
+       "unit": "mm",
+       "min": 45,
+       "max": null,
+       "condition": "severe exposure (table notes permit limited reductions)",
+       "qualifier": "exposure_condition=severe"
+      },
+      {
+       "parameter": "nominal_cover",
+       "dimension": "length",
+       "unit": "mm",
+       "min": 50,
+       "max": null,
+       "condition": "very severe exposure (table notes permit limited reductions)",
+       "qualifier": "exposure_condition=very severe"
+      },
+      {
+       "parameter": "nominal_cover",
+       "dimension": "length",
+       "unit": "mm",
+       "min": 75,
+       "max": null,
+       "condition": "extreme exposure (table notes permit limited reductions)",
+       "qualifier": "exposure_condition=extreme"
+      }
+     ]
+    },
+    {
+     "id": "is-456-2000#materials",
+     "standardId": "is-456-2000",
+     "ref": null,
+     "heading": "Materials",
+     "text": "Cement, aggregates and reinforcement shall conform to the relevant Indian Standards, for example IS 269 for ordinary Portland cement, IS 383 for aggregates and IS 1786 for high-strength deformed steel bars.",
+     "constraints": []
+    },
+    {
+     "id": "is-456-2000#mix-design",
+     "standardId": "is-456-2000",
+     "ref": null,
+     "heading": "Concrete mix proportioning",
+     "text": "Design mixes are proportioned using an established method such as IS 10262, with the target strength derived from the characteristic strength.",
+     "constraints": []
+    },
+    {
+     "id": "is-456-2000#sampling",
+     "standardId": "is-456-2000",
+     "ref": null,
+     "heading": "Sampling and strength tests",
+     "text": "Compressive strength is assessed on 150 mm cubes tested at 28 days, with sampling frequency and acceptance criteria as specified; tests shall be carried out in accordance with IS 516.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "exposure_condition",
+     "label": "Design exposure condition",
+     "rationale": "Minimum grade, cover and water–cement ratio all depend on the exposure condition, which only the purchaser/designer can state.",
+     "severity": "high",
+     "repairTemplate": "The exposure condition for all reinforced concrete shall be taken as '[moderate/severe]' in accordance with {standard}.",
+     "clauseId": "is-456-2000#exposure"
+    },
+    {
+     "parameter": "concrete_grade",
+     "label": "Concrete grade",
+     "rationale": "The grade must be specified and not be lower than the durability minimum for the exposure.",
+     "severity": "high",
+     "repairTemplate": "Reinforced concrete shall be of grade not less than M [value], conforming to {standard}.",
+     "clauseId": "is-456-2000#min-grade"
+    },
+    {
+     "parameter": "nominal_cover",
+     "label": "Nominal cover",
+     "rationale": "Cover protects reinforcement and depends on the exposure condition.",
+     "severity": "medium",
+     "repairTemplate": "Nominal cover to reinforcement shall be not less than [value] mm in accordance with {standard}.",
+     "clauseId": "is-456-2000#cover"
+    },
+    {
+     "parameter": "steel_grade",
+     "label": "Reinforcement grade",
+     "rationale": "The reinforcement grade must be stated for design and procurement.",
+     "severity": "medium",
+     "repairTemplate": "Reinforcement shall be high-strength deformed bars of grade Fe 500D conforming to IS 1786.",
+     "clauseId": "is-456-2000#materials"
+    },
+    {
+     "parameter": "test_method",
+     "label": "Sampling and strength testing",
+     "rationale": "Acceptance of concrete depends on cube testing at the specified frequency.",
+     "severity": "medium",
+     "repairTemplate": "Concrete shall be sampled and cube-tested for 28-day compressive strength in accordance with {standard} and IS 516 (Part 1/Sec 1).",
+     "clauseId": "is-456-2000#sampling"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-383-2016",
+   "designation": "IS 383",
+   "year": 2016,
+   "number": "IS 383:2016",
+   "title": "Coarse and fine aggregate for concrete — Specification",
+   "scope": "Requirements for natural, manufactured and recycled coarse and fine aggregates for concrete, including grading and limits of deleterious materials.",
+   "category": "Civil",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "aggregate",
+    "coarse aggregate",
+    "fine aggregate",
+    "sand",
+    "manufactured sand",
+    "grading",
+    "zone",
+    "deleterious"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-383-2016#grading",
+     "standardId": "is-383-2016",
+     "ref": null,
+     "heading": "Grading",
+     "text": "Fine aggregate shall conform to one of the grading zones and coarse aggregate to the grading for its nominal size.",
+     "constraints": []
+    },
+    {
+     "id": "is-383-2016#deleterious",
+     "standardId": "is-383-2016",
+     "ref": null,
+     "heading": "Deleterious materials",
+     "text": "Limits are specified for clay, silt, fine dust, organic impurities and other deleterious materials.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-1786-2008",
+   "designation": "IS 1786",
+   "year": 2008,
+   "number": "IS 1786:2008",
+   "title": "High strength deformed steel bars and wires for concrete reinforcement — Specification",
+   "scope": "High-strength deformed steel bars and wires (TMT) for concrete reinforcement in grades Fe 415 to Fe 600, including mechanical properties and tests.",
+   "category": "Civil",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "reinforcement",
+    "tmt",
+    "rebar",
+    "deformed bars",
+    "hysd",
+    "fe 500",
+    "fe 500d",
+    "elongation",
+    "proof stress",
+    "steel bars"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-1786-2008#grades",
+     "standardId": "is-1786-2008",
+     "ref": null,
+     "heading": "Grades",
+     "text": "Grades Fe 415, Fe 415D, Fe 500, Fe 500D, Fe 550, Fe 550D and Fe 600 are specified; the D grades have enhanced ductility.",
+     "constraints": []
+    },
+    {
+     "id": "is-1786-2008#elongation",
+     "standardId": "is-1786-2008",
+     "ref": null,
+     "heading": "Mechanical properties — elongation",
+     "text": "Minimum elongation: Fe 415 14.5 %, Fe 415D 18 %, Fe 500 12 %, Fe 500D 16 %, Fe 550 10 %, Fe 550D 14.5 %, Fe 600 10 %.",
+     "constraints": [
+      {
+       "parameter": "elongation",
+       "dimension": "percent",
+       "unit": "%",
+       "min": 14.5,
+       "max": null,
+       "condition": "grade Fe 415",
+       "qualifier": "steel_grade=Fe 415"
+      },
+      {
+       "parameter": "elongation",
+       "dimension": "percent",
+       "unit": "%",
+       "min": 18,
+       "max": null,
+       "condition": "grade Fe 415D",
+       "qualifier": "steel_grade=Fe 415D"
+      },
+      {
+       "parameter": "elongation",
+       "dimension": "percent",
+       "unit": "%",
+       "min": 12,
+       "max": null,
+       "condition": "grade Fe 500",
+       "qualifier": "steel_grade=Fe 500"
+      },
+      {
+       "parameter": "elongation",
+       "dimension": "percent",
+       "unit": "%",
+       "min": 16,
+       "max": null,
+       "condition": "grade Fe 500D",
+       "qualifier": "steel_grade=Fe 500D"
+      },
+      {
+       "parameter": "elongation",
+       "dimension": "percent",
+       "unit": "%",
+       "min": 10,
+       "max": null,
+       "condition": "grade Fe 550",
+       "qualifier": "steel_grade=Fe 550"
+      },
+      {
+       "parameter": "elongation",
+       "dimension": "percent",
+       "unit": "%",
+       "min": 14.5,
+       "max": null,
+       "condition": "grade Fe 550D",
+       "qualifier": "steel_grade=Fe 550D"
+      },
+      {
+       "parameter": "elongation",
+       "dimension": "percent",
+       "unit": "%",
+       "min": 10,
+       "max": null,
+       "condition": "grade Fe 600",
+       "qualifier": "steel_grade=Fe 600"
+      }
+     ]
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "steel_grade",
+     "label": "Steel grade",
+     "rationale": "The grade determines strength and ductility.",
+     "severity": "high",
+     "repairTemplate": "Reinforcement shall be of grade Fe [500D] conforming to {standard}.",
+     "clauseId": "is-1786-2008#grades"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-269-2015",
+   "designation": "IS 269",
+   "year": 2015,
+   "number": "IS 269:2015",
+   "title": "Ordinary Portland cement — Specification",
+   "scope": "Ordinary Portland cement of 33, 43 and 53 grades (consolidating the earlier separate grade standards).",
+   "category": "Civil",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "cement",
+    "opc",
+    "ordinary portland cement",
+    "33 grade",
+    "43 grade",
+    "53 grade"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-269-2015#grades",
+     "standardId": "is-269-2015",
+     "ref": null,
+     "heading": "Grades",
+     "text": "Covers ordinary Portland cement of 33, 43 and 53 grades; this revision replaces IS 8112 (43 grade) and IS 12269 (53 grade).",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "cement_type",
+     "label": "Cement type and grade",
+     "rationale": "The cement type and grade must be stated for mix design.",
+     "severity": "medium",
+     "repairTemplate": "Cement shall be ordinary Portland cement of [43/53] grade conforming to {standard}.",
+     "clauseId": "is-269-2015#grades"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-8112-1989",
+   "designation": "IS 8112",
+   "year": 1989,
+   "number": "IS 8112:1989",
+   "title": "43 grade ordinary Portland cement — Specification",
+   "scope": "Former standard for 43 grade OPC, now covered by IS 269:2015.",
+   "category": "Civil",
+   "kind": "product",
+   "status": "superseded",
+   "keywords": [
+    "cement",
+    "opc",
+    "43 grade"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-8112-1989#status",
+     "standardId": "is-8112-1989",
+     "ref": null,
+     "heading": "Status",
+     "text": "Superseded; 43 grade ordinary Portland cement is now covered by IS 269:2015.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-12269-1987",
+   "designation": "IS 12269",
+   "year": 1987,
+   "number": "IS 12269:1987",
+   "title": "53 grade ordinary Portland cement — Specification",
+   "scope": "Former standard for 53 grade OPC, now covered by IS 269:2015.",
+   "category": "Civil",
+   "kind": "product",
+   "status": "superseded",
+   "keywords": [
+    "cement",
+    "opc",
+    "53 grade"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-12269-1987#status",
+     "standardId": "is-12269-1987",
+     "ref": null,
+     "heading": "Status",
+     "text": "Superseded; 53 grade ordinary Portland cement is now covered by IS 269:2015.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-10262-2019",
+   "designation": "IS 10262",
+   "year": 2019,
+   "number": "IS 10262:2019",
+   "title": "Concrete mix proportioning — Guidelines",
+   "scope": "Guidelines for proportioning concrete mixes to achieve specified strength and workability.",
+   "category": "Civil",
+   "kind": "code_of_practice",
+   "status": "current",
+   "keywords": [
+    "mix design",
+    "mix proportioning",
+    "concrete",
+    "target strength",
+    "workability",
+    "slump"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-10262-2019#procedure",
+     "standardId": "is-10262-2019",
+     "ref": null,
+     "heading": "Mix proportioning procedure",
+     "text": "Gives the procedure for selecting target mean strength, water content, water–cement ratio and aggregate proportions, consistent with the durability requirements of IS 456.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-516-1959",
+   "designation": "IS 516",
+   "year": 1959,
+   "number": "IS 516:1959",
+   "title": "Methods of tests for strength of concrete",
+   "scope": "Former methods of test for compressive and flexural strength of concrete, revised into IS 516 (Part 1/Sec 1).",
+   "category": "Civil",
+   "kind": "test_method",
+   "status": "superseded",
+   "keywords": [
+    "cube test",
+    "compressive strength",
+    "concrete testing",
+    "flexural strength"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-516-1959#status",
+     "standardId": "is-516-1959",
+     "ref": null,
+     "heading": "Status",
+     "text": "Revised; strength tests on hardened concrete are now covered by IS 516 (Part 1/Sec 1):2021.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Supersession by IS 516 (Part 1/Sec 1):2021 not verified."
+   }
+  },
+  {
+   "id": "is-516-1-1-2021",
+   "designation": "IS 516 (Part 1/Sec 1)",
+   "year": 2021,
+   "number": "IS 516 (Part 1/Sec 1):2021",
+   "title": "Hardened concrete — Methods of test — Part 1: Testing of strength of hardened concrete — Section 1: Compressive, flexural and split tensile strength",
+   "scope": "Test methods for compressive, flexural and split tensile strength of hardened concrete specimens.",
+   "category": "Civil",
+   "kind": "test_method",
+   "status": "current",
+   "keywords": [
+    "cube test",
+    "compressive strength",
+    "concrete testing",
+    "hardened concrete",
+    "flexural strength",
+    "split tensile"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-516-1-1-2021#compressive",
+     "standardId": "is-516-1-1-2021",
+     "ref": null,
+     "heading": "Compressive strength test",
+     "text": "Specifies preparation, curing and testing of concrete cubes or cylinders for compressive strength.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Edition year not verified."
+   }
+  },
+  {
+   "id": "is-2062-2011",
+   "designation": "IS 2062",
+   "year": 2011,
+   "number": "IS 2062:2011",
+   "title": "Hot rolled medium and high tensile structural steel — Specification",
+   "scope": "Hot-rolled structural steel plates, sections and bars in grades E 250 to E 650.",
+   "category": "Civil",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "structural steel",
+    "e250",
+    "e350",
+    "rolled sections",
+    "plates",
+    "angles",
+    "channels",
+    "beams"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark)",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-2062-2011#grades",
+     "standardId": "is-2062-2011",
+     "ref": null,
+     "heading": "Grades",
+     "text": "Structural steel is designated by grade (for example E 250, E 350) with quality sub-grades for impact properties.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-10500-2012",
+   "designation": "IS 10500",
+   "year": 2012,
+   "number": "IS 10500:2012",
+   "title": "Drinking water — Specification",
+   "scope": "Acceptable and permissible limits for physical, chemical, toxic, radiological and bacteriological parameters of drinking water.",
+   "category": "Water & Environment",
+   "kind": "specification",
+   "status": "amended",
+   "keywords": [
+    "drinking water",
+    "potable water",
+    "water quality",
+    "ph",
+    "tds",
+    "turbidity",
+    "fluoride",
+    "nitrate",
+    "arsenic",
+    "hardness",
+    "coliform",
+    "e. coli"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards",
+     "Ministry of Jal Shakti"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-10500-2012#ph",
+     "standardId": "is-10500-2012",
+     "ref": null,
+     "heading": "pH value",
+     "text": "pH value shall be within 6.5 to 8.5; no relaxation is allowed.",
+     "constraints": [
+      {
+       "parameter": "ph",
+       "dimension": "ph",
+       "unit": "pH",
+       "min": 6.5,
+       "max": 8.5,
+       "condition": "acceptable limit; no relaxation"
+      }
+     ]
+    },
+    {
+     "id": "is-10500-2012#tds",
+     "standardId": "is-10500-2012",
+     "ref": null,
+     "heading": "Total dissolved solids",
+     "text": "Acceptable limit 500 mg/L; permissible limit 2 000 mg/L only in the absence of an alternate source.",
+     "constraints": [
+      {
+       "parameter": "tds",
+       "dimension": "concentration",
+       "unit": "mg/L",
+       "min": null,
+       "max": 500,
+       "condition": "acceptable limit (2 000 mg/L permissible only in the absence of an alternate source)"
+      }
+     ]
+    },
+    {
+     "id": "is-10500-2012#turbidity",
+     "standardId": "is-10500-2012",
+     "ref": null,
+     "heading": "Turbidity",
+     "text": "Acceptable limit 1 NTU; permissible limit 5 NTU in the absence of an alternate source.",
+     "constraints": [
+      {
+       "parameter": "turbidity",
+       "dimension": "turbidity",
+       "unit": "NTU",
+       "min": null,
+       "max": 1,
+       "condition": "acceptable limit (5 NTU permissible in the absence of an alternate source)"
+      }
+     ]
+    },
+    {
+     "id": "is-10500-2012#fluoride",
+     "standardId": "is-10500-2012",
+     "ref": null,
+     "heading": "Fluoride",
+     "text": "Acceptable limit 1.0 mg/L; permissible limit 1.5 mg/L in the absence of an alternate source.",
+     "constraints": [
+      {
+       "parameter": "fluoride",
+       "dimension": "concentration",
+       "unit": "mg/L",
+       "min": null,
+       "max": 1,
+       "condition": "acceptable limit (1.5 mg/L permissible in the absence of an alternate source)"
+      }
+     ]
+    },
+    {
+     "id": "is-10500-2012#nitrate",
+     "standardId": "is-10500-2012",
+     "ref": null,
+     "heading": "Nitrate",
+     "text": "Nitrate (as NO3) shall not exceed 45 mg/L; no relaxation.",
+     "constraints": [
+      {
+       "parameter": "nitrate",
+       "dimension": "concentration",
+       "unit": "mg/L",
+       "min": null,
+       "max": 45,
+       "condition": "no relaxation"
+      }
+     ]
+    },
+    {
+     "id": "is-10500-2012#chloride",
+     "standardId": "is-10500-2012",
+     "ref": null,
+     "heading": "Chloride",
+     "text": "Acceptable limit 250 mg/L; permissible limit 1 000 mg/L in the absence of an alternate source.",
+     "constraints": [
+      {
+       "parameter": "chloride",
+       "dimension": "concentration",
+       "unit": "mg/L",
+       "min": null,
+       "max": 250,
+       "condition": "acceptable limit (1 000 mg/L permissible in the absence of an alternate source)"
+      }
+     ]
+    },
+    {
+     "id": "is-10500-2012#hardness",
+     "standardId": "is-10500-2012",
+     "ref": null,
+     "heading": "Total hardness",
+     "text": "Total hardness (as CaCO3) acceptable limit 200 mg/L; permissible limit 600 mg/L in the absence of an alternate source.",
+     "constraints": [
+      {
+       "parameter": "total_hardness",
+       "dimension": "concentration",
+       "unit": "mg/L",
+       "min": null,
+       "max": 200,
+       "condition": "acceptable limit (600 mg/L permissible in the absence of an alternate source)"
+      }
+     ]
+    },
+    {
+     "id": "is-10500-2012#arsenic",
+     "standardId": "is-10500-2012",
+     "ref": null,
+     "heading": "Arsenic",
+     "text": "Arsenic (as As) acceptable limit 0.01 mg/L.",
+     "constraints": [
+      {
+       "parameter": "arsenic",
+       "dimension": "concentration",
+       "unit": "mg/L",
+       "min": null,
+       "max": 0.01,
+       "condition": "acceptable limit; verify amendment status of any relaxation"
+      }
+     ]
+    },
+    {
+     "id": "is-10500-2012#bacteriological",
+     "standardId": "is-10500-2012",
+     "ref": null,
+     "heading": "Bacteriological quality",
+     "text": "E. coli or thermotolerant coliform bacteria shall not be detectable in any 100 mL sample.",
+     "constraints": []
+    },
+    {
+     "id": "is-10500-2012#methods",
+     "standardId": "is-10500-2012",
+     "ref": null,
+     "heading": "Methods of test",
+     "text": "Parameters are tested by the referenced methods, chiefly the IS 3025 series for physical and chemical parameters and IS 1622 for microbiological examination.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "test_method",
+     "label": "Testing arrangement",
+     "rationale": "Conformity to the limits is only demonstrable if sampling, laboratory and test methods are specified.",
+     "severity": "medium",
+     "repairTemplate": "Treated water shall be sampled and tested at [frequency] in an accredited laboratory using the IS 3025 series and IS 1622 methods referenced in {standard}.",
+     "clauseId": "is-10500-2012#methods"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Amendments have been issued to this edition; limits shown are the commonly cited acceptable limits — verify current amendment status."
+   }
+  },
+  {
+   "id": "is-3025",
+   "designation": "IS 3025",
+   "year": 1986,
+   "number": "IS 3025 (series)",
+   "title": "Methods of sampling and test (physical and chemical) for water and wastewater (all parts)",
+   "scope": "Multi-part series of sampling and physico-chemical test methods for water and wastewater.",
+   "category": "Water & Environment",
+   "kind": "test_method",
+   "status": "current",
+   "keywords": [
+    "water testing",
+    "sampling",
+    "physical tests",
+    "chemical tests",
+    "wastewater",
+    "methods of test",
+    "ph",
+    "tds",
+    "turbidity"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-3025#series",
+     "standardId": "is-3025",
+     "ref": null,
+     "heading": "Test methods",
+     "text": "Each part specifies a sampling or test method for a physical or chemical parameter of water, such as pH, turbidity, dissolved solids, hardness or fluoride.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Multi-part series; individual parts have different publication years. Year shown is nominal."
+   }
+  },
+  {
+   "id": "is-1622-1981",
+   "designation": "IS 1622",
+   "year": 1981,
+   "number": "IS 1622:1981",
+   "title": "Methods of sampling and microbiological examination of water",
+   "scope": "Sampling and microbiological examination procedures for water quality assessment.",
+   "category": "Water & Environment",
+   "kind": "test_method",
+   "status": "reaffirmed",
+   "keywords": [
+    "microbiological",
+    "coliform",
+    "e. coli",
+    "bacteriological",
+    "sampling",
+    "water testing"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": null,
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "Low"
+   },
+   "clauses": [
+    {
+     "id": "is-1622-1981#sampling",
+     "standardId": "is-1622-1981",
+     "ref": null,
+     "heading": "Sampling",
+     "text": "Samples for microbiological examination are collected in sterile containers and protected from contamination during transport.",
+     "constraints": []
+    }
+   ],
+   "checklist": [],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  },
+  {
+   "id": "is-14543-2016",
+   "designation": "IS 14543",
+   "year": 2016,
+   "number": "IS 14543:2016",
+   "title": "Packaged drinking water (other than packaged natural mineral water) — Specification",
+   "scope": "Requirements for packaged drinking water, including quality limits, packaging, labelling and tests.",
+   "category": "Water & Environment",
+   "kind": "product",
+   "status": "current",
+   "keywords": [
+    "packaged drinking water",
+    "bottled water",
+    "packaged water",
+    "water quality",
+    "labelling"
+   ],
+   "aliases": [],
+   "certification": {
+    "scheme": "BIS product certification (ISI mark) — required for packaged drinking water under food-safety regulations",
+    "bodies": [
+     "Bureau of Indian Standards"
+    ],
+    "relevance": "High"
+   },
+   "clauses": [
+    {
+     "id": "is-14543-2016#requirements",
+     "standardId": "is-14543-2016",
+     "ref": null,
+     "heading": "Requirements",
+     "text": "Packaged drinking water shall meet the specified physical, chemical and microbiological limits, with testing by the IS 3025 series and IS 1622 methods.",
+     "constraints": []
+    },
+    {
+     "id": "is-14543-2016#certification",
+     "standardId": "is-14543-2016",
+     "ref": null,
+     "heading": "Conformity",
+     "text": "Product certification with the Standard Mark is operated by BIS for packaged drinking water.",
+     "constraints": []
+    }
+   ],
+   "checklist": [
+    {
+     "parameter": "conformity_evidence",
+     "label": "BIS certification",
+     "rationale": "Packaged drinking water is sold under the BIS Standard Mark.",
+     "severity": "high",
+     "repairTemplate": "Packaged drinking water shall bear the BIS Standard Mark under a valid licence for {standard}.",
+     "clauseId": "is-14543-2016#certification"
+    }
+   ],
+   "source": {
+    "kind": "curated-seed",
+    "verified": false,
+    "note": "Compiled from public catalogue metadata; verify against the official BIS publication."
+   }
+  }
+ ],
+ "relationships": [
+  {
+   "id": "rel-001",
+   "type": "REQUIRES",
+   "fromId": "is-iec-61439-2-2020",
+   "toId": "is-iec-61439-1-2020",
+   "clauseId": "is-iec-61439-2-2020#scope",
+   "confidence": 0.95,
+   "method": "curated",
+   "note": "Part 2 is read together with the Part 1 general rules."
+  },
+  {
+   "id": "rel-002",
+   "type": "REFERENCES",
+   "fromId": "is-iec-61439-1-2020",
+   "toId": "is-iec-60529-2001",
+   "clauseId": "is-iec-61439-1-2020#ip",
+   "confidence": 0.9,
+   "method": "curated",
+   "note": "Degree of protection is declared as an IP code per IS/IEC 60529."
+  },
+  {
+   "id": "rel-003",
+   "type": "SUPERSEDES",
+   "fromId": "is-iec-61439-1-2020",
+   "toId": "is-8623-1-1993",
+   "clauseId": null,
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "The IS/IEC 61439 series replaced IS 8623 for LV assemblies."
+  },
+  {
+   "id": "rel-004",
+   "type": "SUPERSEDES",
+   "fromId": "is-iec-60898-1-2002",
+   "toId": "is-8828-1996",
+   "clauseId": null,
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "IS/IEC 60898-1 replaced IS 8828 for MCBs."
+  },
+  {
+   "id": "rel-005",
+   "type": "SUPERSEDES",
+   "fromId": "is-iec-60947-2-2003",
+   "toId": "is-13947-2-1993",
+   "clauseId": null,
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "IS/IEC 60947-2 replaced IS 13947 (Part 2) for LV circuit-breakers."
+  },
+  {
+   "id": "rel-006",
+   "type": "REQUIRES",
+   "fromId": "is-732-2019",
+   "toId": "is-3043-2018",
+   "clauseId": "is-732-2019#earthing",
+   "confidence": 0.9,
+   "method": "curated",
+   "note": "Earthing arrangements are designed to IS 3043."
+  },
+  {
+   "id": "rel-007",
+   "type": "REFERENCES",
+   "fromId": "is-732-2019",
+   "toId": "is-12640-1-2016",
+   "clauseId": "is-732-2019#rcd",
+   "confidence": 0.8,
+   "method": "curated",
+   "note": "RCDs for additional protection."
+  },
+  {
+   "id": "rel-008",
+   "type": "REFERENCES",
+   "fromId": "is-732-2019",
+   "toId": "is-694-2010",
+   "clauseId": "is-732-2019#cables",
+   "confidence": 0.75,
+   "method": "curated",
+   "note": "Building wires."
+  },
+  {
+   "id": "rel-009",
+   "type": "REFERENCES",
+   "fromId": "is-732-2019",
+   "toId": "is-1554-1-1988",
+   "clauseId": "is-732-2019#cables",
+   "confidence": 0.75,
+   "method": "curated",
+   "note": "Power cables."
+  },
+  {
+   "id": "rel-010",
+   "type": "REFERENCES",
+   "fromId": "is-732-2019",
+   "toId": "is-iec-60898-1-2002",
+   "clauseId": "is-732-2019#breakers",
+   "confidence": 0.8,
+   "method": "curated",
+   "note": "MCBs for final circuits."
+  },
+  {
+   "id": "rel-011",
+   "type": "TESTED_BY",
+   "fromId": "is-694-2010",
+   "toId": "is-10810",
+   "clauseId": "is-694-2010#tests",
+   "confidence": 0.9,
+   "method": "curated",
+   "note": "Cable tests per IS 10810."
+  },
+  {
+   "id": "rel-012",
+   "type": "REQUIRES",
+   "fromId": "is-694-2010",
+   "toId": "is-8130-2013",
+   "clauseId": "is-694-2010#conductors",
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "Conductors per IS 8130."
+  },
+  {
+   "id": "rel-013",
+   "type": "TESTED_BY",
+   "fromId": "is-1554-1-1988",
+   "toId": "is-10810",
+   "clauseId": "is-1554-1-1988#tests",
+   "confidence": 0.9,
+   "method": "curated",
+   "note": "Cable tests per IS 10810."
+  },
+  {
+   "id": "rel-014",
+   "type": "REQUIRES",
+   "fromId": "is-1554-1-1988",
+   "toId": "is-8130-2013",
+   "clauseId": "is-1554-1-1988#conductors",
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "Conductors per IS 8130."
+  },
+  {
+   "id": "rel-015",
+   "type": "TESTED_BY",
+   "fromId": "is-7098-1-1988",
+   "toId": "is-10810",
+   "clauseId": "is-7098-1-1988#tests",
+   "confidence": 0.9,
+   "method": "curated",
+   "note": "Cable tests per IS 10810."
+  },
+  {
+   "id": "rel-016",
+   "type": "REQUIRES",
+   "fromId": "is-7098-1-1988",
+   "toId": "is-8130-2013",
+   "clauseId": "is-7098-1-1988#conductors",
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "Conductors per IS 8130."
+  },
+  {
+   "id": "rel-017",
+   "type": "REFERENCES",
+   "fromId": "is-325-1996",
+   "toId": "is-12615-2018",
+   "clauseId": "is-325-1996#efficiency",
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "Efficiency classes per IS 12615."
+  },
+  {
+   "id": "rel-018",
+   "type": "REFERENCES",
+   "fromId": "is-325-1996",
+   "toId": "is-iec-60529-2001",
+   "clauseId": "is-325-1996#enclosure",
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "Motor enclosure IP code."
+  },
+  {
+   "id": "rel-019",
+   "type": "TESTED_BY",
+   "fromId": "is-325-1996",
+   "toId": "is-4029-2010",
+   "clauseId": "is-325-1996#tests",
+   "confidence": 0.9,
+   "method": "curated",
+   "note": "Motor tests per IS 4029."
+  },
+  {
+   "id": "rel-020",
+   "type": "RELATED_TO",
+   "fromId": "is-12615-2018",
+   "toId": "is-325-1996",
+   "clauseId": null,
+   "confidence": 0.7,
+   "method": "curated",
+   "note": "Efficiency classes apply to induction motors."
+  },
+  {
+   "id": "rel-021",
+   "type": "TESTED_BY",
+   "fromId": "is-1520-1980",
+   "toId": "is-9137-1978",
+   "clauseId": "is-1520-1980#tests",
+   "confidence": 0.9,
+   "method": "curated",
+   "note": "Pump performance tests per IS 9137."
+  },
+  {
+   "id": "rel-022",
+   "type": "REQUIRES",
+   "fromId": "is-8034-2018",
+   "toId": "is-9283-2013",
+   "clauseId": "is-8034-2018#motor",
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "Pumpset motor per IS 9283."
+  },
+  {
+   "id": "rel-023",
+   "type": "TESTED_BY",
+   "fromId": "is-8034-2018",
+   "toId": "is-9137-1978",
+   "clauseId": "is-8034-2018#tests",
+   "confidence": 0.6,
+   "method": "curated",
+   "note": "Performance testing practice follows IS 9137 (relationship not verified)."
+  },
+  {
+   "id": "rel-024",
+   "type": "TESTED_BY",
+   "fromId": "is-1180-1-2014",
+   "toId": "is-2026-1-2011",
+   "clauseId": "is-1180-1-2014#tests",
+   "confidence": 0.9,
+   "method": "curated",
+   "note": "Transformer tests per IS 2026."
+  },
+  {
+   "id": "rel-025",
+   "type": "REQUIRES",
+   "fromId": "is-456-2000",
+   "toId": "is-269-2015",
+   "clauseId": "is-456-2000#materials",
+   "confidence": 0.8,
+   "method": "curated",
+   "note": "Cement per IS 269."
+  },
+  {
+   "id": "rel-026",
+   "type": "REQUIRES",
+   "fromId": "is-456-2000",
+   "toId": "is-383-2016",
+   "clauseId": "is-456-2000#materials",
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "Aggregates per IS 383."
+  },
+  {
+   "id": "rel-027",
+   "type": "REQUIRES",
+   "fromId": "is-456-2000",
+   "toId": "is-1786-2008",
+   "clauseId": "is-456-2000#materials",
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "Reinforcement per IS 1786."
+  },
+  {
+   "id": "rel-028",
+   "type": "REFERENCES",
+   "fromId": "is-456-2000",
+   "toId": "is-10262-2019",
+   "clauseId": "is-456-2000#mix-design",
+   "confidence": 0.75,
+   "method": "curated",
+   "note": "Mix proportioning guidelines."
+  },
+  {
+   "id": "rel-029",
+   "type": "TESTED_BY",
+   "fromId": "is-456-2000",
+   "toId": "is-516-1959",
+   "clauseId": "is-456-2000#sampling",
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "IS 456 cites IS 516 for strength tests."
+  },
+  {
+   "id": "rel-030",
+   "type": "SUPERSEDES",
+   "fromId": "is-516-1-1-2021",
+   "toId": "is-516-1959",
+   "clauseId": null,
+   "confidence": 0.7,
+   "method": "curated",
+   "note": "Revision of IS 516 into parts (not verified)."
+  },
+  {
+   "id": "rel-031",
+   "type": "SUPERSEDES",
+   "fromId": "is-269-2015",
+   "toId": "is-8112-1989",
+   "clauseId": "is-269-2015#grades",
+   "confidence": 0.9,
+   "method": "curated",
+   "note": "IS 269:2015 consolidates 43 grade OPC."
+  },
+  {
+   "id": "rel-032",
+   "type": "SUPERSEDES",
+   "fromId": "is-269-2015",
+   "toId": "is-12269-1987",
+   "clauseId": "is-269-2015#grades",
+   "confidence": 0.9,
+   "method": "curated",
+   "note": "IS 269:2015 consolidates 53 grade OPC."
+  },
+  {
+   "id": "rel-033",
+   "type": "RELATED_TO",
+   "fromId": "is-10262-2019",
+   "toId": "is-456-2000",
+   "clauseId": "is-10262-2019#procedure",
+   "confidence": 0.7,
+   "method": "curated",
+   "note": "Mix design consistent with IS 456 durability rules."
+  },
+  {
+   "id": "rel-034",
+   "type": "TESTED_BY",
+   "fromId": "is-10500-2012",
+   "toId": "is-3025",
+   "clauseId": "is-10500-2012#methods",
+   "confidence": 0.9,
+   "method": "curated",
+   "note": "Physical/chemical tests per IS 3025."
+  },
+  {
+   "id": "rel-035",
+   "type": "TESTED_BY",
+   "fromId": "is-10500-2012",
+   "toId": "is-1622-1981",
+   "clauseId": "is-10500-2012#methods",
+   "confidence": 0.9,
+   "method": "curated",
+   "note": "Microbiological tests per IS 1622."
+  },
+  {
+   "id": "rel-036",
+   "type": "TESTED_BY",
+   "fromId": "is-14543-2016",
+   "toId": "is-3025",
+   "clauseId": "is-14543-2016#requirements",
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "Physical/chemical tests per IS 3025."
+  },
+  {
+   "id": "rel-037",
+   "type": "TESTED_BY",
+   "fromId": "is-14543-2016",
+   "toId": "is-1622-1981",
+   "clauseId": "is-14543-2016#requirements",
+   "confidence": 0.85,
+   "method": "curated",
+   "note": "Microbiological tests per IS 1622."
+  },
+  {
+   "id": "rel-038",
+   "type": "RELATED_TO",
+   "fromId": "is-14543-2016",
+   "toId": "is-10500-2012",
+   "clauseId": null,
+   "confidence": 0.7,
+   "method": "curated",
+   "note": "Both specify drinking-water quality."
+  },
+  {
+   "id": "rel-039",
+   "type": "RELATED_TO",
+   "fromId": "is-1786-2008",
+   "toId": "is-456-2000",
+   "clauseId": null,
+   "confidence": 0.7,
+   "method": "curated",
+   "note": "Reinforcement for concrete structures."
+  },
+  {
+   "id": "rel-040",
+   "type": "RELATED_TO",
+   "fromId": "is-383-2016",
+   "toId": "is-456-2000",
+   "clauseId": null,
+   "confidence": 0.7,
+   "method": "curated",
+   "note": "Aggregates for concrete."
+  }
+ ],
+ "events": [
+  {
+   "id": "ev-61439",
+   "standardId": "is-8623-1-1993",
+   "date": null,
+   "kind": "supersession",
+   "summary": "IS 8623 (Part 1) replaced by the IS/IEC 61439 series for low-voltage switchgear and controlgear assemblies.",
+   "severity": "high",
+   "replacedById": "is-iec-61439-1-2020"
+  },
+  {
+   "id": "ev-60898",
+   "standardId": "is-8828-1996",
+   "date": null,
+   "kind": "supersession",
+   "summary": "IS 8828 replaced by IS/IEC 60898-1 for miniature circuit-breakers.",
+   "severity": "high",
+   "replacedById": "is-iec-60898-1-2002"
+  },
+  {
+   "id": "ev-60947",
+   "standardId": "is-13947-2-1993",
+   "date": null,
+   "kind": "supersession",
+   "summary": "IS 13947 (Part 2) replaced by IS/IEC 60947-2 for LV circuit-breakers.",
+   "severity": "high",
+   "replacedById": "is-iec-60947-2-2003"
+  },
+  {
+   "id": "ev-3043",
+   "standardId": "is-3043-2018",
+   "date": "2018",
+   "kind": "revision",
+   "summary": "Second revision of the earthing code published, replacing IS 3043:1987.",
+   "severity": "medium"
+  },
+  {
+   "id": "ev-732",
+   "standardId": "is-732-2019",
+   "date": "2019",
+   "kind": "revision",
+   "summary": "Fourth revision of the wiring code published, replacing IS 732:1989.",
+   "severity": "medium"
+  },
+  {
+   "id": "ev-383",
+   "standardId": "is-383-2016",
+   "date": "2016",
+   "kind": "revision",
+   "summary": "Third revision published, adding manufactured and recycled aggregates; replaces IS 383:1970.",
+   "severity": "medium"
+  },
+  {
+   "id": "ev-1786",
+   "standardId": "is-1786-2008",
+   "date": "2008",
+   "kind": "revision",
+   "summary": "Fourth revision published with D grades of enhanced ductility; replaces IS 1786:1985.",
+   "severity": "medium"
+  },
+  {
+   "id": "ev-269",
+   "standardId": "is-269-2015",
+   "date": "2015",
+   "kind": "revision",
+   "summary": "IS 269 revised to cover 33, 43 and 53 grade OPC, replacing IS 8112 and IS 12269.",
+   "severity": "high"
+  },
+  {
+   "id": "ev-10262",
+   "standardId": "is-10262-2019",
+   "date": "2019",
+   "kind": "revision",
+   "summary": "Second revision of the mix-proportioning guidelines, replacing IS 10262:2009.",
+   "severity": "low"
+  },
+  {
+   "id": "ev-516",
+   "standardId": "is-516-1959",
+   "date": null,
+   "kind": "supersession",
+   "summary": "Strength test methods revised as IS 516 (Part 1/Sec 1) (supersession not verified).",
+   "severity": "medium",
+   "replacedById": "is-516-1-1-2021"
+  },
+  {
+   "id": "ev-10500-amd",
+   "standardId": "is-10500-2012",
+   "date": null,
+   "kind": "amendment",
+   "summary": "Amendments have been issued to IS 10500:2012; verify the current amendment status of limits cited in specifications.",
+   "severity": "medium"
+  },
+  {
+   "id": "ev-456-amd",
+   "standardId": "is-456-2000",
+   "date": null,
+   "kind": "amendment",
+   "summary": "Amendments have been issued to IS 456:2000; verify the latest amendment when citing durability tables.",
+   "severity": "medium"
+  },
+  {
+   "id": "ev-8112",
+   "standardId": "is-8112-1989",
+   "date": "2015",
+   "kind": "supersession",
+   "summary": "43 grade OPC now specified by IS 269:2015.",
+   "severity": "high",
+   "replacedById": "is-269-2015"
+  },
+  {
+   "id": "ev-12269",
+   "standardId": "is-12269-1987",
+   "date": "2015",
+   "kind": "supersession",
+   "summary": "53 grade OPC now specified by IS 269:2015.",
+   "severity": "high",
+   "replacedById": "is-269-2015"
+  }
+ ],
+ "priorEditions": [
+  {
+   "designation": "IS 3043",
+   "year": 1987,
+   "replacedById": "is-3043-2018"
+  },
+  {
+   "designation": "IS 732",
+   "year": 1989,
+   "replacedById": "is-732-2019"
+  },
+  {
+   "designation": "IS 383",
+   "year": 1970,
+   "replacedById": "is-383-2016"
+  },
+  {
+   "designation": "IS 1786",
+   "year": 1985,
+   "replacedById": "is-1786-2008"
+  },
+  {
+   "designation": "IS 269",
+   "year": 1989,
+   "replacedById": "is-269-2015"
+  },
+  {
+   "designation": "IS 10262",
+   "year": 2009,
+   "replacedById": "is-10262-2019"
+  },
+  {
+   "designation": "IS 10500",
+   "year": 1991,
+   "replacedById": "is-10500-2012"
+  },
+  {
+   "designation": "IS 694",
+   "year": 1990,
+   "replacedById": "is-694-2010"
+  }
+ ]
+}

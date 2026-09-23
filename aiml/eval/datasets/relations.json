@@ -1,0 +1,615 @@
+{
+  "description": "Relationship extraction. For every standard reference in a sentence, the relation the sentence expresses toward it (REFERENCES for a bare mention or the sentence subject). Designations are canonical (as produced by the reference parser).",
+  "sentences": [
+    {
+      "id": "x1",
+      "split": "dev",
+      "text": "Tests shall be carried out in accordance with IS 10810.",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 10810"
+        ]
+      ]
+    },
+    {
+      "id": "x2",
+      "split": "dev",
+      "text": "Cables shall conform to IS 1554 (Part 1).",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 1554 (Part 1)"
+        ]
+      ]
+    },
+    {
+      "id": "x3",
+      "split": "dev",
+      "text": "This standard supersedes IS 8623 (Part 1):1993.",
+      "relations": [
+        [
+          "SUPERSEDES",
+          "IS 8623 (Part 1)"
+        ]
+      ]
+    },
+    {
+      "id": "x4",
+      "split": "dev",
+      "text": "Performance tests shall be conducted as per IS 9137.",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 9137"
+        ]
+      ]
+    },
+    {
+      "id": "x5",
+      "split": "dev",
+      "text": "The motor shall comply with IS 325 and the efficiency class shall be as per IS 12615.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 325"
+        ],
+        [
+          "REQUIRES",
+          "IS 12615"
+        ]
+      ]
+    },
+    {
+      "id": "x6",
+      "split": "dev",
+      "text": "Water quality shall meet the requirements of IS 10500.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 10500"
+        ]
+      ]
+    },
+    {
+      "id": "x7",
+      "split": "dev",
+      "text": "Samples shall be examined by the methods of IS 1622.",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 1622"
+        ]
+      ]
+    },
+    {
+      "id": "x8",
+      "split": "dev",
+      "text": "Earthing shall be designed in accordance with IS 3043.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 3043"
+        ]
+      ]
+    },
+    {
+      "id": "x9",
+      "split": "dev",
+      "text": "This part shall be read in conjunction with IS/IEC 61439-1.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS/IEC 61439-1"
+        ]
+      ]
+    },
+    {
+      "id": "x10",
+      "split": "dev",
+      "text": "See also IS 732.",
+      "relations": [
+        [
+          "RELATED_TO",
+          "IS 732"
+        ]
+      ]
+    },
+    {
+      "id": "x11",
+      "split": "dev",
+      "text": "Amendment No. 2 to IS 456 revises Table 5.",
+      "relations": [
+        [
+          "AMENDED_BY",
+          "IS 456"
+        ]
+      ]
+    },
+    {
+      "id": "x12",
+      "split": "dev",
+      "text": "The degree of protection shall be verified by the tests of IS/IEC 60529.",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS/IEC 60529"
+        ]
+      ]
+    },
+    {
+      "id": "x13",
+      "split": "dev",
+      "text": "IS 269:2015 replaces IS 8112 and IS 12269.",
+      "relations": [
+        [
+          "REFERENCES",
+          "IS 269"
+        ],
+        [
+          "SUPERSEDES",
+          "IS 8112"
+        ],
+        [
+          "SUPERSEDES",
+          "IS 12269"
+        ]
+      ]
+    },
+    {
+      "id": "x14",
+      "split": "dev",
+      "text": "Cement conforming to IS 269, aggregates conforming to IS 383 and steel conforming to IS 1786 shall be used.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 269"
+        ],
+        [
+          "REQUIRES",
+          "IS 383"
+        ],
+        [
+          "REQUIRES",
+          "IS 1786"
+        ]
+      ]
+    },
+    {
+      "id": "x15",
+      "split": "dev",
+      "text": "Compressive strength shall be determined as per IS 516 (Part 1/Sec 1).",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 516 (Part 1/Sec 1)"
+        ]
+      ]
+    },
+    {
+      "id": "x16",
+      "split": "dev",
+      "text": "The contractor shall refer to IS 10262 for mix proportioning.",
+      "relations": [
+        [
+          "REFERENCES",
+          "IS 10262"
+        ]
+      ]
+    },
+    {
+      "id": "x17",
+      "split": "dev",
+      "text": "Transformers conforming to IS 1180 (Part 1) shall be type tested as per IS 2026 (Part 1).",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 1180 (Part 1)"
+        ],
+        [
+          "TESTED_BY",
+          "IS 2026 (Part 1)"
+        ]
+      ]
+    },
+    {
+      "id": "x18",
+      "split": "dev",
+      "text": "MCBs as per IS/IEC 60898-1 shall be provided.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS/IEC 60898-1"
+        ]
+      ]
+    },
+    {
+      "id": "x19",
+      "split": "dev",
+      "text": "The requirements of IS 8828 are now covered by IS/IEC 60898-1.",
+      "relations": [
+        [
+          "REFERENCES",
+          "IS 8828"
+        ],
+        [
+          "SUPERSEDES",
+          "IS/IEC 60898-1"
+        ]
+      ]
+    },
+    {
+      "id": "x20",
+      "split": "dev",
+      "text": "Insulation resistance shall be measured using the method in IS 10810 (Part 43).",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 10810 (Part 43)"
+        ]
+      ]
+    },
+    {
+      "id": "x21",
+      "split": "test",
+      "text": "Aggregates shall generally comply with IS 383 except where otherwise specified.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 383"
+        ]
+      ]
+    },
+    {
+      "id": "x22",
+      "split": "test",
+      "text": "Fire extinguishers are outside the scope; refer IS 2190.",
+      "relations": [
+        [
+          "REFERENCES",
+          "IS 2190"
+        ]
+      ]
+    },
+    {
+      "id": "x23",
+      "split": "test",
+      "text": "Water shall be sampled as per IS 3025 (Part 1) and analysed as per IS 3025 (Part 11).",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 3025 (Part 1)"
+        ],
+        [
+          "TESTED_BY",
+          "IS 3025 (Part 11)"
+        ]
+      ]
+    },
+    {
+      "id": "x24",
+      "split": "test",
+      "text": "Equipment shall be designed to IS 325 and tested to IS 4029.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 325"
+        ],
+        [
+          "TESTED_BY",
+          "IS 4029"
+        ]
+      ]
+    },
+    {
+      "id": "x25",
+      "split": "test",
+      "text": "Galvanising shall conform to IS 4759.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 4759"
+        ]
+      ]
+    },
+    {
+      "id": "x26",
+      "split": "test",
+      "text": "This specification is related to IS 14543.",
+      "relations": [
+        [
+          "RELATED_TO",
+          "IS 14543"
+        ]
+      ]
+    },
+    {
+      "id": "x27",
+      "split": "test",
+      "text": "Verification of the degree of protection shall follow IS/IEC 60529.",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS/IEC 60529"
+        ]
+      ]
+    },
+    {
+      "id": "x28",
+      "split": "test",
+      "text": "Conductor resistance shall be per IS 8130.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 8130"
+        ]
+      ]
+    },
+    {
+      "id": "x29",
+      "split": "test",
+      "text": "The panel builder shall submit type test certificates referring to IS/IEC 61439-2.",
+      "relations": [
+        [
+          "REFERENCES",
+          "IS/IEC 61439-2"
+        ]
+      ]
+    },
+    {
+      "id": "x30",
+      "split": "test",
+      "text": "Tender documents based on IS 1520 shall be revised.",
+      "relations": [
+        [
+          "REFERENCES",
+          "IS 1520"
+        ]
+      ]
+    },
+    {
+      "id": "x31",
+      "split": "test",
+      "text": "Motors shall have IE3 efficiency in accordance with IS 12615:2018.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 12615"
+        ]
+      ]
+    },
+    {
+      "id": "x32",
+      "split": "test",
+      "text": "Pumps shall be tested as per IS 9137 and IS 1520.",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 9137"
+        ],
+        [
+          "TESTED_BY",
+          "IS 1520"
+        ]
+      ]
+    },
+    {
+      "id": "x33",
+      "split": "test",
+      "text": "The steel shall be tested for elongation as specified in IS 1786.",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 1786"
+        ]
+      ]
+    },
+    {
+      "id": "x34",
+      "split": "test",
+      "text": "Cables shall be laid as per IS 1255.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 1255"
+        ]
+      ]
+    },
+    {
+      "id": "x35",
+      "split": "test",
+      "text": "IS 732 is the governing code.",
+      "relations": [
+        [
+          "REFERENCES",
+          "IS 732"
+        ]
+      ]
+    },
+    {
+      "id": "x36",
+      "split": "test",
+      "text": "RCCBs shall comply with IS 12640 (Part 1):2016.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 12640 (Part 1)"
+        ]
+      ]
+    },
+    {
+      "id": "x37",
+      "split": "test",
+      "text": "The water shall be examined for coliforms following IS 1622.",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 1622"
+        ]
+      ]
+    },
+    {
+      "id": "x38",
+      "split": "test",
+      "text": "Where specified, use IS 7098 (Part 1) cables instead of IS 1554 (Part 1) cables.",
+      "relations": [
+        [
+          "REFERENCES",
+          "IS 7098 (Part 1)"
+        ],
+        [
+          "REFERENCES",
+          "IS 1554 (Part 1)"
+        ]
+      ]
+    },
+    {
+      "id": "y1",
+      "split": "heldout",
+      "text": "Pumps shall be tested in accordance with IS 9137:1978.",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 9137"
+        ]
+      ]
+    },
+    {
+      "id": "y2",
+      "split": "heldout",
+      "text": "Cables shall conform to IS 694 and IS 1554 (Part 1).",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 694"
+        ],
+        [
+          "REQUIRES",
+          "IS 1554 (Part 1)"
+        ]
+      ]
+    },
+    {
+      "id": "y3",
+      "split": "heldout",
+      "text": "IS/IEC 60947-2 supersedes IS 13947 (Part 2).",
+      "relations": [
+        [
+          "REFERENCES",
+          "IS/IEC 60947-2"
+        ],
+        [
+          "SUPERSEDES",
+          "IS 13947 (Part 2)"
+        ]
+      ]
+    },
+    {
+      "id": "y4",
+      "split": "heldout",
+      "text": "Motor efficiency shall be determined by the method given in IS 4029.",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 4029"
+        ]
+      ]
+    },
+    {
+      "id": "y5",
+      "split": "heldout",
+      "text": "For design of earthing refer IS 3043.",
+      "relations": [
+        [
+          "REFERENCES",
+          "IS 3043"
+        ]
+      ]
+    },
+    {
+      "id": "y6",
+      "split": "heldout",
+      "text": "The transformer shall comply with IS 1180 (Part 1):2014.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 1180 (Part 1)"
+        ]
+      ]
+    },
+    {
+      "id": "y7",
+      "split": "heldout",
+      "text": "Concrete shall be sampled and tested as per IS 516.",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 516"
+        ]
+      ]
+    },
+    {
+      "id": "y8",
+      "split": "heldout",
+      "text": "Aggregates, cement and water shall meet IS 383, IS 269 and IS 456 respectively.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS 383"
+        ],
+        [
+          "REQUIRES",
+          "IS 269"
+        ],
+        [
+          "REQUIRES",
+          "IS 456"
+        ]
+      ]
+    },
+    {
+      "id": "y9",
+      "split": "heldout",
+      "text": "Refer to Amendment No. 1 of IS 10500.",
+      "relations": [
+        [
+          "AMENDED_BY",
+          "IS 10500"
+        ]
+      ]
+    },
+    {
+      "id": "y10",
+      "split": "heldout",
+      "text": "Similar to IS 8034, the pumpset shall carry a rating plate.",
+      "relations": [
+        [
+          "RELATED_TO",
+          "IS 8034"
+        ]
+      ]
+    },
+    {
+      "id": "y11",
+      "split": "heldout",
+      "text": "Water quality monitoring shall use the methods of IS 3025 (Part 10).",
+      "relations": [
+        [
+          "TESTED_BY",
+          "IS 3025 (Part 10)"
+        ]
+      ]
+    },
+    {
+      "id": "y12",
+      "split": "heldout",
+      "text": "The switchboard is designed to IS/IEC 61439-2.",
+      "relations": [
+        [
+          "REQUIRES",
+          "IS/IEC 61439-2"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5189 @@
+{
+  "summary": {
+    "txt": {
+      "identification": {
+        "precision": 0.929,
+        "recall": 0.96,
+        "f1": 0.944,
+        "tp": 169,
+        "fp": 13,
+        "fn": 7
+      },
+      "classification": {
+        "accuracy": 0.692,
+        "macroF1": 0.676,
+        "perClassF1": {
+          "general": 0.435,
+          "environmental": 0.833,
+          "material": 0.7,
+          "electrical": 0.698,
+          "safety": 0.636,
+          "dimensional": 0.625,
+          "installation": 0.0,
+          "testing": 0.788,
+          "certification": 0.833,
+          "documentation": 0.706,
+          "performance": 0.952,
+          "quality": 0.909
+        },
+        "n": 169
+      },
+      "attributes": {
+        "precision": 0.953,
+        "recall": 0.962,
+        "f1": 0.958,
+        "tp": 102,
+        "fp": 5,
+        "fn": 4
+      },
+      "findings": {
+        "overall": {
+          "precision": 0.657,
+          "recall": 0.92,
+          "f1": 0.767,
+          "tp": 23,
+          "fp": 12,
+          "fn": 2
+        },
+        "byGroup": {
+          "conflict": {
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.889,
+            "tp": 8,
+            "fp": 2,
+            "fn": 0
+          },
+          "gap": {
+            "precision": 0.333,
+            "recall": 0.75,
+            "f1": 0.462,
+            "tp": 3,
+            "fp": 6,
+            "fn": 1
+          },
+          "dependency": {
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.667,
+            "tp": 3,
+            "fp": 2,
+            "fn": 1
+          },
+          "outdated": {
+            "precision": 0.889,
+            "recall": 1.0,
+            "f1": 0.941,
+            "tp": 8,
+            "fp": 1,
+            "fn": 0
+          },
+          "certification": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.667,
+            "tp": 1,
+            "fp": 1,
+            "fn": 0
+          }
+        }
+      },
+      "meanLatencyMs": 49.1
+    },
+    "pdf": {
+      "identification": {
+        "precision": 0.918,
+        "recall": 0.96,
+        "f1": 0.939,
+        "tp": 169,
+        "fp": 15,
+        "fn": 7
+      },
+      "classification": {
+        "accuracy": 0.686,
+        "macroF1": 0.673,
+        "perClassF1": {
+          "general": 0.435,
+          "environmental": 0.833,
+          "material": 0.683,
+          "electrical": 0.677,
+          "safety": 0.636,
+          "dimensional": 0.625,
+          "installation": 0.0,
+          "testing": 0.788,
+          "certification": 0.833,
+          "documentation": 0.706,
+          "performance": 0.952,
+          "quality": 0.909
+        },
+        "n": 169
+      },
+      "attributes": {
+        "precision": 0.952,
+        "recall": 0.943,
+        "f1": 0.948,
+        "tp": 100,
+        "fp": 5,
+        "fn": 6
+      },
+      "findings": {
+        "overall": {
+          "precision": 0.647,
+          "recall": 0.88,
+          "f1": 0.746,
+          "tp": 22,
+          "fp": 12,
+          "fn": 3
+        },
+        "byGroup": {
+          "conflict": {
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.889,
+            "tp": 8,
+            "fp": 2,
+            "fn": 0
+          },
+          "gap": {
+            "precision": 0.333,
+            "recall": 0.75,
+            "f1": 0.462,
+            "tp": 3,
+            "fp": 6,
+            "fn": 1
+          },
+          "dependency": {
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.667,
+            "tp": 3,
+            "fp": 2,
+            "fn": 1
+          },
+          "outdated": {
+            "precision": 0.875,
+            "recall": 0.875,
+            "f1": 0.875,
+            "tp": 7,
+            "fp": 1,
+            "fn": 1
+          },
+          "certification": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.667,
+            "tp": 1,
+            "fp": 1,
+            "fn": 0
+          }
+        }
+      },
+      "meanLatencyMs": 138.1
+    },
+    "docx": {
+      "identification": {
+        "precision": 0.929,
+        "recall": 0.966,
+        "f1": 0.947,
+        "tp": 170,
+        "fp": 13,
+        "fn": 6
+      },
+      "classification": {
+        "accuracy": 0.694,
+        "macroF1": 0.677,
+        "perClassF1": {
+          "general": 0.435,
+          "environmental": 0.833,
+          "material": 0.7,
+          "electrical": 0.708,
+          "safety": 0.636,
+          "dimensional": 0.625,
+          "installation": 0.0,
+          "testing": 0.788,
+          "certification": 0.833,
+          "documentation": 0.706,
+          "performance": 0.952,
+          "quality": 0.909
+        },
+        "n": 170
+      },
+      "attributes": {
+        "precision": 0.954,
+        "recall": 0.981,
+        "f1": 0.967,
+        "tp": 104,
+        "fp": 5,
+        "fn": 2
+      },
+      "findings": {
+        "overall": {
+          "precision": 0.657,
+          "recall": 0.92,
+          "f1": 0.767,
+          "tp": 23,
+          "fp": 12,
+          "fn": 2
+        },
+        "byGroup": {
+          "conflict": {
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.889,
+            "tp": 8,
+            "fp": 2,
+            "fn": 0
+          },
+          "gap": {
+            "precision": 0.333,
+            "recall": 0.75,
+            "f1": 0.462,
+            "tp": 3,
+            "fp": 6,
+            "fn": 1
+          },
+          "dependency": {
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.667,
+            "tp": 3,
+            "fp": 2,
+            "fn": 1
+          },
+          "outdated": {
+            "precision": 0.889,
+            "recall": 1.0,
+            "f1": 0.941,
+            "tp": 8,
+            "fp": 1,
+            "fn": 0
+          },
+          "certification": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.667,
+            "tp": 1,
+            "fp": 1,
+            "fn": 0
+          }
+        }
+      },
+      "meanLatencyMs": 72.2
+    }
+  },
+  "retrieval": {
+    "bm25": {
+      "queries": 50,
+      "standard": {
+        "recallAt1": 0.92,
+        "recallAt3": 0.98,
+        "recallAt5": 0.98,
+        "mrr": 0.95,
+        "ndcgAt5": 0.951
+      },
+      "clause": {
+        "recallAt1": 0.8,
+        "recallAt3": 0.96,
+        "mrr": 0.884
+      },
+      "misses": [
+        "bq4: expected is-iec-61439-1-2020, got is-3043-2018, is-iec-61439-1-2020, is-iec-60947-2-2003",
+        "bq20: expected is-3043-2018, got is-732-2019, is-3043-2018, is-12640-1-2016",
+        "bq28: expected is-2026-1-2011, got is-iec-61439-1-2020, is-325-1996, is-4029-2010",
+        "bq40: expected is-516-1-1-2021, got is-456-2000, is-516-1-1-2021, is-516-1959"
+      ]
+    },
+    "bm25+thesaurus": {
+      "queries": 50,
+      "standard": {
+        "recallAt1": 0.9,
+        "recallAt3": 0.98,
+        "recallAt5": 0.98,
+        "mrr": 0.94,
+        "ndcgAt5": 0.945
+      },
+      "clause": {
+        "recallAt1": 0.8,
+        "recallAt3": 0.94,
+        "mrr": 0.876
+      },
+      "misses": [
+        "bq4: expected is-iec-61439-1-2020, got is-3043-2018, is-iec-61439-1-2020, is-iec-60947-2-2003",
+        "bq22: expected is-325-1996, got is-12615-2018, is-325-1996, is-4029-2010",
+        "bq25: expected is-325-1996, got is-iec-60529-2001, is-325-1996, is-iec-61439-1-2020",
+        "bq28: expected is-2026-1-2011, got is-iec-61439-1-2020, is-325-1996, is-4029-2010",
+        "bq40: expected is-516-1-1-2021, got is-456-2000, is-516-1-1-2021, is-516-1959"
+      ]
+    },
+    "bm25+rerank": {
+      "queries": 50,
+      "standard": {
+        "recallAt1": 0.88,
+        "recallAt3": 0.98,
+        "recallAt5": 0.98,
+        "mrr": 0.93,
+        "ndcgAt5": 0.931
+      },
+      "clause": {
+        "recallAt1": 0.86,
+        "recallAt3": 0.92,
+        "mrr": 0.893
+      },
+      "misses": [
+        "bq4: expected is-iec-61439-1-2020, got is-3043-2018, is-iec-61439-1-2020, is-iec-60947-2-2003",
+        "bq10: expected is-12640-1-2016|is-732-2019, got is-iec-60898-1-2002, is-12640-1-2016, is-iec-60947-2-2003",
+        "bq20: expected is-3043-2018, got is-732-2019, is-3043-2018, is-12640-1-2016",
+        "bq28: expected is-2026-1-2011, got is-iec-61439-1-2020, is-325-1996, is-4029-2010",
+        "bq40: expected is-516-1-1-2021, got is-456-2000, is-516-1-1-2021, is-516-1959",
+        "bq47: expected is-3025, got is-10500-2012, is-3025, is-14543-2016"
+      ]
+    },
+    "bm25+thesaurus+rerank": {
+      "queries": 50,
+      "standard": {
+        "recallAt1": 0.88,
+        "recallAt3": 0.98,
+        "recallAt5": 0.98,
+        "mrr": 0.93,
+        "ndcgAt5": 0.926
+      },
+      "clause": {
+        "recallAt1": 0.86,
+        "recallAt3": 0.92,
+        "mrr": 0.893
+      },
+      "misses": [
+        "bq4: expected is-iec-61439-1-2020, got is-3043-2018, is-iec-61439-1-2020, is-iec-60947-2-2003",
+        "bq10: expected is-12640-1-2016|is-732-2019, got is-iec-60898-1-2002, is-12640-1-2016, is-iec-60947-2-2003",
+        "bq22: expected is-325-1996, got is-12615-2018, is-325-1996, is-8034-2018",
+        "bq28: expected is-2026-1-2011, got is-iec-61439-1-2020, is-325-1996, is-4029-2010",
+        "bq40: expected is-516-1-1-2021, got is-456-2000, is-516-1-1-2021, is-516-1959",
+        "bq47: expected is-3025, got is-10500-2012, is-3025, is-14543-2016"
+      ]
+    }
+  },
+  "documents": {
+    "txt": [
+      {
+        "id": "b1",
+        "format": "txt",
+        "latencyMs": 71.6,
+        "pages": 1,
+        "parser": "plain-text",
+        "req": {
+          "tp": 37,
+          "fp": 5,
+          "fn": 3
+        },
+        "attr": {
+          "tp": 21,
+          "fp": 2,
+          "fn": 2
+        },
+        "confusion": [
+          [
+            "general",
+            "general"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "electrical",
+            "general"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "general"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "safety",
+            "electrical"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "installation",
+            "electrical"
+          ],
+          [
+            "installation",
+            "material"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "safety",
+            "general"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "safety",
+            "general"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "general",
+            "installation"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "outdated": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 77,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential ambient temperature conflict",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential ambient temperature conflict",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "internal_inconsistency",
+            "severity": "medium",
+            "title": "Inconsistent ambient temperature within the specification",
+            "standardId": null
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_edition",
+            "severity": "medium",
+            "title": "Superseded edition IS 3043:1987 cited",
+            "standardId": "is-3043-2018"
+          },
+          {
+            "kind": "missing",
+            "rule": "insufficient_specification",
+            "severity": "low",
+            "title": "Design and routine verification is not measurable",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Installation altitude is within IS/IEC 61439-1 limits",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 694 limits",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 7098 (Part 1) limits",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 61439-1:2020 is current",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 60947-2:2003 is current",
+            "standardId": "is-iec-60947-2-2003"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 60947-2:2003 is current",
+            "standardId": "is-iec-60947-2-2003"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 60898-1:2002 is current",
+            "standardId": "is-iec-60898-1-2002"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 12640 (Part 1):2016 is current",
+            "standardId": "is-12640-1-2016"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 61439-1:2020 is current",
+            "standardId": "is-iec-61439-1-2020"
+          }
+        ],
+        "repairs": 4,
+        "misses": [
+          "The area falls under seismic zone III.",
+          "Rated short-time withstand current: 50 kA for 1 s",
+          "Form of separation: Form 3b"
+        ],
+        "spurious": [
+          "Last date and time of bid submission: 18.11.2026 up to 15:00 hrs",
+          "The bidder shall submit the EMD in the form of an online payment or bank guarantee from a scheduled bank.",
+          "The bid shall remain valid for 90 days from the date of opening of the technical bid.",
+          "Bidders shall have completed at least one similar work of value not less than Rs. 1.47 crore during the last seven years.",
+          "| 3.5C x 300 sq mm XLPE armoured cable | m | 480"
+        ],
+        "unexpectedFindings": [
+          "gap [insufficient_specification] Design and routine verification is not measurable (is-iec-61439-1-2020)"
+        ],
+        "missedFindings": [
+          "dependency is-10810  — IS 7098 (Part 1) cables are tested per IS 10810; the specification only asks for an IR test."
+        ]
+      },
+      {
+        "id": "b2",
+        "format": "txt",
+        "latencyMs": 52.9,
+        "pages": 1,
+        "parser": "plain-text",
+        "req": {
+          "tp": 32,
+          "fp": 4,
+          "fn": 0
+        },
+        "attr": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 0
+        },
+        "confusion": [
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "installation",
+            "testing"
+          ],
+          [
+            "electrical",
+            "environmental"
+          ],
+          [
+            "safety",
+            "electrical"
+          ],
+          [
+            "installation",
+            "environmental"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "quality",
+            "general"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "documentation",
+            "certification"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "general",
+            "installation"
+          ],
+          [
+            "general",
+            "installation"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 80,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "medium",
+            "title": "Potential fluoride conflict",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "medium",
+            "title": "Potential arsenic conflict",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "outdated",
+            "rule": "amendment_check",
+            "severity": "low",
+            "title": "Amendments to IS 10500:2012 should be confirmed",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "missing",
+            "rule": "checklist_gap",
+            "severity": "medium",
+            "title": "Efficiency class is unspecified",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "Test method IS 4029:2010 is not specified",
+            "standardId": "is-4029-2010"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "IS/IEC 61439-2 depends on IS/IEC 61439-1, which is not addressed",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "Test method IS 1622:1981 is not specified",
+            "standardId": "is-1622-1981"
+          },
+          {
+            "kind": "missing",
+            "rule": "vague_requirement",
+            "severity": "low",
+            "title": "Requirement is not measurable",
+            "standardId": "is-12615-2018"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Permissible voltage variation is within IS 325 limits",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Total dissolved solids is within IS 10500 limits",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Nitrate is within IS 10500 limits",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "pH is within IS 10500 limits",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 8034:2018 is current",
+            "standardId": "is-8034-2018"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 9283:2013 is current",
+            "standardId": "is-9283-2013"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 694:2010 is current",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 10810 (series) is current",
+            "standardId": "is-10810"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 3025 (series) is current",
+            "standardId": "is-3025"
+          }
+        ],
+        "repairs": 7,
+        "misses": [],
+        "spurious": [
+          "The bidder must be registered with the Department in the appropriate class.",
+          "Rates quoted shall be inclusive of all taxes, freight, insurance and transit risks.",
+          "| Submersible pumpset 11 kW, 18 m3/h at 90 m | No. | 34",
+          "| 3C x 10 sq mm submersible flat cable | m | 3400"
+        ],
+        "unexpectedFindings": [
+          "gap [checklist_gap] Efficiency class is unspecified (is-325-1996)",
+          "dependency [dependency_gap] Test method IS 4029:2010 is not specified (is-4029-2010)",
+          "dependency [dependency_gap] IS/IEC 61439-2 depends on IS/IEC 61439-1, which is not addressed (is-iec-61439-1-2020)",
+          "gap [vague_requirement] Requirement is not measurable (is-12615-2018)"
+        ],
+        "missedFindings": []
+      },
+      {
+        "id": "b3",
+        "format": "txt",
+        "latencyMs": 40.3,
+        "pages": 1,
+        "parser": "plain-text",
+        "req": {
+          "tp": 29,
+          "fp": 0,
+          "fn": 0
+        },
+        "attr": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0
+        },
+        "confusion": [
+          [
+            "environmental",
+            "dimensional"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "general"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "general"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "performance",
+            "dimensional"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "general",
+            "testing"
+          ],
+          [
+            "general",
+            "material"
+          ],
+          [
+            "material",
+            "general"
+          ],
+          [
+            "documentation",
+            "testing"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 2,
+            "fp": 1,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 79,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential nominal cover to reinforcement conflict",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_reference",
+            "severity": "high",
+            "title": "IS 12269 has been superseded",
+            "standardId": "is-269-2015"
+          },
+          {
+            "kind": "outdated",
+            "rule": "amendment_check",
+            "severity": "low",
+            "title": "Amendments to IS 456:2000 should be confirmed",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "outdated",
+            "rule": "amendment_check",
+            "severity": "low",
+            "title": "Amendments to IS 456:2000 should be confirmed",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "certification",
+            "rule": "conformity_evidence_missing",
+            "severity": "medium",
+            "title": "Conformity evidence is not specified for 2 product standards",
+            "standardId": "is-269-2015"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Concrete grade is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Minimum cement content is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Maximum free water–cement ratio is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Concrete grade is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Maximum free water–cement ratio is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Minimum cement content is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 383:2016 is current",
+            "standardId": "is-383-2016"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 1786:2008 is current",
+            "standardId": "is-1786-2008"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 10262:2019 is current",
+            "standardId": "is-10262-2019"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 516 (Part 1/Sec 1):2021 is current",
+            "standardId": "is-516-1-1-2021"
+          }
+        ],
+        "repairs": 3,
+        "misses": [],
+        "spurious": [],
+        "unexpectedFindings": [
+          "outdated [amendment_check] Amendments to IS 456:2000 should be confirmed (is-456-2000)"
+        ],
+        "missedFindings": []
+      },
+      {
+        "id": "b4",
+        "format": "txt",
+        "latencyMs": 34.0,
+        "pages": 1,
+        "parser": "plain-text",
+        "req": {
+          "tp": 23,
+          "fp": 4,
+          "fn": 3
+        },
+        "attr": {
+          "tp": 14,
+          "fp": 3,
+          "fn": 1
+        },
+        "confusion": [
+          [
+            "general",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "documentation",
+            "material"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "general",
+            "dimensional"
+          ],
+          [
+            "documentation",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "general",
+            "electrical"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "dependency": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 58,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential ambient temperature conflict",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential rated voltage conflict",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential rated voltage conflict",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_reference",
+            "severity": "high",
+            "title": "IS 13947 (Part 2):1993 has been superseded",
+            "standardId": "is-iec-60947-2-2003"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_edition",
+            "severity": "medium",
+            "title": "Superseded edition IS 2026 (Part 1):1977 cited",
+            "standardId": "is-2026-1-2011"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "Test method IS 10810 (series) is not specified",
+            "standardId": "is-10810"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated apparent power is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated apparent power is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated apparent power is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated apparent power is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 694 limits",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 1180 (Part 1):2014 is current",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 1180 (Part 1):2014 is current",
+            "standardId": "is-1180-1-2014"
+          }
+        ],
+        "repairs": 6,
+        "misses": [
+          "Type: Outdoor, three phase, oil immersed, naturally cooled (ONAN), copper wound.",
+          "Cooling: ONAN",
+          "Energy efficiency level: Level 2"
+        ],
+        "spurious": [
+          "Subject: Procurement of 630 kVA, 11/0.433 kV distribution transformers, 11 kV cables and LT circuit breakers under the RDSS scheme.",
+          "Sealed bids are invited from manufacturers having valid BIS licence for distribution transformers.",
+          "The bidder shall have supplied at least 500 transformers of 630 kVA or higher rating to any State utility during the last five years.",
+          "SECTION IV – 11 kV POWER CABLES"
+        ],
+        "unexpectedFindings": [
+          "conflict [constraint_conflict] Potential ambient temperature conflict (is-iec-61439-1-2020)",
+          "conflict [constraint_conflict] Potential rated voltage conflict (is-7098-1-1988)"
+        ],
+        "missedFindings": [
+          "gap   — 'No-load losses shall be as low as possible' is not measurable."
+        ]
+      },
+      {
+        "id": "b5",
+        "format": "txt",
+        "latencyMs": 56.9,
+        "pages": 1,
+        "parser": "plain-text",
+        "req": {
+          "tp": 28,
+          "fp": 0,
+          "fn": 1
+        },
+        "attr": {
+          "tp": 24,
+          "fp": 0,
+          "fn": 0
+        },
+        "confusion": [
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "environmental",
+            "dimensional"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "performance"
+          ],
+          [
+            "electrical",
+            "general"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "testing",
+            "installation"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "general",
+            "testing"
+          ],
+          [
+            "general",
+            "testing"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 91,
+        "predictedFindings": [
+          {
+            "kind": "missing",
+            "rule": "checklist_gap",
+            "severity": "high",
+            "title": "Conductor cross-section is unspecified",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "missing",
+            "rule": "vague_requirement",
+            "severity": "low",
+            "title": "Requirement is not measurable",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Permissible voltage variation is within IS 325 limits",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 7098 (Part 1) limits",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 1520:1980 is current",
+            "standardId": "is-1520-1980"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 325:1996 is current",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 12615:2018 is current",
+            "standardId": "is-12615-2018"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 9137:1978 is current",
+            "standardId": "is-9137-1978"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 4029:2010 is current",
+            "standardId": "is-4029-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 3043:2018 is current",
+            "standardId": "is-3043-2018"
+          }
+        ],
+        "repairs": 2,
+        "misses": [
+          "Type: Horizontal split casing, single stage, double suction"
+        ],
+        "spurious": [],
+        "unexpectedFindings": [
+          "gap [checklist_gap] Conductor cross-section is unspecified (is-7098-1-1988)",
+          "gap [vague_requirement] Requirement is not measurable (is-325-1996)"
+        ],
+        "missedFindings": []
+      },
+      {
+        "id": "b6",
+        "format": "txt",
+        "latencyMs": 38.9,
+        "pages": 1,
+        "parser": "plain-text",
+        "req": {
+          "tp": 20,
+          "fp": 0,
+          "fn": 0
+        },
+        "attr": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 1
+        },
+        "confusion": [
+          [
+            "general",
+            "certification"
+          ],
+          [
+            "general",
+            "documentation"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "installation",
+            "material"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "dimensional",
+            "electrical"
+          ],
+          [
+            "safety",
+            "electrical"
+          ],
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "general",
+            "dimensional"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "safety",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "safety",
+            "general"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "testing",
+            "safety"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "general",
+            "general"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 3,
+            "fp": 1,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 0
+          }
+        },
+        "readiness": 65,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential rated voltage conflict",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_reference",
+            "severity": "high",
+            "title": "IS 8828 has been superseded",
+            "standardId": "is-iec-60898-1-2002"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_edition",
+            "severity": "medium",
+            "title": "Superseded edition IS 732:1989 cited",
+            "standardId": "is-732-2019"
+          },
+          {
+            "kind": "missing",
+            "rule": "insufficient_specification",
+            "severity": "medium",
+            "title": "Earthing arrangement is not measurable",
+            "standardId": "is-732-2019"
+          },
+          {
+            "kind": "missing",
+            "rule": "insufficient_specification",
+            "severity": "medium",
+            "title": "Inspection and testing on completion is not measurable",
+            "standardId": "is-732-2019"
+          },
+          {
+            "kind": "missing",
+            "rule": "checklist_gap",
+            "severity": "medium",
+            "title": "Degree of protection (IP code) is unspecified",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "Test method IS 10810 (series) is not specified",
+            "standardId": "is-10810"
+          },
+          {
+            "kind": "missing",
+            "rule": "vague_requirement",
+            "severity": "low",
+            "title": "Requirement is not measurable",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "certification",
+            "rule": "conformity_evidence_missing",
+            "severity": "medium",
+            "title": "Conformity evidence is not specified for 3 product standards",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 3043:2018 is current",
+            "standardId": "is-3043-2018"
+          }
+        ],
+        "repairs": 9,
+        "misses": [],
+        "spurious": [],
+        "unexpectedFindings": [
+          "gap [vague_requirement] Requirement is not measurable (is-694-2010)",
+          "certification [conformity_evidence_missing] Conformity evidence is not specified for 3 product standards (is-694-2010)"
+        ],
+        "missedFindings": []
+      }
+    ],
+    "pdf": [
+      {
+        "id": "b1",
+        "format": "pdf",
+        "latencyMs": 309.6,
+        "pages": 4,
+        "parser": "pypdf",
+        "req": {
+          "tp": 37,
+          "fp": 6,
+          "fn": 3
+        },
+        "attr": {
+          "tp": 20,
+          "fp": 2,
+          "fn": 3
+        },
+        "confusion": [
+          [
+            "general",
+            "general"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "electrical",
+            "general"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "general"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "safety",
+            "electrical"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "installation",
+            "electrical"
+          ],
+          [
+            "installation",
+            "material"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "safety",
+            "general"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "safety",
+            "general"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "general",
+            "installation"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "outdated": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 77,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential ambient temperature conflict",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential ambient temperature conflict",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "internal_inconsistency",
+            "severity": "medium",
+            "title": "Inconsistent ambient temperature within the specification",
+            "standardId": null
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_edition",
+            "severity": "medium",
+            "title": "Superseded edition IS 3043:1987 cited",
+            "standardId": "is-3043-2018"
+          },
+          {
+            "kind": "missing",
+            "rule": "insufficient_specification",
+            "severity": "low",
+            "title": "Design and routine verification is not measurable",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Installation altitude is within IS/IEC 61439-1 limits",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 694 limits",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 7098 (Part 1) limits",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 61439-1:2020 is current",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 60947-2:2003 is current",
+            "standardId": "is-iec-60947-2-2003"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 60947-2:2003 is current",
+            "standardId": "is-iec-60947-2-2003"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 60898-1:2002 is current",
+            "standardId": "is-iec-60898-1-2002"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 12640 (Part 1):2016 is current",
+            "standardId": "is-12640-1-2016"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 61439-1:2020 is current",
+            "standardId": "is-iec-61439-1-2020"
+          }
+        ],
+        "repairs": 4,
+        "misses": [
+          "The area falls under seismic zone III.",
+          "Rated short-time withstand current: 50 kA for 1 s",
+          "Form of separation: Form 3b"
+        ],
+        "spurious": [
+          "Last date and time of bid submission: 18.11.2026 up to 15:00 hrs",
+          "The bidder shall submit the EMD in the form of an online payment or bank guarantee from a scheduled bank.",
+          "The bid shall remain valid for 90 days from the date of opening of the technical bid.",
+          "Bidders shall have completed at least one similar work of value not less than Rs. 1.47 crore during the last seven years.",
+          "2500 A continuous current.",
+          "| 3.5C x 300 sq mm XLPE armoured cable | m | 480"
+        ],
+        "unexpectedFindings": [
+          "gap [insufficient_specification] Design and routine verification is not measurable (is-iec-61439-1-2020)"
+        ],
+        "missedFindings": [
+          "dependency is-10810  — IS 7098 (Part 1) cables are tested per IS 10810; the specification only asks for an IR test."
+        ]
+      },
+      {
+        "id": "b2",
+        "format": "pdf",
+        "latencyMs": 135.5,
+        "pages": 3,
+        "parser": "pypdf",
+        "req": {
+          "tp": 32,
+          "fp": 5,
+          "fn": 0
+        },
+        "attr": {
+          "tp": 20,
+          "fp": 0,
+          "fn": 1
+        },
+        "confusion": [
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "installation",
+            "testing"
+          ],
+          [
+            "electrical",
+            "environmental"
+          ],
+          [
+            "safety",
+            "electrical"
+          ],
+          [
+            "installation",
+            "environmental"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "quality",
+            "general"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "documentation",
+            "certification"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "general",
+            "installation"
+          ],
+          [
+            "general",
+            "installation"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 80,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "medium",
+            "title": "Potential fluoride conflict",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "medium",
+            "title": "Potential arsenic conflict",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "outdated",
+            "rule": "amendment_check",
+            "severity": "low",
+            "title": "Amendments to IS 10500:2012 should be confirmed",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "missing",
+            "rule": "checklist_gap",
+            "severity": "medium",
+            "title": "Efficiency class is unspecified",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "Test method IS 4029:2010 is not specified",
+            "standardId": "is-4029-2010"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "IS/IEC 61439-2 depends on IS/IEC 61439-1, which is not addressed",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "Test method IS 1622:1981 is not specified",
+            "standardId": "is-1622-1981"
+          },
+          {
+            "kind": "missing",
+            "rule": "vague_requirement",
+            "severity": "low",
+            "title": "Requirement is not measurable",
+            "standardId": "is-12615-2018"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Permissible voltage variation is within IS 325 limits",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Total dissolved solids is within IS 10500 limits",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Nitrate is within IS 10500 limits",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "pH is within IS 10500 limits",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 8034:2018 is current",
+            "standardId": "is-8034-2018"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 9283:2013 is current",
+            "standardId": "is-9283-2013"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 694:2010 is current",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 10810 (series) is current",
+            "standardId": "is-10810"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 3025 (series) is current",
+            "standardId": "is-3025"
+          }
+        ],
+        "repairs": 7,
+        "misses": [],
+        "spurious": [
+          "The bidder must be registered with the Department in the appropriate class.",
+          "Rates quoted shall be inclusive of all taxes, freight, insurance and transit risks.",
+          "Standard Mark.",
+          "| Submersible pumpset 11 kW, 18 m3/h at 90 m | No. | 34",
+          "| 3C x 10 sq mm submersible flat cable | m | 3400"
+        ],
+        "unexpectedFindings": [
+          "gap [checklist_gap] Efficiency class is unspecified (is-325-1996)",
+          "dependency [dependency_gap] Test method IS 4029:2010 is not specified (is-4029-2010)",
+          "dependency [dependency_gap] IS/IEC 61439-2 depends on IS/IEC 61439-1, which is not addressed (is-iec-61439-1-2020)",
+          "gap [vague_requirement] Requirement is not measurable (is-12615-2018)"
+        ],
+        "missedFindings": []
+      },
+      {
+        "id": "b3",
+        "format": "pdf",
+        "latencyMs": 102.8,
+        "pages": 3,
+        "parser": "pypdf",
+        "req": {
+          "tp": 29,
+          "fp": 0,
+          "fn": 0
+        },
+        "attr": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0
+        },
+        "confusion": [
+          [
+            "environmental",
+            "dimensional"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "general"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "general"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "performance",
+            "dimensional"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "general",
+            "testing"
+          ],
+          [
+            "general",
+            "material"
+          ],
+          [
+            "material",
+            "general"
+          ],
+          [
+            "documentation",
+            "testing"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 2,
+            "fp": 1,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 79,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential nominal cover to reinforcement conflict",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_reference",
+            "severity": "high",
+            "title": "IS 12269 has been superseded",
+            "standardId": "is-269-2015"
+          },
+          {
+            "kind": "outdated",
+            "rule": "amendment_check",
+            "severity": "low",
+            "title": "Amendments to IS 456:2000 should be confirmed",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "outdated",
+            "rule": "amendment_check",
+            "severity": "low",
+            "title": "Amendments to IS 456:2000 should be confirmed",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "certification",
+            "rule": "conformity_evidence_missing",
+            "severity": "medium",
+            "title": "Conformity evidence is not specified for 2 product standards",
+            "standardId": "is-269-2015"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Concrete grade is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Minimum cement content is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Maximum free water–cement ratio is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Concrete grade is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Maximum free water–cement ratio is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Minimum cement content is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 383:2016 is current",
+            "standardId": "is-383-2016"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 1786:2008 is current",
+            "standardId": "is-1786-2008"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 10262:2019 is current",
+            "standardId": "is-10262-2019"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 516 (Part 1/Sec 1):2021 is current",
+            "standardId": "is-516-1-1-2021"
+          }
+        ],
+        "repairs": 3,
+        "misses": [],
+        "spurious": [],
+        "unexpectedFindings": [
+          "outdated [amendment_check] Amendments to IS 456:2000 should be confirmed (is-456-2000)"
+        ],
+        "missedFindings": []
+      },
+      {
+        "id": "b4",
+        "format": "pdf",
+        "latencyMs": 111.2,
+        "pages": 3,
+        "parser": "pypdf",
+        "req": {
+          "tp": 23,
+          "fp": 4,
+          "fn": 3
+        },
+        "attr": {
+          "tp": 14,
+          "fp": 3,
+          "fn": 1
+        },
+        "confusion": [
+          [
+            "general",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "documentation",
+            "material"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "general",
+            "dimensional"
+          ],
+          [
+            "documentation",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "general",
+            "electrical"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "dependency": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 1
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 61,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential ambient temperature conflict",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential rated voltage conflict",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential rated voltage conflict",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_reference",
+            "severity": "high",
+            "title": "IS 13947 (Part 2):1993 has been superseded",
+            "standardId": "is-iec-60947-2-2003"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "Test method IS 10810 (series) is not specified",
+            "standardId": "is-10810"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated apparent power is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated apparent power is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated apparent power is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated apparent power is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 694 limits",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 1180 (Part 1):2014 is current",
+            "standardId": "is-1180-1-2014"
+          }
+        ],
+        "repairs": 5,
+        "misses": [
+          "Type: Outdoor, three phase, oil immersed, naturally cooled (ONAN), copper wound.",
+          "Cooling: ONAN",
+          "Energy efficiency level: Level 2"
+        ],
+        "spurious": [
+          "Subject: Procurement of 630 kVA, 11/0.433 kV distribution transformers, 11 kV cables and LT circuit breakers under the RDSS scheme.",
+          "Sealed bids are invited from manufacturers having valid BIS licence for distribution transformers.",
+          "The bidder shall have supplied at least 500 transformers of 630 kVA or higher rating to any State utility during the last five years.",
+          "SECTION IV – 11 kV POWER CABLES"
+        ],
+        "unexpectedFindings": [
+          "conflict [constraint_conflict] Potential ambient temperature conflict (is-iec-61439-1-2020)",
+          "conflict [constraint_conflict] Potential rated voltage conflict (is-7098-1-1988)"
+        ],
+        "missedFindings": [
+          "outdated is-2026-1-2011  — Routine tests cite the 1977 edition; the current edition is IS 2026 (Part 1):2011.",
+          "gap   — 'No-load losses shall be as low as possible' is not measurable."
+        ]
+      },
+      {
+        "id": "b5",
+        "format": "pdf",
+        "latencyMs": 88.8,
+        "pages": 3,
+        "parser": "pypdf",
+        "req": {
+          "tp": 28,
+          "fp": 0,
+          "fn": 1
+        },
+        "attr": {
+          "tp": 24,
+          "fp": 0,
+          "fn": 0
+        },
+        "confusion": [
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "environmental",
+            "dimensional"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "performance"
+          ],
+          [
+            "electrical",
+            "general"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "testing",
+            "installation"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "general",
+            "testing"
+          ],
+          [
+            "general",
+            "testing"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 91,
+        "predictedFindings": [
+          {
+            "kind": "missing",
+            "rule": "checklist_gap",
+            "severity": "high",
+            "title": "Conductor cross-section is unspecified",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "missing",
+            "rule": "vague_requirement",
+            "severity": "low",
+            "title": "Requirement is not measurable",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Permissible voltage variation is within IS 325 limits",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 7098 (Part 1) limits",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 1520:1980 is current",
+            "standardId": "is-1520-1980"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 325:1996 is current",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 12615:2018 is current",
+            "standardId": "is-12615-2018"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 9137:1978 is current",
+            "standardId": "is-9137-1978"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 4029:2010 is current",
+            "standardId": "is-4029-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 3043:2018 is current",
+            "standardId": "is-3043-2018"
+          }
+        ],
+        "repairs": 2,
+        "misses": [
+          "Type: Horizontal split casing, single stage, double suction"
+        ],
+        "spurious": [],
+        "unexpectedFindings": [
+          "gap [checklist_gap] Conductor cross-section is unspecified (is-7098-1-1988)",
+          "gap [vague_requirement] Requirement is not measurable (is-325-1996)"
+        ],
+        "missedFindings": []
+      },
+      {
+        "id": "b6",
+        "format": "pdf",
+        "latencyMs": 80.5,
+        "pages": 2,
+        "parser": "pypdf",
+        "req": {
+          "tp": 20,
+          "fp": 0,
+          "fn": 0
+        },
+        "attr": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 1
+        },
+        "confusion": [
+          [
+            "general",
+            "certification"
+          ],
+          [
+            "general",
+            "documentation"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "installation",
+            "material"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "dimensional",
+            "electrical"
+          ],
+          [
+            "safety",
+            "electrical"
+          ],
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "general",
+            "dimensional"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "safety",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "safety",
+            "general"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "testing",
+            "safety"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "general",
+            "general"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 3,
+            "fp": 1,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 0
+          }
+        },
+        "readiness": 65,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential rated voltage conflict",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_reference",
+            "severity": "high",
+            "title": "IS 8828 has been superseded",
+            "standardId": "is-iec-60898-1-2002"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_edition",
+            "severity": "medium",
+            "title": "Superseded edition IS 732:1989 cited",
+            "standardId": "is-732-2019"
+          },
+          {
+            "kind": "missing",
+            "rule": "insufficient_specification",
+            "severity": "medium",
+            "title": "Earthing arrangement is not measurable",
+            "standardId": "is-732-2019"
+          },
+          {
+            "kind": "missing",
+            "rule": "insufficient_specification",
+            "severity": "medium",
+            "title": "Inspection and testing on completion is not measurable",
+            "standardId": "is-732-2019"
+          },
+          {
+            "kind": "missing",
+            "rule": "checklist_gap",
+            "severity": "medium",
+            "title": "Degree of protection (IP code) is unspecified",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "Test method IS 10810 (series) is not specified",
+            "standardId": "is-10810"
+          },
+          {
+            "kind": "missing",
+            "rule": "vague_requirement",
+            "severity": "low",
+            "title": "Requirement is not measurable",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "certification",
+            "rule": "conformity_evidence_missing",
+            "severity": "medium",
+            "title": "Conformity evidence is not specified for 3 product standards",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 3043:2018 is current",
+            "standardId": "is-3043-2018"
+          }
+        ],
+        "repairs": 9,
+        "misses": [],
+        "spurious": [],
+        "unexpectedFindings": [
+          "gap [vague_requirement] Requirement is not measurable (is-694-2010)",
+          "certification [conformity_evidence_missing] Conformity evidence is not specified for 3 product standards (is-694-2010)"
+        ],
+        "missedFindings": []
+      }
+    ],
+    "docx": [
+      {
+        "id": "b1",
+        "format": "docx",
+        "latencyMs": 161.1,
+        "pages": 1,
+        "parser": "mammoth",
+        "req": {
+          "tp": 38,
+          "fp": 5,
+          "fn": 2
+        },
+        "attr": {
+          "tp": 23,
+          "fp": 2,
+          "fn": 0
+        },
+        "confusion": [
+          [
+            "general",
+            "general"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "electrical",
+            "general"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "general"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "safety",
+            "electrical"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "installation",
+            "electrical"
+          ],
+          [
+            "installation",
+            "material"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "safety",
+            "general"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "safety",
+            "general"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "general",
+            "installation"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "outdated": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 77,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential ambient temperature conflict",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential ambient temperature conflict",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "internal_inconsistency",
+            "severity": "medium",
+            "title": "Inconsistent ambient temperature within the specification",
+            "standardId": null
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_edition",
+            "severity": "medium",
+            "title": "Superseded edition IS 3043:1987 cited",
+            "standardId": "is-3043-2018"
+          },
+          {
+            "kind": "missing",
+            "rule": "insufficient_specification",
+            "severity": "low",
+            "title": "Design and routine verification is not measurable",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Installation altitude is within IS/IEC 61439-1 limits",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 694 limits",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 7098 (Part 1) limits",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 61439-1:2020 is current",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 60947-2:2003 is current",
+            "standardId": "is-iec-60947-2-2003"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 60947-2:2003 is current",
+            "standardId": "is-iec-60947-2-2003"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 60898-1:2002 is current",
+            "standardId": "is-iec-60898-1-2002"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 12640 (Part 1):2016 is current",
+            "standardId": "is-12640-1-2016"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS/IEC 61439-1:2020 is current",
+            "standardId": "is-iec-61439-1-2020"
+          }
+        ],
+        "repairs": 4,
+        "misses": [
+          "The area falls under seismic zone III.",
+          "Form of separation: Form 3b"
+        ],
+        "spurious": [
+          "Last date and time of bid submission: 18.11.2026 up to 15:00 hrs",
+          "The bidder shall submit the EMD in the form of an online payment or bank guarantee from a scheduled bank.",
+          "The bid shall remain valid for 90 days from the date of opening of the technical bid.",
+          "Bidders shall have completed at least one similar work of value not less than Rs. 1.47 crore during the last seven years.",
+          "| 3.5C x 300 sq mm XLPE armoured cable | m | 480"
+        ],
+        "unexpectedFindings": [
+          "gap [insufficient_specification] Design and routine verification is not measurable (is-iec-61439-1-2020)"
+        ],
+        "missedFindings": [
+          "dependency is-10810  — IS 7098 (Part 1) cables are tested per IS 10810; the specification only asks for an IR test."
+        ]
+      },
+      {
+        "id": "b2",
+        "format": "docx",
+        "latencyMs": 56.1,
+        "pages": 1,
+        "parser": "mammoth",
+        "req": {
+          "tp": 32,
+          "fp": 4,
+          "fn": 0
+        },
+        "attr": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 0
+        },
+        "confusion": [
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "installation",
+            "testing"
+          ],
+          [
+            "electrical",
+            "environmental"
+          ],
+          [
+            "safety",
+            "electrical"
+          ],
+          [
+            "installation",
+            "environmental"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "quality",
+            "general"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "quality",
+            "quality"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "documentation",
+            "certification"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "general",
+            "installation"
+          ],
+          [
+            "general",
+            "installation"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 80,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "medium",
+            "title": "Potential fluoride conflict",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "medium",
+            "title": "Potential arsenic conflict",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "outdated",
+            "rule": "amendment_check",
+            "severity": "low",
+            "title": "Amendments to IS 10500:2012 should be confirmed",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "missing",
+            "rule": "checklist_gap",
+            "severity": "medium",
+            "title": "Efficiency class is unspecified",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "Test method IS 4029:2010 is not specified",
+            "standardId": "is-4029-2010"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "IS/IEC 61439-2 depends on IS/IEC 61439-1, which is not addressed",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "Test method IS 1622:1981 is not specified",
+            "standardId": "is-1622-1981"
+          },
+          {
+            "kind": "missing",
+            "rule": "vague_requirement",
+            "severity": "low",
+            "title": "Requirement is not measurable",
+            "standardId": "is-12615-2018"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Permissible voltage variation is within IS 325 limits",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Total dissolved solids is within IS 10500 limits",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Nitrate is within IS 10500 limits",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "pH is within IS 10500 limits",
+            "standardId": "is-10500-2012"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 8034:2018 is current",
+            "standardId": "is-8034-2018"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 9283:2013 is current",
+            "standardId": "is-9283-2013"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 694:2010 is current",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 10810 (series) is current",
+            "standardId": "is-10810"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 3025 (series) is current",
+            "standardId": "is-3025"
+          }
+        ],
+        "repairs": 7,
+        "misses": [],
+        "spurious": [
+          "The bidder must be registered with the Department in the appropriate class.",
+          "Rates quoted shall be inclusive of all taxes, freight, insurance and transit risks.",
+          "| Submersible pumpset 11 kW, 18 m3/h at 90 m | No. | 34",
+          "| 3C x 10 sq mm submersible flat cable | m | 3400"
+        ],
+        "unexpectedFindings": [
+          "gap [checklist_gap] Efficiency class is unspecified (is-325-1996)",
+          "dependency [dependency_gap] Test method IS 4029:2010 is not specified (is-4029-2010)",
+          "dependency [dependency_gap] IS/IEC 61439-2 depends on IS/IEC 61439-1, which is not addressed (is-iec-61439-1-2020)",
+          "gap [vague_requirement] Requirement is not measurable (is-12615-2018)"
+        ],
+        "missedFindings": []
+      },
+      {
+        "id": "b3",
+        "format": "docx",
+        "latencyMs": 36.4,
+        "pages": 1,
+        "parser": "mammoth",
+        "req": {
+          "tp": 29,
+          "fp": 0,
+          "fn": 0
+        },
+        "attr": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0
+        },
+        "confusion": [
+          [
+            "environmental",
+            "dimensional"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "general"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "general"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "dimensional",
+            "dimensional"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "installation",
+            "general"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "performance",
+            "dimensional"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "general",
+            "testing"
+          ],
+          [
+            "general",
+            "material"
+          ],
+          [
+            "material",
+            "general"
+          ],
+          [
+            "documentation",
+            "testing"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 2,
+            "fp": 1,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 79,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential nominal cover to reinforcement conflict",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_reference",
+            "severity": "high",
+            "title": "IS 12269 has been superseded",
+            "standardId": "is-269-2015"
+          },
+          {
+            "kind": "outdated",
+            "rule": "amendment_check",
+            "severity": "low",
+            "title": "Amendments to IS 456:2000 should be confirmed",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "outdated",
+            "rule": "amendment_check",
+            "severity": "low",
+            "title": "Amendments to IS 456:2000 should be confirmed",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "certification",
+            "rule": "conformity_evidence_missing",
+            "severity": "medium",
+            "title": "Conformity evidence is not specified for 2 product standards",
+            "standardId": "is-269-2015"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Concrete grade is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Minimum cement content is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Maximum free water–cement ratio is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Concrete grade is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Maximum free water–cement ratio is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Minimum cement content is within IS 456 limits",
+            "standardId": "is-456-2000"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 383:2016 is current",
+            "standardId": "is-383-2016"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 1786:2008 is current",
+            "standardId": "is-1786-2008"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 10262:2019 is current",
+            "standardId": "is-10262-2019"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 516 (Part 1/Sec 1):2021 is current",
+            "standardId": "is-516-1-1-2021"
+          }
+        ],
+        "repairs": 3,
+        "misses": [],
+        "spurious": [],
+        "unexpectedFindings": [
+          "outdated [amendment_check] Amendments to IS 456:2000 should be confirmed (is-456-2000)"
+        ],
+        "missedFindings": []
+      },
+      {
+        "id": "b4",
+        "format": "docx",
+        "latencyMs": 37.8,
+        "pages": 1,
+        "parser": "mammoth",
+        "req": {
+          "tp": 23,
+          "fp": 4,
+          "fn": 3
+        },
+        "attr": {
+          "tp": 14,
+          "fp": 3,
+          "fn": 1
+        },
+        "confusion": [
+          [
+            "general",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "documentation",
+            "material"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "general",
+            "dimensional"
+          ],
+          [
+            "documentation",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "general",
+            "electrical"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "dependency": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 58,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential ambient temperature conflict",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential rated voltage conflict",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential rated voltage conflict",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_reference",
+            "severity": "high",
+            "title": "IS 13947 (Part 2):1993 has been superseded",
+            "standardId": "is-iec-60947-2-2003"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_edition",
+            "severity": "medium",
+            "title": "Superseded edition IS 2026 (Part 1):1977 cited",
+            "standardId": "is-2026-1-2011"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "Test method IS 10810 (series) is not specified",
+            "standardId": "is-10810"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated apparent power is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated apparent power is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated apparent power is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated apparent power is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 1180 (Part 1) limits",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 694 limits",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 1180 (Part 1):2014 is current",
+            "standardId": "is-1180-1-2014"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 1180 (Part 1):2014 is current",
+            "standardId": "is-1180-1-2014"
+          }
+        ],
+        "repairs": 6,
+        "misses": [
+          "Type: Outdoor, three phase, oil immersed, naturally cooled (ONAN), copper wound.",
+          "Cooling: ONAN",
+          "Energy efficiency level: Level 2"
+        ],
+        "spurious": [
+          "Subject: Procurement of 630 kVA, 11/0.433 kV distribution transformers, 11 kV cables and LT circuit breakers under the RDSS scheme.",
+          "Sealed bids are invited from manufacturers having valid BIS licence for distribution transformers.",
+          "The bidder shall have supplied at least 500 transformers of 630 kVA or higher rating to any State utility during the last five years.",
+          "SECTION IV – 11 kV POWER CABLES"
+        ],
+        "unexpectedFindings": [
+          "conflict [constraint_conflict] Potential ambient temperature conflict (is-iec-61439-1-2020)",
+          "conflict [constraint_conflict] Potential rated voltage conflict (is-7098-1-1988)"
+        ],
+        "missedFindings": [
+          "gap   — 'No-load losses shall be as low as possible' is not measurable."
+        ]
+      },
+      {
+        "id": "b5",
+        "format": "docx",
+        "latencyMs": 86.9,
+        "pages": 1,
+        "parser": "mammoth",
+        "req": {
+          "tp": 28,
+          "fp": 0,
+          "fn": 1
+        },
+        "attr": {
+          "tp": 24,
+          "fp": 0,
+          "fn": 0
+        },
+        "confusion": [
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "environmental",
+            "dimensional"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "material",
+            "material"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "performance",
+            "performance"
+          ],
+          [
+            "environmental",
+            "environmental"
+          ],
+          [
+            "electrical",
+            "performance"
+          ],
+          [
+            "electrical",
+            "general"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "testing",
+            "installation"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "general",
+            "testing"
+          ],
+          [
+            "general",
+            "testing"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "readiness": 91,
+        "predictedFindings": [
+          {
+            "kind": "missing",
+            "rule": "checklist_gap",
+            "severity": "high",
+            "title": "Conductor cross-section is unspecified",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "missing",
+            "rule": "vague_requirement",
+            "severity": "low",
+            "title": "Requirement is not measurable",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Permissible voltage variation is within IS 325 limits",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "verified",
+            "rule": "constraint_satisfied",
+            "severity": "low",
+            "title": "Rated voltage is within IS 7098 (Part 1) limits",
+            "standardId": "is-7098-1-1988"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 1520:1980 is current",
+            "standardId": "is-1520-1980"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 325:1996 is current",
+            "standardId": "is-325-1996"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 12615:2018 is current",
+            "standardId": "is-12615-2018"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 9137:1978 is current",
+            "standardId": "is-9137-1978"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 4029:2010 is current",
+            "standardId": "is-4029-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 3043:2018 is current",
+            "standardId": "is-3043-2018"
+          }
+        ],
+        "repairs": 2,
+        "misses": [
+          "Type: Horizontal split casing, single stage, double suction"
+        ],
+        "spurious": [],
+        "unexpectedFindings": [
+          "gap [checklist_gap] Conductor cross-section is unspecified (is-7098-1-1988)",
+          "gap [vague_requirement] Requirement is not measurable (is-325-1996)"
+        ],
+        "missedFindings": []
+      },
+      {
+        "id": "b6",
+        "format": "docx",
+        "latencyMs": 55.0,
+        "pages": 1,
+        "parser": "mammoth",
+        "req": {
+          "tp": 20,
+          "fp": 0,
+          "fn": 0
+        },
+        "attr": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 1
+        },
+        "confusion": [
+          [
+            "general",
+            "certification"
+          ],
+          [
+            "general",
+            "documentation"
+          ],
+          [
+            "general",
+            "general"
+          ],
+          [
+            "installation",
+            "material"
+          ],
+          [
+            "electrical",
+            "material"
+          ],
+          [
+            "dimensional",
+            "electrical"
+          ],
+          [
+            "safety",
+            "electrical"
+          ],
+          [
+            "certification",
+            "certification"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "general",
+            "dimensional"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "safety",
+            "electrical"
+          ],
+          [
+            "electrical",
+            "electrical"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "safety",
+            "general"
+          ],
+          [
+            "safety",
+            "safety"
+          ],
+          [
+            "testing",
+            "testing"
+          ],
+          [
+            "testing",
+            "safety"
+          ],
+          [
+            "documentation",
+            "documentation"
+          ],
+          [
+            "general",
+            "general"
+          ]
+        ],
+        "findings": {
+          "conflict": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "gap": {
+            "tp": 3,
+            "fp": 1,
+            "fn": 0
+          },
+          "dependency": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "outdated": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          },
+          "certification": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 0
+          }
+        },
+        "readiness": 65,
+        "predictedFindings": [
+          {
+            "kind": "conflicting",
+            "rule": "constraint_conflict",
+            "severity": "high",
+            "title": "Potential rated voltage conflict",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_reference",
+            "severity": "high",
+            "title": "IS 8828 has been superseded",
+            "standardId": "is-iec-60898-1-2002"
+          },
+          {
+            "kind": "outdated",
+            "rule": "superseded_edition",
+            "severity": "medium",
+            "title": "Superseded edition IS 732:1989 cited",
+            "standardId": "is-732-2019"
+          },
+          {
+            "kind": "missing",
+            "rule": "insufficient_specification",
+            "severity": "medium",
+            "title": "Earthing arrangement is not measurable",
+            "standardId": "is-732-2019"
+          },
+          {
+            "kind": "missing",
+            "rule": "insufficient_specification",
+            "severity": "medium",
+            "title": "Inspection and testing on completion is not measurable",
+            "standardId": "is-732-2019"
+          },
+          {
+            "kind": "missing",
+            "rule": "checklist_gap",
+            "severity": "medium",
+            "title": "Degree of protection (IP code) is unspecified",
+            "standardId": "is-iec-61439-1-2020"
+          },
+          {
+            "kind": "missing",
+            "rule": "dependency_gap",
+            "severity": "medium",
+            "title": "Test method IS 10810 (series) is not specified",
+            "standardId": "is-10810"
+          },
+          {
+            "kind": "missing",
+            "rule": "vague_requirement",
+            "severity": "low",
+            "title": "Requirement is not measurable",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "certification",
+            "rule": "conformity_evidence_missing",
+            "severity": "medium",
+            "title": "Conformity evidence is not specified for 3 product standards",
+            "standardId": "is-694-2010"
+          },
+          {
+            "kind": "verified",
+            "rule": "current_reference",
+            "severity": "low",
+            "title": "Reference to IS 3043:2018 is current",
+            "standardId": "is-3043-2018"
+          }
+        ],
+        "repairs": 9,
+        "misses": [],
+        "spurious": [],
+        "unexpectedFindings": [
+          "gap [vague_requirement] Requirement is not measurable (is-694-2010)",
+          "certification [conformity_evidence_missing] Conformity evidence is not specified for 3 product standards (is-694-2010)"
+        ],
+        "missedFindings": []
+      }
+    ]
+  }
+}

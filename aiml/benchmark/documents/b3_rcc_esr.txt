@@ -1,0 +1,50 @@
+TAMIL NADU WATER SUPPLY AND DRAINAGE BOARD
+Combined Water Supply Scheme to Ramanathapuram Coastal Villages — Package II
+Tender Notification No. 07/TWAD/RMD/2026
+Name of work: Design and construction of 500 KL capacity RCC elevated storage reservoir with 15 m staging, including all allied works.
+
+VOLUME II — TECHNICAL SPECIFICATIONS (CIVIL)
+
+CHAPTER 1: GENERAL
+1.1 The reservoir is located within 2 km of the sea coast.
+1.2 The structure shall be designed for the exposure condition "severe" as defined in IS 456:2000.
+1.3 Design of the container shall be based on IS 3370 (Part 2) for liquid retaining structures.
+1.4 The contractor shall submit the structural design and drawings, vetted by a reputed engineering college, for approval before commencement of work.
+
+CHAPTER 2: MATERIALS
+2.1 Cement shall be ordinary Portland cement 53 grade conforming to IS 12269.
+2.2 Coarse and fine aggregates shall conform to IS 383:2016.
+2.3 The nominal maximum size of coarse aggregate shall be 20 mm.
+2.4 Reinforcement shall be Fe 500D TMT bars conforming to IS 1786:2008.
+2.5 Water used for mixing and curing shall be clean and free from injurious amounts of oils, acids and salts.
+
+CHAPTER 3: CONCRETE
+3.1 All RCC work for the container, staging and foundation shall be of grade M30.
+3.2 Concrete shall be designed mix, proportioned as per IS 10262:2019.
+3.3 Minimum cement content shall be 320 kg/m3.
+3.4 The free water-cement ratio shall not exceed 0.45.
+3.5 Nominal cover to reinforcement shall be 40 mm for all members.
+3.6 Concrete shall be mixed in a batching plant and placed with a concrete pump.
+3.7 Concrete shall be compacted with needle vibrators.
+3.8 Curing shall be done for a minimum period of 14 days.
+
+MIX DESIGN PARAMETERS (Container and staging)
+Grade of concrete: M30
+Exposure condition: severe
+Maximum water-cement ratio: 0.45
+Minimum cement content: 320 kg/m3
+Slump: 75 mm to 100 mm
+
+CHAPTER 4: TESTING AND QUALITY CONTROL
+4.1 Cube samples shall be taken as per the frequency specified in IS 456:2000.
+4.2 Compressive strength tests shall be carried out as per IS 516 (Part 1/Sec 1):2021.
+4.3 The container shall be tested for water tightness by filling it to full supply level for 7 days.
+4.4 Any leakage observed during the test shall be rectified by the contractor at his own cost.
+
+CHAPTER 5: MISCELLANEOUS
+5.1 The reservoir shall be provided with lightning arrester, aluminium ladder and railing.
+5.2 All exposed surfaces shall be painted with two coats of anti-carbonation paint.
+5.3 The contractor shall maintain a site register of all tests conducted.
+
+Note: Rates for the items shall include cost of all materials, labour, T&P and incidental charges.
+Note: In case of any discrepancy between drawings and specifications, the Engineer's decision shall be final.
