@@ -5,7 +5,9 @@
 Writes aiml/datasets/realworld_v2/{documents/*.txt|.pdf|.docx|.gold.json, retrieval.json, README.md}.
 The dev split (12 documents) uses paraphrase variant 0 and the dev unit spellings;
 the test split (18 documents) uses the other paraphrases and additional unit
-spellings, and is registered as *blind*.
+spellings, and is registered as *blind*. The dev2 split (12 documents, added in
+v2.2) uses a third, independently written wording (datagen/dev2.py) and a third
+unit-spelling pool, and is *open*: it is where generalisation errors are studied.
 """
 
 from __future__ import annotations
@@ -21,7 +23,7 @@ from evaluation.render import render_docx, render_pdf
 from .compose import compose, queries
 
 OUT = DATASETS / "realworld_v2"
-PLAN = {"dev": (12, 11), "test": (18, 29)}  # documents, seed base
+PLAN = {"dev": (12, 11), "test": (18, 29), "dev2": (12, 47)}  # documents, seed base
 
 
 def main() -> None:
@@ -32,11 +34,11 @@ def main() -> None:
     summary = []
     for split, (count, base) in PLAN.items():
         rng = random.Random(base)
-        clean = set(rng.sample(range(count), 2 if split == "dev" else 3))
+        clean = set(rng.sample(range(count), 3 if split == "test" else 2))
         for i in range(count):
             doc_id = f"rw2-{split}-{i + 1:02d}"
             n_plants = 0 if i in clean else rng.randint(1, 4)
-            g = compose(doc_id, split, package_index=i + (0 if split == "dev" else 3), n_plants=n_plants, seed=base * 1000 + i)
+            g = compose(doc_id, split, package_index=i + {"dev": 0, "test": 3, "dev2": 5}[split], n_plants=n_plants, seed=base * 1000 + i)
             stem = OUT / "documents" / doc_id
             stem.with_suffix(".txt").write_text(g.text, encoding="utf-8")
             header = f"{g.organization} — Tender {g.name.split('— ')[-1]}"

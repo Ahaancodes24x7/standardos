@@ -76,6 +76,18 @@
         },
         {
           "group": "certification"
+        },
+        {
+          "group": "gap",
+          "standardId": "is-1554-1-1988",
+          "parameter": "conductor_size",
+          "why": "v1.1: the control cables (IS 1554) are specified without a conductor size."
+        },
+        {
+          "group": "gap",
+          "standardId": "is-1554-1-1988",
+          "parameter": "conductor_material",
+          "why": "v1.1: the control cables (IS 1554) are specified without a conductor material."
         }
       ]
     },

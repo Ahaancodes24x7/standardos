@@ -1,0 +1,60 @@
+WATER SUPPLY AND DRAINAGE BOARD
+लोक निर्माण विभाग
+Office of the Executive Engineer, Circle I
+NOTICE INVITING e-TENDER No. EE/CIV/90/2026-27
+Name of work: Construction of RCC elevated service reservoir.
+Estimated cost put to tender: Rs. 381,54,000/-
+Earnest Money Deposit: Rs. 7,57,000/-
+Period of completion: 6 months
+Last date of submission: 20.10.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+2. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+3. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+4. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+5. The tender documents may be downloaded from the e-procurement portal of the Government.
+6. The bidder must be registered with the Department in the appropriate class.
+7. Bids received after the due date and time shall not be considered.
+
+SCOPE OF WORK
+This specification covers construction of rcc elevated service reservoir complete in all respects.
+
+SITE CONDITIONS
+(a) Exposure condition for the design of the structure shall be taken as severe in terms of IS 456:2000.
+
+4 TECHNICAL SPECIFICATION — CONCRETE AND REINFORCEMENT
+(a) Plain and reinforced cement concrete works shall comply with IS 456:2000.
+(b) Grade of concrete for all RCC members shall be M30.
+(c) The nominal cover to reinforcement shall be 45 millimetre. Maximum free water-cement ratio shall be 0.55.
+(d) Cement content shall be not less than 320 kg/cu.m.
+(e) OPC 43 grade cement complying with IS 8112 shall be used.
+(f) Fe 500D TMT reinforcement bars complying with IS 1786:2008 shall be used.
+(g) Mix proportioning of concrete shall be done as per IS 10262:2019.
+(h) Concrete shall be cured for not less than 10 days.
+(i) Mechanical needle vibrators shall be used for compaction of concrete.
+
+5 TESTS AND INSPECTION
+(a) Testing of concrete for compressive strength shall be done as per IS 516:1959.
+(b) The contractor shall furnish manufacturer's test certificates for every lot of cement and reinforcement.
+(c) Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.
+
+6 DOCUMENTATION, WARRANTY AND TRAINING
+(a) Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.
+(b) On completion the contractor shall hand over three copies of the O&M manuals.
+(c) The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship.
+(d) Operation and routine maintenance training shall be given by the contractor to the Department's operators.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | RCC M30 in superstructure | cum | 420
+2 | TMT reinforcement Fe 500D | MT | 58
+
+LIST OF APPROVED MAKES
+Cement: UltraTech / ACC / Ambuja; Steel: SAIL / TATA / JSW
+
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+Note: Drawings are indicative only and shall be verified at site.
+
+Signature of Bidder with seal
+Executive Engineer

@@ -1,0 +1,83 @@
+MUNICIPAL CORPORATION
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. CE/CIV/91/2026-27
+Name of work: Construction of pump house with structural steel roof and electrical works.
+Estimated cost put to tender: Rs. 160,47,000/-
+Earnest Money Deposit: Rs. 1,67,000/-
+Period of completion: 18 months
+Last date of submission: 10.10.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. The tender documents may be downloaded from the e-procurement portal of the Government.
+2. Bids received after the due date and time shall not be considered.
+3. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+4. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+5. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+6. The bidder must be registered with the Department in the appropriate class.
+7. Conditional bids will be summarily rejected.
+
+SCOPE OF WORK
+This specification covers construction of pump house with structural steel roof and electrical works complete in all respects.
+
+SITE CONDITIONS
+- Exposure condition for the design of the structure shall be taken as severe in terms of IS 456:2000.
+
+SECTION 4: CONCRETE AND REINFORCEMENT
+- Plain and reinforced cement concrete works shall comply with IS 456:2000.
+- Grade of concrete for all RCC members shall be M30.
+- The nominal cover to reinforcement shall be 45 m.m..
+- Maximum free water-cement ratio shall be 0.45.
+- Cement content shall be not less than 320 kg/cu.m.
+- OPC 43 grade cement complying with IS 269:2015 shall be used.
+- Aggregates, both coarse and fine, shall comply with IS 383:2016. Fe 500D TMT reinforcement bars complying with IS 1786:1985 shall be used.
+- Mix proportioning of concrete shall be done as per IS 10262:2019.
+- Concrete shall be cured for not less than 10 days.
+- Mechanical needle vibrators shall be used for compaction of concrete.
+
+PART E — STRUCTURAL STEEL WORK
+- Structural steel plates and sections shall be E250 grade complying with IS 2062:2011. Steel work shall be painted with one coat of zinc chromate primer followed by two finishing coats of enamel.
+- Steel work shall be fabricated and erected in accordance with approved drawings.
+
+6 TECHNICAL SPECIFICATION — INTERNAL WIRING AND EARTHING
+- All wiring work shall comply with IS 732:2019.
+- The earthing arrangement of the supply system is TN-S.
+- All wiring shall run concealed in rigid PVC conduit having 1.5 m.m. wall thickness.
+- Wires are to be single core, stranded copper conductor, FR PVC insulated, 450/750 V grade to IS 694:2010.
+- Copper conductors of 1.5 mm2 shall be used for lighting circuits and 4 mm2 for power circuits.
+- MCBs shall comply with IS/IEC 60898-1 and have a rated short-circuit capacity of 10 kA (rms).
+- MCBs from 6 Amperes up to 32 Amperes shall be provided as per the single line diagram.
+- All socket outlet circuits shall be protected by 30 mA RCCBs complying with IS 12640 (Part 1).
+- The earthing installation shall comply with IS 3043:1987.
+- The main distribution board shall be earthed through two pipe earth electrodes.
+- Resistance of the earthing system shall be not more than 1 Ohms.
+
+SECTION 7: TESTING, INSPECTION AND CERTIFICATION
+- Testing of concrete for compressive strength shall be done as per IS 516 (Part 1/Sec 1):2021. The contractor shall furnish manufacturer's test certificates for every lot of cement and reinforcement.
+- The contractor shall submit mill test certificates for all structural steel supplied.
+- Testing of wires shall be done as per IS 10810. After completion, the insulation resistance and earth continuity of the installation shall be tested as per IS 732.
+- All wires, MCBs and RCCBs supplied shall carry the ISI mark.
+- Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.
+
+8 DOCUMENTATION, WARRANTY AND TRAINING
+- Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.
+- On completion the contractor shall hand over three copies of the O&M manuals.
+- The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship. Operation and routine maintenance training shall be given by the contractor to the Department's operators.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | RCC M30 in superstructure | cum | 420
+2 | TMT reinforcement Fe 500D | MT | 58
+3 | Structural steel work in trusses and purlins | MT | 22
+4 | Point wiring for light point with 1.5 sq mm FR PVC wire | Point | 240
+5 | 4 way SPN distribution board | No. | 16
+
+APPROVED MAKES OF MATERIALS
+Cement: UltraTech / ACC / Ambuja; Steel: SAIL / TATA / JSW
+Steel: SAIL / TATA / JSW
+Wires: Polycab / Havells / Finolex; MCB/RCCB: Legrand / Schneider / Havells
+
+Note: Drawings are indicative only and shall be verified at site.
+Note: Quantities are approximate and may vary during execution.
+
+Signature of Bidder with seal
+Executive Engineer

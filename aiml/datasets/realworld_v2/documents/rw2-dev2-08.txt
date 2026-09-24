@@ -1,0 +1,87 @@
+JAL NIGAM
+तकनीकी विशिष्टियाँ
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. EE/CIV/43/2026-27
+Name of work: Design, supply and commissioning of raw water pumping machinery.
+Estimated cost put to tender: Rs. 258,12,000/-
+Earnest Money Deposit: Rs. 5,82,000/-
+Period of completion: 6 months
+Last date of submission: 23.11.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+2. The bidder must be registered with the Department in the appropriate class.
+3. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+4. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+5. Bids received after the due date and time shall not be considered.
+
+GENERAL CONDITIONS OF CONTRACT
+1. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+2. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+3. Liquidated damages at 0.5 % per week of delay shall be levied, subject to a maximum of 10 % of the contract value.
+
+SCOPE OF WORK
+This specification covers design, supply and commissioning of raw water pumping machinery complete in all respects.
+
+3 TECHNICAL SPECIFICATION — HORIZONTAL CENTRIFUGAL PUMPS
+(a) The pumps shall comply with IS 1520:1980.
+(b) Duty point of each pump shall be 250 m^3/h at 45 metre total head.
+(c) Pump efficiency at the duty point shall be 78% (percent) minimum.
+(d) The pump casing shall be cast iron and the impeller bronze.
+(e) The pumpset noise level measured 1 metre away shall be limited to 85 decibels (A).
+
+PUMP DATA SHEET
+Rated discharge: 250 m^3/h
+Rated total head: 45 metre
+Make and type: (to be furnished by the bidder)
+
+4 TECHNICAL SPECIFICATION — DRIVE MOTORS
+(a) Squirrel cage induction motors complying with IS 325:1996 shall be supplied.
+(b) Motor rated output shall be 37 kilowatt.
+(c) Motors are to operate on 415 V AC ± 10% (percent), 50 Hertz ± 5% (percent), three phase supply.
+(d) Motors shall meet efficiency class IE3 of IS 12615:2018.
+(e) The motor enclosure shall have IP55 degree of protection.
+(f) Insulation shall be class F, with temperature rise restricted to class B, for continuous S1 duty.
+(g) The motor synchronous speed shall be 1500 rev/min.
+
+PART E — LT POWER AND CONTROL CABLES
+(a) LT power cables shall be aluminium conductor, XLPE insulated, armoured, PVC sheathed, 1.1 kV grade, complying with IS 7098 (Part 1):1988.
+(b) The size of the main feeder cable shall be 3.5 core 300 Sq mm.
+(c) Maximum continuous conductor temperature of the cables shall be 90 ℃.
+(d) Copper conductor control cables of 2.5 Sq mm, PVC insulated, 1.1 kV grade shall comply with IS 1554 (Part 1).
+(e) Class 2 stranded conductors complying with IS 8130 shall be used.
+(f) Cables shall be run in RCC trenches or on perforated trays as per drawings.
+(g) Double compression glands and crimped lugs shall be used for all cable terminations.
+(h) The maker's name, size, voltage grade and year of manufacture shall be marked on every drum.
+
+SECTION 6: TESTING, INSPECTION AND CERTIFICATION
+(a) Works testing of the pumps shall be done as per IS 9137.
+(b) Each motor shall be subjected to routine tests as per IS 4029.
+(c) All motors shall carry the ISI mark.
+(d) Testing of the cables shall be done as per IS 10810.
+(e) Each consignment of cables shall be accompanied by routine test certificates.
+(f) Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.
+
+7 DOCUMENTATION, WARRANTY AND TRAINING
+(a) Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.
+(b) On completion the contractor shall hand over three copies of the O&M manuals.
+(c) The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship.
+(d) Operation and routine maintenance training shall be given by the contractor to the Department's operators.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Horizontal centrifugal pumpset 250 m3/hr at 45 m | Set | 3
+2 | Squirrel cage induction motor 37 kW, 1500 rpm | No. | 3
+3 | 3.5C x 300 sq mm XLPE armoured cable | m | 350
+4 | Cable tray 300 mm wide | m | 120
+
+APPROVED MAKES OF MATERIALS
+Pumps: Kirloskar Brothers / KSB / Mather & Platt
+Motors: ABB / Siemens / Crompton Greaves / Kirloskar
+Cables: Polycab / KEI / Havells / RR Kabel
+
+Note: Quantities are approximate and may vary during execution.
+Note: Drawings are indicative only and shall be verified at site.
+
+Signature of Bidder with seal
+Executive Engineer

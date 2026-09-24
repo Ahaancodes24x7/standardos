@@ -1,0 +1,355 @@
+{
+ "id": "rw2-dev2-04",
+ "split": "dev2",
+ "name": "Rural piped water supply scheme — pumping and treated water supply — CE/ELE/60/2026-27",
+ "organization": "RURAL WATER SUPPLY DEPARTMENT",
+ "domain": "Centrifugal pumps, Induction motors, Drinking water quality",
+ "plants": [
+  "pump.isi.omit",
+  "water.turbidity.high",
+  "motor.ip.omit",
+  "pump.duty.nohead"
+ ],
+ "style": {
+  "units": {
+   "V": "{n}-volt",
+   "kV": "{n}-kV",
+   "A": "{n} ampere",
+   "kA": "{n} kA (rms)",
+   "degC": "{n} ℃",
+   "mm2": "{n} Sq mm",
+   "kW": "{n} k.W.",
+   "Hz": "{n} Hertz",
+   "m3h": "{n} m3/hour",
+   "mgl": "{n} mg per litre",
+   "ohm": "{n} ohm.",
+   "mm": "{n} millimetre",
+   "m": "{n} mtr",
+   "pct": "{n}% (percent)",
+   "kVA": "{n} kva",
+   "rpm": "{n} rpm.",
+   "NTU": "{n} NTU.",
+   "dBA": "{n} decibels (A)",
+   "kgm3": "{n} kg/cu.m",
+   "days": "{n} calendar days"
+  },
+  "numbering": "plain_number",
+  "caps_rate": 0,
+  "merge_rate": 0.12
+ },
+ "requirements": [
+  {
+   "text": "The pumps shall comply with IS 1520:1980.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Discharge of each pump shall be 250 m3/hour.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "flow_rate",
+     "value": 250
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Pump efficiency at the duty point shall be 78% (percent) minimum.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "efficiency",
+     "value": 78
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "The pump casing shall be cast iron and the impeller bronze.",
+   "category": "material",
+   "attributes": [],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "The pumpset noise level measured 1 mtr away shall be limited to 85 decibels (A).",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "noise_level",
+     "value": 85
+    }
+   ]
+  },
+  {
+   "text": "Rated discharge: 250 m3/hour",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "flow_rate",
+     "value": 250
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Rated total head: 45 mtr",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "pump_head",
+     "value": 45000
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Squirrel cage induction motors complying with IS 325:1996 shall be supplied.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Motor rated output shall be 37 k.W..",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "rated_power",
+     "value": 37000
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Motors are to operate on 415-volt ± 10% (percent), 50 Hertz ± 5% (percent), three phase supply.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 415
+    },
+    {
+     "parameter": "voltage_variation",
+     "value": 10
+    },
+    {
+     "parameter": "frequency",
+     "value": 50
+    },
+    {
+     "parameter": "frequency_variation",
+     "value": 5
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Motors shall meet efficiency class IE3 of IS 12615:2018.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "efficiency_class",
+     "text": "IE3"
+    }
+   ]
+  },
+  {
+   "text": "Insulation shall be class F, with temperature rise restricted to class B, for continuous S1 duty.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "insulation_class",
+     "text": "Class F"
+    },
+    {
+     "parameter": "duty_type",
+     "text": "S1"
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "The motor synchronous speed shall be 1500 rpm..",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "speed",
+     "value": 1500
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "The quality of treated water shall comply with IS 10500:2012.",
+   "category": "quality",
+   "attributes": []
+  },
+  {
+   "text": "The pH value of treated water shall lie within 6.5 to 8.5.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "ph",
+     "value": 6.5
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "TDS of treated water shall be limited to 500 mg per litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "tds",
+     "value": 500
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "The turbidity of treated water shall be limited to 5 NTU..",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "turbidity",
+     "value": 5
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Fluoride (as F) shall be limited to 1.0 mg per litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "fluoride",
+     "value": 1.0
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Nitrate (as NO3) shall be limited to 45 mg per litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "nitrate",
+     "value": 45
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Arsenic (as As) shall be limited to 0.01 mg per litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "arsenic",
+     "value": 0.01
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Total hardness (as CaCO3) shall be limited to 200 mg per litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "total_hardness",
+     "value": 200
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "No E. coli shall be detected in any 100 ml sample.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "bacteriological_quality"
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Works testing of the pumps shall be done as per IS 9137.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Each motor shall be subjected to routine tests as per IS 4029.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "All motors shall carry the ISI mark.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Testing of water samples shall be done at a NABL accredited laboratory as per IS 3025 and IS 1622.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall submit test reports for every source to the Engineer-in-charge.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "On completion the contractor shall hand over three copies of the O&M manuals.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Operation and routine maintenance training shall be given by the contractor to the Department's operators.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "certification",
+   "why": "no conformity evidence for pumps"
+  },
+  {
+   "group": "conflict",
+   "standardId": "is-10500-2012",
+   "parameter": "turbidity",
+   "why": "5 NTU above 1 NTU"
+  },
+  {
+   "group": "gap",
+   "parameter": "ip_rating",
+   "why": "degree of protection not stated"
+  },
+  {
+   "group": "gap",
+   "parameter": "pump_head",
+   "why": "duty head not stated"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-10500-2012",
+   "why": "amendments to confirm"
+  }
+ ]
+}

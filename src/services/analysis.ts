@@ -7,6 +7,7 @@ import type {
   CorpusStatus,
   DependencyDag,
   DocumentAnalysis,
+  DocumentTypeKey,
   EngineInfo,
   EvaluationRun,
   ProcurementDocument,
@@ -24,7 +25,12 @@ import { buildComplianceReport } from "@/lib/report";
 // the FastAPI backend, or — for the account-less demo workspace — to its
 // stateless endpoints, keeping demo results in sessionStorage.
 
-export type AnalysisInput = { file?: File | undefined; text?: string | undefined };
+export type AnalysisInput = {
+  file?: File | undefined;
+  text?: string | undefined;
+  documentType?: DocumentTypeKey | undefined;
+  documentTypeLabel?: string | undefined;
+};
 
 const LOCAL_KEY = "standardos-local-analyses";
 
@@ -51,27 +57,60 @@ function toFormData(input: AnalysisInput) {
   const form = new FormData();
   if (input.file) form.append("file", input.file);
   if (input.text?.trim()) form.append("text", input.text);
+  if (input.documentType) form.append("documentType", input.documentType);
+  if (input.documentType === "other" && input.documentTypeLabel?.trim())
+    form.append("documentTypeLabel", input.documentTypeLabel.trim());
   return form;
 }
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 const POLL_MS = 400;
 const TIMEOUT_MS = 5 * 60 * 1000;
+const STALL_MS = 20 * 1000;
 
 const getRun = (runId: string) => api.get<RunState>(`/api/runs/${runId}`);
+
+/**
+ * Ask the API to execute a queued run. Idempotent: the server claims the run once, so
+ * this is safe alongside the API's own background execution. On serverless hosts
+ * (Vercel) it is the only way a run executes, because work queued after a response
+ * is frozen. Errors are left to polling, which reports the run's final state.
+ */
+function executeRun(runId: string) {
+  void api.post(`/api/runs/${runId}/execute`).catch(() => undefined);
+}
 
 /** Poll a run until it finishes; `onProgress` receives the 1-based pipeline stage (1–8). */
 async function waitForRun(runId: string, onProgress?: (step: number) => void): Promise<RunState> {
   const deadline = Date.now() + TIMEOUT_MS;
+  let failures = 0;
+  let lastChange = Date.now();
+  let lastKey = "";
   for (;;) {
     let run: RunState | null = null;
     try {
       run = await getRun(runId);
-    } catch {
-      // Transient polling errors are ignored until the deadline.
+      failures = 0;
+    } catch (error) {
+      // Transient errors are retried; a run that cannot be read (401/404) or an API that
+      // keeps failing is reported instead of leaving the user on a spinner.
+      failures += 1;
+      if (error instanceof ApiError && (error.status === 401 || error.status === 404)) throw error;
+      if (failures >= 8)
+        throw error instanceof Error ? error : new Error("The analysis service is not responding.");
     }
     if (run?.stage) onProgress?.(run.stage);
     if (run && (run.status === "succeeded" || run.status === "failed")) return run;
+    const key = run ? `${run.status}:${run.stage}` : lastKey;
+    if (key !== lastKey) {
+      lastKey = key;
+      lastChange = Date.now();
+    } else if (Date.now() - lastChange > STALL_MS) {
+      // No progress: the worker may have been frozen (serverless). Executing is idempotent
+      // and reclaims a stale run, so ask again.
+      executeRun(runId);
+      lastChange = Date.now();
+    }
     if (Date.now() > deadline)
       throw new Error("The analysis is taking longer than expected. Check Documents later.");
     await sleep(POLL_MS);
@@ -102,6 +141,7 @@ export async function analyzeDocument(
     toFormData(input),
   );
   onProgress?.(1);
+  executeRun(runId);
   const run = await waitForRun(runId, onProgress);
   if (run.status === "failed") throw new Error(run.error ?? "The analysis failed.");
   onProgress?.(8);
@@ -131,9 +171,53 @@ export async function listDocuments(): Promise<ProcurementDocument[]> {
 
 export async function reanalyze(documentId: string) {
   const { runId } = await api.post<{ runId: string }>(`/api/documents/${documentId}/reanalyze`);
+  executeRun(runId);
   const run = await waitForRun(runId);
   if (run.status === "failed") throw new Error(run.error ?? "The analysis failed.");
 }
+
+/** Rename or re-type a stored document. A type change that alters analysis re-runs it. */
+export async function updateDocument(
+  documentId: string,
+  changes: { name?: string; documentType?: DocumentTypeKey; documentTypeLabel?: string },
+) {
+  if (isLocal(documentId)) {
+    const local = readLocal()[documentId];
+    if (local)
+      writeLocal({
+        ...local,
+        ...changes,
+        documentTypeLabel: changes.documentTypeLabel || local.documentTypeLabel,
+      });
+    return;
+  }
+  const { runId } = await api.patch<{ runId: string | null }>(
+    `/api/documents/${documentId}`,
+    changes,
+  );
+  if (runId) {
+    executeRun(runId);
+    const run = await waitForRun(runId);
+    if (run.status === "failed") throw new Error(run.error ?? "The analysis failed.");
+  }
+}
+
+/** Permanently delete a stored document with its analyses and audit trail. */
+export async function deleteDocument(documentId: string) {
+  if (isLocal(documentId)) {
+    const all = readLocal();
+    delete all[documentId];
+    try {
+      window.sessionStorage.setItem(LOCAL_KEY, JSON.stringify(all));
+    } catch {
+      // Storage unavailable: nothing persisted to remove.
+    }
+    return;
+  }
+  await api.delete(`/api/documents/${documentId}`);
+}
+
+const isLocal = (id: string) => id.startsWith("local-");
 
 export const getAuditTrail = (documentId: string) =>
   api.get<AuditEntry[]>(`/api/documents/${documentId}/audit`);

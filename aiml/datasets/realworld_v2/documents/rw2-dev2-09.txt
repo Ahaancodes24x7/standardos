@@ -1,0 +1,69 @@
+PUBLIC HEALTH ENGINEERING DEPARTMENT
+तकनीकी विशिष्टियाँ
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. CE/ELE/33/2026-27
+Name of work: Supply and installation of borewell submersible pumpsets and water quality testing.
+Estimated cost put to tender: Rs. 107,78,000/-
+Earnest Money Deposit: Rs. 5,45,000/-
+Period of completion: 18 months
+Last date of submission: 20.11.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+2. Bids received after the due date and time shall not be considered.
+3. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+4. The bidder must be registered with the Department in the appropriate class.
+5. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+
+SPECIAL CONDITIONS OF CONTRACT
+1. Rates quoted shall be inclusive of all taxes, freight, insurance and transit risks.
+2. The contractor shall indemnify the Department against all claims arising out of the work.
+3. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+4. Income tax and GST shall be deducted at source as applicable.
+5. Liquidated damages at 0.5 % per week of delay shall be levied, subject to a maximum of 10 % of the contract value.
+
+SCOPE OF WORK
+This specification covers supply and installation of borewell submersible pumpsets and water quality testing complete in all respects.
+
+3 TECHNICAL SPECIFICATION — BOREWELL SUBMERSIBLE PUMPSETS
+(a) SUBMERSIBLE PUMPSETS FOR BOREWELLS SHALL COMPLY WITH IS 8034:2018.
+(b) Duty point of each pumpset shall be 18 cu.m/hr at 90 metre total head.
+(c) The motors shall be wet type, water filled, complying with IS 9283:2013.
+(d) Flat submersible cables shall be copper conductor, PVC insulated, 3 core 6 Sq mm, complying with IS 694:2010 and tested to IS 10810.
+(e) An automatic starter with dry run protection and single phasing preventer shall be supplied with every pumpset.
+
+SECTION 4: TREATED WATER QUALITY
+(a) The quality of treated water shall comply with IS 10500:2012.
+(b) The pH value of treated water shall lie within 6.5 to 8.5.
+(c) TDS of treated water shall be limited to 2000 mg per litre.
+(d) The turbidity of treated water shall be limited to 1 NTU..
+(e) Fluoride (as F) shall be limited to 1.5 mg per litre.
+(f) Nitrate (as NO3) shall be limited to 45 mg per litre.
+(g) Arsenic (as As) shall be limited to 0.01 mg per litre.
+(h) Total hardness (as CaCO3) shall be limited to 200 mg per litre. No E. coli shall be detected in any 100 ml sample.
+
+SECTION 5: TESTING, INSPECTION AND CERTIFICATION
+(a) All pumpsets shall carry the BIS Standard Mark.
+(b) Testing of water samples shall be done at a NABL accredited laboratory as per IS 3025.
+(c) Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.
+
+6 DOCUMENTATION, WARRANTY AND TRAINING
+(a) The contractor shall submit test reports for every source to the Engineer-in-charge. Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.
+(b) On completion the contractor shall hand over three copies of the O&M manuals.
+(c) The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship.
+(d) OPERATION AND ROUTINE MAINTENANCE TRAINING SHALL BE GIVEN BY THE CONTRACTOR TO THE DEPARTMENT'S OPERATORS.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Submersible pumpset 18 m3/hr at 90 m head | Set | 12
+2 | Water quality testing (complete set of parameters) | Sample | 48
+
+APPROVED MAKES OF MATERIALS
+Submersible pumps: CRI / Kirloskar / Texmo
+Testing laboratory: NABL accredited
+
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+Note: Quantities are approximate and may vary during execution.
+
+Signature of Bidder with seal
+Executive Engineer

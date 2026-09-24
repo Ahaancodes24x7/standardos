@@ -1,0 +1,68 @@
+VIDYUT VITRAN NIGAM LIMITED
+तकनीकी विशिष्टियाँ
+Office of the Executive Engineer, Project Division
+NOTICE INVITING e-TENDER No. SE/CIV/14/2026-27
+Name of work: Procurement of distribution transformers and LT cables.
+Estimated cost put to tender: Rs. 386,56,000/-
+Earnest Money Deposit: Rs. 2,93,000/-
+Period of completion: 9 months
+Last date of submission: 10.12.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+2. The tender documents may be downloaded from the e-procurement portal of the Government.
+3. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+4. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+5. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+6. Bids received after the due date and time shall not be considered.
+7. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+
+COMMERCIAL TERMS AND CONDITIONS
+1. The contractor shall indemnify the Department against all claims arising out of the work.
+2. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+3. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+
+SCOPE OF WORK
+This specification covers procurement of distribution transformers and lt cables complete in all respects.
+
+PART C — DISTRIBUTION TRANSFORMERS
+- Distribution transformers shall comply with IS 1180 (Part 1):2014. Transformer rating shall be 630 kva, 11/0.433 kV, vector group Dyn11.
+- Transformers shall comply with energy efficiency level 2 of IS 1180 (Part 1).
+- Transformers shall be outdoor type, copper wound, oil immersed with ONAN cooling.
+- The top oil temperature rise shall be limited to 35 ℃ above an ambient of 50 ℃.
+- The tank shall be fabricated from welded mild steel with epoxy paint finish.
+
+SECTION 4: LT POWER AND CONTROL CABLES
+- LT power cables shall be aluminium conductor, XLPE insulated, armoured, PVC sheathed, 1.1 kV grade, complying with IS 7098 (Part 1):1988. The size of the main feeder cable shall be 3.5 core 300 mm2.
+- Maximum continuous conductor temperature of the cables shall be 90 ℃.
+- Copper conductor control cables of 2.5 mm2, PVC insulated, 1.1 kV grade shall comply with IS 1554 (Part 1).
+- Class 2 stranded conductors complying with IS 8130 shall be used.
+- Cables shall be run in RCC trenches or on perforated trays as per drawings.
+- Double compression glands and crimped lugs shall be used for all cable terminations.
+- The maker's name, size, voltage grade and year of manufacture shall be marked on every drum.
+
+5 TESTS AND INSPECTION
+- Each transformer shall be subjected to all routine tests as per IS 2026 (Part 1):2011.
+- Testing of the cables shall be done as per IS 10810.
+- Each consignment of cables shall be accompanied by routine test certificates. Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.
+
+6 DOCUMENTATION, WARRANTY AND TRAINING
+- Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.
+- On completion the contractor shall hand over three copies of the O&M manuals. The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship.
+- Operation and routine maintenance training shall be given by the contractor to the Department's operators.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | 630 kVA 11/0.433 kV distribution transformer | No. | 4
+2 | 3.5C x 300 sq mm XLPE armoured cable | m | 350
+3 | Cable tray 300 mm wide | m | 120
+
+APPROVED MAKES OF MATERIALS
+Transformers: as per approved vendor list of the utility
+Cables: Polycab / KEI / Havells / RR Kabel
+
+Note: Quantities are approximate and may vary during execution.
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+
+Signature of Bidder with seal
+Executive Engineer

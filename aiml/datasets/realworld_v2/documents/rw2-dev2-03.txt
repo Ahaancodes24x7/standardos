@@ -1,0 +1,104 @@
+URBAN DEVELOPMENT AUTHORITY
+तकनीकी विशिष्टियाँ
+Office of the Executive Engineer, Circle I
+NOTICE INVITING e-TENDER No. EE/WS/59/2026-27
+Name of work: Electrical works for sewage treatment plant including motors and panels.
+Estimated cost put to tender: Rs. 416,96,000/-
+Earnest Money Deposit: Rs. 3,24,000/-
+Period of completion: 9 months
+Last date of submission: 13.11.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. The tender documents may be downloaded from the e-procurement portal of the Government.
+2. The bidder must be registered with the Department in the appropriate class.
+3. Bids received after the due date and time shall not be considered.
+4. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+5. Conditional bids will be summarily rejected.
+6. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+7. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+
+COMMERCIAL TERMS AND CONDITIONS
+1. Rates quoted shall be inclusive of all taxes, freight, insurance and transit risks.
+2. The contractor shall indemnify the Department against all claims arising out of the work.
+3. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+4. Income tax and GST shall be deducted at source as applicable.
+
+SCOPE OF WORK
+This specification covers electrical works for sewage treatment plant including motors and panels complete in all respects.
+
+SITE CONDITIONS
+i) Equipment is to be rated for a maximum ambient temperature of 50° C.
+ii) The relative humidity at site can go up to 95 pct.
+iii) The site is located at less than 1000 metre above MSL.
+
+PART D — MAIN LT PANEL
+i) Distribution boards shall be of suitable dimensions for the equipment housed.
+ii) The main LT switchboard shall comply with IS/IEC 61439-1:2020 and IS/IEC 61439-2:2020.
+iii) The switchboard shall be of floor standing cubicle construction using CRCA sheet steel 2 m.m. thick.
+iv) The switchboard shall have a rated operational voltage of 415 V AC, 3 phase 4 wire, 50 Hertz.
+v) The main busbar shall be electrolytic grade aluminium with a continuous rating of 1600 Amperes.
+vi) The short time withstand current of the busbars shall be 50 kA (rms) for one second.
+vii) The panel enclosure is to have a degree of protection of IP54.
+viii) Internal separation of the switchboard shall be to Form 3b.
+ix) Each incomer shall be a 1600 Amperes, four pole, motorised air circuit breaker complying with IS/IEC 60947-2:2003.
+x) Outgoing feeders shall be controlled by MCCBs having an ultimate breaking capacity of 36 kA (rms).
+xi) Each incomer shall be provided with a class 0.5 accuracy multifunction meter.
+
+GUARANTEED TECHNICAL PARTICULARS — LT PANEL
+Rated operational voltage: 415 V AC
+Main busbar rated current: 1600 Amperes
+Rated short-time withstand current: 50 kA (rms) for 1 s
+Enclosure degree of protection: IP54
+Make and type: (to be furnished by the bidder)
+
+SECTION 5: DRIVE MOTORS
+i) Squirrel cage induction motors complying with IS 325:1996 shall be supplied.
+ii) Motor rated output shall be 37 k.W..
+iii) Motors are to operate on 415 V AC ± 10 pct, 50 Hertz ± 5 pct, three phase supply.
+iv) Motors shall meet efficiency class IE3 of IS 12615:2018.
+v) The motor enclosure shall have IP55 degree of protection.
+vi) Insulation shall be class F, with temperature rise restricted to class B, for continuous S1 duty.
+vii) The motor synchronous speed shall be 1500 rev/min.
+
+SECTION 6: LT POWER AND CONTROL CABLES
+i) LT power cables shall be aluminium conductor, XLPE insulated, armoured, PVC sheathed, 1.1 kV grade, complying with IS 7098 (Part 1):1988.
+ii) Maximum continuous conductor temperature of the cables shall be 90° C.
+iii) Copper conductor control cables of 2.5 Sq mm, PVC insulated, 1.1 kV grade shall comply with IS 1554 (Part 1).
+iv) Class 2 stranded conductors complying with IS 8130 shall be used.
+v) Cables shall be run in RCC trenches or on perforated trays as per drawings.
+vi) Double compression glands and crimped lugs shall be used for all cable terminations.
+vii) The maker's name, size, voltage grade and year of manufacture shall be marked on every drum.
+
+7 TESTS AND INSPECTION
+i) Each assembly shall undergo routine verification as laid down in IS/IEC 61439-1.
+ii) The bidder shall furnish type test certificates of the offered panel design issued by a NABL accredited laboratory.
+iii) Each motor shall be subjected to routine tests as per IS 4029.
+iv) All motors shall carry the ISI mark.
+v) Testing of the cables shall be done as per IS 10810.
+vi) Each consignment of cables shall be accompanied by routine test certificates.
+vii) Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.
+
+8 DOCUMENTATION, WARRANTY AND TRAINING
+i) Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.
+ii) On completion the contractor shall hand over three copies of the O&M manuals.
+iii) The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship.
+iv) Operation and routine maintenance training shall be given by the contractor to the Department's operators.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Main LT panel as per specification | Set | 1
+2 | Sub-distribution board, 12 way TPN | No. | 8
+3 | Squirrel cage induction motor 37 kW, 1500 rpm | No. | 3
+4 | 3.5C x 300 sq mm XLPE armoured cable | m | 350
+5 | Cable tray 300 mm wide | m | 120
+
+APPROVED MAKES OF MATERIALS
+LT panel builder: as per approved list; ACB/MCCB: L&T / Siemens / Schneider / ABB
+Motors: ABB / Siemens / Crompton Greaves / Kirloskar
+Cables: Polycab / KEI / Havells / RR Kabel
+
+Note: Drawings are indicative only and shall be verified at site.
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+
+Signature of Bidder with seal
+Executive Engineer

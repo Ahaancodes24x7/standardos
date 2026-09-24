@@ -1,0 +1,255 @@
+{
+ "id": "rw2-dev2-09",
+ "split": "dev2",
+ "name": "Supply and installation of borewell submersible pumpsets and water quality testing — CE/ELE/33/2026-27",
+ "organization": "PUBLIC HEALTH ENGINEERING DEPARTMENT",
+ "domain": "Submersible pumpsets, Drinking water quality",
+ "plants": [
+  "water.tds.high",
+  "water.tests.no1622",
+  "water.fluoride.high",
+  "sub.eff.omit"
+ ],
+ "style": {
+  "units": {
+   "V": "{n}-volt",
+   "kV": "{n}-kV",
+   "A": "{n} Amperes",
+   "kA": "{n} kA (rms)",
+   "degC": "{n} ℃",
+   "mm2": "{n} Sq mm",
+   "kW": "{n} kilowatt",
+   "Hz": "{n} cycles per second",
+   "m3h": "{n} cu.m/hr",
+   "mgl": "{n} mg per litre",
+   "ohm": "{n} Ohms",
+   "mm": "{n} m.m.",
+   "m": "{n} metre",
+   "pct": "{n} pct",
+   "kVA": "{n} kva",
+   "rpm": "{n} rpm.",
+   "NTU": "{n} NTU.",
+   "dBA": "{n} decibels (A)",
+   "kgm3": "{n} kg per cubic metre",
+   "days": "{n} calendar days"
+  },
+  "numbering": "paren_alpha",
+  "caps_rate": 0.08,
+  "merge_rate": 0.12
+ },
+ "requirements": [
+  {
+   "text": "SUBMERSIBLE PUMPSETS FOR BOREWELLS SHALL COMPLY WITH IS 8034:2018.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Duty point of each pumpset shall be 18 cu.m/hr at 90 metre total head.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "flow_rate",
+     "value": 18
+    },
+    {
+     "parameter": "pump_head",
+     "value": 90000
+    }
+   ],
+   "standard": "is-8034-2018"
+  },
+  {
+   "text": "The motors shall be wet type, water filled, complying with IS 9283:2013.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Flat submersible cables shall be copper conductor, PVC insulated, 3 core 6 Sq mm, complying with IS 694:2010 and tested to IS 10810.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 6
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "An automatic starter with dry run protection and single phasing preventer shall be supplied with every pumpset.",
+   "category": "electrical",
+   "attributes": []
+  },
+  {
+   "text": "The quality of treated water shall comply with IS 10500:2012.",
+   "category": "quality",
+   "attributes": []
+  },
+  {
+   "text": "The pH value of treated water shall lie within 6.5 to 8.5.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "ph",
+     "value": 6.5
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "TDS of treated water shall be limited to 2000 mg per litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "tds",
+     "value": 2000
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "The turbidity of treated water shall be limited to 1 NTU..",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "turbidity",
+     "value": 1
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Fluoride (as F) shall be limited to 1.5 mg per litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "fluoride",
+     "value": 1.5
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Nitrate (as NO3) shall be limited to 45 mg per litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "nitrate",
+     "value": 45
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Arsenic (as As) shall be limited to 0.01 mg per litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "arsenic",
+     "value": 0.01
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Total hardness (as CaCO3) shall be limited to 200 mg per litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "total_hardness",
+     "value": 200
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "No E. coli shall be detected in any 100 ml sample.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "bacteriological_quality"
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "All pumpsets shall carry the BIS Standard Mark.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Testing of water samples shall be done at a NABL accredited laboratory as per IS 3025.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall submit test reports for every source to the Engineer-in-charge.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "On completion the contractor shall hand over three copies of the O&M manuals.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "OPERATION AND ROUTINE MAINTENANCE TRAINING SHALL BE GIVEN BY THE CONTRACTOR TO THE DEPARTMENT'S OPERATORS.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "conflict",
+   "standardId": "is-10500-2012",
+   "parameter": "tds",
+   "why": "2000 mg/l above 500 mg/l acceptable limit"
+  },
+  {
+   "group": "dependency",
+   "standardId": "is-1622-1981",
+   "why": "bacteriological test method not named"
+  },
+  {
+   "group": "conflict",
+   "standardId": "is-10500-2012",
+   "parameter": "fluoride",
+   "why": "1.5 mg/l above 1.0 mg/l acceptable limit"
+  },
+  {
+   "group": "gap",
+   "parameter": "efficiency",
+   "why": "overall efficiency not stated"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-10500-2012",
+   "why": "amendments to confirm"
+  }
+ ]
+}

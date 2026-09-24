@@ -27,3 +27,16 @@ Every inspection of a contaminated or blind split while making changes, and ever
 | 2026-09-24T03:53:52+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-035352_v3-tfidf` (v3-tfidf) |
 | 2026-09-24T03:54:30+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-035430_v3-hybrid` (v3-hybrid) |
 | 2026-09-24T03:54:32+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-035432_v3-gated` (v3-gated) |
+| 2026-09-24 | dataset added | realworld_v2/dev2 (open) | v2.2: third, independently written wording + unit pool (datagen/dev2.py). v3.1 fixes (units_v3, text_attrs_v2, identify_v2, reasoning_v31) were developed on dev2, dev, tenders_v1 and component dev/test only. |
+| 2026-09-24 | re-annotation | tenders_v1 (b1, b5, b6), component/test (s5) | Unified per-product guideline (datasets/ANNOTATION_GUIDELINES.md), applied after seeing v3 output on these contaminated splits; each added label was checked against the document text. v1.0 gold archived in datasets/_archive/. Blind splits untouched. |
+| 2026-09-24 | known gold error | realworld_v2 (generator) | Plant `pump.duty.nohead` removes the head from the duty clause but not from the pump data sheet, so its gold "duty head not stated" is wrong when the data sheet is present (seen in dev2-04). Not corrected: the same generator produced the blind test gold, which is frozen. |
+| 2026-09-24T07:27:14+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-072714_v3` (v3) |
+| 2026-09-24T07:27:14+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-072714_legacy-2.1` (legacy-2.1) |
+| 2026-09-24T07:27:18+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-072718_v3.1` (v3.1) |
+| 2026-09-24T07:27:19+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-072719_v3.1-dag` (v3.1-dag) |
+| 2026-09-24T07:27:21+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-072721_v3+units3` (v3+units3) |
+| 2026-09-24T07:27:22+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-072722_v3+textattrs2` (v3+textattrs2) |
+| 2026-09-24T07:27:23+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-072723_v3+reasoning31` (v3+reasoning31) |
+| 2026-09-24T07:27:23+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-072723_v3+identify2` (v3+identify2) |
+| 2026-09-24T07:29:13+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-072913_v3.1-hybrid` (v3.1-hybrid) |
+| 2026-09-24T07:29:14+00:00 | blind scoring | component/heldout, realworld_v2/test | run `20260924-072914_v3.1-gated` (v3.1-gated) |

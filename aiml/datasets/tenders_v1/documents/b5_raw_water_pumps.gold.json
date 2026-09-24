@@ -3,7 +3,7 @@
   "name": "Raw water pumping machinery, Kanher Dam — MJP Satara E-12/2026-27",
   "organization": "Maharashtra Jeevan Pradhikaran, Satara (benchmark)",
   "domain": "water supply — horizontal centrifugal pumps, induction motors",
-  "notes": "Deliberately well written: every checklist item is stated, variations are within IS 325, test methods (IS 9137, IS 4029, IS 10810) and conformity evidence (ISI mark) are named, and the earthing code is cited in a single passing clause. A reviewer should not be told about any problem; every non-verified finding is a false positive.",
+  "notes": "Well written: variations are within IS 325, test methods (IS 9137, IS 4029, IS 10810) are named and the earthing code is cited in a single passing clause. v1.1 (per-product guideline): the power cables have no conductor size and no conformity evidence.",
   "requirements": [
     {"text": "Each pump shall deliver 450 m3/h against a total head of 42 m.", "category": "performance", "attributes": [{"parameter": "flow_rate", "value": 450}, {"parameter": "pump_head", "value": 42000}]},
     {"text": "The pump efficiency at the duty point shall not be less than 80 %.", "category": "performance", "attributes": [{"parameter": "efficiency", "value": 80}]},
@@ -35,5 +35,8 @@
     {"text": "The contractor shall operate the pumping station for a trial period of 12 months after commissioning.", "category": "general", "attributes": []},
     {"text": "During the trial run the contractor shall provide one operator and one helper in each shift.", "category": "general", "attributes": []}
   ],
-  "findings": []
+  "findings": [
+    {"group": "gap", "standardId": "is-7098-1-1988", "parameter": "conductor_size", "why": "Clause 6.2 specifies the power cables without a conductor size."},
+    {"group": "certification", "why": "The ISI mark is required for pumps and motors (5.3) and test certificates for motors (5.2); the cables (IS 7098) have no conformity evidence."}
+  ]
 }

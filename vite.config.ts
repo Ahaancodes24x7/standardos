@@ -26,7 +26,11 @@ export default defineConfig({
     // Nitro must come after tanstackStart() and before react() so Start's
     // server build is packaged into a deployable server (Vercel Functions,
     // Node, etc.) instead of a raw Vite SSR bundle nothing knows how to run.
-    nitro(),
+    nitro({
+      // On Vercel the /api gateway waits for POST /api/runs/{id}/execute, which runs the
+      // pipeline synchronously; allow it the same 60 s as the API function.
+      vercel: { functions: { maxDuration: 60 } },
+    }),
     // react's vite plugin must come after start's vite plugin
     viteReact(),
   ],

@@ -1,0 +1,336 @@
+{
+ "id": "rw2-dev2-08",
+ "split": "dev2",
+ "name": "Design, supply and commissioning of raw water pumping machinery — EE/CIV/43/2026-27",
+ "organization": "JAL NIGAM",
+ "domain": "Centrifugal pumps, Induction motors, LT power cables",
+ "plants": [
+  "pump.isi.omit"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} V AC",
+   "kV": "{n}-kV",
+   "A": "{n} ampere",
+   "kA": "{n} kA (rms)",
+   "degC": "{n} ℃",
+   "mm2": "{n} Sq mm",
+   "kW": "{n} kilowatt",
+   "Hz": "{n} Hertz",
+   "m3h": "{n} m^3/h",
+   "mgl": "{n} mg per litre",
+   "ohm": "{n} Ohms",
+   "mm": "{n} m.m.",
+   "m": "{n} metre",
+   "pct": "{n}% (percent)",
+   "kVA": "{n} kva",
+   "rpm": "{n} rev/min",
+   "NTU": "{n} NTU.",
+   "dBA": "{n} decibels (A)",
+   "kgm3": "{n} kg/cu.m",
+   "days": "{n} calendar days"
+  },
+  "numbering": "paren_alpha",
+  "caps_rate": 0,
+  "merge_rate": 0
+ },
+ "requirements": [
+  {
+   "text": "The pumps shall comply with IS 1520:1980.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Duty point of each pump shall be 250 m^3/h at 45 metre total head.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "flow_rate",
+     "value": 250
+    },
+    {
+     "parameter": "pump_head",
+     "value": 45000
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Pump efficiency at the duty point shall be 78% (percent) minimum.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "efficiency",
+     "value": 78
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "The pump casing shall be cast iron and the impeller bronze.",
+   "category": "material",
+   "attributes": [],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "The pumpset noise level measured 1 metre away shall be limited to 85 decibels (A).",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "noise_level",
+     "value": 85
+    }
+   ]
+  },
+  {
+   "text": "Rated discharge: 250 m^3/h",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "flow_rate",
+     "value": 250
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Rated total head: 45 metre",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "pump_head",
+     "value": 45000
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Squirrel cage induction motors complying with IS 325:1996 shall be supplied.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Motor rated output shall be 37 kilowatt.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "rated_power",
+     "value": 37000
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Motors are to operate on 415 V AC ± 10% (percent), 50 Hertz ± 5% (percent), three phase supply.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 415
+    },
+    {
+     "parameter": "voltage_variation",
+     "value": 10
+    },
+    {
+     "parameter": "frequency",
+     "value": 50
+    },
+    {
+     "parameter": "frequency_variation",
+     "value": 5
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Motors shall meet efficiency class IE3 of IS 12615:2018.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "efficiency_class",
+     "text": "IE3"
+    }
+   ]
+  },
+  {
+   "text": "The motor enclosure shall have IP55 degree of protection.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ip_rating",
+     "text": "IP55"
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Insulation shall be class F, with temperature rise restricted to class B, for continuous S1 duty.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "insulation_class",
+     "text": "Class F"
+    },
+    {
+     "parameter": "duty_type",
+     "text": "S1"
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "The motor synchronous speed shall be 1500 rev/min.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "speed",
+     "value": 1500
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "LT power cables shall be aluminium conductor, XLPE insulated, armoured, PVC sheathed, 1.1 kV grade, complying with IS 7098 (Part 1):1988.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 1100
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "aluminium"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "XLPE"
+    }
+   ]
+  },
+  {
+   "text": "The size of the main feeder cable shall be 3.5 core 300 Sq mm.",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 300
+    }
+   ],
+   "standard": "is-7098-1-1988"
+  },
+  {
+   "text": "Maximum continuous conductor temperature of the cables shall be 90 ℃.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_temperature",
+     "value": 90
+    }
+   ],
+   "standard": "is-7098-1-1988"
+  },
+  {
+   "text": "Copper conductor control cables of 2.5 Sq mm, PVC insulated, 1.1 kV grade shall comply with IS 1554 (Part 1).",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 2.5
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "Class 2 stranded conductors complying with IS 8130 shall be used.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Cables shall be run in RCC trenches or on perforated trays as per drawings.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Double compression glands and crimped lugs shall be used for all cable terminations.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "The maker's name, size, voltage grade and year of manufacture shall be marked on every drum.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Works testing of the pumps shall be done as per IS 9137.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Each motor shall be subjected to routine tests as per IS 4029.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "All motors shall carry the ISI mark.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Testing of the cables shall be done as per IS 10810.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Each consignment of cables shall be accompanied by routine test certificates.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "On completion the contractor shall hand over three copies of the O&M manuals.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Operation and routine maintenance training shall be given by the contractor to the Department's operators.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "certification",
+   "why": "no conformity evidence for pumps"
+  }
+ ]
+}

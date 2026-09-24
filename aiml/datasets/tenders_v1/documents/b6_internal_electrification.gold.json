@@ -3,7 +3,7 @@
   "name": "Internal electrification, girls' hostel — Karnataka PWD STN 09/2026-27",
   "organization": "Karnataka PWD Electrical Sub-Division, Dharwad (benchmark)",
   "domain": "building services — wiring, distribution boards, protection, earthing",
-  "notes": "Planted (all common in real schedules): wiring code cited as IS 732:1989; MCBs to withdrawn IS 8828; '1100 V grade' building wires against IS 694, which covers up to 450/750 V; no earthing arrangement; testing on completion with no method; wire test method (IS 10810) not named; 'of suitable size' is unmeasurable. ISI marking is required, so no certification finding.",
+  "notes": "Planted (all common in real schedules): wiring code cited as IS 732:1989; MCBs to withdrawn IS 8828; '1100 V grade' building wires against IS 694, which covers up to 450/750 V; no earthing arrangement; testing on completion with no method; wire test method (IS 10810) not named; 'of suitable size' is unmeasurable. v1.1 (per-product guideline): ISI marking covers the wires only, so the MCBs need their own evidence; the distribution boards have no IP rating.",
   "requirements": [
     {"text": "The contractor shall possess a valid electrical contractor licence and shall employ a licensed supervisor on the work.", "category": "general", "attributes": []},
     {"text": "The work shall be carried out as per the Karnataka PWD Schedule of Rates 2025-26 and IS 732:1989.", "category": "general", "attributes": []},
@@ -33,6 +33,8 @@
     {"group": "dependency", "standardId": "is-10810", "why": "Test method for the wires (IS 10810) is not specified."},
     {"group": "gap", "parameter": "earthing_system", "why": "Earthing arrangement (TN-S, TT, ...) is not stated."},
     {"group": "gap", "parameter": "test_method", "why": "Completion testing is required but no method or acceptance criteria per IS 732 are given."},
-    {"group": "gap", "why": "'Of suitable size' for distribution boards is not measurable."}
+    {"group": "gap", "why": "'Of suitable size' for distribution boards is not measurable."},
+    {"group": "gap", "standardId": "is-iec-61439-1-2020", "parameter": "ip_rating", "why": "Distribution boards (10) are specified without a degree of protection."},
+    {"group": "certification", "why": "ISI marking is required for wires only (8); the MCBs (IS 8828 → IS/IEC 60898-1) have no conformity evidence."}
   ]
 }

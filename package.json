@@ -15,8 +15,9 @@
     "db:migrate": "cd backend && uv run alembic upgrade head",
     "db:seed": "cd backend && uv run python -m scripts.seed_standards",
     "test": "cd aiml && uv run pytest && cd ../backend && uv run pytest",
-    "eval": "cd aiml && uv run python -m eval.run all --verbose",
-    "benchmark": "cd aiml && uv run python -m benchmark.run"
+    "eval": "cd aiml && uv run python -m evaluation run --config v3.1",
+    "eval:compare": "cd aiml && uv run python -m evaluation compare",
+    "build:vercel-api": "cd backend && uv run python -m scripts.build_vercel_api"
   },
   "overrides": {
     "rolldown": "1.2.1"

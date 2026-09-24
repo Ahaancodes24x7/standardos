@@ -17,6 +17,7 @@ from dataclasses import dataclass, field
 from typing import Any, Optional
 
 from .clauses import DOMAINS, GENERIC, PACKAGES, VAGUE, Domain, Plant, T
+from .dev2 import DEV2, DEV2_COMPANIONS, FORMS_DEV2
 
 # Per-unit surface forms: (dev pool, extra forms only the test split may use).
 FORMS: dict[str, tuple[list[str], list[str]]] = {
@@ -105,7 +106,10 @@ class Styler:
 
     def __init__(self, rng: random.Random, split: str) -> None:
         self.rng = rng
-        pool = {u: (dev + test if split == "test" else dev) for u, (dev, test) in FORMS.items()}
+        if split == "dev2":
+            pool = FORMS_DEV2  # a third spelling pool, disjoint from dev and test
+        else:
+            pool = {u: (dev + test if split == "test" else dev) for u, (dev, test) in FORMS.items()}
         self.forms = {u: rng.choice(p) for u, p in pool.items()}
         self.numbering = rng.choice(NUMBERING)
         self.caps_rate = rng.choice([0, 0, 0.08])
@@ -149,7 +153,9 @@ def _gold(text: str, c: "Clause") -> dict[str, Any]:
     return gold
 
 
-def _variant(variants: list[str], split: str, rng: random.Random) -> str:
+def _variant(variants: list[str], split: str, rng: random.Random, key: str = "", companion: bool = False) -> str:
+    if split == "dev2":
+        return (DEV2_COMPANIONS if companion else DEV2).get(key, variants[0])
     if split == "dev" or len(variants) == 1:
         return variants[0]
     return rng.choice(variants[1:])
@@ -186,9 +192,11 @@ def compose(doc_id: str, split: str, package_index: int, n_plants: int, seed: in
             if not plant.variants:
                 return None
             attrs = plant.attrs or ([] if plant.group == "gap" else t.attrs)
-            return Clause(style.render(_variant(plant.variants, split, rng)), plant.cat or t.cat, attrs, plant.std or t.std)
+            return Clause(style.render(_variant(plant.variants, split, rng, plant.key)), plant.cat or t.cat, attrs, plant.std or t.std)
         variants = companion_text.get(t.key, t.variants)
-        return Clause(style.render(_variant(variants, split, rng)), t.cat, t.attrs, t.std)
+        return Clause(
+            style.render(_variant(variants, split, rng, t.key, companion=t.key in companion_text)), t.cat, t.attrs, t.std
+        )
 
     # --- header ---
     tender_no = f"{rng.choice(['EE', 'SE', 'CE'])}/{rng.choice(['ELE', 'CIV', 'WS', 'MM'])}/{rng.randint(10, 99)}/{2026}-27"
@@ -251,7 +259,7 @@ def compose(doc_id: str, split: str, package_index: int, n_plants: int, seed: in
         vague = [p for p in chosen if p.replaces is None and p.variants]
         if d is domains[0]:
             for p in vague:
-                spec.insert(rng.randint(0, len(spec)), Clause(style.render(_variant(p.variants, split, rng)), p.cat, [], None))
+                spec.insert(rng.randint(0, len(spec)), Clause(style.render(_variant(p.variants, split, rng, p.key)), p.cat, [], None))
         heading = rng.choice([f"{section} TECHNICAL SPECIFICATION — {d.heading}", f"SECTION {section}: {d.heading}", f"PART {chr(64 + section)} — {d.heading}"])
         lines.append(heading)
         emit(section, spec)

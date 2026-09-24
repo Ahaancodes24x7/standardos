@@ -1,0 +1,12 @@
+# Runtime dependencies of the StandardOS API on Vercel (mirrors backend/ and aiml/ pyproject.toml,
+# without the dev server, migrations and the optional ml / llm extras).
+fastapi>=0.115
+sqlalchemy>=2.0.30
+psycopg[binary]>=3.2
+pydantic>=2.8
+pydantic-settings>=2.4
+itsdangerous>=2.2
+python-multipart>=0.0.9
+email-validator>=2.2
+pypdf>=5.0
+mammoth>=1.8

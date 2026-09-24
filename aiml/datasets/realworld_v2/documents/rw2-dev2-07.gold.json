@@ -1,0 +1,192 @@
+{
+ "id": "rw2-dev2-07",
+ "split": "dev2",
+ "name": "Internal electrification including wiring, distribution boards and earthing — SE/MM/44/2026-27",
+ "organization": "PUBLIC WORKS DEPARTMENT",
+ "domain": "Internal electrification",
+ "plants": [
+  "wiring.earthcode.old"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} V AC",
+   "kV": "{n} kV AC",
+   "A": "{n} ampere",
+   "kA": "{n} kA rms",
+   "degC": "{n}° C",
+   "mm2": "{n} mm2",
+   "kW": "{n} kilowatt",
+   "Hz": "{n} cycles per second",
+   "m3h": "{n} m^3/h",
+   "mgl": "{n} milligram per litre",
+   "ohm": "{n} Ohms",
+   "mm": "{n} m.m.",
+   "m": "{n} metre",
+   "pct": "{n} pct",
+   "kVA": "{n} kilo-volt-ampere",
+   "rpm": "{n} rpm.",
+   "NTU": "{n} NTU.",
+   "dBA": "{n} dB (A)",
+   "kgm3": "{n} kg per cubic metre",
+   "days": "{n} calendar days"
+  },
+  "numbering": "paren_alpha",
+  "caps_rate": 0,
+  "merge_rate": 0
+ },
+ "requirements": [
+  {
+   "text": "All wiring work shall comply with IS 732:2019.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "The earthing arrangement of the supply system is TN-S.",
+   "category": "safety",
+   "attributes": [
+    {
+     "parameter": "earthing_system",
+     "text": "TN-S"
+    }
+   ],
+   "standard": "is-3043-2018"
+  },
+  {
+   "text": "All wiring shall run concealed in rigid PVC conduit having 1.5 m.m. wall thickness.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Wires are to be single core, stranded copper conductor, FR PVC insulated, 450/750 V grade to IS 694:2010.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 750
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "Copper conductors of 1.5 mm2 shall be used for lighting circuits and 4 mm2 for power circuits.",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 1.5
+    },
+    {
+     "parameter": "conductor_size",
+     "value": 4
+    }
+   ],
+   "standard": "is-694-2010"
+  },
+  {
+   "text": "MCBs shall comply with IS/IEC 60898-1 and have a rated short-circuit capacity of 10 kA rms.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 10000
+    }
+   ]
+  },
+  {
+   "text": "MCBs from 6 ampere up to 32 ampere shall be provided as per the single line diagram.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 6
+    }
+   ],
+   "standard": "is-iec-60898-1-2002"
+  },
+  {
+   "text": "All socket outlet circuits shall be protected by 30 mA RCCBs complying with IS 12640 (Part 1).",
+   "category": "safety",
+   "attributes": []
+  },
+  {
+   "text": "The earthing installation shall comply with IS 3043:1987.",
+   "category": "safety",
+   "attributes": []
+  },
+  {
+   "text": "The main distribution board shall be earthed through two pipe earth electrodes.",
+   "category": "safety",
+   "attributes": [],
+   "standard": "is-3043-2018"
+  },
+  {
+   "text": "Resistance of the earthing system shall be not more than 1 Ohms.",
+   "category": "safety",
+   "attributes": [
+    {
+     "parameter": "earth_resistance",
+     "value": 1
+    }
+   ],
+   "standard": "is-3043-2018"
+  },
+  {
+   "text": "Testing of wires shall be done as per IS 10810.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "After completion, the insulation resistance and earth continuity of the installation shall be tested as per IS 732.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "All wires, MCBs and RCCBs supplied shall carry the ISI mark.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "On completion the contractor shall hand over three copies of the O&M manuals.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Operation and routine maintenance training shall be given by the contractor to the Department's operators.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "outdated",
+   "standardId": "is-3043-2018",
+   "why": "IS 3043:1987 revised as IS 3043:2018"
+  }
+ ]
+}

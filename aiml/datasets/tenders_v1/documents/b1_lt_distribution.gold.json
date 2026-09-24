@@ -3,7 +3,7 @@
   "name": "LT electrical distribution system — CPWD NIT 14/EE(E)/EED/2026-27",
   "organization": "CPWD Eastern Electrical Division (benchmark)",
   "domain": "electrical — LV switchgear, protective devices, cables, earthing",
-  "notes": "Planted: design ambient 50 °C (and 45 °C in the GTP) above the 40 °C normal service limit and inconsistent with each other; superseded edition IS 3043:1987; XLPE cables with no named test method. Conformity evidence (NABL type-test certificates) is stated, so no certification finding is expected.",
+  "notes": "Planted: design ambient 50 °C (and 45 °C in the GTP) above the 40 °C normal service limit and inconsistent with each other; superseded edition IS 3043:1987; XLPE cables with no named test method. v1.1 (per-product guideline): conformity evidence is stated for the panel only, so the cables and MCBs need their own; the MCB rated current is not stated.",
   "requirements": [
     {"text": "The work shall be executed in accordance with CPWD General Specifications for Electrical Works (Part I Internal and Part II External), as amended up to date.", "category": "general", "attributes": []},
     {"text": "The equipment shall be designed for a maximum ambient temperature of 50 °C and relative humidity up to 95 %.", "category": "environmental", "attributes": [{"parameter": "ambient_temperature", "value": 50}, {"parameter": "relative_humidity", "value": 95}]},
@@ -51,6 +51,8 @@
     {"group": "conflict", "standardId": "is-iec-61439-1-2020", "parameter": "ambient_temperature", "why": "GTP states 45 °C, also above 40 °C."},
     {"group": "conflict", "why": "Site conditions (50 °C) and GTP (45 °C) state different design ambient temperatures."},
     {"group": "outdated", "standardId": "is-3043-2018", "why": "IS 3043:1987 has been revised as IS 3043:2018."},
-    {"group": "dependency", "standardId": "is-10810", "why": "IS 7098 (Part 1) cables are tested per IS 10810; the specification only asks for an IR test."}
+    {"group": "dependency", "standardId": "is-10810", "why": "IS 7098 (Part 1) cables are tested per IS 10810; the specification only asks for an IR test."},
+    {"group": "gap", "standardId": "is-iec-60898-1-2002", "parameter": "rated_current", "why": "Clause 5.2 gives the MCB breaking capacity but no rated current (IS/IEC 60898-1 checklist)."},
+    {"group": "certification", "why": "Type-test certificates are required for the panel only (8.2); the XLPE cables (IS 7098) and MCBs (IS/IEC 60898-1) have no conformity evidence."}
   ]
 }

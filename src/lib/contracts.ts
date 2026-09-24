@@ -100,10 +100,17 @@ export type GraphPath = {
 };
 
 /** Wire format of an analysed document. `analyzedAt` is ISO-8601 on the wire. */
+export type DocumentTypeKey =
+  "specification" | "tender" | "boq" | "datasheet" | "test_report" | "inspection_report" | "other";
+
 export type DocumentAnalysis = {
   id: string;
   name: string;
+  /** Source format label (PDF / DOCX / TXT / Text). */
   type: string;
+  /** What the document is; `documentTypeLabel` is its display name (the user's own for "other"). */
+  documentType: DocumentTypeKey;
+  documentTypeLabel: string;
   organization: string;
   analyzedAt: string;
   standards: number;

@@ -1,11 +1,240 @@
-import { createFileRoute,useNavigate } from "@tanstack/react-router";
-import { AlertCircle,ArrowRight,Check,FileText,UploadCloud,X } from "lucide-react";
-import { useRef,useState } from "react";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { AlertCircle, ArrowRight, Check, FileText, UploadCloud, X } from "lucide-react";
+import { useRef, useState } from "react";
 import { analyzeDocument } from "@/services/analysis";
+import {
+  DocumentTypePicker,
+  type DocumentTypeValue,
+} from "@/components/analysis/document-type-picker";
 import { Button } from "@/components/ui/button";
-import { Tabs,TabsContent,TabsList,TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-export const Route=createFileRoute("/_authenticated/analyze/")({head:()=>({meta:[{title:"Analyze a Specification — STANDARDOS"},{name:"description",content:"Upload or paste a procurement specification for standards and compliance analysis."},{property:"og:title",content:"Analyze a Specification — STANDARDOS"},{property:"og:description",content:"Map standards and detect compliance issues."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:AnalyzePage});
-const steps=["Reading specification","Extracting requirements","Identifying product category","Mapping Indian Standards","Resolving normative references","Checking certifications","Detecting conflicts","Generating compliance report"];
-function AnalyzePage(){const nav=useNavigate();const input=useRef<HTMLInputElement>(null);const [file,setFile]=useState<File|null>(null);const [text,setText]=useState("");const [drag,setDrag]=useState(false);const [error,setError]=useState("");const [progress,setProgress]=useState(0);const [running,setRunning]=useState(false);const validate=(candidate:File)=>{const ext=candidate.name.split(".").pop()?.toLowerCase();if(!["pdf","docx","txt"].includes(ext??"")){setError("Unsupported file. Upload PDF, DOCX, or TXT.");return}if(candidate.size>20*1024*1024){setError("Upload failed. The maximum file size is 20 MB.");return}setError("");setFile(candidate)};const run=async()=>{if(!file&&!text.trim()){setError("Add a file or paste specification text before analysis.");return}setRunning(true);setError("");try{const result=await analyzeDocument({file:file??undefined,text:text||undefined},setProgress);await nav({to:"/analyze/$documentId",params:{documentId:result.id}})}catch(err){setError(err instanceof Error&&err.message?err.message:"Analysis failed because the service could not respond. Your document is safe; please retry.");setRunning(false);setProgress(0)}};return <div className="reveal max-w-5xl"><header><p className="eyebrow">New analysis</p><h1 className="page-title mt-3">Analyze a Specification</h1><p className="mt-4 max-w-2xl leading-7 text-muted-foreground">Upload a tender, procurement document, or technical specification. STANDARDOS will identify applicable standards and compliance requirements.</p></header>{running?<Processing progress={progress}/>:<section className="mt-10 glass-panel p-5 sm:p-7"><Tabs defaultValue="upload"><TabsList><TabsTrigger value="upload">Upload document</TabsTrigger><TabsTrigger value="paste">Paste specification text</TabsTrigger></TabsList><TabsContent value="upload" className="mt-5"><div onDragOver={(e)=>{e.preventDefault();setDrag(true)}} onDragLeave={()=>setDrag(false)} onDrop={(e)=>{e.preventDefault();setDrag(false);const dropped=e.dataTransfer.files[0];if(dropped)validate(dropped)}} className={`grid min-h-56 place-items-center border border-dashed p-7 text-center transition-all ${drag?"border-accent-foreground bg-accent/25":"border-border bg-background/30"}`}><div><span className="mx-auto grid size-12 place-items-center rounded-full bg-accent text-accent-foreground"><UploadCloud/></span><h2 className="mt-4 text-lg font-bold text-primary">Drop your specification here</h2><p className="mt-1 text-sm text-muted-foreground">PDF, DOCX, or TXT · up to 20 MB</p><Button variant="outline" className="mt-5" onClick={()=>input.current?.click()}>Browse files</Button><input ref={input} hidden type="file" accept=".pdf,.docx,.txt" onChange={(e)=>{const chosen=e.target.files?.[0];if(chosen)validate(chosen)}}/></div></div>{file&&<div className="mt-4 flex items-center gap-3 border-t border-border pt-4"><FileText className="size-5 text-accent-foreground"/><div className="min-w-0 flex-1"><p className="truncate text-sm font-bold text-primary">{file.name}</p><p className="text-xs text-muted-foreground">{(file.size/1024).toFixed(1)} KB · Ready to analyze</p></div><button aria-label="Remove file" onClick={()=>setFile(null)}><X className="size-4"/></button></div>}</TabsContent><TabsContent value="paste" className="mt-5"><Textarea value={text} onChange={(e)=>setText(e.target.value)} placeholder="Paste the technical specification or tender clauses here…" className="min-h-56 resize-y" maxLength={30000}/><p className="mt-2 text-right text-xs text-muted-foreground">{text.length.toLocaleString()} / 30,000</p></TabsContent></Tabs>{error&&<p role="alert" className="mt-4 flex items-center gap-2 text-sm text-destructive"><AlertCircle className="size-4"/>{error}</p>}<div className="mt-6 flex justify-end"><Button size="lg" onClick={run}>Analyze Specification <ArrowRight/></Button></div></section>}</div>}
-function Processing({progress}:{progress:number}){return <section className="mt-12 glass-panel p-7 sm:p-10"><p className="eyebrow">Analysis in progress</p><h2 className="section-title mt-3">Building the evidence trail.</h2><div className="mt-8 h-1 overflow-hidden bg-secondary"><div className="h-full bg-accent-foreground transition-all duration-500" style={{width:`${progress/8*100}%`}}/></div><div className="mt-8 grid gap-3 sm:grid-cols-2">{steps.map((step,index)=>{const done=index<progress;const active=index===progress;return <div key={step} className={`flex items-center gap-3 py-2 text-sm transition-opacity ${done||active?"opacity-100":"opacity-35"}`}><span className={`grid size-6 place-items-center rounded-full border ${done?"border-success bg-success text-success-foreground":active?"border-accent-foreground text-accent-foreground":"border-border"}`}>{done?<Check className="size-3"/>:<span className="text-[10px]">{index+1}</span>}</span><span className={active?"font-bold text-primary":"text-muted-foreground"}>{step}</span></div>})}</div></section>}
+export const Route = createFileRoute("/_authenticated/analyze/")({
+  head: () => ({
+    meta: [
+      { title: "Analyze a Specification — STANDARDOS" },
+      {
+        name: "description",
+        content:
+          "Upload or paste a procurement specification for standards and compliance analysis.",
+      },
+      { property: "og:title", content: "Analyze a Specification — STANDARDOS" },
+      { property: "og:description", content: "Map standards and detect compliance issues." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: AnalyzePage,
+});
+const steps = [
+  "Reading specification",
+  "Extracting requirements",
+  "Identifying product category",
+  "Mapping Indian Standards",
+  "Resolving normative references",
+  "Checking certifications",
+  "Detecting conflicts",
+  "Generating compliance report",
+];
+function AnalyzePage() {
+  const nav = useNavigate();
+  const input = useRef<HTMLInputElement>(null);
+  const [file, setFile] = useState<File | null>(null);
+  const [text, setText] = useState("");
+  const [drag, setDrag] = useState(false);
+  const [error, setError] = useState("");
+  const [progress, setProgress] = useState(0);
+  const [running, setRunning] = useState(false);
+  const [docType, setDocType] = useState<DocumentTypeValue>({
+    documentType: "specification",
+    documentTypeLabel: "",
+  });
+  const validate = (candidate: File) => {
+    const ext = candidate.name.split(".").pop()?.toLowerCase();
+    if (!["pdf", "docx", "txt"].includes(ext ?? "")) {
+      setError("Unsupported file. Upload PDF, DOCX, or TXT.");
+      return;
+    }
+    if (candidate.size > 20 * 1024 * 1024) {
+      setError("Upload failed. The maximum file size is 20 MB.");
+      return;
+    }
+    setError("");
+    setFile(candidate);
+  };
+  const run = async () => {
+    if (!file && !text.trim()) {
+      setError("Add a file or paste specification text before analysis.");
+      return;
+    }
+    if (docType.documentType === "other" && !docType.documentTypeLabel.trim()) {
+      setError("Name the document type when you choose Other.");
+      return;
+    }
+    setRunning(true);
+    setError("");
+    try {
+      const result = await analyzeDocument(
+        {
+          file: file ?? undefined,
+          text: text || undefined,
+          documentType: docType.documentType,
+          documentTypeLabel: docType.documentTypeLabel,
+        },
+        setProgress,
+      );
+      await nav({ to: "/analyze/$documentId", params: { documentId: result.id } });
+    } catch (err) {
+      setError(
+        err instanceof Error && err.message
+          ? err.message
+          : "Analysis failed because the service could not respond. Your document is safe; please retry.",
+      );
+      setRunning(false);
+      setProgress(0);
+    }
+  };
+  return (
+    <div className="reveal max-w-5xl">
+      <header>
+        <p className="eyebrow">New analysis</p>
+        <h1 className="page-title mt-3">Analyze a Document</h1>
+        <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
+          Upload a specification, tender, bill of quantities, vendor datasheet, test or inspection
+          report — or any document type of your own. STANDARDOS identifies applicable standards and
+          compliance issues and keeps the analysis in your workspace.
+        </p>
+      </header>
+      {running ? (
+        <Processing progress={progress} />
+      ) : (
+        <section className="mt-10 glass-panel p-5 sm:p-7">
+          <div className="mb-6 border-b border-border pb-6">
+            <DocumentTypePicker value={docType} onChange={setDocType} />
+          </div>
+          <Tabs defaultValue="upload">
+            <TabsList>
+              <TabsTrigger value="upload">Upload document</TabsTrigger>
+              <TabsTrigger value="paste">Paste text</TabsTrigger>
+            </TabsList>
+            <TabsContent value="upload" className="mt-5">
+              <div
+                onDragOver={(e) => {
+                  e.preventDefault();
+                  setDrag(true);
+                }}
+                onDragLeave={() => setDrag(false)}
+                onDrop={(e) => {
+                  e.preventDefault();
+                  setDrag(false);
+                  const dropped = e.dataTransfer.files[0];
+                  if (dropped) validate(dropped);
+                }}
+                className={`grid min-h-56 place-items-center border border-dashed p-7 text-center transition-all ${drag ? "border-accent-foreground bg-accent/25" : "border-border bg-background/30"}`}
+              >
+                <div>
+                  <span className="mx-auto grid size-12 place-items-center rounded-full bg-accent text-accent-foreground">
+                    <UploadCloud />
+                  </span>
+                  <h2 className="mt-4 text-lg font-bold text-primary">Drop your document here</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    PDF, DOCX, or TXT · up to 20 MB
+                  </p>
+                  <Button variant="outline" className="mt-5" onClick={() => input.current?.click()}>
+                    Browse files
+                  </Button>
+                  <input
+                    ref={input}
+                    hidden
+                    type="file"
+                    accept=".pdf,.docx,.txt"
+                    onChange={(e) => {
+                      const chosen = e.target.files?.[0];
+                      if (chosen) validate(chosen);
+                    }}
+                  />
+                </div>
+              </div>
+              {file && (
+                <div className="mt-4 flex items-center gap-3 border-t border-border pt-4">
+                  <FileText className="size-5 text-accent-foreground" />
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-bold text-primary">{file.name}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {(file.size / 1024).toFixed(1)} KB · Ready to analyze
+                    </p>
+                  </div>
+                  <button aria-label="Remove file" onClick={() => setFile(null)}>
+                    <X className="size-4" />
+                  </button>
+                </div>
+              )}
+            </TabsContent>
+            <TabsContent value="paste" className="mt-5">
+              <Textarea
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                placeholder="Paste the document text here (specification, tender clauses, BOQ items, datasheet values…)"
+                className="min-h-56 resize-y"
+                maxLength={30000}
+              />
+              <p className="mt-2 text-right text-xs text-muted-foreground">
+                {text.length.toLocaleString()} / 30,000
+              </p>
+            </TabsContent>
+          </Tabs>
+          {error && (
+            <p role="alert" className="mt-4 flex items-center gap-2 text-sm text-destructive">
+              <AlertCircle className="size-4" />
+              {error}
+            </p>
+          )}
+          <div className="mt-6 flex justify-end">
+            <Button size="lg" onClick={run}>
+              Analyze Document <ArrowRight />
+            </Button>
+          </div>
+        </section>
+      )}
+    </div>
+  );
+}
+function Processing({ progress }: { progress: number }) {
+  return (
+    <section className="mt-12 glass-panel p-7 sm:p-10">
+      <p className="eyebrow">Analysis in progress</p>
+      <h2 className="section-title mt-3">Building the evidence trail.</h2>
+      <div className="mt-8 h-1 overflow-hidden bg-secondary">
+        <div
+          className="h-full bg-accent-foreground transition-all duration-500"
+          style={{ width: `${(progress / 8) * 100}%` }}
+        />
+      </div>
+      <div className="mt-8 grid gap-3 sm:grid-cols-2">
+        {steps.map((step, index) => {
+          const done = index < progress;
+          const active = index === progress;
+          return (
+            <div
+              key={step}
+              className={`flex items-center gap-3 py-2 text-sm transition-opacity ${done || active ? "opacity-100" : "opacity-35"}`}
+            >
+              <span
+                className={`grid size-6 place-items-center rounded-full border ${done ? "border-success bg-success text-success-foreground" : active ? "border-accent-foreground text-accent-foreground" : "border-border"}`}
+              >
+                {done ? (
+                  <Check className="size-3" />
+                ) : (
+                  <span className="text-[10px]">{index + 1}</span>
+                )}
+              </span>
+              <span className={active ? "font-bold text-primary" : "text-muted-foreground"}>
+                {step}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}

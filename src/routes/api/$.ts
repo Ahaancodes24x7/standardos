@@ -7,10 +7,31 @@ import { createFileRoute } from "@tanstack/react-router";
 // the session cookie stays first-party and no CORS setup is needed. Set
 // VITE_API_URL instead to call a separately hosted API directly.
 
-const HOP_BY_HOP = ["connection", "keep-alive", "transfer-encoding", "upgrade", "host", "content-length"];
+const HOP_BY_HOP = [
+  "connection",
+  "keep-alive",
+  "transfer-encoding",
+  "upgrade",
+  "host",
+  "content-length",
+];
+
+// Vercel sets VERCEL=1; there is no API on localhost in a Vercel function.
+const deployed = Boolean(process.env["VERCEL"]);
 
 async function forward({ request }: { request: Request }): Promise<Response> {
-  const target = (process.env["API_INTERNAL_URL"] ?? "http://127.0.0.1:8000").replace(/\/$/, "");
+  const configured = process.env["API_INTERNAL_URL"];
+  if (!configured && deployed) {
+    // On a deployment there is no API on localhost: say what is missing instead of timing out.
+    return Response.json(
+      {
+        detail:
+          "The StandardOS API is not configured for this deployment. Deploy the API (deploy/vercel-api, see docs/DEPLOYMENT.md) and set API_INTERNAL_URL to its URL.",
+      },
+      { status: 503 },
+    );
+  }
+  const target = (configured ?? "http://127.0.0.1:8000").replace(/\/$/, "");
   const url = new URL(request.url);
   const headers = new Headers(request.headers);
   for (const name of HOP_BY_HOP) headers.delete(name);
@@ -30,7 +51,11 @@ async function forward({ request }: { request: Request }): Promise<Response> {
     return new Response(upstream.body, { status: upstream.status, headers: responseHeaders });
   } catch {
     return Response.json(
-      { detail: "The StandardOS API is unreachable. Start it with `bun run api:dev`." },
+      {
+        detail: deployed
+          ? `The StandardOS API at ${target} is unreachable. Check the backend deployment and API_INTERNAL_URL.`
+          : "The StandardOS API is unreachable. Start it with `bun run api:dev`.",
+      },
       { status: 502 },
     );
   }

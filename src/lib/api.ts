@@ -62,7 +62,18 @@ async function request<T>(
     throw new ApiError("The StandardOS service is unreachable. Check that the API is running.", 0);
   }
   const text = await response.text();
-  const payload: unknown = text ? JSON.parse(text) : null;
+  let payload: unknown = null;
+  try {
+    payload = text ? JSON.parse(text) : null;
+  } catch {
+    // A proxy or platform error page (HTML / plain text) instead of the API's JSON.
+    if (response.ok)
+      throw new ApiError(
+        "The StandardOS service returned an unreadable response.",
+        response.status,
+      );
+    payload = { detail: gatewayMessage(response.status) };
+  }
   if (!response.ok) {
     const detail =
       payload && typeof payload === "object" && "detail" in payload
@@ -76,9 +87,17 @@ async function request<T>(
   return payload as T;
 }
 
+function gatewayMessage(status: number): string {
+  if (status === 502 || status === 503)
+    return "The StandardOS API is unreachable. If this is a deployment, check that the API is deployed and API_INTERNAL_URL points to it.";
+  if (status === 504) return "The StandardOS API took too long to respond. Please retry.";
+  return `Request failed (${status}).`;
+}
+
 export const api = {
   get: <T>(path: string, query?: Query) => request<T>("GET", path, { query }),
   post: <T>(path: string, json?: unknown) => request<T>("POST", path, { json }),
   patch: <T>(path: string, json?: unknown) => request<T>("PATCH", path, { json }),
+  delete: <T>(path: string) => request<T>("DELETE", path),
   upload: <T>(path: string, form: FormData) => request<T>("POST", path, { form }),
 };

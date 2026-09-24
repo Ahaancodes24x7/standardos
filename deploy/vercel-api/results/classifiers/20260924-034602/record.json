@@ -1,0 +1,591 @@
+{
+  "run_id": "20260924-034602",
+  "meta": {
+    "created_at": "2026-09-24T03:45:52+00:00",
+    "encoder": "sentence-transformers/all-MiniLM-L6-v2",
+    "categories": [
+      "performance",
+      "electrical",
+      "environmental",
+      "safety",
+      "material",
+      "dimensional",
+      "testing",
+      "certification",
+      "documentation",
+      "installation",
+      "quality",
+      "general"
+    ],
+    "gate_tau": 0.675,
+    "training": {
+      "datasets": [
+        "realworld_v2/dev",
+        "component/dev"
+      ],
+      "fit": 136,
+      "validation": 34
+    },
+    "hybrid": {
+      "val_macro_f1": 0.9282,
+      "best_epoch": 25,
+      "train_seconds": 1.0
+    }
+  },
+  "include_blind": true,
+  "results": {
+    "realworld_v2/test": {
+      "lexicon-v2": {
+        "n": 526,
+        "cls_accuracy": 0.808,
+        "cls_macro_f1": 0.8314,
+        "ci": {
+          "cls_accuracy": [
+            0.7738,
+            0.8422
+          ],
+          "cls_macro_f1": [
+            0.7988,
+            0.8619
+          ]
+        },
+        "per_class_f1": {
+          "certification": 1.0,
+          "dimensional": 0.684,
+          "documentation": 0.867,
+          "electrical": 0.714,
+          "environmental": 0.986,
+          "general": 0.539,
+          "installation": 0.786,
+          "material": 0.766,
+          "performance": 0.892,
+          "quality": 0.889,
+          "safety": 0.889,
+          "testing": 0.966
+        }
+      },
+      "tfidf-lr": {
+        "n": 526,
+        "cls_accuracy": 0.8194,
+        "cls_macro_f1": 0.8624,
+        "ci": {
+          "cls_accuracy": [
+            0.7851,
+            0.8517
+          ],
+          "cls_macro_f1": [
+            0.835,
+            0.8856
+          ]
+        },
+        "per_class_f1": {
+          "certification": 1.0,
+          "dimensional": 1.0,
+          "documentation": 0.867,
+          "electrical": 0.818,
+          "environmental": 0.939,
+          "general": 0.552,
+          "installation": 0.881,
+          "material": 0.875,
+          "performance": 0.833,
+          "quality": 0.909,
+          "safety": 1.0,
+          "testing": 0.673
+        }
+      },
+      "embed-lr": {
+        "n": 526,
+        "cls_accuracy": 0.8612,
+        "cls_macro_f1": 0.8916,
+        "ci": {
+          "cls_accuracy": [
+            0.8308,
+            0.8897
+          ],
+          "cls_macro_f1": [
+            0.8661,
+            0.9122
+          ]
+        },
+        "per_class_f1": {
+          "certification": 1.0,
+          "dimensional": 0.914,
+          "documentation": 0.65,
+          "electrical": 0.884,
+          "environmental": 1.0,
+          "general": 0.759,
+          "installation": 0.952,
+          "material": 0.822,
+          "performance": 0.968,
+          "quality": 0.941,
+          "safety": 1.0,
+          "testing": 0.809
+        }
+      },
+      "hybrid-nn": {
+        "n": 526,
+        "cls_accuracy": 0.8897,
+        "cls_macro_f1": 0.9088,
+        "ci": {
+          "cls_accuracy": [
+            0.8631,
+            0.9163
+          ],
+          "cls_macro_f1": [
+            0.8845,
+            0.9294
+          ]
+        },
+        "per_class_f1": {
+          "certification": 1.0,
+          "dimensional": 0.865,
+          "documentation": 0.762,
+          "electrical": 0.9,
+          "environmental": 1.0,
+          "general": 0.73,
+          "installation": 0.873,
+          "material": 0.825,
+          "performance": 1.0,
+          "quality": 0.986,
+          "safety": 1.0,
+          "testing": 0.966
+        }
+      },
+      "gated": {
+        "n": 526,
+        "cls_accuracy": 0.8422,
+        "cls_macro_f1": 0.8658,
+        "ci": {
+          "cls_accuracy": [
+            0.8118,
+            0.8726
+          ],
+          "cls_macro_f1": [
+            0.8366,
+            0.8912
+          ]
+        },
+        "per_class_f1": {
+          "certification": 1.0,
+          "dimensional": 0.875,
+          "documentation": 0.867,
+          "electrical": 0.785,
+          "environmental": 0.986,
+          "general": 0.655,
+          "installation": 0.725,
+          "material": 0.772,
+          "performance": 0.923,
+          "quality": 0.947,
+          "safety": 0.889,
+          "testing": 0.966
+        }
+      }
+    },
+    "tenders_v1/all": {
+      "lexicon-v2": {
+        "n": 176,
+        "cls_accuracy": 0.7557,
+        "cls_macro_f1": 0.7651,
+        "ci": {
+          "cls_accuracy": [
+            0.6875,
+            0.8183
+          ],
+          "cls_macro_f1": [
+            0.6898,
+            0.8213
+          ]
+        },
+        "per_class_f1": {
+          "certification": 0.769,
+          "dimensional": 0.8,
+          "documentation": 0.778,
+          "electrical": 0.769,
+          "environmental": 0.88,
+          "general": 0.511,
+          "installation": 0.571,
+          "material": 0.757,
+          "performance": 0.978,
+          "quality": 0.909,
+          "safety": 0.75,
+          "testing": 0.71
+        }
+      },
+      "tfidf-lr": {
+        "n": 176,
+        "cls_accuracy": 0.8125,
+        "cls_macro_f1": 0.8034,
+        "ci": {
+          "cls_accuracy": [
+            0.75,
+            0.8636
+          ],
+          "cls_macro_f1": [
+            0.7194,
+            0.8595
+          ]
+        },
+        "per_class_f1": {
+          "certification": 0.8,
+          "dimensional": 0.667,
+          "documentation": 0.778,
+          "electrical": 0.831,
+          "environmental": 0.857,
+          "general": 0.638,
+          "installation": 0.615,
+          "material": 0.895,
+          "performance": 0.905,
+          "quality": 1.0,
+          "safety": 0.828,
+          "testing": 0.828
+        }
+      },
+      "embed-lr": {
+        "n": 176,
+        "cls_accuracy": 0.7898,
+        "cls_macro_f1": 0.7866,
+        "ci": {
+          "cls_accuracy": [
+            0.7273,
+            0.8466
+          ],
+          "cls_macro_f1": [
+            0.7049,
+            0.845
+          ]
+        },
+        "per_class_f1": {
+          "certification": 0.8,
+          "dimensional": 0.8,
+          "documentation": 0.636,
+          "electrical": 0.862,
+          "environmental": 0.846,
+          "general": 0.578,
+          "installation": 0.667,
+          "material": 0.737,
+          "performance": 0.889,
+          "quality": 0.857,
+          "safety": 0.929,
+          "testing": 0.839
+        }
+      },
+      "hybrid-nn": {
+        "n": 176,
+        "cls_accuracy": 0.8409,
+        "cls_macro_f1": 0.8368,
+        "ci": {
+          "cls_accuracy": [
+            0.7841,
+            0.892
+          ],
+          "cls_macro_f1": [
+            0.7631,
+            0.8901
+          ]
+        },
+        "per_class_f1": {
+          "certification": 1.0,
+          "dimensional": 0.667,
+          "documentation": 0.762,
+          "electrical": 0.914,
+          "environmental": 0.917,
+          "general": 0.653,
+          "installation": 0.625,
+          "material": 0.765,
+          "performance": 0.936,
+          "quality": 1.0,
+          "safety": 0.929,
+          "testing": 0.875
+        }
+      },
+      "gated": {
+        "n": 176,
+        "cls_accuracy": 0.8011,
+        "cls_macro_f1": 0.7955,
+        "ci": {
+          "cls_accuracy": [
+            0.7386,
+            0.858
+          ],
+          "cls_macro_f1": [
+            0.7253,
+            0.8499
+          ]
+        },
+        "per_class_f1": {
+          "certification": 0.833,
+          "dimensional": 0.8,
+          "documentation": 0.667,
+          "electrical": 0.861,
+          "environmental": 0.917,
+          "general": 0.444,
+          "installation": 0.6,
+          "material": 0.842,
+          "performance": 1.0,
+          "quality": 1.0,
+          "safety": 0.769,
+          "testing": 0.812
+        }
+      }
+    },
+    "component/test": {
+      "lexicon-v2": {
+        "n": 22,
+        "cls_accuracy": 0.8182,
+        "cls_macro_f1": 0.7598,
+        "ci": {
+          "cls_accuracy": [
+            0.6364,
+            0.9545
+          ],
+          "cls_macro_f1": [
+            0.5555,
+            0.9572
+          ]
+        },
+        "per_class_f1": {
+          "certification": 1.0,
+          "documentation": 1.0,
+          "electrical": 0.8,
+          "environmental": 1.0,
+          "general": 0.5,
+          "material": 0.5,
+          "performance": 0.889,
+          "quality": 0.909,
+          "testing": 1.0
+        }
+      },
+      "tfidf-lr": {
+        "n": 22,
+        "cls_accuracy": 0.6818,
+        "cls_macro_f1": 0.4392,
+        "ci": {
+          "cls_accuracy": [
+            0.4545,
+            0.8636
+          ],
+          "cls_macro_f1": [
+            0.2844,
+            0.7611
+          ]
+        },
+        "per_class_f1": {
+          "certification": 0.667,
+          "documentation": 0.0,
+          "electrical": 0.75,
+          "environmental": 1.0,
+          "general": 0.0,
+          "material": 0.4,
+          "performance": 0.667,
+          "quality": 0.909,
+          "testing": 0.0
+        }
+      },
+      "embed-lr": {
+        "n": 22,
+        "cls_accuracy": 0.5909,
+        "cls_macro_f1": 0.4176,
+        "ci": {
+          "cls_accuracy": [
+            0.4091,
+            0.7727
+          ],
+          "cls_macro_f1": [
+            0.2645,
+            0.5945
+          ]
+        },
+        "per_class_f1": {
+          "certification": 1.0,
+          "documentation": 0.0,
+          "electrical": 0.8,
+          "environmental": 0.8,
+          "general": 0.0,
+          "material": 0.0,
+          "performance": 0.667,
+          "quality": 0.909,
+          "testing": 0.0
+        }
+      },
+      "hybrid-nn": {
+        "n": 22,
+        "cls_accuracy": 0.7273,
+        "cls_macro_f1": 0.5131,
+        "ci": {
+          "cls_accuracy": [
+            0.5455,
+            0.9091
+          ],
+          "cls_macro_f1": [
+            0.3988,
+            0.7475
+          ]
+        },
+        "per_class_f1": {
+          "certification": 1.0,
+          "documentation": 0.0,
+          "electrical": 1.0,
+          "environmental": 1.0,
+          "general": 0.333,
+          "material": 0.0,
+          "performance": 0.889,
+          "quality": 0.909,
+          "testing": 0.0
+        }
+      },
+      "gated": {
+        "n": 22,
+        "cls_accuracy": 0.8636,
+        "cls_macro_f1": 0.7056,
+        "ci": {
+          "cls_accuracy": [
+            0.7273,
+            1.0
+          ],
+          "cls_macro_f1": [
+            0.5396,
+            1.0
+          ]
+        },
+        "per_class_f1": {
+          "certification": 1.0,
+          "documentation": 0.0,
+          "electrical": 1.0,
+          "environmental": 1.0,
+          "general": 0.5,
+          "material": 0.667,
+          "performance": 0.889,
+          "quality": 1.0,
+          "testing": 1.0
+        }
+      }
+    },
+    "component/heldout": {
+      "lexicon-v2": {
+        "n": 12,
+        "cls_accuracy": 1.0,
+        "cls_macro_f1": 1.0,
+        "ci": {
+          "cls_accuracy": [
+            1.0,
+            1.0
+          ],
+          "cls_macro_f1": [
+            1.0,
+            1.0
+          ]
+        },
+        "per_class_f1": {
+          "dimensional": 1.0,
+          "documentation": 1.0,
+          "electrical": 1.0,
+          "environmental": 1.0,
+          "general": 1.0,
+          "material": 1.0,
+          "performance": 1.0,
+          "testing": 1.0
+        }
+      },
+      "tfidf-lr": {
+        "n": 12,
+        "cls_accuracy": 0.6667,
+        "cls_macro_f1": 0.5648,
+        "ci": {
+          "cls_accuracy": [
+            0.4167,
+            0.9167
+          ],
+          "cls_macro_f1": [
+            0.2896,
+            0.8368
+          ]
+        },
+        "per_class_f1": {
+          "dimensional": 0.667,
+          "documentation": 1.0,
+          "electrical": 0.667,
+          "environmental": 1.0,
+          "general": 0.0,
+          "material": 0.75,
+          "performance": 0.0,
+          "testing": 1.0
+        }
+      },
+      "embed-lr": {
+        "n": 12,
+        "cls_accuracy": 0.6667,
+        "cls_macro_f1": 0.6376,
+        "ci": {
+          "cls_accuracy": [
+            0.4167,
+            0.9167
+          ],
+          "cls_macro_f1": [
+            0.3429,
+            0.918
+          ]
+        },
+        "per_class_f1": {
+          "dimensional": 0.667,
+          "documentation": 1.0,
+          "electrical": 1.0,
+          "environmental": 1.0,
+          "general": 0.5,
+          "material": 0.571,
+          "performance": 0.0,
+          "testing": 1.0
+        }
+      },
+      "hybrid-nn": {
+        "n": 12,
+        "cls_accuracy": 0.75,
+        "cls_macro_f1": 0.8214,
+        "ci": {
+          "cls_accuracy": [
+            0.5,
+            1.0
+          ],
+          "cls_macro_f1": [
+            0.4857,
+            1.0
+          ]
+        },
+        "per_class_f1": {
+          "dimensional": 0.667,
+          "documentation": 1.0,
+          "electrical": 0.667,
+          "environmental": 1.0,
+          "general": 0.667,
+          "material": 0.571,
+          "performance": 1.0,
+          "testing": 1.0
+        }
+      },
+      "gated": {
+        "n": 12,
+        "cls_accuracy": 0.9167,
+        "cls_macro_f1": 0.9405,
+        "ci": {
+          "cls_accuracy": [
+            0.75,
+            1.0
+          ],
+          "cls_macro_f1": [
+            0.7455,
+            1.0
+          ]
+        },
+        "per_class_f1": {
+          "dimensional": 1.0,
+          "documentation": 1.0,
+          "electrical": 1.0,
+          "environmental": 1.0,
+          "general": 0.667,
+          "material": 0.857,
+          "performance": 1.0,
+          "testing": 1.0
+        }
+      }
+    }
+  }
+}

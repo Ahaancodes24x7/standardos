@@ -1,0 +1,85 @@
+RURAL WATER SUPPLY DEPARTMENT
+Office of the Executive Engineer, Project Division
+NOTICE INVITING e-TENDER No. CE/ELE/60/2026-27
+Name of work: Rural piped water supply scheme — pumping and treated water supply.
+Estimated cost put to tender: Rs. 194,22,000/-
+Earnest Money Deposit: Rs. 2,57,000/-
+Period of completion: 12 months
+Last date of submission: 25.12.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. The Department reserves the right to accept or reject any bid without assigning any reason.
+2. Conditional bids will be summarily rejected.
+3. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+4. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+5. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+
+GENERAL CONDITIONS OF CONTRACT
+1. Income tax and GST shall be deducted at source as applicable.
+2. Rates quoted shall be inclusive of all taxes, freight, insurance and transit risks.
+3. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+4. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+5. Liquidated damages at 0.5 % per week of delay shall be levied, subject to a maximum of 10 % of the contract value.
+
+SCOPE OF WORK
+This specification covers rural piped water supply scheme — pumping and treated water supply complete in all respects.
+
+SECTION 3: HORIZONTAL CENTRIFUGAL PUMPS
+1. The pumps shall comply with IS 1520:1980.
+2. Discharge of each pump shall be 250 m3/hour.
+3. Pump efficiency at the duty point shall be 78% (percent) minimum. The pump casing shall be cast iron and the impeller bronze.
+4. The pumpset noise level measured 1 mtr away shall be limited to 85 decibels (A).
+
+PUMP DATA SHEET
+Rated discharge: 250 m3/hour
+Rated total head: 45 mtr
+Make and type: (to be furnished by the bidder)
+
+SECTION 4: DRIVE MOTORS
+1. Squirrel cage induction motors complying with IS 325:1996 shall be supplied.
+2. Motor rated output shall be 37 k.W.. Motors are to operate on 415-volt ± 10% (percent), 50 Hertz ± 5% (percent), three phase supply.
+3. Motors shall meet efficiency class IE3 of IS 12615:2018.
+4. Insulation shall be class F, with temperature rise restricted to class B, for continuous S1 duty.
+5. The motor synchronous speed shall be 1500 rpm..
+
+PART E — TREATED WATER QUALITY
+1. The quality of treated water shall comply with IS 10500:2012.
+2. The pH value of treated water shall lie within 6.5 to 8.5.
+3. TDS of treated water shall be limited to 500 mg per litre.
+4. The turbidity of treated water shall be limited to 5 NTU..
+5. Fluoride (as F) shall be limited to 1.0 mg per litre.
+6. Nitrate (as NO3) shall be limited to 45 mg per litre.
+7. Arsenic (as As) shall be limited to 0.01 mg per litre.
+8. Total hardness (as CaCO3) shall be limited to 200 mg per litre.
+9. No E. coli shall be detected in any 100 ml sample.
+
+SECTION 6: TESTING, INSPECTION AND CERTIFICATION
+1. Works testing of the pumps shall be done as per IS 9137.
+2. Each motor shall be subjected to routine tests as per IS 4029.
+3. All motors shall carry the ISI mark.
+4. Testing of water samples shall be done at a NABL accredited laboratory as per IS 3025 and IS 1622.
+5. Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.
+
+7 DOCUMENTATION, WARRANTY AND TRAINING
+1. The contractor shall submit test reports for every source to the Engineer-in-charge.
+2. Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.
+3. On completion the contractor shall hand over three copies of the O&M manuals.
+4. The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship.
+5. Operation and routine maintenance training shall be given by the contractor to the Department's operators.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Horizontal centrifugal pumpset 250 m3/hr at 45 m | Set | 3
+2 | Squirrel cage induction motor 37 kW, 1500 rpm | No. | 3
+3 | Water quality testing (complete set of parameters) | Sample | 48
+
+APPROVED MAKES OF MATERIALS
+Pumps: Kirloskar Brothers / KSB / Mather & Platt
+Motors: ABB / Siemens / Crompton Greaves / Kirloskar
+Testing laboratory: NABL accredited
+
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+Note: Drawings are indicative only and shall be verified at site.
+
+Signature of Bidder with seal
+Executive Engineer

@@ -207,7 +207,7 @@ def test_sweeper(client: TestClient):
 
 def test_engine_dag_and_evaluation(client: TestClient):
     engine = client.get("/api/engine").json()
-    assert engine["pipelineVersion"].startswith("standardos-pipeline/3.") and engine["config"] == "v3"
+    assert engine["pipelineVersion"].startswith("standardos-pipeline/3.") and engine["config"] == "v3.1"
 
     dag = client.get("/api/dependency-dag").json()
     assert dag["cycles"] == [] and dag["stats"]["nodes"] > 0 and dag["edges"]
@@ -253,3 +253,72 @@ def test_corpus_import_requires_admin(client: TestClient):
     sign_up(client, "NotAdmin")
     res = client.post("/api/admin/corpus/import", files={"file": ("c.json", b"{}", "application/json")})
     assert res.status_code == 403
+
+
+BOQ = """SCHEDULE OF QUANTITIES
+1 | Supply of LT panel with 1600 A ACB incomer, 50 kA, IP54, conforming to IS/IEC 61439-2:2020 | No. | 1
+2. Supply of 3.5 core 300 sq mm XLPE armoured cable conforming to IS 7098 (Part 1):1988 | m | 480
+3. MCBs conforming to IS 8828, 10 kA breaking capacity | No. | 60
+"""
+
+
+def test_document_types(client: TestClient):
+    sign_up(client, "Types")
+    types = client.get("/api/document-types").json()
+    assert {t["key"] for t in types} >= {"specification", "boq", "datasheet", "test_report", "other"}
+
+    # A BOQ is analysed as a schedule: zoning must not drop it.
+    res = client.post("/api/analyses", data={"text": BOQ, "documentType": "boq"})
+    assert res.status_code == 200, res.text
+    boq_id, run_id = res.json()["documentId"], res.json()["runId"]
+    assert client.post(f"/api/runs/{run_id}/execute").json()["status"] == "succeeded"
+    boq = client.get(f"/api/documents/{boq_id}").json()
+    assert boq["documentType"] == "boq" and boq["documentTypeLabel"] == "Bill of quantities"
+    assert boq["requirementCount"] >= 2
+    assert any(f["status"] == "outdated" for f in boq["findings"])  # IS 8828 is withdrawn
+
+    # Custom type needs a name; unknown types are rejected.
+    assert client.post("/api/analyses", data={"text": PANEL_SPEC, "documentType": "other"}).status_code == 400
+    assert client.post("/api/analyses", data={"text": PANEL_SPEC, "documentType": "poem"}).status_code == 400
+    custom = client.post(
+        "/api/analyses", data={"text": PANEL_SPEC, "documentType": "other", "documentTypeLabel": "Consultant review note"}
+    ).json()
+    client.post(f"/api/runs/{custom['runId']}/execute")
+    doc = client.get(f"/api/documents/{custom['documentId']}").json()
+    assert doc["documentType"] == "other" and doc["documentTypeLabel"] == "Consultant review note"
+
+    # Re-typing to a type that reads the document differently queues a new run.
+    patched = client.patch(f"/api/documents/{custom['documentId']}", json={"documentType": "specification", "name": "Panel spec"}).json()
+    assert patched["runId"]
+    client.post(f"/api/runs/{patched['runId']}/execute")
+    doc = client.get(f"/api/documents/{custom['documentId']}").json()
+    assert doc["name"] == "Panel spec" and doc["documentType"] == "specification" and doc["runId"] == patched["runId"]
+    assert client.patch(f"/api/documents/{custom['documentId']}", json={"name": "Renamed"}).json() == {"runId": None}
+    assert "updated" in {a["action"] for a in client.get(f"/api/documents/{custom['documentId']}/audit").json()}
+
+    # Delete removes the document and everything under it.
+    assert client.delete(f"/api/documents/{boq_id}").json() == {"deleted": True}
+    assert client.get(f"/api/documents/{boq_id}").status_code == 404
+    assert client.delete(f"/api/documents/{boq_id}").status_code == 404
+
+
+def test_stale_run_is_reclaimed(client: TestClient):
+    """A run frozen mid-flight (serverless) is re-executed by the next /execute call."""
+    from datetime import datetime, timedelta, timezone
+
+    from sqlalchemy import update
+
+    from app import models as m
+    from app.db import session_scope
+
+    sign_up(client, "Stale")
+    document_id, run_id = analyse_text(client, PANEL_SPEC)
+    with session_scope() as db:
+        db.execute(
+            update(m.AnalysisRun).where(m.AnalysisRun.id == uuid.UUID(run_id)).values(
+                status="running", attempts=1, heartbeat_at=datetime.now(timezone.utc) - timedelta(minutes=5)
+            )
+        )
+        db.commit()
+    assert client.post(f"/api/runs/{run_id}/execute").json()["status"] == "succeeded"
+    assert client.get(f"/api/documents/{document_id}").json()["runStatus"] == "succeeded"

@@ -556,3 +556,53 @@ All fixes in this audit sit behind `PipelineConfig` flags. The `legacy-2.1` pres
 - On the two larger sets the hybrid network is best. On the small component sets (22 and 12 items) it is worse, and the lexicon wins there.
 - The category does not change any finding: findings are identical across classifier presets.
 - The default therefore stays `lexicon`: it is interpretable and needs no extra dependencies. `v3-gated` is the recommended opt-in.
+
+---
+
+## Addendum (2026-09-24): pipeline 3.1.0: generalisation to unseen wording
+
+**Method.** The rules had been developed on realworld_v2/dev (paraphrase variant 0). The blind test split
+uses other paraphrases, and error analysis on it would leak it. A new **open** split, `dev2` (dataset v2.2),
+was written as a third, independent wording of every clause, with a third unit-spelling pool. `dev2`
+reproduced the blind problem: findings precision was 47% there, against 100% on dev. All v3.1 fixes were
+found and checked on dev2, dev, tenders_v1 and component dev/test. The blind split was scored once, at
+the end.
+
+**Fixes** (preset `v3.1`, the new default; `v3` still reproduces 3.0.0):
+- `units_v3`: spelling-robust units. Any letter case, plus dotted, spelled-out and "per" forms and
+  carets ("Amperes", "Hertz", "Sq mm", "m^3/h", "k.W.", "mg per litre", "℃"). Also "415-volt", and
+  "V AC ± 10 pct" read as a relative tolerance. Prefix-sensitive symbols (mA/MA) stay case-exact.
+- `text_attrs_v2`: a categorical value anywhere in a sentence that names its parameter ("exposure …
+  taken as severe", "arrangement … is TN-S", "insulation shall be class F"). Adds common cue phrasings
+  ("above MSL", "duty point", "continuous rating").
+- `identify_v2`: obligations without "shall" ("are to be", "are to operate", "will inspect"). A
+  labelled heading ("SECTION IV – 11 kV POWER CABLES") is never a requirement.
+- `reasoning_v31`:
+  - dependency gaps only for standards the purchaser cites;
+  - "of approved make" is not vague;
+  - laboratory testing of samples or sources is not product-conformity evidence.
+
+**Annotation.** One per-product guideline now applies to every dataset
+(`aiml/datasets/ANNOTATION_GUIDELINES.md`). tenders_v1 (b1, b5, b6) and component/test (s5) were
+re-annotated under it: the old gold is archived and the change is logged in `results/CONTAMINATION.md`.
+Blind splits were not touched.
+
+**Results** (TXT, findings F1; runs `20260924-0727*`, same dataset versions for every config):
+
+| Split | Role | v3 | v3.1 | Δ (95% paired CI) |
+| --- | --- | --- | --- | --- |
+| realworld_v2/dev2 | open | 59.8 | **98.4** | +38.6 [+31.8, +48.7] |
+| realworld_v2/test | **blind** | 67.7 | **81.5** | +13.8 [+7.2, +20.7] |
+| realworld_v2/dev | open | 96.3 | 96.3 | 0 |
+| tenders_v1 (v1.1) | contaminated | 95.4 | **100.0** | |
+| component/test (v1.1) | contaminated | 100.0 | 100.0 | |
+| component/heldout | blind | 100.0 | 100.0 | |
+
+On the blind split, precision rose from 53.8 to 72.1, recall from 91.5 to 93.6 and attribute F1 from 81.4
+to 92.9. Most of the gain came from units: `v3+units3` alone gives 80.7. The remaining gap between blind
+(81.5) and dev2 (98.4) is wording that neither dev split covers. The next step is a fresh open split
+written by someone else, not more work on the test split.
+
+Known gold error: the realworld_v2 generator plant `pump.duty.nohead` leaves the head in the pump data
+sheet, so its "duty head not stated" label is wrong when a data sheet is present. It is left uncorrected,
+because the frozen blind gold comes from the same generator.

@@ -39,7 +39,7 @@ const METRICS: Array<[string, string]> = [
   ["fnd_recall", "Findings R"],
   ["fnd_f1", "Findings F1"],
 ];
-const CONFIG_ORDER = ["legacy-2.1", "v3", "v3-dag", "v3-tfidf", "v3-hybrid", "v3-gated"];
+const CONFIG_ORDER = ["legacy-2.1", "v3", "v3.1", "v3.1-dag", "v3.1-hybrid", "v3.1-gated"];
 const CLASSIFIERS = ["lexicon-v2", "tfidf-lr", "embed-lr", "hybrid-nn", "gated"];
 
 const pct = (v: number | undefined) => (v === undefined ? "—" : (v * 100).toFixed(1));
@@ -116,8 +116,9 @@ function Evaluation() {
         <h2 className="font-serif text-3xl text-primary">Pipeline configurations</h2>
         <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
           Document-level scores (TXT format) per dataset split. <b>legacy-2.1</b> reproduces the
-          engine before the audit; <b>v3</b> is the default; the other rows change one component.
-          Best value per column in bold.
+          engine before the audit; <b>v3</b> the audit fixes; <b>v3.1</b> (default) adds the
+          generalisation fixes found on the open <i>dev2</i> split; the other rows change one
+          component. Best value per column in bold.
         </p>
         {splits.map((split) => {
           const key = `${split.dataset}/${split.split}`;

@@ -610,6 +610,608 @@ Running the Project
 bun run api:dev             # FastAPI on :8000 (docs at http://localhost:8000/api/docs)
 bun run dev                 # frontend on :3000 (its /api/* is forwarded to FastAPI)
 bun run test                # pytest: engine, eval gate, API integration (needs TEST_DATABASE_URL)
+bun run eval                # versioned evaluation run (open splits) → aiml/results/runs/<id>/report.md
+bun run build:vercel-api    # refresh deploy/vercel-api after changing backend/app or aiml/
+bun run build && bun run preview
+```
+
+API integration tests run against a real Postgres named by `TEST_DATABASE_URL` and are skipped without it; never point it at a database you want to keep. Without a database the demo workspace ("Explore demo") still works: it runs the real pipeline and saves nothing.
+
+Any procurement document can be analysed and kept in the workspace: technical specifications, tenders, bills of quantities, vendor datasheets, test and inspection reports, or a document type you name yourself.
+
+**Deploying:** see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md). It uses two Vercel projects: the web app at the repository root and the API in `deploy/vercel-api`.
+
+Current results (pipeline 3.1.0, preset `v3.1`; findings F1 on TXT; details in [aiml/results/INDEX.md](aiml/results/INDEX.md) and [docs/PIPELINE_AUDIT.md](docs/PIPELINE_AUDIT.md)):
+
+| Dataset / split | Role | Findings F1 | Requirement ID F1 |
+| --- | --- | --- | --- |
+| realworld_v2 / test (18 tenders, unseen wording) | blind | 81.5 | 99.6 |
+| realworld_v2 / dev2 (12 tenders, independent wording) | open | 98.4 | 100.0 |
+| realworld_v2 / dev (12 tenders) | open | 96.3 | 99.9 |
+| tenders_v1 (6 hand-written tenders, v1.1 gold) | contaminated | 100.0 | 98.0 |
+| component / heldout | blind | 100.0 | 100.0 |
+
+Example Workflow](#example-workflow)
+- [Use Cases](#use-cases)
+- [Innovation](#innovation)
+- [Data & Standards Governance](#data--standards-governance)
+- [Human-in-the-Loop](#human-in-the-loop)
+- [Roadmap](#roadmap)
+- [Future Scope](#future-scope)
+- [Contributing](#contributing)
+- [Disclaimer](#disclaimer)
+- [License](#license)
+- [Team](#team)
+
+---
+
+# Overview
+
+**STANDARDOS** is an AI-powered procurement specification intelligence platform designed to help organizations understand, map, audit, and improve technical procurement specifications against relevant Indian Standards.
+
+Procurement documents often contain requirements that are not independent.
+
+A single product specification can depend on:
+
+- Product standards
+- Test methods
+- Safety standards
+- Installation standards
+- Terminology standards
+- Normative references
+- Certification requirements
+- Amendments and newer versions
+
+STANDARDOS transforms these relationships into a structured intelligence workflow.
+
+Instead of treating standards as isolated documents, STANDARDOS models them as a connected system:
+
+```text
+Requirements
+     ↓
+Indian Standards
+     ↓
+Normative References
+     ↓
+Testing
+     ↓
+Certification
+     ↓
+Compliance
+The Problem
+
+Technical procurement specifications are often created and reviewed manually.
+
+A procurement officer may need to:
+
+Understand the product requirements.
+Identify applicable Indian Standards.
+Search through related standards.
+Inspect normative references.
+Verify amendments and versions.
+Identify certification requirements.
+Check whether important requirements are missing.
+Review the specification for technical inconsistencies.
+
+This process becomes increasingly difficult when specifications involve multiple technical domains and interconnected standards.
+
+The hidden problem
+
+A procurement specification may look like:
+
+Product
+├── Technical Parameters
+├── Safety Requirements
+├── Testing Requirements
+├── Environmental Requirements
+└── Certification
+
+But underneath it can actually represent:
+
+Requirement
+      ↓
+Product Standard
+      ↓
+Normative Reference
+      ↓
+Test Method
+      ↓
+Safety Standard
+      ↓
+Certification Requirement
+
+Missing one relationship can result in an incomplete specification.
+
+Our Solution
+
+STANDARDOS acts as an intelligent layer between procurement specifications and standards knowledge.
+
+                 PROCUREMENT SPECIFICATION
+                           │
+                           ↓
+                  Requirement Extraction
+                           │
+                           ↓
+                    Standards Discovery
+                           │
+                           ↓
+                 Standards Dependency Graph
+                           │
+                           ↓
+                  Compliance Reasoning
+                           │
+             ┌─────────────┼─────────────┐
+             ↓             ↓             ↓
+        Gap Detection  Conflict Check  Version Check
+             │             │             │
+             └─────────────┼─────────────┘
+                           ↓
+                  Specification Repair
+                           │
+                           ↓
+                  Evidence-backed Output
+
+STANDARDOS is designed to move beyond simple document retrieval.
+
+It attempts to understand:
+
+What does the specification require?
+Which standards apply?
+What other standards are connected to them?
+What requirements may be missing?
+Are there potential conflicts?
+Are referenced standards current?
+What should a reviewer investigate?
+How STANDARDOS Works
+
+STANDARDOS follows a multi-stage intelligence pipeline.
+
+1. Understand
+
+The system receives a procurement specification, technical description, or tender document.
+
+Example:
+
+Industrial motor
+
+Rated Power: 15 kW
+Voltage: 415 V
+Frequency: 50 Hz
+Protection: IP55
+Industrial environment
+Safety compliance required
+2. Parse
+
+The document is processed to identify:
+
+Technical parameters
+Requirements
+Product attributes
+Existing standards
+Certification references
+Testing requirements
+3. Extract Requirements
+
+Natural-language requirements are converted into structured representations.
+
+Example:
+
+"Motor shall operate at 415V ±10%"
+
+        ↓
+
+Parameter:
+operating_voltage
+
+Value:
+415
+
+Tolerance:
+±10%
+
+Unit:
+V
+4. Discover Standards
+
+The extracted requirements are matched against the available standards knowledge base using semantic retrieval.
+
+The system can consider:
+
+Product terminology
+Technical attributes
+Application domain
+Requirement semantics
+Existing standard references
+5. Build the Standards Graph
+
+Relevant standards are represented as interconnected entities.
+
+                    Product Standard
+                           │
+            ┌──────────────┼──────────────┐
+            ↓              ↓              ↓
+      Test Standard   Safety Standard   Terminology
+            │              │
+            ↓              ↓
+      Test Evidence   Certification
+
+This allows STANDARDOS to reason about relationships rather than treating every standard as an isolated search result.
+
+6. Reason
+
+The reasoning layer evaluates relationships between:
+
+Requirements
+Standards
+Normative references
+Tests
+Certifications
+Versions
+Constraints
+7. Audit
+
+The system can identify areas requiring review.
+
+Examples:
+
+Potential Missing Requirement
+Potential Standards Conflict
+Potential Outdated Reference
+Missing Supporting Test Reference
+Certification Review Required
+8. Repair
+
+STANDARDOS can generate a structured recommendation for improving the specification.
+
+Original Requirement
+        ↓
+Detected Issue
+        ↓
+Applicable Standard
+        ↓
+Supporting Reference
+        ↓
+Suggested Revision
+        ↓
+Reason / Evidence
+Core Features
+🔎 Semantic Standards Discovery
+
+Find potentially relevant Indian Standards from natural-language procurement requirements.
+
+Instead of requiring exact standard numbers or keywords, STANDARDOS uses semantic understanding to connect technical requirements with relevant standards.
+
+🧩 Requirement Graph
+
+Break complex specifications into atomic requirements.
+
+Example:
+
+Industrial Motor
+│
+├── Rated Power
+├── Voltage
+├── Frequency
+├── Efficiency
+├── Protection Rating
+├── Temperature
+├── Safety
+└── Testing
+
+Each requirement can then be mapped to relevant standards and references.
+
+🕸️ Standards Dependency Graph
+
+Model relationships between standards.
+
+The graph can represent:
+
+Standard
+   │
+   ├── references
+   ├── tested-by
+   ├── depends-on
+   ├── supports
+   ├── supersedes
+   ├── amended-by
+   └── requires
+
+This enables deeper standards intelligence.
+
+⚠️ Standards Collision Detection
+
+Identify potential conflicts between procurement requirements and standards.
+
+Example:
+
+Tender Requirement
+        │
+        ↓
+Operating Temperature: 120°C
+        │
+        ↓
+Referenced Standard
+        │
+        ↓
+Compatibility Check
+        │
+        ↓
+Potential Conflict
+
+The result is surfaced for human review.
+
+🕳️ Missing Requirement Detection
+
+STANDARDOS can identify potentially missing supporting elements.
+
+Examples:
+
+Test methods
+Safety references
+Installation requirements
+Certification requirements
+Normative references
+Technical parameters
+🔄 Version & Amendment Intelligence
+
+Standards can change over time.
+
+STANDARDOS is designed to track relationships such as:
+
+Old Version
+     ↓
+Amendment
+     ↓
+Updated Version
+     ↓
+Affected Specification
+
+This helps identify procurement documents that may require review.
+
+🛠️ Specification Repair
+
+Instead of only reporting an issue, STANDARDOS can generate a structured proposal for review.
+
+Example:
+
+Issue:
+Missing supporting test requirement
+
+Related Standard:
+IS XXXXX
+
+Suggested Action:
+Add the relevant test reference to the specification.
+
+Reason:
+The requirement depends on the associated test methodology.
+📋 Compliance Intelligence
+
+STANDARDOS can organize information related to:
+
+Applicable standards
+Certification
+Testing
+Safety
+Normative references
+Version information
+
+The objective is to make technical review more structured and traceable.
+
+What Makes STANDARDOS Different?
+
+STANDARDOS is intentionally designed not to be just another:
+
+PDF
+ ↓
+Vector Database
+ ↓
+RAG
+ ↓
+Chatbot
+
+A conventional standards assistant might work like:
+
+Question
+   ↓
+Search
+   ↓
+Retrieve Documents
+   ↓
+LLM
+   ↓
+Answer
+
+STANDARDOS introduces an additional reasoning layer:
+
+Tender
+  ↓
+Requirement Graph
+  ↓
+Standards Graph
+  ↓
+Normative Dependencies
+  ↓
+Constraint Reasoning
+  ↓
+Gap Detection
+  ↓
+Conflict Detection
+  ↓
+Version Analysis
+  ↓
+Specification Repair
+Core innovation
+
+STANDARDOS treats a procurement specification as a dependency graph rather than a document.
+
+The objective is to move from:
+
+Search → Answer
+
+toward:
+
+Understand → Connect → Reason → Audit → Repair
+
+System Architecture
+┌─────────────────────────────────────────────┐
+│              STANDARDOS FRONTEND             │
+│           TanStack Start (React)            │
+└──────────────────────┬──────────────────────┘
+                       │
+                       ↓
+┌─────────────────────────────────────────────┐
+│                 API LAYER                    │
+│      FastAPI (Python) + PostgreSQL          │
+└──────────────────────┬──────────────────────┘
+                       │
+        ┌──────────────┼──────────────┐
+        ↓              ↓              ↓
+┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│ Requirement  │ │  Semantic    │ │ Standards    │
+│ Extraction   │ │  Retrieval   │ │ Knowledge    │
+│              │ │              │ │ Graph        │
+└──────┬───────┘ └──────┬───────┘ └──────┬───────┘
+       │                │                │
+       └────────────────┼────────────────┘
+                        ↓
+              ┌──────────────────┐
+              │ Reasoning Engine │
+              │                  │
+              │ Rules            │
+              │ Constraints      │
+              │ Relationships    │
+              └────────┬─────────┘
+                       │
+        ┌──────────────┼──────────────┐
+        ↓              ↓              ↓
+┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│ Gap          │ │ Conflict     │ │ Version      │
+│ Detection    │ │ Detection    │ │ Intelligence │
+└──────┬───────┘ └──────┬───────┘ └──────┬───────┘
+       │                │                │
+       └────────────────┼────────────────┘
+                        ↓
+              ┌──────────────────┐
+              │ Specification    │
+              │ Repair Engine    │
+              └────────┬─────────┘
+                       ↓
+              ┌──────────────────┐
+              │ Explainable      │
+              │ Output           │
+              └──────────────────┘
+AI Pipeline
+                 INPUT DOCUMENT
+                       │
+                       ↓
+              Document Processing
+                       │
+                       ↓
+            Requirement Extraction
+                       │
+                       ↓
+             Semantic Representation
+                       │
+                       ↓
+              Standards Retrieval
+                       │
+                       ↓
+             Graph Construction
+                       │
+                       ↓
+             Relationship Analysis
+                       │
+                       ↓
+              Constraint Reasoning
+                       │
+          ┌────────────┼────────────┐
+          ↓            ↓            ↓
+        Gaps       Conflicts     Versions
+          │            │            │
+          └────────────┼────────────┘
+                       ↓
+                Human Review
+                       │
+                       ↓
+             Specification Repair
+Technology Stack
+
+What this repository actually contains. The design rationale for each choice, and what is not built yet, are in [docs/INTELLIGENCE.md](docs/INTELLIGENCE.md).
+
+| Layer | Technology |
+| --- | --- |
+| Frontend | TanStack Start (React 19, file-based routing, SSR), Tailwind CSS, Radix UI. `/api/*` is forwarded to FastAPI by a gateway route, so the browser uses a single origin. |
+| Backend API | **FastAPI** (Python 3.12) in `backend/`: auth (signed HTTP-only session cookie, scrypt hashes), uploads, analysis runs, review/repair decisions, audit trail, standards search and graph, change impact |
+| Database | **PostgreSQL** via SQLAlchemy 2 + psycopg 3; schema migrations with **Alembic** (documents, runs, requirements, standards graph, findings, evidence, repairs, audit trail) |
+| Jobs | Postgres-backed run queue: FastAPI background task executes the run, atomic claim, stage heartbeat, cron sweeper re-queues stalled runs |
+| AI/ML engine | **Python package `standardos_aiml`** in `aiml/`, no web or database dependencies |
+| Document parsing | pypdf for PDF, mammoth for DOCX, UTF-8/Windows-1252 for TXT. OCR is not implemented. |
+| NLP | Deterministic requirement identification, unit-normalised quantity parsing, entity and standard-reference extraction, lexicon classification |
+| Retrieval | Fielded BM25 over standard clauses + interpretable feature re-ranker (in-memory) |
+| Knowledge graph | Typed relationships in Postgres + in-memory traversal (supersession, REQUIRES, TESTED_BY, …) |
+| Reasoning | Interval constraint checks, purchaser checklists, dependency/version/certification rules, evidence-grounded repair templates |
+| LLM (optional) | Claude (`claude-opus-5`) for repair wording only, off by default, with every rewrite checked for changed facts |
+| Tests / evaluation | pytest (engine unit tests, eval regression gate, API integration tests on Postgres); gold datasets in `aiml/eval/`; tender-realistic benchmark in `aiml/benchmark/` |
+
+Project Structure
+
+```text
+aiml/                      AI/ML engine (Python)
+  standardos_aiml/           ingest/ nlp/ standards/ reasoning/ pipeline.py llm_repair.py
+  standardos_aiml/standards/data/seed_corpus.json   curated standards corpus (seed)
+  eval/                      gold datasets, harness (python -m eval.run), results
+  benchmark/                 6 tender-realistic specs + 50 queries, runner, results
+  tests/                     unit tests + evaluation regression gate
+backend/                   FastAPI service (Python)
+  app/                       main.py, routers/, models.py, store.py (runs/persistence), view.py, corpus.py, security.py
+  alembic/                   migrations (baseline = the previous Drizzle schema)
+  scripts/seed_standards.py  load the standards corpus into Postgres
+  tests/                     API integration tests against Postgres
+src/                       Frontend (TanStack Start)
+  routes/                    pages, plus routes/api/$.ts (gateway to FastAPI)
+  services/                  analysis.ts, auth.ts — the only modules that call the API
+  lib/                       api.ts (HTTP client), contracts.ts (API types), report.ts
+  components/                UI
+pyproject.toml             uv workspace (aiml + backend)
+docs/INTELLIGENCE.md       Architecture, decisions, implemented vs. future work
+```
+
+Installation
+
+Prerequisites: [uv](https://docs.astral.sh/uv/) (Python 3.12+), Bun 1.2+, Node.js 22+, PostgreSQL 14+.
+
+```bash
+uv sync --all-packages --all-extras   # Python: engine + API (+ dev tools) into .venv
+bun install                           # Frontend
+cp .env.example .env                  # set DATABASE_URL and SESSION_SECRET
+bun run db:migrate                    # alembic upgrade head (adopts an existing Drizzle-created schema)
+bun run db:seed                       # load the standards corpus
+```
+
+Environment Variables
+
+| Variable | Purpose |
+| --- | --- |
+| `DATABASE_URL` | Postgres connection string (required for accounts and saved analyses) |
+| `DATABASE_POOL_MAX` | Optional max connections per API process |
+| `DB_MIGRATION_URL` | Optional direct connection for Alembic; **takes precedence over `DATABASE_URL` for migrations** |
+| `SESSION_SECRET` | 32+ random characters to sign the session cookie (required) |
+| `SESSION_COOKIE_SECURE` | `true` when served over HTTPS |
+| `CRON_SECRET` | Bearer token for `GET /api/cron/analysis-sweeper` |
+| `STANDARDOS_LLM_REPAIR` | `on` enables optional LLM wording of repairs (default off) |
+| `ANTHROPIC_API_KEY` | Credentials for the above |
+| `API_INTERNAL_URL` | Where the frontend gateway and SSR reach FastAPI (default `http://127.0.0.1:8000`) |
+| `VITE_API_URL` | Optional: browser calls a separately hosted API directly (then set `CORS_ORIGINS`) |
+
+Do not commit .env files or API keys.
+
+Running the Project
+
+```bash
+bun run api:dev             # FastAPI on :8000 (docs at http://localhost:8000/api/docs)
+bun run dev                 # frontend on :3000 (its /api/* is forwarded to FastAPI)
+bun run test                # pytest: engine, eval gate, API integration (needs TEST_DATABASE_URL)
 bun run eval                # component evaluation → aiml/eval/results/latest.md
 bun run benchmark           # tender-realistic benchmark → aiml/benchmark/results/latest.md
 bun run build && bun run preview

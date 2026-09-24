@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpDown, FilePlus2, Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { formatAnalyzedAt, listDocuments } from "@/services/analysis";
+import { DOCUMENT_TYPES } from "@/lib/document-types";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -31,17 +32,21 @@ function Documents() {
   const documents = Route.useLoaderData();
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState("all");
+  const [docType, setDocType] = useState("all");
   const [asc, setAsc] = useState(false);
   const rows = useMemo(
     () =>
       documents
         .filter(
           (d) =>
-            (d.name + d.organization).toLowerCase().includes(query.toLowerCase()) &&
-            (status === "all" || d.status === status),
+            (d.name + d.organization + d.documentTypeLabel)
+              .toLowerCase()
+              .includes(query.toLowerCase()) &&
+            (status === "all" || d.status === status) &&
+            (docType === "all" || d.documentType === docType),
         )
         .sort((a, b) => (asc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name))),
-    [documents, query, status, asc],
+    [documents, query, status, docType, asc],
   );
   return (
     <div className="reveal">
@@ -50,7 +55,8 @@ function Documents() {
           <p className="eyebrow">Workspace / Documents</p>
           <h1 className="page-title mt-3">Document Library</h1>
           <p className="mt-4 text-muted-foreground">
-            All procurement documents and their latest compliance state.
+            Every document you have analysed (specifications, tenders, BOQs, datasheets, reports and
+            your own document types) with its latest compliance state.
           </p>
         </div>
         <Button asChild>
@@ -82,6 +88,19 @@ function Documents() {
             <SelectItem value="Failed">Failed</SelectItem>
           </SelectContent>
         </Select>
+        <Select value={docType} onValueChange={setDocType}>
+          <SelectTrigger className="w-52" aria-label="Document type">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All document types</SelectItem>
+            {DOCUMENT_TYPES.map((t) => (
+              <SelectItem key={t.key} value={t.key}>
+                {t.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
         <Button variant="outline" onClick={() => setAsc(!asc)}>
           <ArrowUpDown />
           Name
@@ -89,7 +108,7 @@ function Documents() {
       </div>
       <div className="mt-6 overflow-x-auto">
         <div className="min-w-[820px]">
-          <div className="grid grid-cols-[2.2fr_.5fr_.6fr_.5fr_.6fr_.8fr] gap-5 border-b border-border pb-3 text-[10px] font-bold uppercase tracking-[.1em] text-muted-foreground">
+          <div className="grid grid-cols-[2.2fr_1fr_.6fr_.5fr_.6fr_.8fr] gap-5 border-b border-border pb-3 text-[10px] font-bold uppercase tracking-[.1em] text-muted-foreground">
             <span>Name</span>
             <span>Type</span>
             <span>Standards</span>
@@ -102,7 +121,7 @@ function Documents() {
               key={doc.id}
               to="/documents/$documentId"
               params={{ documentId: doc.id }}
-              className="thin-row grid grid-cols-[2.2fr_.5fr_.6fr_.5fr_.6fr_.8fr] items-center gap-5 py-5 text-sm"
+              className="thin-row grid grid-cols-[2.2fr_1fr_.6fr_.5fr_.6fr_.8fr] items-center gap-5 py-5 text-sm"
             >
               <span>
                 <b className="block text-primary">{doc.name}</b>
@@ -111,7 +130,10 @@ function Documents() {
                   {doc.status === "Failed" || doc.status === "Processing" ? ` · ${doc.status}` : ""}
                 </small>
               </span>
-              <span>{doc.type}</span>
+              <span>
+                <span className="block text-primary">{doc.documentTypeLabel}</span>
+                <small className="text-muted-foreground">{doc.type}</small>
+              </span>
               <span>{doc.standards}</span>
               <span className={doc.issues > 2 ? "font-bold text-warning-foreground" : ""}>
                 {doc.issues}
@@ -134,6 +156,7 @@ function Documents() {
                 onClick={() => {
                   setQuery("");
                   setStatus("all");
+                  setDocType("all");
                 }}
               >
                 Clear filters
@@ -143,7 +166,7 @@ function Documents() {
             <>
               <p className="font-bold text-primary">No documents analysed yet.</p>
               <Button asChild variant="link">
-                <Link to="/analyze">Analyze your first specification</Link>
+                <Link to="/analyze">Analyze your first document</Link>
               </Button>
             </>
           )}

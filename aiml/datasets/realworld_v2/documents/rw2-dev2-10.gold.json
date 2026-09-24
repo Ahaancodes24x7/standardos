@@ -1,0 +1,213 @@
+{
+ "id": "rw2-dev2-10",
+ "split": "dev2",
+ "name": "Procurement of distribution transformers and LT cables — SE/CIV/14/2026-27",
+ "organization": "VIDYUT VITRAN NIGAM LIMITED",
+ "domain": "Distribution transformers, LT power cables",
+ "plants": [
+  "tx.typetest.omit"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} V AC",
+   "kV": "{n}-kV",
+   "A": "{n} ampere",
+   "kA": "{n} kA rms",
+   "degC": "{n} ℃",
+   "mm2": "{n} mm2",
+   "kW": "{n} k.W.",
+   "Hz": "{n} cycles per second",
+   "m3h": "{n} cu.m/hr",
+   "mgl": "{n} milligram per litre",
+   "ohm": "{n} Ohms",
+   "mm": "{n} m.m.",
+   "m": "{n} metre",
+   "pct": "{n} pct",
+   "kVA": "{n} kva",
+   "rpm": "{n} rev/min",
+   "NTU": "{n} NTU.",
+   "dBA": "{n} dB (A)",
+   "kgm3": "{n} kg/cu.m",
+   "days": "{n} calendar days"
+  },
+  "numbering": "dash",
+  "caps_rate": 0,
+  "merge_rate": 0.12
+ },
+ "requirements": [
+  {
+   "text": "Distribution transformers shall comply with IS 1180 (Part 1):2014.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Transformer rating shall be 630 kva, 11/0.433 kV, vector group Dyn11.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "apparent_power",
+     "value": 630000
+    }
+   ],
+   "standard": "is-1180-1-2014"
+  },
+  {
+   "text": "Transformers shall comply with energy efficiency level 2 of IS 1180 (Part 1).",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "efficiency_class",
+     "text": "Level 2"
+    }
+   ]
+  },
+  {
+   "text": "Transformers shall be outdoor type, copper wound, oil immersed with ONAN cooling.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "The top oil temperature rise shall be limited to 35 ℃ above an ambient of 50 ℃.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ambient_temperature",
+     "value": 50
+    }
+   ]
+  },
+  {
+   "text": "The tank shall be fabricated from welded mild steel with epoxy paint finish.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "LT power cables shall be aluminium conductor, XLPE insulated, armoured, PVC sheathed, 1.1 kV grade, complying with IS 7098 (Part 1):1988.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 1100
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "aluminium"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "XLPE"
+    }
+   ]
+  },
+  {
+   "text": "The size of the main feeder cable shall be 3.5 core 300 mm2.",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 300
+    }
+   ],
+   "standard": "is-7098-1-1988"
+  },
+  {
+   "text": "Maximum continuous conductor temperature of the cables shall be 90 ℃.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_temperature",
+     "value": 90
+    }
+   ],
+   "standard": "is-7098-1-1988"
+  },
+  {
+   "text": "Copper conductor control cables of 2.5 mm2, PVC insulated, 1.1 kV grade shall comply with IS 1554 (Part 1).",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 2.5
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "Class 2 stranded conductors complying with IS 8130 shall be used.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Cables shall be run in RCC trenches or on perforated trays as per drawings.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Double compression glands and crimped lugs shall be used for all cable terminations.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "The maker's name, size, voltage grade and year of manufacture shall be marked on every drum.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Each transformer shall be subjected to all routine tests as per IS 2026 (Part 1):2011.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Testing of the cables shall be done as per IS 10810.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Each consignment of cables shall be accompanied by routine test certificates.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "On completion the contractor shall hand over three copies of the O&M manuals.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Operation and routine maintenance training shall be given by the contractor to the Department's operators.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "certification",
+   "why": "no conformity evidence for transformers"
+  }
+ ]
+}

@@ -1,0 +1,340 @@
+{
+ "id": "rw2-dev2-12",
+ "split": "dev2",
+ "name": "Construction of pump house with structural steel roof and electrical works — CE/CIV/91/2026-27",
+ "organization": "MUNICIPAL CORPORATION",
+ "domain": "Reinforced concrete works, Structural steel, Internal electrification",
+ "plants": [
+  "wiring.earthcode.old",
+  "rcc.steel.old"
+ ],
+ "style": {
+  "units": {
+   "V": "{n}-volt",
+   "kV": "{n}-kV",
+   "A": "{n} Amperes",
+   "kA": "{n} kA (rms)",
+   "degC": "{n} ℃",
+   "mm2": "{n} mm2",
+   "kW": "{n} kilowatt",
+   "Hz": "{n} Hertz",
+   "m3h": "{n} cu.m/hr",
+   "mgl": "{n} milligram per litre",
+   "ohm": "{n} Ohms",
+   "mm": "{n} m.m.",
+   "m": "{n} metre",
+   "pct": "{n} pct",
+   "kVA": "{n} kilo-volt-ampere",
+   "rpm": "{n} rev/min",
+   "NTU": "{n} NTU.",
+   "dBA": "{n} dB (A)",
+   "kgm3": "{n} kg/cu.m",
+   "days": "{n} calendar days"
+  },
+  "numbering": "dash",
+  "caps_rate": 0,
+  "merge_rate": 0.12
+ },
+ "requirements": [
+  {
+   "text": "Exposure condition for the design of the structure shall be taken as severe in terms of IS 456:2000.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "exposure_condition",
+     "text": "severe"
+    }
+   ]
+  },
+  {
+   "text": "Plain and reinforced cement concrete works shall comply with IS 456:2000.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Grade of concrete for all RCC members shall be M30.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "concrete_grade",
+     "value": 30
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "The nominal cover to reinforcement shall be 45 m.m..",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "nominal_cover",
+     "value": 45
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "Maximum free water-cement ratio shall be 0.45.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "water_cement_ratio",
+     "value": 0.45
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "Cement content shall be not less than 320 kg/cu.m.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "cement_content",
+     "value": 320
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "OPC 43 grade cement complying with IS 269:2015 shall be used.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "cement_type",
+     "text": "OPC 43 grade"
+    }
+   ]
+  },
+  {
+   "text": "Aggregates, both coarse and fine, shall comply with IS 383:2016.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Fe 500D TMT reinforcement bars complying with IS 1786:1985 shall be used.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "steel_grade",
+     "text": "Fe 500D"
+    }
+   ]
+  },
+  {
+   "text": "Mix proportioning of concrete shall be done as per IS 10262:2019.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Concrete shall be cured for not less than 10 days.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Mechanical needle vibrators shall be used for compaction of concrete.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Structural steel plates and sections shall be E250 grade complying with IS 2062:2011.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Steel work shall be painted with one coat of zinc chromate primer followed by two finishing coats of enamel.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Steel work shall be fabricated and erected in accordance with approved drawings.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "All wiring work shall comply with IS 732:2019.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "The earthing arrangement of the supply system is TN-S.",
+   "category": "safety",
+   "attributes": [
+    {
+     "parameter": "earthing_system",
+     "text": "TN-S"
+    }
+   ],
+   "standard": "is-3043-2018"
+  },
+  {
+   "text": "All wiring shall run concealed in rigid PVC conduit having 1.5 m.m. wall thickness.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Wires are to be single core, stranded copper conductor, FR PVC insulated, 450/750 V grade to IS 694:2010.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 750
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "Copper conductors of 1.5 mm2 shall be used for lighting circuits and 4 mm2 for power circuits.",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 1.5
+    },
+    {
+     "parameter": "conductor_size",
+     "value": 4
+    }
+   ],
+   "standard": "is-694-2010"
+  },
+  {
+   "text": "MCBs shall comply with IS/IEC 60898-1 and have a rated short-circuit capacity of 10 kA (rms).",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 10000
+    }
+   ]
+  },
+  {
+   "text": "MCBs from 6 Amperes up to 32 Amperes shall be provided as per the single line diagram.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 6
+    }
+   ],
+   "standard": "is-iec-60898-1-2002"
+  },
+  {
+   "text": "All socket outlet circuits shall be protected by 30 mA RCCBs complying with IS 12640 (Part 1).",
+   "category": "safety",
+   "attributes": []
+  },
+  {
+   "text": "The earthing installation shall comply with IS 3043:1987.",
+   "category": "safety",
+   "attributes": []
+  },
+  {
+   "text": "The main distribution board shall be earthed through two pipe earth electrodes.",
+   "category": "safety",
+   "attributes": [],
+   "standard": "is-3043-2018"
+  },
+  {
+   "text": "Resistance of the earthing system shall be not more than 1 Ohms.",
+   "category": "safety",
+   "attributes": [
+    {
+     "parameter": "earth_resistance",
+     "value": 1
+    }
+   ],
+   "standard": "is-3043-2018"
+  },
+  {
+   "text": "Testing of concrete for compressive strength shall be done as per IS 516 (Part 1/Sec 1):2021.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall furnish manufacturer's test certificates for every lot of cement and reinforcement.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "The contractor shall submit mill test certificates for all structural steel supplied.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Testing of wires shall be done as per IS 10810.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "After completion, the insulation resistance and earth continuity of the installation shall be tested as per IS 732.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "All wires, MCBs and RCCBs supplied shall carry the ISI mark.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Before despatch, the Engineer-in-charge will inspect the equipment at the maker's works.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Detailed shop drawings are to be submitted by the contractor for approval not later than 21 calendar days after the award of work.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "On completion the contractor shall hand over three copies of the O&M manuals.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall guarantee the whole installation for 12 months after handing over against faulty design, materials and workmanship.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Operation and routine maintenance training shall be given by the contractor to the Department's operators.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "outdated",
+   "standardId": "is-3043-2018",
+   "why": "IS 3043:1987 revised as IS 3043:2018"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-1786-2008",
+   "why": "1985 edition cited"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-456-2000",
+   "why": "amendments to confirm"
+  }
+ ]
+}

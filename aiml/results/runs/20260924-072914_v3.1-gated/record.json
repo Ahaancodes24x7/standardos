@@ -1,0 +1,3890 @@
+{
+  "run_id": "20260924-072914_v3.1-gated",
+  "label": "pipeline 3.1.0 official (v3.1-gated)",
+  "created_at": "2026-09-24T07:29:14+00:00",
+  "git_commit": "398dbed",
+  "pipeline_version": "standardos-pipeline/3.0.0-py",
+  "corpus_version": "seed-6ada30cf",
+  "config": {
+    "name": "v3.1-gated",
+    "retrieval": {
+      "expansion": false,
+      "document_context": true,
+      "rerank": true,
+      "min_confidence": 0.35,
+      "top_k": 5
+    },
+    "zoning": true,
+    "heading_v2": true,
+    "segmentation_v2": true,
+    "attributes_v2": true,
+    "lexicon_version": 2,
+    "units_v2": true,
+    "classifier": "gated",
+    "units_v3": true,
+    "text_attrs_v2": true,
+    "identify_v2": true,
+    "reasoning_v31": true,
+    "rerank_version": 2,
+    "product_terms_v2": true,
+    "scope_guard": true,
+    "dependency_mode": "citation",
+    "detector_gate": true,
+    "scoped_checklists": true,
+    "vague_version": 2,
+    "amendment_dedupe": true,
+    "certification_scope": true,
+    "relations_version": 2
+  },
+  "include_blind": true,
+  "blind_scored": [
+    "component/heldout",
+    "realworld_v2/test"
+  ],
+  "datasets": {
+    "component": {
+      "version": "1.0",
+      "files_hashed": 5
+    },
+    "tenders_v1": {
+      "version": "1.0",
+      "files_hashed": 13
+    },
+    "realworld_v2": {
+      "version": "2.2",
+      "files_hashed": 169
+    }
+  },
+  "environment": {
+    "python": "3.12.4",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "duration_s": 149.3,
+  "tasks": [
+    {
+      "task": "documents",
+      "dataset": "component",
+      "split": "dev",
+      "variant": "txt",
+      "role": "open",
+      "n": 8,
+      "metrics": {
+        "id_precision": 1.0,
+        "id_recall": 0.8889,
+        "id_f1": 0.9412,
+        "attr_precision": 1.0,
+        "attr_recall": 1.0,
+        "attr_f1": 1.0,
+        "cls_accuracy": 0.9583,
+        "cls_macro_f1": 0.9506,
+        "fnd_precision": 0.9,
+        "fnd_recall": 1.0,
+        "fnd_f1": 0.9474,
+        "fnd_conflict_precision": 1.0,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 1.0,
+        "fnd_gap_precision": 1.0,
+        "fnd_gap_recall": 1.0,
+        "fnd_gap_f1": 1.0,
+        "fnd_dependency_precision": 0.6667,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 0.8,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 1.0,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 1.0,
+        "fnd_certification_f1": 1.0,
+        "latency_ms": 5856.8241
+      },
+      "ci": {
+        "id_precision": [
+          1.0,
+          1.0
+        ],
+        "id_recall": [
+          0.6893,
+          1.0
+        ],
+        "id_f1": [
+          0.8161,
+          1.0
+        ],
+        "attr_precision": [
+          1.0,
+          1.0
+        ],
+        "attr_recall": [
+          1.0,
+          1.0
+        ],
+        "attr_f1": [
+          1.0,
+          1.0
+        ],
+        "cls_accuracy": [
+          0.839,
+          1.0
+        ],
+        "cls_macro_f1": [
+          0.7289,
+          1.0
+        ],
+        "fnd_precision": [
+          0.8571,
+          1.0
+        ],
+        "fnd_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_f1": [
+          0.9231,
+          1.0
+        ],
+        "fnd_conflict_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_precision": [
+          0.6667,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          0.8,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          1.0,
+          1.0
+        ],
+        "latency_ms": [
+          97.806,
+          17361.6371
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "component",
+      "split": "dev",
+      "variant": "bm25",
+      "role": "open",
+      "n": 25,
+      "metrics": {
+        "std_r1": 1.0,
+        "std_r3": 1.0,
+        "std_r5": 1.0,
+        "std_mrr": 1.0,
+        "ndcg5": 0.9783,
+        "cl_r1": 0.88,
+        "cl_r3": 1.0,
+        "cl_mrr": 0.94
+      },
+      "ci": {
+        "std_r1": [
+          1.0,
+          1.0
+        ],
+        "std_r3": [
+          1.0,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          1.0,
+          1.0
+        ],
+        "ndcg5": [
+          0.9579,
+          0.9944
+        ],
+        "cl_r1": [
+          0.759,
+          1.0
+        ],
+        "cl_r3": [
+          1.0,
+          1.0
+        ],
+        "cl_mrr": [
+          0.8795,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "component",
+      "split": "dev",
+      "variant": "bm25+thesaurus",
+      "role": "open",
+      "n": 25,
+      "metrics": {
+        "std_r1": 0.96,
+        "std_r3": 1.0,
+        "std_r5": 1.0,
+        "std_mrr": 0.98,
+        "ndcg5": 0.965,
+        "cl_r1": 0.84,
+        "cl_r3": 1.0,
+        "cl_mrr": 0.9133
+      },
+      "ci": {
+        "std_r1": [
+          0.88,
+          1.0
+        ],
+        "std_r3": [
+          1.0,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          0.94,
+          1.0
+        ],
+        "ndcg5": [
+          0.9256,
+          0.9908
+        ],
+        "cl_r1": [
+          0.68,
+          0.96
+        ],
+        "cl_r3": [
+          1.0,
+          1.0
+        ],
+        "cl_mrr": [
+          0.8267,
+          0.98
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "component",
+      "split": "dev",
+      "variant": "bm25+rerank",
+      "role": "open",
+      "n": 25,
+      "metrics": {
+        "std_r1": 1.0,
+        "std_r3": 1.0,
+        "std_r5": 1.0,
+        "std_mrr": 1.0,
+        "ndcg5": 0.976,
+        "cl_r1": 0.96,
+        "cl_r3": 0.96,
+        "cl_mrr": 0.96
+      },
+      "ci": {
+        "std_r1": [
+          1.0,
+          1.0
+        ],
+        "std_r3": [
+          1.0,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          1.0,
+          1.0
+        ],
+        "ndcg5": [
+          0.953,
+          0.9944
+        ],
+        "cl_r1": [
+          0.88,
+          1.0
+        ],
+        "cl_r3": [
+          0.88,
+          1.0
+        ],
+        "cl_mrr": [
+          0.88,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "component",
+      "split": "dev",
+      "variant": "bm25+thesaurus+rerank",
+      "role": "open",
+      "n": 25,
+      "metrics": {
+        "std_r1": 1.0,
+        "std_r3": 1.0,
+        "std_r5": 1.0,
+        "std_mrr": 1.0,
+        "ndcg5": 0.976,
+        "cl_r1": 0.96,
+        "cl_r3": 0.96,
+        "cl_mrr": 0.96
+      },
+      "ci": {
+        "std_r1": [
+          1.0,
+          1.0
+        ],
+        "std_r3": [
+          1.0,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          1.0,
+          1.0
+        ],
+        "ndcg5": [
+          0.953,
+          0.9944
+        ],
+        "cl_r1": [
+          0.88,
+          1.0
+        ],
+        "cl_r3": [
+          0.88,
+          1.0
+        ],
+        "cl_mrr": [
+          0.88,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "resolution",
+      "dataset": "component",
+      "split": "dev",
+      "variant": "-",
+      "role": "open",
+      "n": 17,
+      "metrics": {
+        "res_ok": 1.0,
+        "edition_ok": 1.0
+      },
+      "ci": {
+        "res_ok": [
+          1.0,
+          1.0
+        ],
+        "edition_ok": [
+          1.0,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "relations",
+      "dataset": "component",
+      "split": "dev",
+      "variant": "-",
+      "role": "open",
+      "n": 20,
+      "metrics": {
+        "rel_precision": 1.0,
+        "rel_recall": 1.0,
+        "rel_f1": 1.0
+      },
+      "ci": {
+        "rel_precision": [
+          1.0,
+          1.0
+        ],
+        "rel_recall": [
+          1.0,
+          1.0
+        ],
+        "rel_f1": [
+          1.0,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "documents",
+      "dataset": "component",
+      "split": "test",
+      "variant": "txt",
+      "role": "contaminated",
+      "n": 8,
+      "metrics": {
+        "id_precision": 0.9565,
+        "id_recall": 1.0,
+        "id_f1": 0.9778,
+        "attr_precision": 0.9412,
+        "attr_recall": 0.9412,
+        "attr_f1": 0.9412,
+        "cls_accuracy": 0.8636,
+        "cls_macro_f1": 0.7056,
+        "fnd_precision": 1.0,
+        "fnd_recall": 1.0,
+        "fnd_f1": 1.0,
+        "fnd_conflict_precision": 1.0,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 1.0,
+        "fnd_gap_precision": 1.0,
+        "fnd_gap_recall": 1.0,
+        "fnd_gap_f1": 1.0,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 1.0,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 1.0,
+        "fnd_certification_f1": 1.0,
+        "latency_ms": 95.7321
+      },
+      "ci": {
+        "id_precision": [
+          0.8696,
+          1.0
+        ],
+        "id_recall": [
+          1.0,
+          1.0
+        ],
+        "id_f1": [
+          0.9302,
+          1.0
+        ],
+        "attr_precision": [
+          0.7647,
+          1.0
+        ],
+        "attr_recall": [
+          0.8571,
+          1.0
+        ],
+        "attr_f1": [
+          0.8462,
+          1.0
+        ],
+        "cls_accuracy": [
+          0.6667,
+          1.0
+        ],
+        "cls_macro_f1": [
+          0.4821,
+          1.0
+        ],
+        "fnd_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          1.0,
+          1.0
+        ],
+        "latency_ms": [
+          84.6505,
+          106.6969
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "component",
+      "split": "test",
+      "variant": "bm25",
+      "role": "contaminated",
+      "n": 25,
+      "metrics": {
+        "std_r1": 0.96,
+        "std_r3": 1.0,
+        "std_r5": 1.0,
+        "std_mrr": 0.98,
+        "ndcg5": 0.99,
+        "cl_r1": 0.96,
+        "cl_r3": 1.0,
+        "cl_mrr": 0.98
+      },
+      "ci": {
+        "std_r1": [
+          0.88,
+          1.0
+        ],
+        "std_r3": [
+          1.0,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          0.94,
+          1.0
+        ],
+        "ndcg5": [
+          0.9742,
+          1.0
+        ],
+        "cl_r1": [
+          0.88,
+          1.0
+        ],
+        "cl_r3": [
+          1.0,
+          1.0
+        ],
+        "cl_mrr": [
+          0.94,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "component",
+      "split": "test",
+      "variant": "bm25+thesaurus",
+      "role": "contaminated",
+      "n": 25,
+      "metrics": {
+        "std_r1": 0.92,
+        "std_r3": 1.0,
+        "std_r5": 1.0,
+        "std_mrr": 0.96,
+        "ndcg5": 0.977,
+        "cl_r1": 0.92,
+        "cl_r3": 1.0,
+        "cl_mrr": 0.96
+      },
+      "ci": {
+        "std_r1": [
+          0.8,
+          1.0
+        ],
+        "std_r3": [
+          1.0,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          0.9,
+          1.0
+        ],
+        "ndcg5": [
+          0.9409,
+          1.0
+        ],
+        "cl_r1": [
+          0.8,
+          1.0
+        ],
+        "cl_r3": [
+          1.0,
+          1.0
+        ],
+        "cl_mrr": [
+          0.9,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "component",
+      "split": "test",
+      "variant": "bm25+rerank",
+      "role": "contaminated",
+      "n": 25,
+      "metrics": {
+        "std_r1": 1.0,
+        "std_r3": 1.0,
+        "std_r5": 1.0,
+        "std_mrr": 1.0,
+        "ndcg5": 0.9794,
+        "cl_r1": 1.0,
+        "cl_r3": 1.0,
+        "cl_mrr": 1.0
+      },
+      "ci": {
+        "std_r1": [
+          1.0,
+          1.0
+        ],
+        "std_r3": [
+          1.0,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          1.0,
+          1.0
+        ],
+        "ndcg5": [
+          0.9441,
+          0.9986
+        ],
+        "cl_r1": [
+          1.0,
+          1.0
+        ],
+        "cl_r3": [
+          1.0,
+          1.0
+        ],
+        "cl_mrr": [
+          1.0,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "component",
+      "split": "test",
+      "variant": "bm25+thesaurus+rerank",
+      "role": "contaminated",
+      "n": 25,
+      "metrics": {
+        "std_r1": 1.0,
+        "std_r3": 1.0,
+        "std_r5": 1.0,
+        "std_mrr": 1.0,
+        "ndcg5": 0.978,
+        "cl_r1": 1.0,
+        "cl_r3": 1.0,
+        "cl_mrr": 1.0
+      },
+      "ci": {
+        "std_r1": [
+          1.0,
+          1.0
+        ],
+        "std_r3": [
+          1.0,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          1.0,
+          1.0
+        ],
+        "ndcg5": [
+          0.9412,
+          0.9971
+        ],
+        "cl_r1": [
+          1.0,
+          1.0
+        ],
+        "cl_r3": [
+          1.0,
+          1.0
+        ],
+        "cl_mrr": [
+          1.0,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "resolution",
+      "dataset": "component",
+      "split": "test",
+      "variant": "-",
+      "role": "contaminated",
+      "n": 17,
+      "metrics": {
+        "res_ok": 1.0,
+        "edition_ok": 1.0
+      },
+      "ci": {
+        "res_ok": [
+          1.0,
+          1.0
+        ],
+        "edition_ok": [
+          1.0,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "relations",
+      "dataset": "component",
+      "split": "test",
+      "variant": "-",
+      "role": "contaminated",
+      "n": 18,
+      "metrics": {
+        "rel_precision": 1.0,
+        "rel_recall": 1.0,
+        "rel_f1": 1.0
+      },
+      "ci": {
+        "rel_precision": [
+          1.0,
+          1.0
+        ],
+        "rel_recall": [
+          1.0,
+          1.0
+        ],
+        "rel_f1": [
+          1.0,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "documents",
+      "dataset": "component",
+      "split": "heldout",
+      "variant": "txt",
+      "role": "blind",
+      "n": 5,
+      "metrics": {
+        "id_precision": 1.0,
+        "id_recall": 1.0,
+        "id_f1": 1.0,
+        "attr_precision": 1.0,
+        "attr_recall": 1.0,
+        "attr_f1": 1.0,
+        "cls_accuracy": 0.9167,
+        "cls_macro_f1": 0.9405,
+        "fnd_precision": 1.0,
+        "fnd_recall": 1.0,
+        "fnd_f1": 1.0,
+        "fnd_conflict_precision": 1.0,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 1.0,
+        "fnd_gap_precision": 1.0,
+        "fnd_gap_recall": 1.0,
+        "fnd_gap_f1": 1.0,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 1.0,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 1.0,
+        "fnd_certification_f1": 1.0,
+        "latency_ms": 102.6974
+      },
+      "ci": {
+        "id_precision": [
+          1.0,
+          1.0
+        ],
+        "id_recall": [
+          1.0,
+          1.0
+        ],
+        "id_f1": [
+          1.0,
+          1.0
+        ],
+        "attr_precision": [
+          1.0,
+          1.0
+        ],
+        "attr_recall": [
+          1.0,
+          1.0
+        ],
+        "attr_f1": [
+          1.0,
+          1.0
+        ],
+        "cls_accuracy": [
+          0.0,
+          1.0
+        ],
+        "cls_macro_f1": [
+          0.0,
+          1.0
+        ],
+        "fnd_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          1.0,
+          1.0
+        ],
+        "latency_ms": [
+          90.1829,
+          116.1101
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "component",
+      "split": "heldout",
+      "variant": "bm25",
+      "role": "blind",
+      "n": 15,
+      "metrics": {
+        "std_r1": 0.9333,
+        "std_r3": 1.0,
+        "std_r5": 1.0,
+        "std_mrr": 0.9667,
+        "ndcg5": 0.9816,
+        "cl_r1": 0.7333,
+        "cl_r3": 0.8667,
+        "cl_mrr": 0.83
+      },
+      "ci": {
+        "std_r1": [
+          0.8,
+          1.0
+        ],
+        "std_r3": [
+          1.0,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          0.9,
+          1.0
+        ],
+        "ndcg5": [
+          0.9521,
+          1.0
+        ],
+        "cl_r1": [
+          0.5333,
+          0.9333
+        ],
+        "cl_r3": [
+          0.6667,
+          1.0
+        ],
+        "cl_mrr": [
+          0.6767,
+          0.9667
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "component",
+      "split": "heldout",
+      "variant": "bm25+thesaurus",
+      "role": "blind",
+      "n": 15,
+      "metrics": {
+        "std_r1": 0.8667,
+        "std_r3": 1.0,
+        "std_r5": 1.0,
+        "std_mrr": 0.9333,
+        "ndcg5": 0.9636,
+        "cl_r1": 0.6667,
+        "cl_r3": 0.9333,
+        "cl_mrr": 0.8167
+      },
+      "ci": {
+        "std_r1": [
+          0.6667,
+          1.0
+        ],
+        "std_r3": [
+          1.0,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          0.8333,
+          1.0
+        ],
+        "ndcg5": [
+          0.925,
+          0.9931
+        ],
+        "cl_r1": [
+          0.4,
+          0.8667
+        ],
+        "cl_r3": [
+          0.8,
+          1.0
+        ],
+        "cl_mrr": [
+          0.6833,
+          0.9333
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "component",
+      "split": "heldout",
+      "variant": "bm25+rerank",
+      "role": "blind",
+      "n": 15,
+      "metrics": {
+        "std_r1": 0.9333,
+        "std_r3": 1.0,
+        "std_r5": 1.0,
+        "std_mrr": 0.9556,
+        "ndcg5": 0.972,
+        "cl_r1": 0.9333,
+        "cl_r3": 1.0,
+        "cl_mrr": 0.9556
+      },
+      "ci": {
+        "std_r1": [
+          0.8,
+          1.0
+        ],
+        "std_r3": [
+          1.0,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          0.8667,
+          1.0
+        ],
+        "ndcg5": [
+          0.9281,
+          0.9976
+        ],
+        "cl_r1": [
+          0.8,
+          1.0
+        ],
+        "cl_r3": [
+          1.0,
+          1.0
+        ],
+        "cl_mrr": [
+          0.8667,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "component",
+      "split": "heldout",
+      "variant": "bm25+thesaurus+rerank",
+      "role": "blind",
+      "n": 15,
+      "metrics": {
+        "std_r1": 0.9333,
+        "std_r3": 1.0,
+        "std_r5": 1.0,
+        "std_mrr": 0.9556,
+        "ndcg5": 0.9671,
+        "cl_r1": 0.9333,
+        "cl_r3": 1.0,
+        "cl_mrr": 0.9556
+      },
+      "ci": {
+        "std_r1": [
+          0.8,
+          1.0
+        ],
+        "std_r3": [
+          1.0,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          0.8667,
+          1.0
+        ],
+        "ndcg5": [
+          0.9231,
+          0.9952
+        ],
+        "cl_r1": [
+          0.8,
+          1.0
+        ],
+        "cl_r3": [
+          1.0,
+          1.0
+        ],
+        "cl_mrr": [
+          0.8667,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "resolution",
+      "dataset": "component",
+      "split": "heldout",
+      "variant": "-",
+      "role": "blind",
+      "n": 8,
+      "metrics": {
+        "res_ok": 1.0,
+        "edition_ok": 1.0
+      },
+      "ci": {
+        "res_ok": [
+          1.0,
+          1.0
+        ],
+        "edition_ok": [
+          1.0,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "relations",
+      "dataset": "component",
+      "split": "heldout",
+      "variant": "-",
+      "role": "blind",
+      "n": 12,
+      "metrics": {
+        "rel_precision": 0.9375,
+        "rel_recall": 0.9375,
+        "rel_f1": 0.9375
+      },
+      "ci": {
+        "rel_precision": [
+          0.7692,
+          1.0
+        ],
+        "rel_recall": [
+          0.7692,
+          1.0
+        ],
+        "rel_f1": [
+          0.7692,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "documents",
+      "dataset": "tenders_v1",
+      "split": "all",
+      "variant": "txt",
+      "role": "contaminated",
+      "n": 6,
+      "metrics": {
+        "id_precision": 0.9942,
+        "id_recall": 0.9659,
+        "id_f1": 0.9798,
+        "attr_precision": 0.9545,
+        "attr_recall": 0.9906,
+        "attr_f1": 0.9722,
+        "cls_accuracy": 0.8235,
+        "cls_macro_f1": 0.8141,
+        "fnd_precision": 1.0,
+        "fnd_recall": 1.0,
+        "fnd_f1": 1.0,
+        "fnd_conflict_precision": 1.0,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 1.0,
+        "fnd_gap_precision": 1.0,
+        "fnd_gap_recall": 1.0,
+        "fnd_gap_f1": 1.0,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 1.0,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 1.0,
+        "fnd_certification_f1": 1.0,
+        "latency_ms": 580.1991
+      },
+      "ci": {
+        "id_precision": [
+          0.9803,
+          1.0
+        ],
+        "id_recall": [
+          0.9316,
+          0.9943
+        ],
+        "id_f1": [
+          0.9563,
+          0.9971
+        ],
+        "attr_precision": [
+          0.8966,
+          1.0
+        ],
+        "attr_recall": [
+          0.9674,
+          1.0
+        ],
+        "attr_f1": [
+          0.9327,
+          1.0
+        ],
+        "cls_accuracy": [
+          0.7517,
+          0.8824
+        ],
+        "cls_macro_f1": [
+          0.7388,
+          0.8697
+        ],
+        "fnd_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          1.0,
+          1.0
+        ],
+        "latency_ms": [
+          427.581,
+          746.748
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": false
+    },
+    {
+      "task": "documents",
+      "dataset": "tenders_v1",
+      "split": "all",
+      "variant": "pdf",
+      "role": "contaminated",
+      "n": 6,
+      "metrics": {
+        "id_precision": 0.9827,
+        "id_recall": 0.9659,
+        "id_f1": 0.9742,
+        "attr_precision": 0.9537,
+        "attr_recall": 0.9717,
+        "attr_f1": 0.9626,
+        "cls_accuracy": 0.8176,
+        "cls_macro_f1": 0.8126,
+        "fnd_precision": 1.0,
+        "fnd_recall": 0.9677,
+        "fnd_f1": 0.9836,
+        "fnd_conflict_precision": 1.0,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 1.0,
+        "fnd_gap_precision": 1.0,
+        "fnd_gap_recall": 1.0,
+        "fnd_gap_f1": 1.0,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 0.875,
+        "fnd_outdated_f1": 0.9333,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 1.0,
+        "fnd_certification_f1": 1.0,
+        "latency_ms": 558.894
+      },
+      "ci": {
+        "id_precision": [
+          0.9709,
+          0.9943
+        ],
+        "id_recall": [
+          0.9316,
+          0.9943
+        ],
+        "id_f1": [
+          0.9516,
+          0.9932
+        ],
+        "attr_precision": [
+          0.8962,
+          1.0
+        ],
+        "attr_recall": [
+          0.9514,
+          0.9913
+        ],
+        "attr_f1": [
+          0.9243,
+          0.9952
+        ],
+        "cls_accuracy": [
+          0.75,
+          0.869
+        ],
+        "cls_macro_f1": [
+          0.7435,
+          0.8611
+        ],
+        "fnd_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_recall": [
+          0.8929,
+          1.0
+        ],
+        "fnd_f1": [
+          0.9434,
+          1.0
+        ],
+        "fnd_conflict_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          0.6364,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          0.7778,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          1.0,
+          1.0
+        ],
+        "latency_ms": [
+          393.1001,
+          783.9664
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": false
+    },
+    {
+      "task": "documents",
+      "dataset": "tenders_v1",
+      "split": "all",
+      "variant": "docx",
+      "role": "contaminated",
+      "n": 6,
+      "metrics": {
+        "id_precision": 0.9942,
+        "id_recall": 0.9659,
+        "id_f1": 0.9798,
+        "attr_precision": 0.9545,
+        "attr_recall": 0.9906,
+        "attr_f1": 0.9722,
+        "cls_accuracy": 0.8235,
+        "cls_macro_f1": 0.8141,
+        "fnd_precision": 1.0,
+        "fnd_recall": 1.0,
+        "fnd_f1": 1.0,
+        "fnd_conflict_precision": 1.0,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 1.0,
+        "fnd_gap_precision": 1.0,
+        "fnd_gap_recall": 1.0,
+        "fnd_gap_f1": 1.0,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 1.0,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 1.0,
+        "fnd_certification_f1": 1.0,
+        "latency_ms": 568.928
+      },
+      "ci": {
+        "id_precision": [
+          0.9803,
+          1.0
+        ],
+        "id_recall": [
+          0.9316,
+          0.9943
+        ],
+        "id_f1": [
+          0.9563,
+          0.9971
+        ],
+        "attr_precision": [
+          0.8966,
+          1.0
+        ],
+        "attr_recall": [
+          0.9674,
+          1.0
+        ],
+        "attr_f1": [
+          0.9327,
+          1.0
+        ],
+        "cls_accuracy": [
+          0.7517,
+          0.8824
+        ],
+        "cls_macro_f1": [
+          0.7388,
+          0.8697
+        ],
+        "fnd_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          1.0,
+          1.0
+        ],
+        "latency_ms": [
+          419.795,
+          734.8378
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "tenders_v1",
+      "split": "all",
+      "variant": "bm25",
+      "role": "contaminated",
+      "n": 50,
+      "metrics": {
+        "std_r1": 0.92,
+        "std_r3": 0.98,
+        "std_r5": 0.98,
+        "std_mrr": 0.95,
+        "ndcg5": 0.9545,
+        "cl_r1": 0.8,
+        "cl_r3": 0.96,
+        "cl_mrr": 0.8838
+      },
+      "ci": {
+        "std_r1": [
+          0.84,
+          0.98
+        ],
+        "std_r3": [
+          0.94,
+          1.0
+        ],
+        "std_r5": [
+          0.94,
+          1.0
+        ],
+        "std_mrr": [
+          0.89,
+          0.99
+        ],
+        "ndcg5": [
+          0.9073,
+          0.9883
+        ],
+        "cl_r1": [
+          0.68,
+          0.9
+        ],
+        "cl_r3": [
+          0.9,
+          1.0
+        ],
+        "cl_mrr": [
+          0.8127,
+          0.95
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "tenders_v1",
+      "split": "all",
+      "variant": "bm25+thesaurus",
+      "role": "contaminated",
+      "n": 50,
+      "metrics": {
+        "std_r1": 0.92,
+        "std_r3": 0.98,
+        "std_r5": 0.98,
+        "std_mrr": 0.95,
+        "ndcg5": 0.9539,
+        "cl_r1": 0.82,
+        "cl_r3": 0.94,
+        "cl_mrr": 0.8859
+      },
+      "ci": {
+        "std_r1": [
+          0.84,
+          0.98
+        ],
+        "std_r3": [
+          0.94,
+          1.0
+        ],
+        "std_r5": [
+          0.94,
+          1.0
+        ],
+        "std_mrr": [
+          0.9,
+          0.99
+        ],
+        "ndcg5": [
+          0.908,
+          0.9883
+        ],
+        "cl_r1": [
+          0.7,
+          0.92
+        ],
+        "cl_r3": [
+          0.88,
+          1.0
+        ],
+        "cl_mrr": [
+          0.809,
+          0.9529
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "tenders_v1",
+      "split": "all",
+      "variant": "bm25+rerank",
+      "role": "contaminated",
+      "n": 50,
+      "metrics": {
+        "std_r1": 0.94,
+        "std_r3": 0.98,
+        "std_r5": 0.98,
+        "std_mrr": 0.96,
+        "ndcg5": 0.9463,
+        "cl_r1": 0.92,
+        "cl_r3": 0.94,
+        "cl_mrr": 0.9322
+      },
+      "ci": {
+        "std_r1": [
+          0.86,
+          1.0
+        ],
+        "std_r3": [
+          0.94,
+          1.0
+        ],
+        "std_r5": [
+          0.94,
+          1.0
+        ],
+        "std_mrr": [
+          0.91,
+          1.0
+        ],
+        "ndcg5": [
+          0.899,
+          0.979
+        ],
+        "cl_r1": [
+          0.84,
+          0.98
+        ],
+        "cl_r3": [
+          0.86,
+          1.0
+        ],
+        "cl_mrr": [
+          0.8544,
+          0.99
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "tenders_v1",
+      "split": "all",
+      "variant": "bm25+thesaurus+rerank",
+      "role": "contaminated",
+      "n": 50,
+      "metrics": {
+        "std_r1": 0.94,
+        "std_r3": 0.98,
+        "std_r5": 0.98,
+        "std_mrr": 0.96,
+        "ndcg5": 0.944,
+        "cl_r1": 0.92,
+        "cl_r3": 0.94,
+        "cl_mrr": 0.9322
+      },
+      "ci": {
+        "std_r1": [
+          0.88,
+          1.0
+        ],
+        "std_r3": [
+          0.94,
+          1.0
+        ],
+        "std_r5": [
+          0.94,
+          1.0
+        ],
+        "std_mrr": [
+          0.91,
+          1.0
+        ],
+        "ndcg5": [
+          0.8989,
+          0.9783
+        ],
+        "cl_r1": [
+          0.84,
+          0.98
+        ],
+        "cl_r3": [
+          0.86,
+          1.0
+        ],
+        "cl_mrr": [
+          0.8544,
+          0.99
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "documents",
+      "dataset": "realworld_v2",
+      "split": "dev",
+      "variant": "txt",
+      "role": "open",
+      "n": 12,
+      "metrics": {
+        "id_precision": 1.0,
+        "id_recall": 0.9971,
+        "id_f1": 0.9985,
+        "attr_precision": 0.9604,
+        "attr_recall": 0.982,
+        "attr_f1": 0.971,
+        "cls_accuracy": 0.8772,
+        "cls_macro_f1": 0.8872,
+        "fnd_precision": 1.0,
+        "fnd_recall": 0.9286,
+        "fnd_f1": 0.963,
+        "fnd_conflict_precision": 1.0,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 1.0,
+        "fnd_gap_precision": 1.0,
+        "fnd_gap_recall": 0.875,
+        "fnd_gap_f1": 0.9333,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 1.0,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 0.5,
+        "fnd_certification_f1": 0.6667,
+        "latency_ms": 560.5049,
+        "map_accuracy": 0.9597
+      },
+      "ci": {
+        "id_precision": [
+          1.0,
+          1.0
+        ],
+        "id_recall": [
+          0.9903,
+          1.0
+        ],
+        "id_f1": [
+          0.9951,
+          1.0
+        ],
+        "attr_precision": [
+          0.9312,
+          0.9858
+        ],
+        "attr_recall": [
+          0.9712,
+          0.9947
+        ],
+        "attr_f1": [
+          0.955,
+          0.9874
+        ],
+        "cls_accuracy": [
+          0.8437,
+          0.9036
+        ],
+        "cls_macro_f1": [
+          0.8528,
+          0.9091
+        ],
+        "fnd_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_recall": [
+          0.84,
+          1.0
+        ],
+        "fnd_f1": [
+          0.913,
+          1.0
+        ],
+        "fnd_conflict_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_recall": [
+          0.5714,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          0.7273,
+          1.0
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          0.0,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          0.0,
+          1.0
+        ],
+        "latency_ms": [
+          488.0782,
+          629.8203
+        ],
+        "map_accuracy": [
+          0.9369,
+          0.9828
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": true
+    },
+    {
+      "task": "documents",
+      "dataset": "realworld_v2",
+      "split": "dev",
+      "variant": "pdf",
+      "role": "open",
+      "n": 12,
+      "metrics": {
+        "id_precision": 0.9942,
+        "id_recall": 0.9971,
+        "id_f1": 0.9956,
+        "attr_precision": 0.9593,
+        "attr_recall": 0.955,
+        "attr_f1": 0.9571,
+        "cls_accuracy": 0.8743,
+        "cls_macro_f1": 0.8853,
+        "fnd_precision": 0.8929,
+        "fnd_recall": 0.8929,
+        "fnd_f1": 0.8929,
+        "fnd_conflict_precision": 1.0,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 1.0,
+        "fnd_gap_precision": 0.7,
+        "fnd_gap_recall": 0.875,
+        "fnd_gap_f1": 0.7778,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 0.875,
+        "fnd_outdated_f1": 0.9333,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 0.5,
+        "fnd_certification_f1": 0.6667,
+        "latency_ms": 567.3858,
+        "map_accuracy": 0.9597
+      },
+      "ci": {
+        "id_precision": [
+          0.982,
+          1.0
+        ],
+        "id_recall": [
+          0.9903,
+          1.0
+        ],
+        "id_f1": [
+          0.989,
+          1.0
+        ],
+        "attr_precision": [
+          0.9302,
+          0.9853
+        ],
+        "attr_recall": [
+          0.9188,
+          0.9852
+        ],
+        "attr_f1": [
+          0.9375,
+          0.9768
+        ],
+        "cls_accuracy": [
+          0.8412,
+          0.9
+        ],
+        "cls_macro_f1": [
+          0.8525,
+          0.9067
+        ],
+        "fnd_precision": [
+          0.7727,
+          1.0
+        ],
+        "fnd_recall": [
+          0.7566,
+          1.0
+        ],
+        "fnd_f1": [
+          0.8,
+          0.963
+        ],
+        "fnd_conflict_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          0.3844,
+          1.0
+        ],
+        "fnd_gap_recall": [
+          0.5714,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          0.5,
+          0.9524
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          0.5714,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          0.7273,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          0.0,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          0.0,
+          1.0
+        ],
+        "latency_ms": [
+          483.9422,
+          648.2614
+        ],
+        "map_accuracy": [
+          0.9369,
+          0.9828
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": true
+    },
+    {
+      "task": "documents",
+      "dataset": "realworld_v2",
+      "split": "dev",
+      "variant": "docx",
+      "role": "open",
+      "n": 12,
+      "metrics": {
+        "id_precision": 1.0,
+        "id_recall": 0.9971,
+        "id_f1": 0.9985,
+        "attr_precision": 0.9604,
+        "attr_recall": 0.982,
+        "attr_f1": 0.971,
+        "cls_accuracy": 0.8772,
+        "cls_macro_f1": 0.8872,
+        "fnd_precision": 1.0,
+        "fnd_recall": 0.9286,
+        "fnd_f1": 0.963,
+        "fnd_conflict_precision": 1.0,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 1.0,
+        "fnd_gap_precision": 1.0,
+        "fnd_gap_recall": 0.875,
+        "fnd_gap_f1": 0.9333,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 1.0,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 0.5,
+        "fnd_certification_f1": 0.6667,
+        "latency_ms": 617.223,
+        "map_accuracy": 0.9597
+      },
+      "ci": {
+        "id_precision": [
+          1.0,
+          1.0
+        ],
+        "id_recall": [
+          0.9903,
+          1.0
+        ],
+        "id_f1": [
+          0.9951,
+          1.0
+        ],
+        "attr_precision": [
+          0.9312,
+          0.9858
+        ],
+        "attr_recall": [
+          0.9712,
+          0.9947
+        ],
+        "attr_f1": [
+          0.955,
+          0.9874
+        ],
+        "cls_accuracy": [
+          0.8437,
+          0.9036
+        ],
+        "cls_macro_f1": [
+          0.8528,
+          0.9091
+        ],
+        "fnd_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_recall": [
+          0.84,
+          1.0
+        ],
+        "fnd_f1": [
+          0.913,
+          1.0
+        ],
+        "fnd_conflict_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_recall": [
+          0.5714,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          0.7273,
+          1.0
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          0.0,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          0.0,
+          1.0
+        ],
+        "latency_ms": [
+          503.7138,
+          742.518
+        ],
+        "map_accuracy": [
+          0.9369,
+          0.9828
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": true
+    },
+    {
+      "task": "retrieval",
+      "dataset": "realworld_v2",
+      "split": "dev",
+      "variant": "bm25",
+      "role": "open",
+      "n": 35,
+      "metrics": {
+        "std_r1": 0.9143,
+        "std_r3": 0.9143,
+        "std_r5": 1.0,
+        "std_mrr": 0.9329,
+        "ndcg5": 0.9487,
+        "cl_r1": 0.8286,
+        "cl_r3": 0.9143,
+        "cl_mrr": 0.8834
+      },
+      "ci": {
+        "std_r1": [
+          0.8,
+          1.0
+        ],
+        "std_r3": [
+          0.8,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          0.8443,
+          1.0
+        ],
+        "ndcg5": [
+          0.8811,
+          1.0
+        ],
+        "cl_r1": [
+          0.6857,
+          0.9429
+        ],
+        "cl_r3": [
+          0.8,
+          1.0
+        ],
+        "cl_mrr": [
+          0.7826,
+          0.9603
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "realworld_v2",
+      "split": "dev",
+      "variant": "bm25+thesaurus",
+      "role": "open",
+      "n": 35,
+      "metrics": {
+        "std_r1": 0.7714,
+        "std_r3": 0.9429,
+        "std_r5": 0.9429,
+        "std_mrr": 0.8619,
+        "ndcg5": 0.8758,
+        "cl_r1": 0.7143,
+        "cl_r3": 0.9429,
+        "cl_mrr": 0.817
+      },
+      "ci": {
+        "std_r1": [
+          0.6286,
+          0.9143
+        ],
+        "std_r3": [
+          0.8571,
+          1.0
+        ],
+        "std_r5": [
+          0.8571,
+          1.0
+        ],
+        "std_mrr": [
+          0.7762,
+          0.9476
+        ],
+        "ndcg5": [
+          0.7864,
+          0.9503
+        ],
+        "cl_r1": [
+          0.5714,
+          0.8571
+        ],
+        "cl_r3": [
+          0.8571,
+          1.0
+        ],
+        "cl_mrr": [
+          0.722,
+          0.911
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "realworld_v2",
+      "split": "dev",
+      "variant": "bm25+rerank",
+      "role": "open",
+      "n": 35,
+      "metrics": {
+        "std_r1": 0.9429,
+        "std_r3": 0.9714,
+        "std_r5": 0.9714,
+        "std_mrr": 0.9556,
+        "ndcg5": 0.9571,
+        "cl_r1": 0.9429,
+        "cl_r3": 0.9714,
+        "cl_mrr": 0.9556
+      },
+      "ci": {
+        "std_r1": [
+          0.8571,
+          1.0
+        ],
+        "std_r3": [
+          0.9143,
+          1.0
+        ],
+        "std_r5": [
+          0.9143,
+          1.0
+        ],
+        "std_mrr": [
+          0.8857,
+          1.0
+        ],
+        "ndcg5": [
+          0.8857,
+          1.0
+        ],
+        "cl_r1": [
+          0.8571,
+          1.0
+        ],
+        "cl_r3": [
+          0.9143,
+          1.0
+        ],
+        "cl_mrr": [
+          0.8857,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "realworld_v2",
+      "split": "dev",
+      "variant": "bm25+thesaurus+rerank",
+      "role": "open",
+      "n": 35,
+      "metrics": {
+        "std_r1": 0.8286,
+        "std_r3": 0.9714,
+        "std_r5": 0.9714,
+        "std_mrr": 0.8984,
+        "ndcg5": 0.915,
+        "cl_r1": 0.8286,
+        "cl_r3": 0.9714,
+        "cl_mrr": 0.8984
+      },
+      "ci": {
+        "std_r1": [
+          0.7136,
+          0.9429
+        ],
+        "std_r3": [
+          0.9143,
+          1.0
+        ],
+        "std_r5": [
+          0.9143,
+          1.0
+        ],
+        "std_mrr": [
+          0.819,
+          0.9714
+        ],
+        "ndcg5": [
+          0.8367,
+          0.9789
+        ],
+        "cl_r1": [
+          0.7136,
+          0.9429
+        ],
+        "cl_r3": [
+          0.9143,
+          1.0
+        ],
+        "cl_mrr": [
+          0.819,
+          0.9714
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "documents",
+      "dataset": "realworld_v2",
+      "split": "test",
+      "variant": "txt",
+      "role": "blind",
+      "n": 18,
+      "metrics": {
+        "id_precision": 1.0,
+        "id_recall": 0.9924,
+        "id_f1": 0.9962,
+        "attr_precision": 0.9677,
+        "attr_recall": 0.8929,
+        "attr_f1": 0.9288,
+        "cls_accuracy": 0.8506,
+        "cls_macro_f1": 0.8773,
+        "fnd_precision": 0.7213,
+        "fnd_recall": 0.9362,
+        "fnd_f1": 0.8148,
+        "fnd_conflict_precision": 0.9,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 0.9474,
+        "fnd_gap_precision": 0.3333,
+        "fnd_gap_recall": 0.8889,
+        "fnd_gap_f1": 0.4848,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 1.0,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 0.8,
+        "fnd_certification_f1": 0.8889,
+        "latency_ms": 534.7901,
+        "map_accuracy": 0.9378
+      },
+      "ci": {
+        "id_precision": [
+          1.0,
+          1.0
+        ],
+        "id_recall": [
+          0.9832,
+          1.0
+        ],
+        "id_f1": [
+          0.9915,
+          1.0
+        ],
+        "attr_precision": [
+          0.9467,
+          0.9877
+        ],
+        "attr_recall": [
+          0.8497,
+          0.9337
+        ],
+        "attr_f1": [
+          0.8965,
+          0.9578
+        ],
+        "cls_accuracy": [
+          0.8249,
+          0.8763
+        ],
+        "cls_macro_f1": [
+          0.8509,
+          0.8993
+        ],
+        "fnd_precision": [
+          0.5781,
+          0.88
+        ],
+        "fnd_recall": [
+          0.875,
+          1.0
+        ],
+        "fnd_f1": [
+          0.7156,
+          0.9167
+        ],
+        "fnd_conflict_precision": [
+          0.6667,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          0.8,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          0.1199,
+          0.6317
+        ],
+        "fnd_gap_recall": [
+          0.6667,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          0.2069,
+          0.7368
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          0.5714,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          0.7273,
+          1.0
+        ],
+        "latency_ms": [
+          469.6932,
+          594.1745
+        ],
+        "map_accuracy": [
+          0.902,
+          0.9761
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": true
+    },
+    {
+      "task": "documents",
+      "dataset": "realworld_v2",
+      "split": "test",
+      "variant": "pdf",
+      "role": "blind",
+      "n": 18,
+      "metrics": {
+        "id_precision": 0.9905,
+        "id_recall": 0.9924,
+        "id_f1": 0.9915,
+        "attr_precision": 0.967,
+        "attr_recall": 0.872,
+        "attr_f1": 0.9171,
+        "cls_accuracy": 0.8525,
+        "cls_macro_f1": 0.8777,
+        "fnd_precision": 0.6719,
+        "fnd_recall": 0.9149,
+        "fnd_f1": 0.7748,
+        "fnd_conflict_precision": 0.9,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 0.9474,
+        "fnd_gap_precision": 0.3043,
+        "fnd_gap_recall": 0.7778,
+        "fnd_gap_f1": 0.4375,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 0.7778,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 0.875,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 0.8,
+        "fnd_certification_f1": 0.8889,
+        "latency_ms": 534.4318,
+        "map_accuracy": 0.9378
+      },
+      "ci": {
+        "id_precision": [
+          0.9834,
+          0.9979
+        ],
+        "id_recall": [
+          0.9832,
+          1.0
+        ],
+        "id_f1": [
+          0.9859,
+          0.9965
+        ],
+        "attr_precision": [
+          0.9448,
+          0.9873
+        ],
+        "attr_recall": [
+          0.8288,
+          0.9169
+        ],
+        "attr_f1": [
+          0.8847,
+          0.9475
+        ],
+        "cls_accuracy": [
+          0.8263,
+          0.8797
+        ],
+        "cls_macro_f1": [
+          0.8492,
+          0.9006
+        ],
+        "fnd_precision": [
+          0.5357,
+          0.8182
+        ],
+        "fnd_recall": [
+          0.8163,
+          1.0
+        ],
+        "fnd_f1": [
+          0.6735,
+          0.8714
+        ],
+        "fnd_conflict_precision": [
+          0.6667,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          0.8,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          0.0952,
+          0.6364
+        ],
+        "fnd_gap_recall": [
+          0.5714,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          0.1713,
+          0.7143
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          0.6667,
+          0.9231
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          0.8,
+          0.96
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          0.5714,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          0.7273,
+          1.0
+        ],
+        "latency_ms": [
+          471.7484,
+          595.6502
+        ],
+        "map_accuracy": [
+          0.902,
+          0.9761
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": true
+    },
+    {
+      "task": "documents",
+      "dataset": "realworld_v2",
+      "split": "test",
+      "variant": "docx",
+      "role": "blind",
+      "n": 18,
+      "metrics": {
+        "id_precision": 1.0,
+        "id_recall": 0.9924,
+        "id_f1": 0.9962,
+        "attr_precision": 0.9677,
+        "attr_recall": 0.8929,
+        "attr_f1": 0.9288,
+        "cls_accuracy": 0.8506,
+        "cls_macro_f1": 0.8773,
+        "fnd_precision": 0.7213,
+        "fnd_recall": 0.9362,
+        "fnd_f1": 0.8148,
+        "fnd_conflict_precision": 0.9,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 0.9474,
+        "fnd_gap_precision": 0.3333,
+        "fnd_gap_recall": 0.8889,
+        "fnd_gap_f1": 0.4848,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 1.0,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 0.8,
+        "fnd_certification_f1": 0.8889,
+        "latency_ms": 910.7106,
+        "map_accuracy": 0.9378
+      },
+      "ci": {
+        "id_precision": [
+          1.0,
+          1.0
+        ],
+        "id_recall": [
+          0.9832,
+          1.0
+        ],
+        "id_f1": [
+          0.9915,
+          1.0
+        ],
+        "attr_precision": [
+          0.9467,
+          0.9877
+        ],
+        "attr_recall": [
+          0.8497,
+          0.9337
+        ],
+        "attr_f1": [
+          0.8965,
+          0.9578
+        ],
+        "cls_accuracy": [
+          0.8249,
+          0.8763
+        ],
+        "cls_macro_f1": [
+          0.8509,
+          0.8993
+        ],
+        "fnd_precision": [
+          0.5781,
+          0.88
+        ],
+        "fnd_recall": [
+          0.875,
+          1.0
+        ],
+        "fnd_f1": [
+          0.7156,
+          0.9167
+        ],
+        "fnd_conflict_precision": [
+          0.6667,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          0.8,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          0.1199,
+          0.6317
+        ],
+        "fnd_gap_recall": [
+          0.6667,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          0.2069,
+          0.7368
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          0.5714,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          0.7273,
+          1.0
+        ],
+        "latency_ms": [
+          658.9834,
+          1203.3
+        ],
+        "map_accuracy": [
+          0.902,
+          0.9761
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": true
+    },
+    {
+      "task": "retrieval",
+      "dataset": "realworld_v2",
+      "split": "test",
+      "variant": "bm25",
+      "role": "blind",
+      "n": 35,
+      "metrics": {
+        "std_r1": 0.8857,
+        "std_r3": 0.9429,
+        "std_r5": 0.9714,
+        "std_mrr": 0.9167,
+        "ndcg5": 0.9303,
+        "cl_r1": 0.8286,
+        "cl_r3": 0.9143,
+        "cl_mrr": 0.8801
+      },
+      "ci": {
+        "std_r1": [
+          0.7714,
+          0.9714
+        ],
+        "std_r3": [
+          0.8571,
+          1.0
+        ],
+        "std_r5": [
+          0.9143,
+          1.0
+        ],
+        "std_mrr": [
+          0.8286,
+          0.9857
+        ],
+        "ndcg5": [
+          0.8549,
+          0.9895
+        ],
+        "cl_r1": [
+          0.7143,
+          0.9429
+        ],
+        "cl_r3": [
+          0.8,
+          1.0
+        ],
+        "cl_mrr": [
+          0.7867,
+          0.9619
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "realworld_v2",
+      "split": "test",
+      "variant": "bm25+thesaurus",
+      "role": "blind",
+      "n": 35,
+      "metrics": {
+        "std_r1": 0.8,
+        "std_r3": 0.9429,
+        "std_r5": 0.9429,
+        "std_mrr": 0.8762,
+        "ndcg5": 0.8901,
+        "cl_r1": 0.7143,
+        "cl_r3": 0.9143,
+        "cl_mrr": 0.8037
+      },
+      "ci": {
+        "std_r1": [
+          0.6571,
+          0.9143
+        ],
+        "std_r3": [
+          0.8571,
+          1.0
+        ],
+        "std_r5": [
+          0.8571,
+          1.0
+        ],
+        "std_mrr": [
+          0.7762,
+          0.9571
+        ],
+        "ndcg5": [
+          0.7939,
+          0.9609
+        ],
+        "cl_r1": [
+          0.5714,
+          0.8571
+        ],
+        "cl_r3": [
+          0.8,
+          1.0
+        ],
+        "cl_mrr": [
+          0.6926,
+          0.9061
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "realworld_v2",
+      "split": "test",
+      "variant": "bm25+rerank",
+      "role": "blind",
+      "n": 35,
+      "metrics": {
+        "std_r1": 0.9429,
+        "std_r3": 0.9714,
+        "std_r5": 1.0,
+        "std_mrr": 0.9629,
+        "ndcg5": 0.9719,
+        "cl_r1": 0.9429,
+        "cl_r3": 0.9714,
+        "cl_mrr": 0.9629
+      },
+      "ci": {
+        "std_r1": [
+          0.8571,
+          1.0
+        ],
+        "std_r3": [
+          0.9143,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          0.9029,
+          1.0
+        ],
+        "ndcg5": [
+          0.9264,
+          1.0
+        ],
+        "cl_r1": [
+          0.8571,
+          1.0
+        ],
+        "cl_r3": [
+          0.9143,
+          1.0
+        ],
+        "cl_mrr": [
+          0.9029,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "retrieval",
+      "dataset": "realworld_v2",
+      "split": "test",
+      "variant": "bm25+thesaurus+rerank",
+      "role": "blind",
+      "n": 35,
+      "metrics": {
+        "std_r1": 0.9143,
+        "std_r3": 0.9714,
+        "std_r5": 1.0,
+        "std_mrr": 0.9438,
+        "ndcg5": 0.9577,
+        "cl_r1": 0.9143,
+        "cl_r3": 0.9714,
+        "cl_mrr": 0.9438
+      },
+      "ci": {
+        "std_r1": [
+          0.8279,
+          1.0
+        ],
+        "std_r3": [
+          0.9143,
+          1.0
+        ],
+        "std_r5": [
+          1.0,
+          1.0
+        ],
+        "std_mrr": [
+          0.8752,
+          1.0
+        ],
+        "ndcg5": [
+          0.9051,
+          1.0
+        ],
+        "cl_r1": [
+          0.8279,
+          1.0
+        ],
+        "cl_r3": [
+          0.9143,
+          1.0
+        ],
+        "cl_mrr": [
+          0.8752,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    },
+    {
+      "task": "documents",
+      "dataset": "realworld_v2",
+      "split": "dev2",
+      "variant": "txt",
+      "role": "open",
+      "n": 12,
+      "metrics": {
+        "id_precision": 1.0,
+        "id_recall": 1.0,
+        "id_f1": 1.0,
+        "attr_precision": 0.9511,
+        "attr_recall": 1.0,
+        "attr_f1": 0.9749,
+        "cls_accuracy": 0.8069,
+        "cls_macro_f1": 0.831,
+        "fnd_precision": 1.0,
+        "fnd_recall": 0.9688,
+        "fnd_f1": 0.9841,
+        "fnd_conflict_precision": 1.0,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 1.0,
+        "fnd_gap_precision": 1.0,
+        "fnd_gap_recall": 0.8,
+        "fnd_gap_f1": 0.8889,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 1.0,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 1.0,
+        "fnd_certification_f1": 1.0,
+        "latency_ms": 618.2553,
+        "map_accuracy": 0.9739
+      },
+      "ci": {
+        "id_precision": [
+          1.0,
+          1.0
+        ],
+        "id_recall": [
+          1.0,
+          1.0
+        ],
+        "id_f1": [
+          1.0,
+          1.0
+        ],
+        "attr_precision": [
+          0.9321,
+          0.9702
+        ],
+        "attr_recall": [
+          1.0,
+          1.0
+        ],
+        "attr_f1": [
+          0.9649,
+          0.9848
+        ],
+        "cls_accuracy": [
+          0.7714,
+          0.8297
+        ],
+        "cls_macro_f1": [
+          0.8012,
+          0.8419
+        ],
+        "fnd_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_recall": [
+          0.9091,
+          1.0
+        ],
+        "fnd_f1": [
+          0.9524,
+          1.0
+        ],
+        "fnd_conflict_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_recall": [
+          0.5,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          0.6667,
+          1.0
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          1.0,
+          1.0
+        ],
+        "latency_ms": [
+          515.8759,
+          725.0143
+        ],
+        "map_accuracy": [
+          0.9428,
+          1.0
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": true
+    },
+    {
+      "task": "documents",
+      "dataset": "realworld_v2",
+      "split": "dev2",
+      "variant": "pdf",
+      "role": "open",
+      "n": 12,
+      "metrics": {
+        "id_precision": 0.9858,
+        "id_recall": 1.0,
+        "id_f1": 0.9928,
+        "attr_precision": 0.9531,
+        "attr_recall": 0.9486,
+        "attr_f1": 0.9508,
+        "cls_accuracy": 0.7954,
+        "cls_macro_f1": 0.8248,
+        "fnd_precision": 0.9394,
+        "fnd_recall": 0.9688,
+        "fnd_f1": 0.9538,
+        "fnd_conflict_precision": 1.0,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 1.0,
+        "fnd_gap_precision": 1.0,
+        "fnd_gap_recall": 0.8,
+        "fnd_gap_f1": 0.8889,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 0.875,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 0.9333,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 1.0,
+        "fnd_certification_f1": 1.0,
+        "latency_ms": 678.3664,
+        "map_accuracy": 0.9739
+      },
+      "ci": {
+        "id_precision": [
+          0.9748,
+          0.9969
+        ],
+        "id_recall": [
+          1.0,
+          1.0
+        ],
+        "id_f1": [
+          0.9872,
+          0.9985
+        ],
+        "attr_precision": [
+          0.9382,
+          0.9705
+        ],
+        "attr_recall": [
+          0.9114,
+          0.9894
+        ],
+        "attr_f1": [
+          0.927,
+          0.9756
+        ],
+        "cls_accuracy": [
+          0.756,
+          0.8231
+        ],
+        "cls_macro_f1": [
+          0.7918,
+          0.8383
+        ],
+        "fnd_precision": [
+          0.8461,
+          1.0
+        ],
+        "fnd_recall": [
+          0.9091,
+          1.0
+        ],
+        "fnd_f1": [
+          0.8985,
+          0.9885
+        ],
+        "fnd_conflict_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_recall": [
+          0.5,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          0.6667,
+          1.0
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          0.6998,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          0.8234,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          1.0,
+          1.0
+        ],
+        "latency_ms": [
+          533.2919,
+          841.8448
+        ],
+        "map_accuracy": [
+          0.9428,
+          1.0
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": true
+    },
+    {
+      "task": "documents",
+      "dataset": "realworld_v2",
+      "split": "dev2",
+      "variant": "docx",
+      "role": "open",
+      "n": 12,
+      "metrics": {
+        "id_precision": 1.0,
+        "id_recall": 1.0,
+        "id_f1": 1.0,
+        "attr_precision": 0.9511,
+        "attr_recall": 1.0,
+        "attr_f1": 0.9749,
+        "cls_accuracy": 0.8069,
+        "cls_macro_f1": 0.831,
+        "fnd_precision": 1.0,
+        "fnd_recall": 0.9688,
+        "fnd_f1": 0.9841,
+        "fnd_conflict_precision": 1.0,
+        "fnd_conflict_recall": 1.0,
+        "fnd_conflict_f1": 1.0,
+        "fnd_gap_precision": 1.0,
+        "fnd_gap_recall": 0.8,
+        "fnd_gap_f1": 0.8889,
+        "fnd_dependency_precision": 1.0,
+        "fnd_dependency_recall": 1.0,
+        "fnd_dependency_f1": 1.0,
+        "fnd_outdated_precision": 1.0,
+        "fnd_outdated_recall": 1.0,
+        "fnd_outdated_f1": 1.0,
+        "fnd_certification_precision": 1.0,
+        "fnd_certification_recall": 1.0,
+        "fnd_certification_f1": 1.0,
+        "latency_ms": 554.3114,
+        "map_accuracy": 0.9739
+      },
+      "ci": {
+        "id_precision": [
+          1.0,
+          1.0
+        ],
+        "id_recall": [
+          1.0,
+          1.0
+        ],
+        "id_f1": [
+          1.0,
+          1.0
+        ],
+        "attr_precision": [
+          0.9321,
+          0.9702
+        ],
+        "attr_recall": [
+          1.0,
+          1.0
+        ],
+        "attr_f1": [
+          0.9649,
+          0.9848
+        ],
+        "cls_accuracy": [
+          0.7714,
+          0.8297
+        ],
+        "cls_macro_f1": [
+          0.8012,
+          0.8419
+        ],
+        "fnd_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_recall": [
+          0.9091,
+          1.0
+        ],
+        "fnd_f1": [
+          0.9524,
+          1.0
+        ],
+        "fnd_conflict_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_conflict_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_gap_recall": [
+          0.5,
+          1.0
+        ],
+        "fnd_gap_f1": [
+          0.6667,
+          1.0
+        ],
+        "fnd_dependency_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_dependency_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_outdated_f1": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_precision": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_recall": [
+          1.0,
+          1.0
+        ],
+        "fnd_certification_f1": [
+          1.0,
+          1.0
+        ],
+        "latency_ms": [
+          449.1312,
+          670.814
+        ],
+        "map_accuracy": [
+          0.9428,
+          1.0
+        ]
+      },
+      "has_requirements": true,
+      "has_findings": true,
+      "has_mapping": true
+    },
+    {
+      "task": "graph",
+      "dataset": "corpus",
+      "split": "seed-6ada30cf",
+      "variant": "-",
+      "role": "open",
+      "n": 18,
+      "metrics": {
+        "edge_precision": 0.7838,
+        "edge_recall": 0.8056,
+        "edge_f1": 0.7945,
+        "pair_precision": 0.973,
+        "pair_recall": 1.0,
+        "pair_f1": 0.9863
+      },
+      "ci": {
+        "edge_precision": [
+          0.5952,
+          0.9445
+        ],
+        "edge_recall": [
+          0.6176,
+          0.9706
+        ],
+        "edge_f1": [
+          0.6087,
+          0.9524
+        ],
+        "pair_precision": [
+          0.9091,
+          1.0
+        ],
+        "pair_recall": [
+          1.0,
+          1.0
+        ],
+        "pair_f1": [
+          0.9524,
+          1.0
+        ]
+      },
+      "has_requirements": false,
+      "has_findings": false,
+      "has_mapping": false
+    }
+  ]
+}
