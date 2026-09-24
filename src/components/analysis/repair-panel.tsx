@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Edit3, RotateCcw, X } from "lucide-react";
+import { Check, Edit3, RotateCcw, ShieldCheck, Tag, X } from "lucide-react";
 import type { Repair, RepairStatus } from "@/lib/contracts";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -25,7 +25,7 @@ export function RepairPanel({ repairs, onDecide }: { repairs: Repair[]; onDecide
   };
 
   return (
-    <div className="grid gap-8">
+    <div className="space-y-6">
       {repairs.map((repair, index) => {
         const state = states[repair.id] ?? "pending";
         const editing = edits[repair.id] !== undefined;
@@ -33,116 +33,159 @@ export function RepairPanel({ repairs, onDecide }: { repairs: Repair[]; onDecide
           state === "edited" && repair.finalText && !editing
             ? repair.finalText
             : repair.recommended;
+
         return (
-          <article key={repair.id} className="border-t border-border pt-7">
-            <div className="flex justify-between gap-3">
-              <p className="eyebrow">Correction {String(index + 1).padStart(2, "0")}</p>
-              {state !== "pending" && (
-                <span
-                  className={`text-xs font-bold uppercase ${state === "rejected" ? "text-destructive" : "text-success-foreground"}`}
-                >
-                  {state}
+          <article
+            key={repair.id}
+            className={`intel-card p-6 space-y-5 transition-all ${
+              state === "accepted"
+                ? "border-success/50 bg-success/5"
+                : state === "rejected"
+                  ? "border-destructive/30 bg-destructive/5 opacity-70"
+                  : ""
+            }`}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between border-b border-border/70 pb-3">
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-xs font-bold text-accent-foreground">
+                  CORRECTION #{String(index + 1).padStart(2, "0")}
                 </span>
-              )}
+                <span className="text-muted-foreground">·</span>
+                <span className="text-xs text-muted-foreground">Evidence-backed revision</span>
+              </div>
+              <span
+                className={`rounded-md px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
+                  state === "accepted"
+                    ? "bg-success/20 text-success-foreground"
+                    : state === "rejected"
+                      ? "bg-destructive/20 text-destructive"
+                      : state === "edited"
+                        ? "bg-accent/30 text-accent-foreground"
+                        : "bg-muted text-muted-foreground"
+                }`}
+              >
+                {state === "pending" ? "Pending Review" : state}
+              </span>
             </div>
-            <div className="mt-5 grid gap-6 lg:grid-cols-2">
-              <div>
-                <p className="text-xs font-bold uppercase text-muted-foreground">Original</p>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground line-through decoration-destructive/40">
+
+            {/* Side-by-side Diff */}
+            <div className="grid gap-4 lg:grid-cols-2">
+              {/* Original */}
+              <div className="rounded-xl border border-border/70 bg-background/60 p-4 space-y-1.5">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                  Original Specification Requirement
+                </p>
+                <p className="text-xs leading-relaxed text-muted-foreground line-through decoration-destructive/40">
                   {repair.original}
                 </p>
               </div>
-              <div>
-                <p className="text-xs font-bold uppercase text-accent-foreground">Recommended</p>
+
+              {/* Recommended */}
+              <div className="rounded-xl border border-accent/40 bg-accent/10 p-4 space-y-1.5">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-accent-foreground font-semibold">
+                  StandardOS Recommended Correction
+                </p>
                 {editing ? (
                   <Textarea
                     value={edits[repair.id]}
                     onChange={(event) => setEdits({ ...edits, [repair.id]: event.target.value })}
-                    className="mt-2 min-h-28"
+                    className="min-h-24 text-xs font-mono"
                   />
                 ) : (
-                  <p className="mt-2 text-sm font-medium leading-6 text-primary">{shown}</p>
+                  <p className="text-xs leading-relaxed font-semibold text-primary">{shown}</p>
                 )}
               </div>
             </div>
-            <div className="mt-5 grid gap-3 border-l-2 border-accent pl-4 text-sm sm:grid-cols-2">
-              <p>
-                <b className="text-primary">Evidence</b>
-                <br />
-                <span className="text-muted-foreground">{repair.evidence}</span>
-              </p>
-              <p>
-                <b className="text-primary">Reason</b>
-                <br />
-                <span className="text-muted-foreground">{repair.reason}</span>
-              </p>
+
+            {/* Evidence & Reason Strip */}
+            <div className="grid gap-3 rounded-lg border border-border/60 bg-muted/20 p-3.5 text-xs sm:grid-cols-2">
+              <div>
+                <span className="font-bold text-primary">Governing Standard & Evidence:</span>
+                <p className="mt-0.5 text-muted-foreground">{repair.evidence}</p>
+              </div>
+              <div>
+                <span className="font-bold text-primary">Detection Reason:</span>
+                <p className="mt-0.5 text-muted-foreground">{repair.reason}</p>
+              </div>
             </div>
-            {repair.provenance && (
-              <p className="mt-3 text-[11px] text-muted-foreground">
-                Generated by {repair.provenance.component}@{repair.provenance.componentVersion} (
-                {repair.provenance.method}
-                {repair.provenance.model ? `, ${repair.provenance.model}` : ""}). Not applied until
-                a reviewer accepts it.
-              </p>
-            )}
-            <div className="mt-5 flex flex-wrap gap-2">
-              {editing ? (
-                <>
-                  <Button
-                    size="sm"
-                    disabled={busy === repair.id || !edits[repair.id]?.trim()}
-                    onClick={() => decide(repair, "edited", edits[repair.id])}
-                  >
-                    <Check />
-                    Save edited text
-                  </Button>
+
+            {/* Action Bar */}
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
+              <div className="text-[11px] text-muted-foreground">
+                {repair.provenance ? (
+                  <span>
+                    Generated via {repair.provenance.component} ({repair.provenance.method})
+                  </span>
+                ) : (
+                  <span>Decision will be saved to immutable audit trail</span>
+                )}
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {editing ? (
+                  <>
+                    <Button
+                      size="sm"
+                      disabled={busy === repair.id || !edits[repair.id]?.trim()}
+                      onClick={() => decide(repair, "edited", edits[repair.id])}
+                      className="gap-1.5"
+                    >
+                      <Check className="size-3.5" />
+                      <span>Save Edited Text</span>
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => setEdits(({ [repair.id]: _dropped, ...rest }) => rest)}
+                    >
+                      Cancel
+                    </Button>
+                  </>
+                ) : state === "pending" ? (
+                  <>
+                    <Button
+                      size="sm"
+                      disabled={busy === repair.id}
+                      onClick={() => decide(repair, "accepted")}
+                      className="gap-1.5 bg-success text-success-foreground hover:bg-success/90"
+                    >
+                      <Check className="size-3.5 stroke-[3]" />
+                      <span>Accept Change</span>
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      disabled={busy === repair.id}
+                      onClick={() => decide(repair, "rejected")}
+                      className="gap-1.5 text-destructive hover:bg-destructive/10"
+                    >
+                      <X className="size-3.5" />
+                      <span>Reject</span>
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => setEdits({ ...edits, [repair.id]: repair.recommended })}
+                      className="gap-1.5"
+                    >
+                      <Edit3 className="size-3.5" />
+                      <span>Edit Custom</span>
+                    </Button>
+                  </>
+                ) : (
                   <Button
                     size="sm"
                     variant="ghost"
-                    onClick={() => setEdits(({ [repair.id]: _dropped, ...rest }) => rest)}
-                  >
-                    Cancel
-                  </Button>
-                </>
-              ) : state === "pending" ? (
-                <>
-                  <Button
-                    size="sm"
                     disabled={busy === repair.id}
-                    onClick={() => decide(repair, "accepted")}
+                    onClick={() => decide(repair, "pending")}
+                    className="gap-1.5 text-xs text-muted-foreground"
                   >
-                    <Check />
-                    Accept change
+                    <RotateCcw className="size-3.5" />
+                    <span>Undo Decision</span>
                   </Button>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    disabled={busy === repair.id}
-                    onClick={() => decide(repair, "rejected")}
-                  >
-                    <X />
-                    Reject
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    onClick={() => setEdits({ ...edits, [repair.id]: repair.recommended })}
-                  >
-                    <Edit3 />
-                    Edit
-                  </Button>
-                </>
-              ) : (
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  disabled={busy === repair.id}
-                  onClick={() => decide(repair, "pending")}
-                >
-                  <RotateCcw />
-                  Undo decision
-                </Button>
-              )}
+                )}
+              </div>
             </div>
           </article>
         );

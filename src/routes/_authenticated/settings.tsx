@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Bell, Check, KeyRound, Save } from "lucide-react";
+import { Bell, Check, KeyRound, Lock, Save, Shield, User } from "lucide-react";
 import { useEffect, useState, type FormEvent } from "react";
 import { toast } from "sonner";
 import { useAuth } from "@/contexts/auth-context";
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { PageHeader } from "@/components/shared/page-header";
 
 export const Route = createFileRoute("/_authenticated/settings")({
   head: () => ({
@@ -32,10 +33,12 @@ function SettingsPage() {
   const [organization, setOrganization] = useState("");
   const [saving, setSaving] = useState(false);
   const [password, setPassword] = useState("");
+
   useEffect(() => {
     setName(profile?.full_name ?? "");
     setOrganization(profile?.organization ?? "");
   }, [profile]);
+
   const saveProfile = async (event: FormEvent) => {
     event.preventDefault();
     if (isDemo) {
@@ -52,9 +55,10 @@ function SettingsPage() {
     }
     setSaving(false);
   };
+
   const updatePassword = async () => {
     if (password.length < 8) {
-      toast.error("Use at least 8 characters.");
+      toast.error("Password must be at least 8 characters.");
       return;
     }
     try {
@@ -65,88 +69,127 @@ function SettingsPage() {
       toast.error(err instanceof Error ? err.message : "Something went wrong.");
     }
   };
+
   return (
-    <div className="reveal max-w-4xl">
-      <header>
-        <p className="eyebrow">Workspace / Settings</p>
-        <h1 className="page-title mt-3">Settings</h1>
-        <p className="mt-4 text-muted-foreground">
-          Manage your identity, organization, and review notifications.
-        </p>
-      </header>
-      <section className="mt-12 border-t border-border pt-7">
-        <h2 className="text-xl font-bold text-primary">Profile</h2>
-        <form onSubmit={saveProfile} className="mt-6 grid gap-5 sm:grid-cols-2">
-          <div className="grid gap-2">
-            <Label htmlFor="settings-name">Full name</Label>
+    <div className="reveal max-w-4xl space-y-8">
+      {/* Header */}
+      <PageHeader
+        eyebrow="Workspace / Settings"
+        title="Settings & Preferences"
+        description="Manage your professional identity, organization credentials, and notification thresholds."
+      />
+
+      {/* Profile Section */}
+      <section className="intel-card p-6 space-y-6">
+        <div className="flex items-center gap-2.5 border-b border-border/70 pb-3">
+          <User className="size-4 text-accent-foreground" />
+          <h2 className="text-base font-bold text-primary">Profile Identity</h2>
+        </div>
+
+        <form onSubmit={saveProfile} className="grid gap-5 sm:grid-cols-2">
+          <div className="space-y-1.5">
+            <Label
+              htmlFor="settings-name"
+              className="text-xs font-bold uppercase text-muted-foreground"
+            >
+              Full Name
+            </Label>
             <Input
               id="settings-name"
               value={name}
               onChange={(event) => setName(event.target.value)}
+              className="text-xs bg-background"
               required
             />
           </div>
-          <div className="grid gap-2">
-            <Label htmlFor="settings-org">Organization</Label>
+
+          <div className="space-y-1.5">
+            <Label
+              htmlFor="settings-org"
+              className="text-xs font-bold uppercase text-muted-foreground"
+            >
+              Procurement Organization
+            </Label>
             <Input
               id="settings-org"
               value={organization}
               onChange={(event) => setOrganization(event.target.value)}
+              className="text-xs bg-background"
               required
             />
           </div>
-          <div className="sm:col-span-2">
-            <Button type="submit" disabled={saving}>
-              <Save />
-              {saving ? "Saving…" : "Save profile"}
+
+          <div className="sm:col-span-2 pt-2">
+            <Button type="submit" disabled={saving} size="sm" className="gap-2">
+              <Save className="size-3.5" />
+              <span>{saving ? "Saving…" : "Save Profile Details"}</span>
             </Button>
           </div>
         </form>
       </section>
-      <section className="mt-12 border-t border-border pt-7">
-        <div className="flex items-center gap-3">
-          <Bell className="size-5 text-accent-foreground" />
-          <h2 className="text-xl font-bold text-primary">Notifications</h2>
+
+      {/* Notifications Section */}
+      <section className="intel-card p-6 space-y-5">
+        <div className="flex items-center gap-2.5 border-b border-border/70 pb-3">
+          <Bell className="size-4 text-accent-foreground" />
+          <h2 className="text-base font-bold text-primary">Notification Channels</h2>
         </div>
-        <div className="mt-5 divide-y divide-border">
+
+        <div className="divide-y divide-border/60">
           <Preference
-            title="Standards amendments"
-            detail="Alert me when a mapped standard changes."
+            title="Standards Amendments"
+            detail="Alert me immediately when an Indian Standard mapped to an active specification is revised or amended."
             defaultChecked
           />
           <Preference
-            title="Compliance review reminders"
-            detail="Notify me about unresolved high-severity findings."
+            title="Compliance Review Reminders"
+            detail="Notify me about unresolved high-severity conflicts and normative gaps requiring sign-off."
             defaultChecked
           />
           <Preference
-            title="Analysis completion"
-            detail="Notify me when a long-running analysis completes."
+            title="Analysis Pipeline Completion"
+            detail="Send desktop notification when an asynchronous document analysis run concludes."
           />
         </div>
       </section>
-      <section className="mt-12 border-t border-border pt-7">
-        <div className="flex items-center gap-3">
-          <KeyRound className="size-5 text-accent-foreground" />
-          <h2 className="text-xl font-bold text-primary">Password</h2>
+
+      {/* Password Security Section */}
+      <section className="intel-card p-6 space-y-5">
+        <div className="flex items-center gap-2.5 border-b border-border/70 pb-3">
+          <KeyRound className="size-4 text-accent-foreground" />
+          <h2 className="text-base font-bold text-primary">Authentication Security</h2>
         </div>
+
         {isDemo ? (
-          <p className="mt-4 text-sm text-muted-foreground">
-            Password changes are unavailable in the demonstration workspace.
-          </p>
+          <div className="rounded-lg border border-border/80 bg-background/50 p-4 text-xs text-muted-foreground">
+            Password changes are disabled in demonstration sessions.
+          </div>
         ) : (
-          <div className="mt-5 flex max-w-xl flex-col gap-3 sm:flex-row">
-            <Input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              placeholder="New password"
-              minLength={8}
-            />
-            <Button type="button" variant="outline" onClick={updatePassword}>
-              <Check />
-              Update password
-            </Button>
+          <div className="space-y-3 max-w-lg">
+            <Label htmlFor="new-pw" className="text-xs font-bold uppercase text-muted-foreground">
+              New Password
+            </Label>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Input
+                id="new-pw"
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                placeholder="At least 8 characters"
+                minLength={8}
+                className="text-xs bg-background"
+              />
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={updatePassword}
+                className="gap-1.5 shrink-0"
+              >
+                <Check className="size-3.5" />
+                <span>Update Password</span>
+              </Button>
+            </div>
           </div>
         )}
       </section>
@@ -164,11 +207,12 @@ function Preference({
   defaultChecked?: boolean;
 }) {
   const [checked, setChecked] = useState(defaultChecked);
+
   return (
-    <div className="flex items-center gap-5 py-5">
-      <div className="flex-1">
-        <p className="font-semibold text-primary">{title}</p>
-        <p className="mt-1 text-sm text-muted-foreground">{detail}</p>
+    <div className="flex items-center justify-between gap-5 py-4">
+      <div className="space-y-0.5 max-w-xl">
+        <p className="text-xs font-bold text-primary">{title}</p>
+        <p className="text-[11px] leading-relaxed text-muted-foreground">{detail}</p>
       </div>
       <Switch
         checked={checked}

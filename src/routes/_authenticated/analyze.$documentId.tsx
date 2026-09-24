@@ -1,12 +1,21 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import {
   AlertCircle,
+  AlertTriangle,
   ArrowLeft,
   ArrowRight,
+  BookOpen,
   CheckCircle2,
+  Clock,
   Download,
-  WandSparkles,
+  FileCheck2,
+  GitBranch,
+  Layers,
+  ShieldAlert,
+  ShieldCheck,
+  Wand2,
 } from "lucide-react";
+import { useState } from "react";
 import { RelationshipGraph } from "@/components/analysis/relationship-graph";
 import { FindingsList } from "@/components/analysis/findings";
 import { RepairPanel } from "@/components/analysis/repair-panel";
@@ -14,6 +23,10 @@ import { useReviewActions } from "@/components/analysis/use-review";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { downloadComplianceReport, formatAnalyzedAt, getAnalysis } from "@/services/analysis";
+import { PageHeader } from "@/components/shared/page-header";
+import { MetricCard } from "@/components/shared/metric-card";
+import { EvidenceDrawer } from "@/components/shared/evidence-drawer";
+import type { Requirement } from "@/lib/contracts";
 
 export const Route = createFileRoute("/_authenticated/analyze/$documentId")({
   loader: async ({ params }) => {
@@ -37,150 +50,280 @@ export const Route = createFileRoute("/_authenticated/analyze/$documentId")({
 function Results() {
   const doc = Route.useLoaderData();
   const { onReview, onDecide } = useReviewActions([doc]);
+  const [selectedReq, setSelectedReq] = useState<Requirement | null>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   const failed = doc.runStatus === "failed";
+  const conflictsCount = doc.findings.filter((f) => f.status === "conflicting").length;
+
   return (
-    <div className="reveal">
-      <Link
-        to="/analyze"
-        className="mb-7 flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary"
+    <div className="reveal space-y-8">
+      {/* Back button & Eyebrow */}
+      <div className="flex items-center justify-between">
+        <Link
+          to="/analyze"
+          className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-primary transition"
+        >
+          <ArrowLeft className="size-3.5" />
+          <span>Start Another Analysis</span>
+        </Link>
+        <span className="font-mono text-xs text-muted-foreground">
+          {formatAnalyzedAt(doc.analyzedAt)}
+          {doc.isSample ? " · Sample Document" : ""}
+        </span>
+      </div>
+
+      {/* Main Header */}
+      <PageHeader
+        eyebrow={`${doc.documentTypeLabel} · ${doc.type} · ${doc.organization}`}
+        title={doc.name}
+        description={`Analyzed against Indian Standards corpus ${doc.corpusVersion ?? "3.1"}. Review extracted requirements, normative graph linkages, and evidence-backed corrections.`}
       >
-        <ArrowLeft className="size-4" />
-        New analysis
-      </Link>
-      <header>
-        <p className="eyebrow">
-          {failed
-            ? "Analysis failed"
-            : doc.runStatus === "succeeded"
-              ? "Analysis complete"
-              : "Analysis in progress"}{" "}
-          · {formatAnalyzedAt(doc.analyzedAt)}
-          {doc.isSample ? " · Sample document" : ""}
-        </p>
-        <h1 className="mt-3 font-display text-4xl text-primary sm:text-5xl">{doc.name}</h1>
-        {failed && (
-          <p role="alert" className="mt-6 flex items-center gap-2 text-sm text-destructive">
-            <AlertCircle className="size-4" />
-            {doc.runError ?? "The analysis failed."}
-          </p>
-        )}
-        {doc.warnings.length > 0 && (
-          <ul className="mt-6 grid gap-1 border-l-2 border-warning-foreground pl-4 text-sm text-muted-foreground">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => void downloadComplianceReport(doc)}
+          className="gap-2"
+        >
+          <Download className="size-4" />
+          <span>Export Report</span>
+        </Button>
+        <Button asChild size="sm" className="gap-2">
+          <Link to="/documents">
+            <span>Documents Library</span>
+            <ArrowRight className="size-4" />
+          </Link>
+        </Button>
+      </PageHeader>
+
+      {/* Errors / Warnings */}
+      {failed && (
+        <div
+          role="alert"
+          className="flex items-center gap-2.5 rounded-xl border border-destructive/40 bg-destructive/10 p-4 text-sm font-semibold text-destructive"
+        >
+          <AlertCircle className="size-5 shrink-0" />
+          <span>{doc.runError ?? "The analysis pipeline failed to complete."}</span>
+        </div>
+      )}
+
+      {doc.warnings.length > 0 && (
+        <div className="rounded-xl border border-warning/40 bg-warning/10 p-4 text-xs text-warning-foreground space-y-1">
+          <div className="flex items-center gap-2 font-bold uppercase tracking-wider text-[11px]">
+            <AlertTriangle className="size-4" />
+            <span>Analysis Advisories</span>
+          </div>
+          <ul className="list-disc pl-5 space-y-0.5">
             {doc.warnings.map((w) => (
               <li key={w}>{w}</li>
             ))}
           </ul>
-        )}
-        <div className="mt-8 flex items-end justify-between gap-4">
-          <div>
-            <p className="text-sm font-bold text-primary">Specification Readiness</p>
-            <p
-              className="mt-1 text-xs text-muted-foreground"
-              title={doc.readinessFormula ?? undefined}
+        </div>
+      )}
+
+      {/* Executive Metric Cards */}
+      <section className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <MetricCard
+          label="Specification Readiness"
+          value={`${doc.readiness}%`}
+          icon={ShieldCheck}
+          subtitle="Mapping coverage less issue penalties"
+          trend={{
+            value: doc.readiness >= 80 ? "Pass readiness" : "Review required",
+            positive: doc.readiness >= 80,
+          }}
+        />
+        <MetricCard
+          label="Mapped Standards"
+          value={doc.standards}
+          icon={BookOpen}
+          subtitle="Indian Standards identified"
+          trend={{ value: `${doc.certificationCount} mandatory certs`, neutral: true }}
+        />
+        <MetricCard
+          label="Extracted Requirements"
+          value={doc.requirementCount || doc.requirements.length}
+          icon={Layers}
+          subtitle="Governing obligations"
+          trend={{ value: "Indexed in Graph", neutral: true }}
+        />
+        <MetricCard
+          label="Compliance Findings"
+          value={doc.issues}
+          icon={ShieldAlert}
+          subtitle={`${conflictsCount} critical conflicts`}
+          trend={{
+            value: doc.issues === 0 ? "Zero flags" : `${doc.repairs.length} corrections available`,
+            positive: doc.issues === 0,
+          }}
+        />
+      </section>
+
+      {/* Analysis Workbench Tabs */}
+      <Tabs defaultValue="audit" className="space-y-6">
+        <div className="border-b border-border/70 pb-1">
+          <TabsList className="flex flex-wrap h-auto gap-2 bg-transparent p-0">
+            <TabsTrigger
+              value="audit"
+              className="gap-2 rounded-lg border border-border/70 bg-card/60 px-4 py-2.5 text-xs font-bold data-[state=active]:border-accent-foreground data-[state=active]:bg-accent/30 data-[state=active]:text-primary"
             >
-              Mapping coverage less a severity-weighted penalty for open findings
+              <FileCheck2 className="size-4 text-accent-foreground" />
+              <span>Compliance Audit</span>
+              <span className="rounded-full bg-accent/40 px-2 py-0.5 font-mono text-[10px]">
+                {doc.findings.length}
+              </span>
+            </TabsTrigger>
+
+            <TabsTrigger
+              value="graph"
+              className="gap-2 rounded-lg border border-border/70 bg-card/60 px-4 py-2.5 text-xs font-bold data-[state=active]:border-accent-foreground data-[state=active]:bg-accent/30 data-[state=active]:text-primary"
+            >
+              <GitBranch className="size-4 text-accent-foreground" />
+              <span>Evidence Graph</span>
+              <span className="rounded-full bg-accent/40 px-2 py-0.5 font-mono text-[10px]">
+                {doc.graphPaths.length}
+              </span>
+            </TabsTrigger>
+
+            <TabsTrigger
+              value="repair"
+              className="gap-2 rounded-lg border border-border/70 bg-card/60 px-4 py-2.5 text-xs font-bold data-[state=active]:border-accent-foreground data-[state=active]:bg-accent/30 data-[state=active]:text-primary"
+            >
+              <Wand2 className="size-4 text-accent-foreground" />
+              <span>Specification Repair</span>
+              <span className="rounded-full bg-accent/40 px-2 py-0.5 font-mono text-[10px]">
+                {doc.repairs.length}
+              </span>
+            </TabsTrigger>
+
+            <TabsTrigger
+              value="requirements"
+              className="gap-2 rounded-lg border border-border/70 bg-card/60 px-4 py-2.5 text-xs font-bold data-[state=active]:border-accent-foreground data-[state=active]:bg-accent/30 data-[state=active]:text-primary"
+            >
+              <Layers className="size-4 text-accent-foreground" />
+              <span>Requirements</span>
+              <span className="rounded-full bg-accent/40 px-2 py-0.5 font-mono text-[10px]">
+                {doc.requirements.length}
+              </span>
+            </TabsTrigger>
+          </TabsList>
+        </div>
+
+        {/* Tab 1: Compliance Audit */}
+        <TabsContent value="audit" className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="eyebrow">Actionable Audit Flags</p>
+              <h2 className="text-xl font-bold text-primary">Compliance Findings</h2>
+            </div>
+            <span className="text-xs text-muted-foreground">
+              Review flagged evidence, confirm decisions, or dismiss as not applicable
+            </span>
+          </div>
+          <FindingsList findings={doc.findings} onReview={onReview} />
+        </TabsContent>
+
+        {/* Tab 2: Evidence Graph */}
+        <TabsContent value="graph" className="space-y-4">
+          <div>
+            <p className="eyebrow">Topological Evidence Mapping</p>
+            <h2 className="text-xl font-bold text-primary">Requirement Relationship Trail</h2>
+            <p className="text-xs text-muted-foreground mt-1">
+              Trace requirements from specification text through governing standard, clause,
+              normative test method, and mandatory certification.
             </p>
           </div>
-          <p className="font-display text-4xl text-primary">{doc.readiness}%</p>
-        </div>
-        <div className="mt-3 h-2 overflow-hidden bg-secondary">
-          <div className="h-full bg-accent-foreground" style={{ width: `${doc.readiness}%` }} />
-        </div>
-        <div className="mt-8 grid grid-cols-2 border-y border-border md:grid-cols-4">
-          {[
-            [String(doc.requirementCount), "Requirements detected"],
-            [String(doc.standards), "Standards identified"],
-            [String(doc.certificationCount), "Certifications"],
-            [String(doc.issues), "Issues requiring review"],
-          ].map(([v, l], i) => (
-            <div key={l} className={`py-5 ${i > 0 ? "md:border-l md:pl-6" : ""}`}>
-              <p className="font-display text-3xl text-primary">{v}</p>
-              <p className="mt-1 text-xs text-muted-foreground">{l}</p>
+          <RelationshipGraph paths={doc.graphPaths} />
+        </TabsContent>
+
+        {/* Tab 3: Specification Repair */}
+        <TabsContent value="repair" className="space-y-4">
+          <div>
+            <p className="eyebrow">Evidence-Led Corrections</p>
+            <h2 className="text-xl font-bold text-primary">Specification Repair Workbench</h2>
+            <p className="text-xs text-muted-foreground mt-1">
+              Review recommended phrasing updates to bring clauses into conformance with governing
+              Indian Standards.
+            </p>
+          </div>
+          {doc.repairs.length ? (
+            <RepairPanel repairs={doc.repairs} onDecide={onDecide} />
+          ) : (
+            <div className="intel-card py-16 text-center space-y-3">
+              <CheckCircle2 className="mx-auto size-10 text-success-foreground" />
+              <h3 className="text-base font-bold text-primary">Zero repairs needed</h3>
+              <p className="text-xs text-muted-foreground max-w-md mx-auto">
+                No contradictory or outdated requirements were identified in this specification.
+              </p>
             </div>
-          ))}
-        </div>
-      </header>
-      <Tabs defaultValue="graph" className="mt-12">
-        <TabsList className="flex h-auto flex-wrap justify-start">
-          <TabsTrigger value="graph">Requirement graph</TabsTrigger>
-          <TabsTrigger value="audit">Compliance audit</TabsTrigger>
-          <TabsTrigger value="repair">Specification repair</TabsTrigger>
-        </TabsList>
-        <TabsContent value="graph" className="mt-8">
-          <Section
-            title="Requirement relationship"
-            eyebrow="Evidence graph"
-            description="Follow the selected procurement requirement through its standard, normative clause, test method, and certification."
-          >
-            <RelationshipGraph paths={doc.graphPaths} />
-          </Section>
+          )}
         </TabsContent>
-        <TabsContent value="audit" className="mt-8">
-          <Section
-            title="Compliance audit"
-            eyebrow="Actionable findings"
-            description="Open any finding to review its source, governing evidence, severity, and recommended response. Confirm or dismiss it to record your decision."
-          >
-            <FindingsList findings={doc.findings} onReview={onReview} />
-          </Section>
-        </TabsContent>
-        <TabsContent value="repair" className="mt-8">
-          <Section
-            title="Repair Specification"
-            eyebrow="Evidence-backed corrections"
-            description="Review each generated correction. Accept, reject, or edit the proposed requirement before export."
-          >
-            {doc.repairs.length ? (
-              <RepairPanel repairs={doc.repairs} onDecide={onDecide} />
-            ) : (
-              <div className="py-14 text-center">
-                <CheckCircle2 className="mx-auto size-8 text-success-foreground" />
-                <p className="mt-4 font-bold text-primary">No repairs are required.</p>
-              </div>
-            )}
-          </Section>
+
+        {/* Tab 4: Requirements Catalog */}
+        <TabsContent value="requirements" className="space-y-4">
+          <div>
+            <p className="eyebrow">Extracted Corpus</p>
+            <h2 className="text-xl font-bold text-primary">Document Requirements</h2>
+            <p className="text-xs text-muted-foreground mt-1">
+              Click any requirement row to inspect full clause details, provenance, and governing
+              standard.
+            </p>
+          </div>
+          <div className="intel-card overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[700px] text-left text-sm">
+                <thead>
+                  <tr className="border-b border-border/70 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                    <th className="py-3 px-4">Requirement</th>
+                    <th className="py-3 px-3">Category</th>
+                    <th className="py-3 px-3">Standard</th>
+                    <th className="py-3 px-3">Governing Clause</th>
+                    <th className="py-3 px-3 text-right">Confidence</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border/50">
+                  {doc.requirements.map((req) => (
+                    <tr
+                      key={req.id}
+                      className="group transition-colors hover:bg-accent/20 cursor-pointer"
+                      onClick={() => {
+                        setSelectedReq(req);
+                        setDrawerOpen(true);
+                      }}
+                    >
+                      <td className="py-3 px-4 max-w-md">
+                        <p className="font-semibold text-primary truncate">{req.text}</p>
+                        {req.sectionLabel && (
+                          <span className="text-[10px] text-muted-foreground">
+                            {req.sectionLabel}
+                          </span>
+                        )}
+                      </td>
+                      <td className="py-3 px-3 text-xs text-muted-foreground font-medium">
+                        {req.category}
+                      </td>
+                      <td className="py-3 px-3 font-mono text-xs font-bold text-accent-foreground">
+                        {req.standard}
+                      </td>
+                      <td className="py-3 px-3 text-xs text-muted-foreground">
+                        {req.clause || "—"}
+                      </td>
+                      <td className="py-3 px-3 text-right font-mono text-xs font-bold text-primary">
+                        {req.confidence !== undefined
+                          ? `${Math.round(req.confidence * 100)}%`
+                          : "—"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </TabsContent>
       </Tabs>
-      <div className="mt-12 flex flex-wrap items-center justify-between gap-3">
-        <p className="max-w-xl text-xs leading-5 text-muted-foreground">
-          Pipeline {doc.pipelineVersion ?? "—"} · standards corpus {doc.corpusVersion ?? "—"}
-          {doc.corpusSource ? ` (${doc.corpusSource})` : ""}. Decision support only: findings and
-          repairs must be reviewed by qualified personnel.
-        </p>
-        <div className="flex flex-wrap gap-2">
-          <Button variant="outline" onClick={() => void downloadComplianceReport(doc)}>
-            <Download />
-            Compliance report
-          </Button>
-          <Button asChild>
-            <Link to="/documents">
-              <WandSparkles />
-              Return to document library <ArrowRight />
-            </Link>
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-}
 
-function Section({
-  eyebrow,
-  title,
-  description,
-  children,
-}: {
-  eyebrow: string;
-  title: string;
-  description: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section>
-      <p className="eyebrow">{eyebrow}</p>
-      <h2 className="section-title mt-2">{title}</h2>
-      <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">{description}</p>
-      <div className="mt-7">{children}</div>
-    </section>
+      {/* Requirement Details Drawer */}
+      <EvidenceDrawer requirement={selectedReq} open={drawerOpen} onOpenChange={setDrawerOpen} />
+    </div>
   );
 }

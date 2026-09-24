@@ -1,13 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   AlertCircle,
+  Clock,
+  Command,
   FileText,
+  Filter,
   Search as SearchIcon,
   SlidersHorizontal,
+  Sparkles,
   Upload,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { PageIntro, EmptySearch } from "@/components/app-shell";
+import { EmptySearch } from "@/components/app-shell";
 import { StandardResultCard } from "@/components/standard-result";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,16 +19,17 @@ import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { SearchResult } from "@/lib/contracts";
 import { searchStandards } from "@/services/analysis";
+import { PageHeader } from "@/components/shared/page-header";
 
 export const Route = createFileRoute("/search")({
   head: () => ({
     meta: [
-      { title: "Search Indian Standards — StandardOS" },
+      { title: "Search Indian Standards — STANDARDOS" },
       {
         name: "description",
         content: "Search BIS standards using product descriptions, tender clauses or documents.",
       },
-      { property: "og:title", content: "Standards Search — StandardOS" },
+      { property: "og:title", content: "Standards Search — STANDARDOS" },
       {
         property: "og:description",
         content: "Clause-level Indian Standards search with explainable matches.",
@@ -84,7 +89,6 @@ function SearchPage() {
 
   useEffect(() => {
     void runSearch(query);
-    // Run once for the example query; later searches are user-triggered.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -97,160 +101,193 @@ function SearchPage() {
     list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
 
   return (
-    <div className="page-wrap pb-20 pt-8">
-      <PageIntro
-        eyebrow="Standards intelligence"
-        title="Search requirements, not catalog titles."
-        description="Describe the product or obligation in plain language. StandardOS will return ranked evidence, not just keywords."
+    <div className="reveal site-container py-8 space-y-8">
+      {/* Header */}
+      <PageHeader
+        eyebrow="Standards Intelligence"
+        title="Search Requirements & Clauses"
+        description="Describe product specifications or tender obligations in plain language. StandardOS returns ranked evidence and clause citations directly from the Indian Standards knowledge graph."
       />
-      <div className="glass-panel mt-8 p-4 sm:p-6">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <Tabs defaultValue="query" className="w-full">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <TabsList>
-                <TabsTrigger value="query">
-                  <SearchIcon /> Query
-                </TabsTrigger>
-                <TabsTrigger value="excerpt">
-                  <FileText /> Tender excerpt
-                </TabsTrigger>
-                <TabsTrigger value="file">
-                  <Upload /> Upload file
-                </TabsTrigger>
-              </TabsList>
-              <label className="flex items-center gap-2 text-sm font-semibold text-primary">
+
+      {/* Command Center Input Card */}
+      <div className="intel-card p-6 space-y-6">
+        <Tabs defaultValue="query" className="w-full">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-border/70 pb-4">
+            <TabsList className="grid w-full grid-cols-3 max-w-sm">
+              <TabsTrigger value="query" className="gap-1.5 text-xs">
+                <SearchIcon className="size-3.5" />
+                <span>Query</span>
+              </TabsTrigger>
+              <TabsTrigger value="excerpt" className="gap-1.5 text-xs">
+                <FileText className="size-3.5" />
+                <span>Excerpt</span>
+              </TabsTrigger>
+              <TabsTrigger value="file" className="gap-1.5 text-xs">
+                <Upload className="size-3.5" />
+                <span>File</span>
+              </TabsTrigger>
+            </TabsList>
+
+            <div className="flex items-center gap-2">
+              <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                 Language
-                <select
-                  className="rounded-sm border border-input bg-background/70 px-3 py-2"
-                  value={language}
-                  onChange={(event) => setLanguage(event.target.value)}
-                >
-                  <option>English</option>
-                  <option>Hindi</option>
-                </select>
               </label>
-            </div>
-            <TabsContent value="query">
-              <form
-                className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto]"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  void runSearch(query);
-                }}
+              <select
+                className="rounded-lg border border-border bg-background px-3 py-1.5 text-xs font-semibold text-primary"
+                value={language}
+                onChange={(event) => setLanguage(event.target.value)}
               >
+                <option>English</option>
+                <option>Hindi</option>
+              </select>
+            </div>
+          </div>
+
+          <TabsContent value="query" className="mt-4">
+            <form
+              className="flex flex-col gap-3 sm:flex-row sm:items-center"
+              onSubmit={(e) => {
+                e.preventDefault();
+                void runSearch(query);
+              }}
+            >
+              <div className="relative flex-1">
+                <SearchIcon className="absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
-                  className="h-14 bg-background/55 px-5 text-base"
+                  className="h-12 pl-10 text-sm bg-background font-medium"
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
-                  placeholder="Describe a product, material or requirement…"
+                  placeholder="Describe a material, specification parameter, or engineering requirement…"
                 />
-                <Button size="lg" type="submit">
-                  <SearchIcon /> Find standards
-                </Button>
-              </form>
-            </TabsContent>
-            <TabsContent value="excerpt">
-              <Textarea
-                className="mt-4 min-h-36 bg-background/55 p-4"
-                value={excerpt}
-                onChange={(e) => setExcerpt(e.target.value)}
-                maxLength={5000}
-                placeholder="Paste one or more tender clauses here…"
-              />
-              <Button className="mt-3" onClick={() => void runSearch(excerpt)}>
-                <SearchIcon /> Analyse excerpt
+              </div>
+              <Button size="lg" type="submit" className="h-12 gap-2 shadow-xs shrink-0">
+                <SearchIcon className="size-4" />
+                <span>Find Standards</span>
               </Button>
-            </TabsContent>
-            <TabsContent value="file">
-              <label className="mt-4 grid min-h-40 cursor-pointer place-items-center border border-dashed border-input bg-background/35 text-center">
-                <span>
-                  <Upload className="mx-auto mb-3 text-accent-foreground" />
-                  <b className="text-primary">Choose a TXT excerpt</b>
-                  <small className="mt-1 block text-muted-foreground">
-                    First 5,000 characters are searched · full PDF/DOCX analysis is available after
-                    sign-in
-                  </small>
-                </span>
-                <input
-                  type="file"
-                  accept=".txt"
-                  className="sr-only"
-                  onChange={(e) => void readFile(e.target.files?.[0])}
-                />
-              </label>
-            </TabsContent>
-          </Tabs>
-        </div>
+            </form>
+          </TabsContent>
+
+          <TabsContent value="excerpt" className="mt-4 space-y-3">
+            <Textarea
+              className="min-h-32 text-xs font-mono"
+              value={excerpt}
+              onChange={(e) => setExcerpt(e.target.value)}
+              maxLength={5000}
+              placeholder="Paste one or more tender clauses or BOQ specifications here…"
+            />
+            <Button size="sm" onClick={() => void runSearch(excerpt)} className="gap-2">
+              <SearchIcon className="size-3.5" />
+              <span>Analyze Excerpt</span>
+            </Button>
+          </TabsContent>
+
+          <TabsContent value="file" className="mt-4">
+            <label className="grid min-h-36 cursor-pointer place-items-center rounded-xl border-2 border-dashed border-border/80 bg-background/50 p-6 text-center hover:bg-card transition">
+              <div className="space-y-1.5">
+                <Upload className="mx-auto size-6 text-accent-foreground" />
+                <p className="text-xs font-bold text-primary">Choose a TXT specification excerpt</p>
+                <p className="text-[11px] text-muted-foreground">
+                  First 5,000 characters analyzed. Sign in for complete multi-page PDF/DOCX
+                  processing.
+                </p>
+              </div>
+              <input
+                type="file"
+                accept=".txt"
+                className="sr-only"
+                onChange={(e) => void readFile(e.target.files?.[0])}
+              />
+            </label>
+          </TabsContent>
+        </Tabs>
       </div>
-      <div className="mt-8 grid gap-6 lg:grid-cols-[15rem_minmax(0,1fr)]">
-        <aside className="glass-panel h-fit p-5 lg:sticky lg:top-28">
-          <h2 className="flex items-center gap-2 font-serif text-xl text-primary">
-            <SlidersHorizontal className="size-4" /> Refine
-          </h2>
-          <fieldset className="mt-6 border-t border-border pt-5">
-            <legend className="text-xs font-bold uppercase tracking-[.1em] text-muted-foreground">
-              Domain
+
+      {/* Search Grid */}
+      <div className="grid gap-6 lg:grid-cols-12">
+        {/* Facets Sidebar */}
+        <aside className="intel-card p-5 space-y-5 lg:col-span-3 self-start lg:sticky lg:top-20">
+          <div className="flex items-center gap-2 border-b border-border/70 pb-3">
+            <SlidersHorizontal className="size-4 text-accent-foreground" />
+            <h2 className="text-xs font-bold uppercase tracking-wider text-primary">
+              Refine Facets
+            </h2>
+          </div>
+
+          <fieldset className="space-y-2.5">
+            <legend className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+              Product Domain
             </legend>
-            <div className="mt-3 grid gap-2">
+            <div className="grid gap-2">
               {DOMAINS.map((value) => (
-                <label key={value} className="flex items-center gap-2 text-sm">
+                <label key={value} className="flex items-center gap-2 text-xs cursor-pointer">
                   <input
                     type="checkbox"
                     className="accent-accent-foreground"
                     checked={domains.includes(value)}
                     onChange={() => setDomains(toggle(domains, value))}
-                  />{" "}
-                  {value}
+                  />
+                  <span className="text-primary font-medium">{value}</span>
                 </label>
               ))}
             </div>
           </fieldset>
-          <fieldset className="mt-6 border-t border-border pt-5">
-            <legend className="text-xs font-bold uppercase tracking-[.1em] text-muted-foreground">
-              Publication year
+
+          <fieldset className="space-y-2.5 border-t border-border/60 pt-4">
+            <legend className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+              Publication Edition
             </legend>
-            <div className="mt-3 grid gap-2">
+            <div className="grid gap-2">
               {YEARS.map(([label, value]) => (
-                <label key={value} className="flex items-center gap-2 text-sm">
+                <label key={value} className="flex items-center gap-2 text-xs cursor-pointer">
                   <input
                     type="checkbox"
                     className="accent-accent-foreground"
                     checked={years.includes(value)}
                     onChange={() => setYears(toggle(years, value))}
-                  />{" "}
-                  {label}
+                  />
+                  <span className="text-primary font-medium">{label}</span>
                 </label>
               ))}
             </div>
           </fieldset>
         </aside>
-        <section>
-          <div className="mb-4 flex items-baseline justify-between">
+
+        {/* Results Area */}
+        <section className="space-y-4 lg:col-span-9">
+          <div className="flex items-center justify-between border-b border-border/70 pb-2">
             <div>
-              <p className="font-serif text-2xl text-primary">
-                {results ? "Recommended standards" : "No search yet"}
+              <p className="font-bold text-primary text-sm">
+                {results ? "Ranked Governing Standards" : "Awaiting Search"}
               </p>
-              <p className="text-sm text-muted-foreground">
-                {results ? `${results.length} ranked matches · ${language}` : ""}
-              </p>
+              {results && (
+                <p className="text-xs text-muted-foreground">
+                  {results.length} ranked matches mapped to your query
+                </p>
+              )}
             </div>
           </div>
+
           {language === "Hindi" && (
-            <p className="mb-4 text-sm text-muted-foreground">
-              Hindi-language retrieval is not supported yet; the corpus and query processing are
-              English only.
-            </p>
+            <div className="rounded-lg border border-warning/40 bg-warning/10 p-3 text-xs text-warning-foreground">
+              Hindi-language semantic retrieval is in development. Results currently indexed in
+              English.
+            </div>
           )}
+
           {error && (
-            <p role="alert" className="mb-4 flex items-center gap-2 text-sm text-destructive">
-              <AlertCircle className="size-4" />
-              {error}
-            </p>
+            <div
+              role="alert"
+              className="flex items-center gap-2 rounded-lg border border-destructive/40 bg-destructive/10 p-3 text-xs text-destructive"
+            >
+              <AlertCircle className="size-4 shrink-0" />
+              <span>{error}</span>
+            </div>
           )}
+
           {loading ? (
-            <div className="grid gap-4">
-              {[1, 2, 3].map((item) => (
-                <div key={item} className="glass-panel h-64 animate-pulse bg-card/50" />
+            <div className="grid gap-3">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="intel-card h-48 animate-pulse bg-card/60" />
               ))}
             </div>
           ) : !results || !results.length ? (

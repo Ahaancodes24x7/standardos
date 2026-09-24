@@ -1,5 +1,17 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { AlertCircle, ArrowRight, Check, FileText, UploadCloud, X } from "lucide-react";
+import {
+  AlertCircle,
+  ArrowRight,
+  Check,
+  CheckCircle2,
+  Cpu,
+  FileSearch,
+  FileText,
+  Loader2,
+  Sparkles,
+  UploadCloud,
+  X,
+} from "lucide-react";
 import { useRef, useState } from "react";
 import { analyzeDocument } from "@/services/analysis";
 import {
@@ -9,6 +21,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
+import { PageHeader } from "@/components/shared/page-header";
+
 export const Route = createFileRoute("/_authenticated/analyze/")({
   head: () => ({
     meta: [
@@ -26,16 +40,18 @@ export const Route = createFileRoute("/_authenticated/analyze/")({
   }),
   component: AnalyzePage,
 });
-const steps = [
-  "Reading specification",
-  "Extracting requirements",
-  "Identifying product category",
-  "Mapping Indian Standards",
-  "Resolving normative references",
-  "Checking certifications",
-  "Detecting conflicts",
-  "Generating compliance report",
+
+const PIPELINE_STAGES = [
+  { id: 1, title: "Parsing Document", desc: "Zoning & section segmentation" },
+  { id: 2, title: "Requirement Extraction", desc: "NLP attribute identification" },
+  { id: 3, title: "Domain Classification", desc: "Hybrid embedding & lexicon" },
+  { id: 4, title: "Standards Retrieval", desc: "Mapping applicable BIS standards" },
+  { id: 5, title: "Graph Reasoning", desc: "Normative reference & DAG resolution" },
+  { id: 6, title: "Conformity Audit", desc: "Mandatory certification & test checks" },
+  { id: 7, title: "Conflict Detection", desc: "Contradiction & obsolescence discovery" },
+  { id: 8, title: "Compliance Synthesis", desc: "Evidence trail & repair generation" },
 ];
+
 function AnalyzePage() {
   const nav = useNavigate();
   const input = useRef<HTMLInputElement>(null);
@@ -49,6 +65,7 @@ function AnalyzePage() {
     documentType: "specification",
     documentTypeLabel: "",
   });
+
   const validate = (candidate: File) => {
     const ext = candidate.name.split(".").pop()?.toLowerCase();
     if (!["pdf", "docx", "txt"].includes(ext ?? "")) {
@@ -62,6 +79,7 @@ function AnalyzePage() {
     setError("");
     setFile(candidate);
   };
+
   const run = async () => {
     if (!file && !text.trim()) {
       setError("Add a file or paste specification text before analysis.");
@@ -94,143 +112,254 @@ function AnalyzePage() {
       setProgress(0);
     }
   };
+
   return (
-    <div className="reveal max-w-5xl">
-      <header>
-        <p className="eyebrow">New analysis</p>
-        <h1 className="page-title mt-3">Analyze a Document</h1>
-        <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
-          Upload a specification, tender, bill of quantities, vendor datasheet, test or inspection
-          report — or any document type of your own. STANDARDOS identifies applicable standards and
-          compliance issues and keeps the analysis in your workspace.
-        </p>
-      </header>
+    <div className="reveal max-w-5xl mx-auto space-y-8">
+      {/* Header */}
+      <PageHeader
+        eyebrow="Intelligence Pipeline"
+        title="Analyze a Specification"
+        description="Extract requirements, map Indian Standards, verify normative dependencies, and generate clause-level evidence."
+      />
+
       {running ? (
         <Processing progress={progress} />
       ) : (
-        <section className="mt-10 glass-panel p-5 sm:p-7">
-          <div className="mb-6 border-b border-border pb-6">
-            <DocumentTypePicker value={docType} onChange={setDocType} />
+        <div className="space-y-6">
+          {/* Analysis Workflow Overview Strip */}
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-5 rounded-xl border border-border/70 bg-card/60 p-3 text-center text-xs">
+            <div className="space-y-1">
+              <span className="text-[10px] font-bold uppercase text-muted-foreground">Input</span>
+              <p className="font-semibold text-primary">1. Document</p>
+            </div>
+            <div className="space-y-1">
+              <span className="text-[10px] font-bold uppercase text-muted-foreground">NLP</span>
+              <p className="font-semibold text-primary">2. Requirements</p>
+            </div>
+            <div className="space-y-1">
+              <span className="text-[10px] font-bold uppercase text-muted-foreground">Corpus</span>
+              <p className="font-semibold text-primary">3. Standards</p>
+            </div>
+            <div className="space-y-1">
+              <span className="text-[10px] font-bold uppercase text-muted-foreground">DAG</span>
+              <p className="font-semibold text-primary">4. Reasoning</p>
+            </div>
+            <div className="col-span-2 sm:col-span-1 space-y-1">
+              <span className="text-[10px] font-bold uppercase text-muted-foreground">Outcome</span>
+              <p className="font-semibold text-accent-foreground">5. Findings</p>
+            </div>
           </div>
-          <Tabs defaultValue="upload">
-            <TabsList>
-              <TabsTrigger value="upload">Upload document</TabsTrigger>
-              <TabsTrigger value="paste">Paste text</TabsTrigger>
-            </TabsList>
-            <TabsContent value="upload" className="mt-5">
-              <div
-                onDragOver={(e) => {
-                  e.preventDefault();
-                  setDrag(true);
-                }}
-                onDragLeave={() => setDrag(false)}
-                onDrop={(e) => {
-                  e.preventDefault();
-                  setDrag(false);
-                  const dropped = e.dataTransfer.files[0];
-                  if (dropped) validate(dropped);
-                }}
-                className={`grid min-h-56 place-items-center border border-dashed p-7 text-center transition-all ${drag ? "border-accent-foreground bg-accent/25" : "border-border bg-background/30"}`}
-              >
-                <div>
-                  <span className="mx-auto grid size-12 place-items-center rounded-full bg-accent text-accent-foreground">
-                    <UploadCloud />
-                  </span>
-                  <h2 className="mt-4 text-lg font-bold text-primary">Drop your document here</h2>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    PDF, DOCX, or TXT · up to 20 MB
-                  </p>
-                  <Button variant="outline" className="mt-5" onClick={() => input.current?.click()}>
-                    Browse files
-                  </Button>
-                  <input
-                    ref={input}
-                    hidden
-                    type="file"
-                    accept=".pdf,.docx,.txt"
-                    onChange={(e) => {
-                      const chosen = e.target.files?.[0];
-                      if (chosen) validate(chosen);
-                    }}
-                  />
-                </div>
-              </div>
-              {file && (
-                <div className="mt-4 flex items-center gap-3 border-t border-border pt-4">
-                  <FileText className="size-5 text-accent-foreground" />
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-bold text-primary">{file.name}</p>
-                    <p className="text-xs text-muted-foreground">
-                      {(file.size / 1024).toFixed(1)} KB · Ready to analyze
-                    </p>
+
+          {/* Main Input Card */}
+          <section className="intel-card p-6 sm:p-8 space-y-6">
+            {/* Document Type Selector */}
+            <div className="border-b border-border/70 pb-6">
+              <DocumentTypePicker value={docType} onChange={setDocType} />
+            </div>
+
+            {/* Upload or Paste Tabs */}
+            <Tabs defaultValue="upload" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 max-w-xs">
+                <TabsTrigger value="upload" className="gap-2">
+                  <UploadCloud className="size-4" />
+                  <span>Upload File</span>
+                </TabsTrigger>
+                <TabsTrigger value="paste" className="gap-2">
+                  <FileText className="size-4" />
+                  <span>Paste Text</span>
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="upload" className="mt-5 space-y-4">
+                <div
+                  onDragOver={(e) => {
+                    e.preventDefault();
+                    setDrag(true);
+                  }}
+                  onDragLeave={() => setDrag(false)}
+                  onDrop={(e) => {
+                    e.preventDefault();
+                    setDrag(false);
+                    const dropped = e.dataTransfer.files[0];
+                    if (dropped) validate(dropped);
+                  }}
+                  className={`grid min-h-60 place-items-center rounded-xl border-2 border-dashed p-8 text-center transition-all ${
+                    drag
+                      ? "border-accent-foreground bg-accent/20"
+                      : "border-border/80 bg-background/50 hover:bg-card/70"
+                  }`}
+                >
+                  <div className="max-w-md space-y-3">
+                    <span className="mx-auto grid size-14 place-items-center rounded-2xl bg-accent/30 text-accent-foreground shadow-xs">
+                      <UploadCloud className="size-7" />
+                    </span>
+                    <div>
+                      <h2 className="text-base font-bold text-primary">
+                        Drag and drop your specification here
+                      </h2>
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        Supports PDF, DOCX, or TXT · Up to 20 MB file size
+                      </p>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => input.current?.click()}
+                      className="mt-2"
+                    >
+                      Browse local files
+                    </Button>
+                    <input
+                      ref={input}
+                      hidden
+                      type="file"
+                      accept=".pdf,.docx,.txt"
+                      onChange={(e) => {
+                        const chosen = e.target.files?.[0];
+                        if (chosen) validate(chosen);
+                      }}
+                    />
                   </div>
-                  <button aria-label="Remove file" onClick={() => setFile(null)}>
-                    <X className="size-4" />
-                  </button>
                 </div>
-              )}
-            </TabsContent>
-            <TabsContent value="paste" className="mt-5">
-              <Textarea
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                placeholder="Paste the document text here (specification, tender clauses, BOQ items, datasheet values…)"
-                className="min-h-56 resize-y"
-                maxLength={30000}
-              />
-              <p className="mt-2 text-right text-xs text-muted-foreground">
-                {text.length.toLocaleString()} / 30,000
-              </p>
-            </TabsContent>
-          </Tabs>
-          {error && (
-            <p role="alert" className="mt-4 flex items-center gap-2 text-sm text-destructive">
-              <AlertCircle className="size-4" />
-              {error}
-            </p>
-          )}
-          <div className="mt-6 flex justify-end">
-            <Button size="lg" onClick={run}>
-              Analyze Document <ArrowRight />
-            </Button>
-          </div>
-        </section>
+
+                {file && (
+                  <div className="flex items-center justify-between rounded-xl border border-border/80 bg-card p-4">
+                    <div className="flex items-center gap-3">
+                      <span className="grid size-10 place-items-center rounded-lg bg-accent/20 text-accent-foreground">
+                        <FileText className="size-5" />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-bold text-primary">{file.name}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {(file.size / (1024 * 1024)).toFixed(2)} MB · Ready for analysis
+                        </p>
+                      </div>
+                    </div>
+                    <Button
+                      size="icon"
+                      variant="ghost"
+                      onClick={() => setFile(null)}
+                      aria-label="Remove selected file"
+                    >
+                      <X className="size-4" />
+                    </Button>
+                  </div>
+                )}
+              </TabsContent>
+
+              <TabsContent value="paste" className="mt-5 space-y-2">
+                <Textarea
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  placeholder="Paste specification requirements, tender clauses, BOQ items, or material parameters..."
+                  className="min-h-60 resize-y rounded-xl font-mono text-xs leading-relaxed"
+                  maxLength={30000}
+                />
+                <div className="flex items-center justify-between text-xs text-muted-foreground pt-1">
+                  <span>Plain text or markdown</span>
+                  <span className="font-mono">
+                    {text.length.toLocaleString()} / 30,000 characters
+                  </span>
+                </div>
+              </TabsContent>
+            </Tabs>
+
+            {error && (
+              <div
+                role="alert"
+                className="flex items-center gap-2.5 rounded-lg border border-destructive/40 bg-destructive/10 p-3 text-xs font-semibold text-destructive"
+              >
+                <AlertCircle className="size-4 shrink-0" />
+                <span>{error}</span>
+              </div>
+            )}
+
+            <div className="flex items-center justify-between border-t border-border/70 pt-6">
+              <span className="text-xs text-muted-foreground">
+                Engine: <strong className="text-primary font-mono">StandardOS v3.1</strong>
+              </span>
+              <Button size="lg" onClick={run} className="gap-2 shadow-xs">
+                <span>Start Intelligence Analysis</span>
+                <ArrowRight className="size-4" />
+              </Button>
+            </div>
+          </section>
+        </div>
       )}
     </div>
   );
 }
+
 function Processing({ progress }: { progress: number }) {
+  const currentProgressPct = Math.min(100, Math.max(8, Math.round((progress / 8) * 100)));
+  const activeStage = PIPELINE_STAGES[Math.min(progress, 7)];
+
   return (
-    <section className="mt-12 glass-panel p-7 sm:p-10">
-      <p className="eyebrow">Analysis in progress</p>
-      <h2 className="section-title mt-3">Building the evidence trail.</h2>
-      <div className="mt-8 h-1 overflow-hidden bg-secondary">
+    <section className="intel-card p-8 sm:p-10 space-y-8">
+      <div>
+        <div className="flex items-center justify-between">
+          <p className="eyebrow flex items-center gap-2">
+            <Cpu className="size-3.5" />
+            <span>Analysis In Execution</span>
+          </p>
+          <span className="font-mono text-xs font-bold text-accent-foreground">
+            Stage {Math.min(progress, 8)} of 8 · {currentProgressPct}%
+          </span>
+        </div>
+        <h2 className="mt-2 text-2xl font-extrabold text-primary">
+          {activeStage?.title ?? "Processing Specification"}
+        </h2>
+        <p className="text-xs text-muted-foreground mt-1">
+          {activeStage?.desc ??
+            "Tracing requirements and normative references in standards knowledge graph"}
+        </p>
+      </div>
+
+      {/* Progress Bar */}
+      <div className="h-2 w-full overflow-hidden rounded-full bg-secondary">
         <div
-          className="h-full bg-accent-foreground transition-all duration-500"
-          style={{ width: `${(progress / 8) * 100}%` }}
+          className="h-full bg-accent-foreground transition-all duration-500 ease-out"
+          style={{ width: `${currentProgressPct}%` }}
         />
       </div>
-      <div className="mt-8 grid gap-3 sm:grid-cols-2">
-        {steps.map((step, index) => {
+
+      {/* 8-Stage Precision Grid */}
+      <div className="grid gap-3 sm:grid-cols-2">
+        {PIPELINE_STAGES.map((stage, index) => {
           const done = index < progress;
           const active = index === progress;
           return (
             <div
-              key={step}
-              className={`flex items-center gap-3 py-2 text-sm transition-opacity ${done || active ? "opacity-100" : "opacity-35"}`}
+              key={stage.id}
+              className={`flex items-start gap-3 rounded-xl border p-3.5 transition-all ${
+                done
+                  ? "border-success/40 bg-success/5 text-primary"
+                  : active
+                    ? "border-accent-foreground/60 bg-accent/20 text-primary shadow-xs"
+                    : "border-border/60 bg-background/30 opacity-40"
+              }`}
             >
               <span
-                className={`grid size-6 place-items-center rounded-full border ${done ? "border-success bg-success text-success-foreground" : active ? "border-accent-foreground text-accent-foreground" : "border-border"}`}
+                className={`grid size-7 shrink-0 place-items-center rounded-lg text-xs font-bold ${
+                  done
+                    ? "bg-success text-success-foreground"
+                    : active
+                      ? "bg-accent-foreground text-background beacon"
+                      : "border border-border text-muted-foreground"
+                }`}
               >
                 {done ? (
-                  <Check className="size-3" />
+                  <Check className="size-3.5 stroke-[3]" />
+                ) : active ? (
+                  <Loader2 className="size-3.5 animate-spin" />
                 ) : (
-                  <span className="text-[10px]">{index + 1}</span>
+                  <span>{stage.id}</span>
                 )}
               </span>
-              <span className={active ? "font-bold text-primary" : "text-muted-foreground"}>
-                {step}
-              </span>
+              <div className="min-w-0">
+                <p className="text-xs font-bold">{stage.title}</p>
+                <p className="text-[11px] text-muted-foreground truncate">{stage.desc}</p>
+              </div>
             </div>
           );
         })}
