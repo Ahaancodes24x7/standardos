@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, Building2, History, Link2, ShieldCheck } from "lucide-react";
+import { ArrowLeft, Building2, GitBranch, History, Link2, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getStandard } from "@/services/analysis";
+import { getStandard, getStandardDependencies } from "@/services/analysis";
 
 const RELATION_LABEL: Record<string, [string, string]> = {
   REFERENCES: ["References", "Referenced by"],
@@ -17,7 +17,8 @@ export const Route = createFileRoute("/standard/$id")({
   loader: async ({ params }) => {
     const standard = await getStandard(params.id);
     if (!standard) throw notFound();
-    return { standard };
+    const dependencies = await getStandardDependencies(params.id).catch(() => null);
+    return { standard, dependencies };
   },
   head: ({ loaderData }) => {
     const title = loaderData?.standard.title ?? "Standard unavailable";
@@ -39,7 +40,7 @@ export const Route = createFileRoute("/standard/$id")({
 });
 
 function StandardDetail() {
-  const { standard } = Route.useLoaderData();
+  const { standard, dependencies } = Route.useLoaderData();
   return (
     <div className="page-wrap pb-20 pt-8">
       <Button asChild variant="ghost" className="mb-6 px-0">
@@ -105,6 +106,79 @@ function StandardDetail() {
               )}
             </div>
           </section>
+          {dependencies &&
+          (dependencies.dependsOn.length > 0 ||
+            dependencies.requiredBy.length > 0 ||
+            dependencies.canonical) ? (
+            <section className="mt-10">
+              <h2 className="flex items-center gap-2 font-serif text-3xl text-primary">
+                <GitBranch className="size-6" /> Normative dependencies
+              </h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                From the dependency DAG (REQUIRES and TESTED_BY edges, superseded editions
+                contracted into their replacements). Specifying this standard obliges its
+                dependencies; a revision of it affects every standard that depends on it.
+              </p>
+              {dependencies.canonical && (
+                <p className="mt-4 text-sm">
+                  Reasoned as{" "}
+                  <Link
+                    className="font-semibold text-primary underline"
+                    to="/standard/$id"
+                    params={{ id: dependencies.canonical.id }}
+                  >
+                    {dependencies.canonical.number}
+                  </Link>{" "}
+                  (current replacement).
+                </p>
+              )}
+              <div className="mt-5 grid gap-6 sm:grid-cols-2">
+                <div>
+                  <p className="eyebrow">Depends on</p>
+                  <ul className="mt-3 space-y-2 text-sm">
+                    {dependencies.dependsOn.map((d) => (
+                      <li key={d.id} className="border-l-2 border-accent pl-3">
+                        <Link
+                          className="font-semibold text-primary"
+                          to="/standard/$id"
+                          params={{ id: d.id }}
+                        >
+                          {d.number}
+                        </Link>{" "}
+                        <span className="text-xs text-muted-foreground">
+                          {d.type === "TESTED_BY" ? "test method" : "requires"}
+                          {d.depth > 1 ? ` · via ${d.via.join(" → ")}` : ""}
+                        </span>
+                      </li>
+                    ))}
+                    {!dependencies.dependsOn.length && (
+                      <li className="text-muted-foreground">None recorded.</li>
+                    )}
+                  </ul>
+                </div>
+                <div>
+                  <p className="eyebrow">Required by</p>
+                  <ul className="mt-3 space-y-2 text-sm">
+                    {dependencies.requiredBy.map((d) => (
+                      <li key={d.id} className="border-l-2 border-accent pl-3">
+                        <Link
+                          className="font-semibold text-primary"
+                          to="/standard/$id"
+                          params={{ id: d.id }}
+                        >
+                          {d.number}
+                        </Link>{" "}
+                        <span className="text-xs text-muted-foreground">{d.title}</span>
+                      </li>
+                    ))}
+                    {!dependencies.requiredBy.length && (
+                      <li className="text-muted-foreground">No dependants.</li>
+                    )}
+                  </ul>
+                </div>
+              </div>
+            </section>
+          ) : null}
         </article>
         <aside className="space-y-4">
           <div className="glass-panel p-5">

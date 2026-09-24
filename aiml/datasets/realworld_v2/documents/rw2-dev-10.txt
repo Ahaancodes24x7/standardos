@@ -1,0 +1,84 @@
+PUBLIC WORKS DEPARTMENT
+कार्यपालक अभियंता
+Office of the Executive Engineer, Project Division
+NOTICE INVITING e-TENDER No. CE/CIV/54/2026-27
+Name of work: Hostel block construction — civil and internal electrical works.
+Estimated cost put to tender: Rs. 64,62,000/-
+Earnest Money Deposit: Rs. 1,42,000/-
+Period of completion: 18 months
+Last date of submission: 14.11.2026 up to 15:00 hrs
+
+INSTRUCTIONS TO BIDDERS
+1. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+2. The Department reserves the right to accept or reject any bid without assigning any reason.
+3. The bidder must be registered with the Department in the appropriate class.
+4. The tender documents may be downloaded from the e-procurement portal of the Government.
+
+SPECIAL CONDITIONS OF CONTRACT
+1. Rates quoted shall be inclusive of all taxes, freight, insurance and transit risks.
+2. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+3. Income tax and GST shall be deducted at source as applicable.
+4. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+5. The contractor shall comply with all labour laws and the provisions of the Contract Labour Act.
+
+SCOPE OF WORK
+This specification covers hostel block construction — civil and internal electrical works complete in all respects.
+
+SITE CONDITIONS
+1. The structure shall be designed for the exposure condition severe as defined in IS 456:2000.
+
+PART D — CONCRETE AND REINFORCEMENT
+1. All plain and reinforced concrete work shall conform to IS 456:2000.
+2. All RCC work shall be of grade M30.
+3. Nominal cover to reinforcement shall be 45mm.
+4. The free water-cement ratio shall not exceed 0.45.
+5. Minimum cement content shall be 320 kg/m³.
+6. Cement shall be ordinary Portland cement 43 grade conforming to IS 269:2015.
+7. Coarse and fine aggregates shall conform to IS 383:2016.
+8. Reinforcement shall be Fe 500D TMT bars conforming to IS 1786:2008.
+9. Concrete shall be design mix proportioned as per IS 10262:2019. Distribution boards and enclosures shall be of suitable size.
+10. Curing shall be continued for a minimum period of 10 days.
+11. Concrete shall be compacted with mechanical needle vibrators.
+
+PART E — INTERNAL WIRING AND EARTHING
+1. Wiring shall be carried out as per IS 732:1989.
+2. The supply system shall be TN-S earthing arrangement.
+3. Wiring shall be concealed in rigid PVC conduits of 1.5mm wall thickness.
+4. Wires shall be FR PVC insulated, single core, stranded copper conductor of 450/750 V grade conforming to IS 694:2010.
+5. Lighting circuits shall be wired with 1.5 sq mm and power circuits with 4 sq mm copper conductors.
+6. Miniature circuit breakers shall conform to IS/IEC 60898-1 and shall have a breaking capacity of 10kA.
+7. MCB ratings shall range from 6A to 32A as shown in the single line diagram.
+8. RCCBs with rated residual operating current of 30 mA shall be provided for all socket outlet circuits and shall conform to IS 12640 (Part 1).
+9. Earthing shall be carried out in accordance with IS 3043:2018.
+10. Two numbers of pipe earth electrodes shall be provided for the main distribution board.
+11. The earth resistance shall not exceed 1 ohms.
+
+6 TESTS AND INSPECTION
+1. Compressive strength tests shall be carried out as per IS 516 (Part 1/Sec 1):2021.
+2. Manufacturer's test certificates shall be furnished for each lot of cement and reinforcement steel.
+3. Wires shall be tested in accordance with IS 10810.
+4. On completion, insulation resistance and earth continuity tests shall be carried out in accordance with IS 732.
+5. Wires, MCBs and RCCBs shall be ISI marked.
+6. The equipment shall be inspected by the Engineer-in-charge at the manufacturer's works before dispatch.
+
+7 DOCUMENTATION, WARRANTY AND TRAINING
+1. The contractor shall submit detailed shop drawings for approval within 21 days of award of work. Three sets of operation and maintenance manuals shall be handed over on completion.
+2. The complete installation shall be guaranteed against defective design, material and workmanship for a period of 12 months from the date of handing over.
+3. The contractor shall train the Department's operating staff in operation and routine maintenance.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | RCC M30 in superstructure | cum | 420
+2 | TMT reinforcement Fe 500D | MT | 58
+3 | Point wiring for light point with 1.5 sq mm FR PVC wire | Point | 240
+4 | 4 way SPN distribution board | No. | 16
+
+APPROVED MAKES OF MATERIALS
+Cement: UltraTech / ACC / Ambuja; Steel: SAIL / TATA / JSW
+Wires: Polycab / Havells / Finolex; MCB/RCCB: Legrand / Schneider / Havells
+
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+Note: Quantities are approximate and may vary during execution.
+
+Signature of Bidder with seal
+Executive Engineer

@@ -1,7 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Database, Terminal } from "lucide-react";
+import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
+import { useState } from "react";
+import { Database, Terminal, Upload } from "lucide-react";
 import { PageIntro } from "@/components/app-shell";
-import { getCorpusStatus } from "@/services/analysis";
+import { Button } from "@/components/ui/button";
+import { getCorpusStatus, importCorpus } from "@/services/analysis";
 
 export const Route = createFileRoute("/admin")({
   loader: () => getCorpusStatus(),
@@ -32,9 +34,11 @@ function Admin() {
         <p>
           Corpus version <b>{status.version}</b> loaded from <b>{status.source}</b>. Import and
           re-index run from the command line (<code>uv run python -m scripts.seed_standards</code>{" "}
-          in <code>backend/</code>); in-app upload of licensed standards is not implemented yet.
+          in <code>backend/</code>) or by uploading a corpus JSON file below (corpus administrators
+          listed in <code>ADMIN_EMAILS</code>).
         </p>
       </div>
+      <CorpusUpload />
       <div className="glass-panel mt-8 overflow-x-auto">
         <table className="w-full min-w-[720px] text-left text-sm">
           <thead className="border-b border-border bg-muted/55 text-xs uppercase tracking-[.08em] text-muted-foreground">
@@ -72,6 +76,60 @@ function Admin() {
         <Database className="size-3" /> {status.standards.length} standards · {status.clauses}{" "}
         clauses · {status.relationships} relationships · {status.events} version records
       </p>
+    </div>
+  );
+}
+
+function CorpusUpload() {
+  const router = useRouter();
+  const [file, setFile] = useState<File | null>(null);
+  const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null);
+  const [busy, setBusy] = useState(false);
+
+  async function submit() {
+    if (!file) return;
+    setBusy(true);
+    setMessage(null);
+    try {
+      const result = await importCorpus(file);
+      setMessage({
+        ok: true,
+        text: `Imported corpus ${result.version}: ${result.standards} standards, ${result.clauses} clauses, ${result.relationships} relationships. New analyses use it immediately.`,
+      });
+      await router.invalidate();
+    } catch (error) {
+      setMessage({ ok: false, text: error instanceof Error ? error.message : "Import failed." });
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <div className="glass-panel mt-6 flex flex-wrap items-center gap-4 p-5 text-sm">
+      <Upload className="size-5 text-accent-foreground" />
+      <label className="min-w-0 flex-1">
+        <span className="block font-semibold text-primary">Import standards corpus</span>
+        <span className="block text-xs text-muted-foreground">
+          JSON with <code>standards</code>, <code>relationships</code>, <code>events</code> and{" "}
+          <code>priorEditions</code> — the format of the bundled seed. Replaces the active corpus.
+        </span>
+        <input
+          className="mt-2 block text-xs"
+          type="file"
+          accept="application/json,.json"
+          onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+        />
+      </label>
+      <Button onClick={submit} disabled={!file || busy}>
+        {busy ? "Importing…" : "Import"}
+      </Button>
+      {message && (
+        <p
+          className={`w-full text-xs ${message.ok ? "text-accent-foreground" : "text-destructive"}`}
+        >
+          {message.text}
+        </p>
+      )}
     </div>
   );
 }

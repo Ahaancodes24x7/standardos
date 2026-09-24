@@ -1,0 +1,65 @@
+WATER SUPPLY AND DRAINAGE BOARD
+लोक निर्माण विभाग
+Office of the Executive Engineer, Circle I
+NOTICE INVITING e-TENDER No. CE/MM/94/2026-27
+Name of work: Construction of RCC elevated service reservoir.
+Estimated cost put to tender: Rs. 254,89,000/-
+Earnest Money Deposit: Rs. 9,24,000/-
+Period of completion: 6 months
+Last date of submission: 23.10.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. The tender documents may be downloaded from the e-procurement portal of the Government.
+2. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+3. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+4. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+5. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+
+COMMERCIAL TERMS AND CONDITIONS
+1. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+2. The contractor shall comply with all labour laws and the provisions of the Contract Labour Act.
+3. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+4. Liquidated damages at 0.5 % per week of delay shall be levied, subject to a maximum of 10 % of the contract value.
+
+SCOPE OF WORK
+This specification covers construction of rcc elevated service reservoir complete in all respects.
+
+SITE CONDITIONS
+i) The structure shall be designed for the exposure condition severe as defined in IS 456:2000.
+
+4 TECHNICAL SPECIFICATION — CONCRETE AND REINFORCEMENT
+i) All plain and reinforced concrete work shall conform to IS 456:2000.
+ii) All RCC work shall be of grade M30.
+iii) Nominal cover to reinforcement shall be 30mm.
+iv) The free water-cement ratio shall not exceed 0.45.
+v) Minimum cement content shall be 320 kg/m3.
+vi) Cement shall be ordinary Portland cement 43 grade conforming to IS 269:2015.
+vii) Coarse and fine aggregates shall conform to IS 383:2016.
+viii) Reinforcement shall be Fe 500D TMT bars conforming to IS 1786:2008.
+ix) Concrete shall be design mix proportioned as per IS 10262:2019.
+x) Curing shall be continued for a minimum period of 10 days.
+xi) Concrete shall be compacted with mechanical needle vibrators.
+
+SECTION 5: TESTING, INSPECTION AND CERTIFICATION
+i) Cube tests for compressive strength shall be carried out at 7 and 28 days.
+ii) Manufacturer's test certificates shall be furnished for each lot of cement and reinforcement steel.
+iii) The equipment shall be inspected by the Engineer-in-charge at the manufacturer's works before dispatch.
+
+6 DOCUMENTATION, WARRANTY AND TRAINING
+i) The contractor shall submit detailed shop drawings for approval within 21 days of award of work.
+ii) Three sets of operation and maintenance manuals shall be handed over on completion. The complete installation shall be guaranteed against defective design, material and workmanship for a period of 12 months from the date of handing over.
+iii) The contractor shall train the Department's operating staff in operation and routine maintenance.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | RCC M30 in superstructure | cum | 420
+2 | TMT reinforcement Fe 500D | MT | 58
+
+LIST OF APPROVED MAKES
+Cement: UltraTech / ACC / Ambuja; Steel: SAIL / TATA / JSW
+
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+Note: Quantities are approximate and may vary during execution.
+
+Signature of Bidder with seal
+Executive Engineer

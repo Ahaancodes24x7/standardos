@@ -39,6 +39,17 @@ class Settings(BaseSettings):
     # Maximum pasted-text length for an analysis.
     max_text_chars: int = 100_000
 
+    # Pipeline preset used for analyses (see `python -m evaluation presets` in aiml/):
+    # v3 (default), v3-gated / v3-hybrid (learned classifier), v3-dag, legacy-2.1 …
+    standardos_pipeline_config: str = "v3"
+
+    # Comma-separated e-mail addresses allowed to import a standards corpus in the app.
+    admin_emails: str = ""
+
+    @property
+    def admin_email_list(self) -> set[str]:
+        return {e.strip().lower() for e in self.admin_emails.split(",") if e.strip()}
+
     @field_validator("database_url", "db_migration_url")
     @classmethod
     def _sqlalchemy_url(cls, value: Optional[str]) -> Optional[str]:

@@ -7,14 +7,16 @@ import re
 from dataclasses import dataclass, replace
 from typing import Iterable, Optional, Protocol
 
-from ..nlp.entities import PRODUCT_TERMS, extract_product_terms
+from ..nlp.entities import PRODUCT_TERMS, PRODUCT_TERMS_V2, extract_product_terms
 from ..nlp.parameters import parameter_label
+from ..config import RetrievalOptions, current
 from ..provenance import clamp01, fmt_num, js_round, provenance
 from ..types import Attribute, Corpus, CorpusClause, CorpusStandard, RetrievalHit
 from .resolve import ResolvedReference, StandardResolver
 from .text import synonyms_of, tokenize
 
 _TEST_WORD = re.compile(r"\btest", re.I)
+_TEST_CLAUSE = re.compile(r"\b(tests?|testing|verification|methods? of test)\b", re.I)
 
 K1 = 1.2
 B = 0.75
@@ -23,15 +25,6 @@ B = 0.75
 # keywords and scope, so a clause about "tests" in a cable standard is found
 # by a query about cables.
 FIELD_WEIGHTS = {"clause_text": 1.0, "heading": 1.5, "title": 1.2, "keywords": 1.5, "scope": 0.6, "designation": 2.0}
-
-
-@dataclass(frozen=True)
-class RetrievalOptions:
-    expansion: bool = False  # use the domain thesaurus for query expansion
-    document_context: bool = True  # add the document's dominant product terms to every query
-    rerank: bool = True  # apply the feature re-ranker; when False, rank by BM25 only
-    min_confidence: float = 0.35  # hits below this confidence are not returned as mappings
-    top_k: int = 5
 
 
 # Thesaurus expansion is off by default: it lowered R@1 on every split in the
@@ -101,6 +94,7 @@ class StandardsIndex:
         self.corpus = corpus
         self.resolver = StandardResolver(corpus)
         self._product_forms: dict[str, list[str]] = dict(PRODUCT_TERMS)
+        self._product_forms_v2: dict[str, list[str]] = dict(PRODUCT_TERMS_V2)
         self._docs: list[_Doc] = []
         self._doc_by_clause: dict[str, _Doc] = {}
         self._df: dict[str, int] = {}
@@ -179,7 +173,8 @@ class StandardsIndex:
         return sorted(results, key=lambda r: -r.score)
 
     def _standard_matches_product(self, standard: CorpusStandard, product: str) -> bool:
-        forms = [product, *self._product_forms.get(product, [])]
+        forms_table = self._product_forms_v2 if current().product_terms_v2 else self._product_forms
+        forms = [product, *forms_table.get(product, [])]
         haystack = f"{standard.title} {' '.join(standard.keywords)} {standard.scope}".lower()
         return any(form in haystack for form in forms)
 
@@ -197,6 +192,8 @@ class StandardsIndex:
         and ranked first.
         """
         document_cited_ids = document_cited_ids or set()
+        cfg = current()
+        v2 = cfg.rerank_version >= 2
         # Only parameters the requirement actually states count as retrieval
         # evidence; a bare mention ("cover to reinforcement") is too weak —
         # except a test mention, which is how test-method standards are found.
@@ -237,6 +234,9 @@ class StandardsIndex:
             if standard.kind == "test_method":
                 clause_params.add("test_method")
                 std_params.add("test_method")
+            elif v2 and _TEST_CLAUSE.search(f"{clause.heading} {clause.text}"):
+                # v2: a tests/verification clause of any standard kind governs the test method.
+                clause_params.add("test_method")
             clause_param_hit = [p for p in params if p in clause_params]
             std_param_hit = [p for p in params if p in std_params]
             product_hit = [t for t in requirement.terms if self._standard_matches_product(standard, t)]
@@ -250,10 +250,12 @@ class StandardsIndex:
 
             signals: list[str] = []
             if options.rerank:
+                # v2: parameter features break near-ties only; they cannot overturn a clear BM25 lead.
+                gate = min(1.0, bm25n / 0.75) if v2 else 1.0
                 final = (
                     RERANK_WEIGHTS["bm25"] * bm25n
-                    + RERANK_WEIGHTS["clause_parameter"] * (1 if clause_param_hit else 0)
-                    + RERANK_WEIGHTS["standard_parameter"] * (1 if std_param_hit else 0)
+                    + gate * RERANK_WEIGHTS["clause_parameter"] * (1 if clause_param_hit else 0)
+                    + gate * RERANK_WEIGHTS["standard_parameter"] * (1 if std_param_hit else 0)
                     + RERANK_WEIGHTS["product"] * (1 if product_hit else 0)
                     + RERANK_WEIGHTS["context_product"] * (1 if context_hit else 0)
                     + RERANK_WEIGHTS["document_cited"] * (1 if doc_cited else 0)
@@ -266,6 +268,14 @@ class StandardsIndex:
                 if standard.kind == "test_method" and not mentions_testing and not explicit:
                     final *= 0.6
                     signals.append("test-method standard down-weighted for a non-testing requirement")
+                if v2 and standard.kind == "test_method" and requirement.category == "testing" and not explicit:
+                    final += 0.08
+                    signals.append("test-method standard preferred for a testing requirement")
+                if cfg.scope_guard and not explicit and not doc_cited and document_cited_ids:
+                    shared = self._cited_competitor(standard, requirement.terms, document_cited_ids)
+                    if shared:
+                        final *= 0.75
+                        signals.append(f'the document cites another standard for "{shared}"')
                 # Out of domain: the requirement/document names products and this standard covers none of them.
                 known_products = len(requirement.terms) > 0 or (options.document_context and len(context_terms) > 0)
                 if known_products and not product_hit and not context_hit and not explicit and not doc_cited:
@@ -327,6 +337,20 @@ class StandardsIndex:
             )
             for s in kept
         ]
+
+    def matches_product(self, standard: CorpusStandard, product: str) -> bool:
+        return self._standard_matches_product(standard, product)
+
+    def _cited_competitor(self, standard: CorpusStandard, terms: list[str], cited_ids: set[str]) -> Optional[str]:
+        """A product of the requirement that another *cited* standard of the same kind also covers."""
+        for term in terms:
+            if not self._standard_matches_product(standard, term):
+                continue
+            for cid in cited_ids:
+                cited = self.resolver.get(cid)
+                if cited and cited.id != standard.id and cited.kind == standard.kind and self._standard_matches_product(cited, term):
+                    return term
+        return None
 
     def rank_clauses(self, text: str, options: RetrievalOptions = DEFAULT_RETRIEVAL) -> list[str]:
         """Clause-level ranking for evaluation (all clauses, not collapsed per standard)."""

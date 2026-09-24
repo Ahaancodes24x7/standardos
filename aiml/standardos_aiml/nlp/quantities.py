@@ -9,15 +9,21 @@ from typing import Optional
 
 from ..types import Quantity, TextSpan
 from .parameters import DEFAULT_PARAMETER_FOR_DIMENSION, PARAMETERS
-from .units import UNIT_PATTERN, lookup_unit, to_canonical
+from ..config import current
+from .units import UNIT_PATTERN, lookup_unit, to_canonical, unit_pattern_v2
 
 NUM = r"[-]?\d+(?:,\d{3})*(?:\.\d+)?"
 
 # number [unit] [(to|-|and) number] unit [± tol [unit]]
-QUANTITY_RE = re.compile(
-    rf"(?P<pm>±\s*)?(?P<a>{NUM})(?:\s*(?:(?P<ua>{UNIT_PATTERN})(?![A-Za-z0-9²³]))?\s*(?P<sep>to|–|—|-|and)\s*(?P<b>{NUM}))?"
-    rf"\s*(?P<u>{UNIT_PATTERN})(?![A-Za-z0-9²³])(?:\s*(?:±|\+/-|\+-)\s*(?P<tol>\d+(?:\.\d+)?)\s*(?P<tolu>%|{UNIT_PATTERN})?)?"
-)
+def _quantity_re(units: str) -> re.Pattern[str]:
+    return re.compile(
+        rf"(?P<pm>±\s*)?(?P<a>{NUM})(?:\s*(?:(?P<ua>{units})(?![A-Za-z0-9²³]))?\s*(?P<sep>to|–|—|-|and)\s*(?P<b>{NUM}))?"
+        rf"\s*(?P<u>{units})(?![A-Za-z0-9²³])(?:\s*(?:±|\+/-|\+-)\s*(?P<tol>\d+(?:\.\d+)?)\s*(?P<tolu>%|{units})?)?"
+    )
+
+
+QUANTITY_RE = _quantity_re(UNIT_PATTERN)
+QUANTITY_RE_V2 = _quantity_re(unit_pattern_v2())
 
 PH_RE = re.compile(r"\bpH\b[^0-9.;]{0,45}?(?P<a>\d{1,2}(?:\.\d+)?)(?:\s*(?:to|–|-|and)\s*(?P<b>\d{1,2}(?:\.\d+)?))?")
 WC_RE = re.compile(
@@ -118,7 +124,7 @@ def extract_quantities(text: str, base: int = 0) -> list[Quantity]:
             )
         )
 
-    for m in QUANTITY_RE.finditer(text):
+    for m in (QUANTITY_RE_V2 if current().units_v2 else QUANTITY_RE).finditer(text):
         start, end = m.start(), m.end()
         if overlaps(start, end):
             continue

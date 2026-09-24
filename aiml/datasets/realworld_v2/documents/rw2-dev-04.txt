@@ -1,0 +1,64 @@
+PUBLIC HEALTH ENGINEERING DEPARTMENT
+Office of the Executive Engineer, Circle I
+NOTICE INVITING e-TENDER No. EE/CIV/19/2026-27
+Name of work: Supply and installation of borewell submersible pumpsets and water quality testing.
+Estimated cost put to tender: Rs. 244,99,000/-
+Earnest Money Deposit: Rs. 4,51,000/-
+Period of completion: 9 months
+Last date of submission: 11.10.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. The Department reserves the right to accept or reject any bid without assigning any reason.
+2. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+3. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+4. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+
+COMMERCIAL TERMS AND CONDITIONS
+1. Income tax and GST shall be deducted at source as applicable.
+2. Liquidated damages at 0.5 % per week of delay shall be levied, subject to a maximum of 10 % of the contract value.
+3. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+
+SCOPE OF WORK
+This specification covers supply and installation of borewell submersible pumpsets and water quality testing complete in all respects.
+
+3 TECHNICAL SPECIFICATION — BOREWELL SUBMERSIBLE PUMPSETS
+(a) Borewell submersible pumpsets shall conform to IS 8034:2018.
+(b) Each pumpset shall deliver 18 m3/hr against a total head of 90 m.
+(c) Motors shall be water filled, wet type, conforming to IS 9283:2013.
+(d) Submersible flat cables shall be 3 core, 6 mm², copper conductor, PVC insulated, conforming to IS 694:2010 and tested as per IS 10810. Each pumpset shall be provided with an automatic starter with single phasing preventer and dry run protection.
+
+PART D — TREATED WATER QUALITY
+(a) Treated water supplied shall conform to IS 10500:2012.
+(b) pH of treated water shall be between 6.5 and 8.5.
+(c) Total dissolved solids shall not exceed 500 mg/l.
+(d) Turbidity shall not be more than 5 NTU.
+(e) Fluoride shall not exceed 1.0 mg/l.
+(f) Nitrate shall not exceed 45 mg/l. Arsenic shall not exceed 0.01 mg/l.
+(g) Total hardness as CaCO3 shall not exceed 200 mg/l.
+(h) E. coli shall not be detectable in any 100 ml sample.
+
+5 TESTS AND INSPECTION
+(a) Pumpsets shall bear the BIS Standard Mark.
+(b) Water samples shall be tested in a NABL accredited laboratory as per IS 3025 and IS 1622.
+(c) The equipment shall be inspected by the Engineer-in-charge at the manufacturer's works before dispatch.
+
+6 DOCUMENTATION, WARRANTY AND TRAINING
+(a) Test reports shall be submitted to the Engineer-in-charge for each source. The contractor shall submit detailed shop drawings for approval within 21 days of award of work.
+(b) Three sets of operation and maintenance manuals shall be handed over on completion.
+(c) The complete installation shall be guaranteed against defective design, material and workmanship for a period of 12 months from the date of handing over.
+(d) The contractor shall train the Department's operating staff in operation and routine maintenance.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Submersible pumpset 18 m3/hr at 90 m head | Set | 12
+2 | Water quality testing (complete set of parameters) | Sample | 48
+
+LIST OF APPROVED MAKES
+Submersible pumps: CRI / Kirloskar / Texmo
+Testing laboratory: NABL accredited
+
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+Note: Quantities are approximate and may vary during execution.
+
+Signature of Bidder with seal
+Executive Engineer

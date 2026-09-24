@@ -1,0 +1,66 @@
+VIDYUT VITRAN NIGAM LIMITED
+लोक निर्माण विभाग
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. EE/WS/82/2026-27
+Name of work: Procurement of distribution transformers and LT cables.
+Estimated cost put to tender: Rs. 291,80,000/-
+Earnest Money Deposit: Rs. 9,74,000/-
+Period of completion: 18 months
+Last date of submission: 21.11.2026 up to 15:00 hrs
+
+SECTION I — INSTRUCTIONS TO TENDERERS
+1. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+2. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+3. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+4. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+5. Conditional bids will be summarily rejected.
+6. The tender documents may be downloaded from the e-procurement portal of the Government.
+
+SCOPE OF WORK
+This specification covers procurement of distribution transformers and lt cables complete in all respects.
+
+PART C — DISTRIBUTION TRANSFORMERS
+3.1 Distribution transformers shall be designed and manufactured to IS 1180 (Part 1):2014.
+3.2 Transformer rating shall be 630kVA, 11 kV / 433 V, Dyn11.
+3.3 Losses shall correspond to energy efficiency level 2 of IS 1180 (Part 1).
+3.4 Transformers shall be outdoor type, mineral oil filled, naturally cooled, with copper windings.
+3.5 Winding temperature rise shall be limited to 40°C over a maximum ambient of 50°C.
+3.6 Transformer tank shall be fabricated from mild steel plates and epoxy painted.
+
+PART D — LT POWER AND CONTROL CABLES
+4.1 LT power cables shall be XLPE insulated 1.1 kV grade armoured cables with aluminium conductors as per IS 7098 (Part 1):1988.
+4.2 Size of the incoming feeder cable shall be 3.5 core x 300 Sq.mm.
+4.3 Continuous conductor operating temperature of XLPE cables shall be 90°C. Copper control cables of 2.5 Sq.mm shall be PVC insulated heavy duty type as per IS 1554 (Part 1).
+4.4 Cable conductors shall meet the resistance requirements of IS 8130 for class 2 conductors.
+4.5 Cables shall be laid directly in ground at a depth of 750mm with brick protection.
+4.6 Terminations shall be made with brass double compression glands and tinned copper lugs.
+4.7 CABLE DRUMS SHALL CARRY MARKING OF SIZE, TYPE, LENGTH AND MANUFACTURER'S NAME.
+
+5 TESTS AND INSPECTION
+5.1 Each transformer shall be subjected to routine tests in accordance with IS 2026 (Part 1):2011.
+5.2 The bidder shall submit type test certificates from an NABL accredited laboratory for the offered rating.
+5.3 Acceptance tests on cables shall be carried out as per IS 10810 in presence of the Engineer.
+5.4 Manufacturer's test certificates shall accompany every cable drum supplied.
+5.5 PRE-DISPATCH INSPECTION SHALL BE OFFERED TO THE DEPARTMENT'S AUTHORISED REPRESENTATIVE WITH 15 DAYS NOTICE.
+
+6 DOCUMENTATION, WARRANTY AND TRAINING
+6.1 Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.
+6.2 O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.
+6.3 The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.
+6.4 Training of two operators for one week shall be imparted by the supplier after commissioning.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | 630 kVA 11/0.433 kV distribution transformer | No. | 4
+2 | 3.5C x 300 sq mm XLPE armoured cable | m | 350
+3 | Cable tray 300 mm wide | m | 120
+
+LIST OF APPROVED MAKES
+Transformers: as per approved vendor list of the utility
+Cables: Polycab / KEI / Havells / RR Kabel
+
+Note: Quantities are approximate and may vary during execution.
+Note: Drawings are indicative only and shall be verified at site.
+
+Signature of Bidder with seal
+Executive Engineer

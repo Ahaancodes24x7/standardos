@@ -1,0 +1,776 @@
+{
+ "queries": [
+  {
+   "id": "rw2-dev-panel.ambient",
+   "split": "dev",
+   "text": "The equipment shall be designed for a maximum ambient temperature of 40 °C.",
+   "standards": {
+    "is-iec-61439-1-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-1-2020#service-conditions"
+   ]
+  },
+  {
+   "id": "rw2-dev-panel.altitude",
+   "split": "dev",
+   "text": "The installation is at an altitude of less than 1000 m above mean sea level.",
+   "standards": {
+    "is-iec-61439-1-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-1-2020#humidity-altitude"
+   ]
+  },
+  {
+   "id": "rw2-dev-panel.voltage",
+   "split": "dev",
+   "text": "The rated operational voltage shall be 415 V, 3 phase, 4 wire, 50 Hz.",
+   "standards": {
+    "is-iec-61439-1-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-1-2020#ratings"
+   ]
+  },
+  {
+   "id": "rw2-dev-panel.busbar",
+   "split": "dev",
+   "text": "Main busbars shall be of electrolytic grade aluminium rated for 1600 A continuous current.",
+   "standards": {
+    "is-iec-61439-1-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-1-2020#ratings"
+   ]
+  },
+  {
+   "id": "rw2-dev-panel.sc",
+   "split": "dev",
+   "text": "The busbars and panel shall withstand a short circuit current of 50 kA for 1 second.",
+   "standards": {
+    "is-iec-61439-1-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-1-2020#short-circuit"
+   ]
+  },
+  {
+   "id": "rw2-dev-panel.ip",
+   "split": "dev",
+   "text": "The degree of protection of the panel enclosure shall be IP54.",
+   "standards": {
+    "is-iec-61439-1-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-1-2020#ip"
+   ]
+  },
+  {
+   "id": "rw2-dev-panel.form",
+   "split": "dev",
+   "text": "The switchboard shall have Form 3b internal separation.",
+   "standards": {
+    "is-iec-61439-2-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-2-2020#forms"
+   ]
+  },
+  {
+   "id": "rw2-dev-panel.mccb",
+   "split": "dev",
+   "text": "Outgoing feeders shall be MCCBs with ultimate breaking capacity of 36 kA.",
+   "standards": {
+    "is-iec-60947-2-2003": 2
+   },
+   "clauses": [
+    "is-iec-60947-2-2003#ratings"
+   ]
+  },
+  {
+   "id": "rw2-dev-wiring.sizes",
+   "split": "dev",
+   "text": "Lighting circuits shall be wired with 1.5 sq mm and power circuits with 4 sq mm copper conductors.",
+   "standards": {
+    "is-694-2010": 2
+   },
+   "clauses": [
+    "is-694-2010#conductors"
+   ]
+  },
+  {
+   "id": "rw2-dev-wiring.mcbrating",
+   "split": "dev",
+   "text": "MCB ratings shall range from 6 A to 32 A as shown in the single line diagram.",
+   "standards": {
+    "is-iec-60898-1-2002": 2
+   },
+   "clauses": [
+    "is-iec-60898-1-2002#ratings"
+   ]
+  },
+  {
+   "id": "rw2-dev-wiring.electrodes",
+   "split": "dev",
+   "text": "Two numbers of pipe earth electrodes shall be provided for the main distribution board.",
+   "standards": {
+    "is-3043-2018": 2
+   },
+   "clauses": [
+    "is-3043-2018#electrodes"
+   ]
+  },
+  {
+   "id": "rw2-dev-wiring.earthres",
+   "split": "dev",
+   "text": "The earth resistance shall not exceed 1 ohm.",
+   "standards": {
+    "is-3043-2018": 2
+   },
+   "clauses": [
+    "is-3043-2018#electrodes",
+    "is-3043-2018#measurement"
+   ]
+  },
+  {
+   "id": "rw2-dev-cable.size",
+   "split": "dev",
+   "text": "The main feeder cable shall be 3.5 core 300 sq mm.",
+   "standards": {
+    "is-7098-1-1988": 2
+   },
+   "clauses": [
+    "is-7098-1-1988#conductors"
+   ]
+  },
+  {
+   "id": "rw2-dev-cable.temp",
+   "split": "dev",
+   "text": "The cables shall be suitable for a maximum continuous conductor temperature of 90 °C.",
+   "standards": {
+    "is-7098-1-1988": 2
+   },
+   "clauses": [
+    "is-7098-1-1988#voltage"
+   ]
+  },
+  {
+   "id": "rw2-dev-motor.power",
+   "split": "dev",
+   "text": "The rated output of the motor shall be 37 kW.",
+   "standards": {
+    "is-325-1996": 2
+   },
+   "clauses": [
+    "is-325-1996#rating-plate"
+   ]
+  },
+  {
+   "id": "rw2-dev-motor.supply",
+   "split": "dev",
+   "text": "Motors shall be suitable for 415 V ± 10 %, 50 Hz ± 5 %, 3 phase supply.",
+   "standards": {
+    "is-325-1996": 2
+   },
+   "clauses": [
+    "is-325-1996#variation"
+   ]
+  },
+  {
+   "id": "rw2-dev-motor.ip",
+   "split": "dev",
+   "text": "Degree of protection of the motor enclosure shall be IP55.",
+   "standards": {
+    "is-325-1996": 2
+   },
+   "clauses": [
+    "is-325-1996#enclosure"
+   ]
+  },
+  {
+   "id": "rw2-dev-pump.duty",
+   "split": "dev",
+   "text": "Each pump shall deliver 250 m3/hr against a total head of 45 m.",
+   "standards": {
+    "is-1520-1980": 2
+   },
+   "clauses": [
+    "is-1520-1980#performance"
+   ]
+  },
+  {
+   "id": "rw2-dev-pump.eff",
+   "split": "dev",
+   "text": "The pump efficiency at the duty point shall not be less than 78 %.",
+   "standards": {
+    "is-1520-1980": 2
+   },
+   "clauses": [
+    "is-1520-1980#performance"
+   ]
+  },
+  {
+   "id": "rw2-dev-pump.materials",
+   "split": "dev",
+   "text": "Casing shall be of cast iron and impeller shall be of bronze.",
+   "standards": {
+    "is-1520-1980": 2
+   },
+   "clauses": [
+    "is-1520-1980#materials"
+   ]
+  },
+  {
+   "id": "rw2-dev-sub.duty",
+   "split": "dev",
+   "text": "Each pumpset shall deliver 18 m3/hr against a total head of 90 m.",
+   "standards": {
+    "is-8034-2018": 2
+   },
+   "clauses": [
+    "is-8034-2018#performance"
+   ]
+  },
+  {
+   "id": "rw2-dev-sub.eff",
+   "split": "dev",
+   "text": "The overall efficiency of the pumpset shall be not less than 52 %.",
+   "standards": {
+    "is-8034-2018": 2
+   },
+   "clauses": [
+    "is-8034-2018#performance"
+   ]
+  },
+  {
+   "id": "rw2-dev-tx.rating",
+   "split": "dev",
+   "text": "Rating: 630 kVA, 11/0.433 kV, Dyn11 vector group.",
+   "standards": {
+    "is-1180-1-2014": 2
+   },
+   "clauses": [
+    "is-1180-1-2014#ratings"
+   ]
+  },
+  {
+   "id": "rw2-dev-rcc.grade",
+   "split": "dev",
+   "text": "All RCC work shall be of grade M30.",
+   "standards": {
+    "is-456-2000": 2
+   },
+   "clauses": [
+    "is-456-2000#min-grade"
+   ]
+  },
+  {
+   "id": "rw2-dev-rcc.cover",
+   "split": "dev",
+   "text": "Nominal cover to reinforcement shall be 45 mm.",
+   "standards": {
+    "is-456-2000": 2
+   },
+   "clauses": [
+    "is-456-2000#cover"
+   ]
+  },
+  {
+   "id": "rw2-dev-rcc.wc",
+   "split": "dev",
+   "text": "The free water-cement ratio shall not exceed 0.45.",
+   "standards": {
+    "is-456-2000": 2
+   },
+   "clauses": [
+    "is-456-2000#wc-ratio"
+   ]
+  },
+  {
+   "id": "rw2-dev-rcc.cc",
+   "split": "dev",
+   "text": "Minimum cement content shall be 320 kg/m3.",
+   "standards": {
+    "is-456-2000": 2
+   },
+   "clauses": [
+    "is-456-2000#cement-content"
+   ]
+  },
+  {
+   "id": "rw2-dev-water.ph",
+   "split": "dev",
+   "text": "pH of treated water shall be between 6.5 and 8.5.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#ph"
+   ]
+  },
+  {
+   "id": "rw2-dev-water.tds",
+   "split": "dev",
+   "text": "Total dissolved solids shall not exceed 500 mg/l.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#tds"
+   ]
+  },
+  {
+   "id": "rw2-dev-water.turbidity",
+   "split": "dev",
+   "text": "Turbidity shall not be more than 1 NTU.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#turbidity"
+   ]
+  },
+  {
+   "id": "rw2-dev-water.fluoride",
+   "split": "dev",
+   "text": "Fluoride shall not exceed 1.0 mg/l.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#fluoride"
+   ]
+  },
+  {
+   "id": "rw2-dev-water.nitrate",
+   "split": "dev",
+   "text": "Nitrate shall not exceed 45 mg/l.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#nitrate"
+   ]
+  },
+  {
+   "id": "rw2-dev-water.arsenic",
+   "split": "dev",
+   "text": "Arsenic shall not exceed 0.01 mg/l.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#arsenic"
+   ]
+  },
+  {
+   "id": "rw2-dev-water.hardness",
+   "split": "dev",
+   "text": "Total hardness as CaCO3 shall not exceed 200 mg/l.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#hardness"
+   ]
+  },
+  {
+   "id": "rw2-dev-water.ecoli",
+   "split": "dev",
+   "text": "E. coli shall not be detectable in any 100 ml sample.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#bacteriological"
+   ]
+  },
+  {
+   "id": "rw2-test-panel.ambient",
+   "split": "test",
+   "text": "All equipment shall be suitable for operation at an ambient air temperature not exceeding 40 °C.",
+   "standards": {
+    "is-iec-61439-1-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-1-2020#service-conditions"
+   ]
+  },
+  {
+   "id": "rw2-test-panel.altitude",
+   "split": "test",
+   "text": "Site altitude does not exceed 1000 m above MSL.",
+   "standards": {
+    "is-iec-61439-1-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-1-2020#humidity-altitude"
+   ]
+  },
+  {
+   "id": "rw2-test-panel.voltage",
+   "split": "test",
+   "text": "The panel shall be suitable for 415 V ± 10 %, 50 Hz, 3 phase 4 wire system.",
+   "standards": {
+    "is-iec-61439-1-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-1-2020#ratings"
+   ]
+  },
+  {
+   "id": "rw2-test-panel.busbar",
+   "split": "test",
+   "text": "The horizontal busbar shall be high conductivity aluminium alloy of 1600 A rating.",
+   "standards": {
+    "is-iec-61439-1-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-1-2020#ratings"
+   ]
+  },
+  {
+   "id": "rw2-test-panel.sc",
+   "split": "test",
+   "text": "Short time withstand rating of the switchboard shall be 50 kA for 1 s.",
+   "standards": {
+    "is-iec-61439-1-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-1-2020#short-circuit"
+   ]
+  },
+  {
+   "id": "rw2-test-panel.ip",
+   "split": "test",
+   "text": "Enclosure protection class for the switchboard shall be IP 54.",
+   "standards": {
+    "is-iec-61439-1-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-1-2020#ip"
+   ]
+  },
+  {
+   "id": "rw2-test-panel.form",
+   "split": "test",
+   "text": "Internal separation of functional units shall be Form 4.",
+   "standards": {
+    "is-iec-61439-2-2020": 2
+   },
+   "clauses": [
+    "is-iec-61439-2-2020#forms"
+   ]
+  },
+  {
+   "id": "rw2-test-panel.mccb",
+   "split": "test",
+   "text": "All outgoing MCCBs shall have a rated service breaking capacity of not less than 36 kA.",
+   "standards": {
+    "is-iec-60947-2-2003": 2
+   },
+   "clauses": [
+    "is-iec-60947-2-2003#ratings"
+   ]
+  },
+  {
+   "id": "rw2-test-wiring.sizes",
+   "split": "test",
+   "text": "Minimum conductor size shall be 1.5 sq mm for lighting points and 4 sq mm for power points.",
+   "standards": {
+    "is-694-2010": 2
+   },
+   "clauses": [
+    "is-694-2010#conductors"
+   ]
+  },
+  {
+   "id": "rw2-test-wiring.mcbrating",
+   "split": "test",
+   "text": "Final circuit MCBs shall be rated between 6 A and 32 A.",
+   "standards": {
+    "is-iec-60898-1-2002": 2
+   },
+   "clauses": [
+    "is-iec-60898-1-2002#ratings"
+   ]
+  },
+  {
+   "id": "rw2-test-wiring.electrodes",
+   "split": "test",
+   "text": "Main distribution board shall be earthed through two separate pipe earth electrodes.",
+   "standards": {
+    "is-3043-2018": 2
+   },
+   "clauses": [
+    "is-3043-2018#electrodes"
+   ]
+  },
+  {
+   "id": "rw2-test-wiring.earthres",
+   "split": "test",
+   "text": "Combined resistance of the earthing system shall be less than 1 ohm.",
+   "standards": {
+    "is-3043-2018": 2
+   },
+   "clauses": [
+    "is-3043-2018#electrodes",
+    "is-3043-2018#measurement"
+   ]
+  },
+  {
+   "id": "rw2-test-cable.size",
+   "split": "test",
+   "text": "Size of the incoming feeder cable shall be 3.5 core x 300 sq mm.",
+   "standards": {
+    "is-7098-1-1988": 2
+   },
+   "clauses": [
+    "is-7098-1-1988#conductors"
+   ]
+  },
+  {
+   "id": "rw2-test-cable.temp",
+   "split": "test",
+   "text": "Continuous conductor operating temperature of XLPE cables shall be 90 °C.",
+   "standards": {
+    "is-7098-1-1988": 2
+   },
+   "clauses": [
+    "is-7098-1-1988#voltage"
+   ]
+  },
+  {
+   "id": "rw2-test-motor.power",
+   "split": "test",
+   "text": "Motor rating shall be 37 kW continuous.",
+   "standards": {
+    "is-325-1996": 2
+   },
+   "clauses": [
+    "is-325-1996#rating-plate"
+   ]
+  },
+  {
+   "id": "rw2-test-motor.supply",
+   "split": "test",
+   "text": "Motors shall operate satisfactorily on a supply of 415 V ± 10 % and 50 Hz ± 5 %.",
+   "standards": {
+    "is-325-1996": 2
+   },
+   "clauses": [
+    "is-325-1996#variation"
+   ]
+  },
+  {
+   "id": "rw2-test-motor.ip",
+   "split": "test",
+   "text": "Motor enclosure shall be totally enclosed fan cooled with IP 55 protection.",
+   "standards": {
+    "is-325-1996": 2
+   },
+   "clauses": [
+    "is-325-1996#enclosure"
+   ]
+  },
+  {
+   "id": "rw2-test-pump.duty",
+   "split": "test",
+   "text": "Duty point of each pump shall be 250 m3/hr discharge at 45 m total dynamic head.",
+   "standards": {
+    "is-1520-1980": 2
+   },
+   "clauses": [
+    "is-1520-1980#performance"
+   ]
+  },
+  {
+   "id": "rw2-test-pump.eff",
+   "split": "test",
+   "text": "Guaranteed pump efficiency at the rated duty shall be minimum 78 %.",
+   "standards": {
+    "is-1520-1980": 2
+   },
+   "clauses": [
+    "is-1520-1980#performance"
+   ]
+  },
+  {
+   "id": "rw2-test-pump.materials",
+   "split": "test",
+   "text": "Pump casing shall be CI and impeller of leaded tin bronze.",
+   "standards": {
+    "is-1520-1980": 2
+   },
+   "clauses": [
+    "is-1520-1980#materials"
+   ]
+  },
+  {
+   "id": "rw2-test-sub.duty",
+   "split": "test",
+   "text": "Duty point of each pumpset shall be 18 m3/hr at 90 m total head.",
+   "standards": {
+    "is-8034-2018": 2
+   },
+   "clauses": [
+    "is-8034-2018#performance"
+   ]
+  },
+  {
+   "id": "rw2-test-sub.eff",
+   "split": "test",
+   "text": "Overall pumpset efficiency at duty point shall be minimum 52 %.",
+   "standards": {
+    "is-8034-2018": 2
+   },
+   "clauses": [
+    "is-8034-2018#performance"
+   ]
+  },
+  {
+   "id": "rw2-test-tx.rating",
+   "split": "test",
+   "text": "Transformer rating shall be 630 kVA, 11 kV / 433 V, Dyn11.",
+   "standards": {
+    "is-1180-1-2014": 2
+   },
+   "clauses": [
+    "is-1180-1-2014#ratings"
+   ]
+  },
+  {
+   "id": "rw2-test-rcc.grade",
+   "split": "test",
+   "text": "Grade of concrete for all structural members shall be M 30.",
+   "standards": {
+    "is-456-2000": 2
+   },
+   "clauses": [
+    "is-456-2000#min-grade"
+   ]
+  },
+  {
+   "id": "rw2-test-rcc.cover",
+   "split": "test",
+   "text": "Clear cover to main reinforcement shall be 45 mm for all members.",
+   "standards": {
+    "is-456-2000": 2
+   },
+   "clauses": [
+    "is-456-2000#cover"
+   ]
+  },
+  {
+   "id": "rw2-test-rcc.wc",
+   "split": "test",
+   "text": "Maximum free water cement ratio shall be 0.45.",
+   "standards": {
+    "is-456-2000": 2
+   },
+   "clauses": [
+    "is-456-2000#wc-ratio"
+   ]
+  },
+  {
+   "id": "rw2-test-rcc.cc",
+   "split": "test",
+   "text": "Cement content shall not be less than 320 kg/m3 of concrete.",
+   "standards": {
+    "is-456-2000": 2
+   },
+   "clauses": [
+    "is-456-2000#cement-content"
+   ]
+  },
+  {
+   "id": "rw2-test-water.ph",
+   "split": "test",
+   "text": "pH value: 6.5 to 8.5",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#ph"
+   ]
+  },
+  {
+   "id": "rw2-test-water.tds",
+   "split": "test",
+   "text": "TDS of supplied water shall be within 500 mg/l.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#tds"
+   ]
+  },
+  {
+   "id": "rw2-test-water.turbidity",
+   "split": "test",
+   "text": "Turbidity of treated water shall be limited to 1 NTU.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#turbidity"
+   ]
+  },
+  {
+   "id": "rw2-test-water.fluoride",
+   "split": "test",
+   "text": "Fluoride content shall be within 1.0 mg/l.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#fluoride"
+   ]
+  },
+  {
+   "id": "rw2-test-water.nitrate",
+   "split": "test",
+   "text": "Nitrate as NO3 shall be less than 45 mg/l.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#nitrate"
+   ]
+  },
+  {
+   "id": "rw2-test-water.arsenic",
+   "split": "test",
+   "text": "Arsenic content in supplied water shall be less than 0.01 mg/l.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#arsenic"
+   ]
+  },
+  {
+   "id": "rw2-test-water.hardness",
+   "split": "test",
+   "text": "Total hardness shall be within 200 mg/l as CaCO3.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#hardness"
+   ]
+  },
+  {
+   "id": "rw2-test-water.ecoli",
+   "split": "test",
+   "text": "Total coliforms shall be absent in any 100 ml sample.",
+   "standards": {
+    "is-10500-2012": 2
+   },
+   "clauses": [
+    "is-10500-2012#bacteriological"
+   ]
+  }
+ ]
+}

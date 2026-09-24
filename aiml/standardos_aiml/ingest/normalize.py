@@ -10,6 +10,8 @@ import math
 import re
 import unicodedata
 
+from ..config import current
+
 CHAR_MAP: list[tuple[re.Pattern[str], str]] = [
     (re.compile("º"), "°"),  # masculine ordinal is often typed for the degree sign; NFKC would turn it into "o"
     (re.compile("−"), "-"),  # minus sign
@@ -33,6 +35,7 @@ def normalize_characters(text: str) -> str:
 
 
 ENUMERATOR = re.compile(r"^\s*(?:\d+(?:\.\d+)*[.)]?\s|\(?[a-z]\)\s|\(?[ivx]{1,4}\)\s|•|-\s|\*\s)", re.I)
+UNIT_TAIL = re.compile(r"\d\s*[Aa]\s*$")
 JOIN_TAIL = re.compile(
     r"(?:[,(–-]|\b(?:and|or|of|the|to|with|in|for|at|by|as|per|than|from|a|an|shall|be|is|are|not)\s*)$", re.I
 )
@@ -52,9 +55,10 @@ def reflow_lines(text: str) -> str:
             if re.search(r"[a-z]-$", prev) and re.match(r"[a-z]", line):
                 out[-1] = prev[:-1] + line
                 continue
-            continues = bool(re.match(r"[a-z(]", line)) or (
-                bool(JOIN_TAIL.search(prev)) and not ENUMERATOR.search(line)
-            )
+            joins_tail = bool(JOIN_TAIL.search(prev))
+            if joins_tail and current().segmentation_v2 and UNIT_TAIL.search(prev):
+                joins_tail = False  # "Rated current: 1600 A" ends in amperes, not the article "a"
+            continues = bool(re.match(r"[a-z(]", line)) or (joins_tail and not ENUMERATOR.search(line))
             if continues and not ENUMERATOR.search(line):
                 out[-1] = f"{prev} {line}"
                 continue

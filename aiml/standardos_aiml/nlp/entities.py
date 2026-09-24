@@ -6,6 +6,7 @@ import re
 from dataclasses import dataclass
 from typing import Callable, Optional
 
+from ..config import current
 from ..types import Entity, StandardReference, TextSpan
 
 # ---------------------------------------------------------------------------
@@ -282,12 +283,28 @@ PRODUCT_TERMS: list[tuple[str, list[str]]] = [
     ("packaged drinking water", ["packaged drinking water", "bottled water", "packaged water"]),
 ]
 
-_PRODUCT_RES: list[tuple[str, list[re.Pattern[str]]]] = [
-    (canonical, [re.compile("[^a-z]" + re.sub(r"[-/]", "[-/ ]?", form) + "[^a-z]") for form in forms])
-    for canonical, forms in PRODUCT_TERMS
-]
+# v2: surface forms missing in 2.1 (audit: "flexible cords" found no product).
+_V2_EXTRA = {
+    "cable": ["cord", "cords", "flexible cord"],
+    "switchgear assembly": ["busbar", "busbars", "switch board"],
+    "earthing": ["earth electrodes", "earth resistance", "earth pits"],
+    "residual current device": ["rccbs", "rcds", "elcbs"],
+}
+PRODUCT_TERMS_V2: list[tuple[str, list[str]]] = [(c, [*forms, *_V2_EXTRA.get(c, [])]) for c, forms in PRODUCT_TERMS]
+
+
+def _compile(table: list[tuple[str, list[str]]]) -> list[tuple[str, list[re.Pattern[str]]]]:
+    return [
+        (canonical, [re.compile("[^a-z]" + re.sub(r"[-/]", "[-/ ]?", form) + "[^a-z]") for form in forms])
+        for canonical, forms in table
+    ]
+
+
+_PRODUCT_RES = _compile(PRODUCT_TERMS)
+_PRODUCT_RES_V2 = _compile(PRODUCT_TERMS_V2)
 
 
 def extract_product_terms(text: str) -> list[str]:
     lower = f" {text.lower()} "
-    return [canonical for canonical, patterns in _PRODUCT_RES if any(p.search(lower) for p in patterns)]
+    table = _PRODUCT_RES_V2 if current().product_terms_v2 else _PRODUCT_RES
+    return [canonical for canonical, patterns in table if any(p.search(lower) for p in patterns)]

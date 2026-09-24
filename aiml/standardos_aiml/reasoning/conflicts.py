@@ -24,8 +24,11 @@ from ..types import (
     ReasoningFinding,
     StructuredRequirement,
 )
+from ..config import current
 from .context import (
+    GATE_CONFIDENCE,
     ReasoningContext,
+    in_scope,
     clause_evidence,
     clause_label,
     document_attributes,
@@ -106,12 +109,36 @@ def _candidate_standards(ctx: ReasoningContext, req: StructuredRequirement) -> l
     ids: dict[str, None] = {}
     mapping = ctx.mapping_for(req.id)
     top = mapping.hits[0] if mapping and mapping.hits else None
+    gate = current().detector_gate
     if top and top.confidence >= ctx.threshold:
-        ids[top.standard_id] = None
+        if not gate or (top.confidence >= GATE_CONFIDENCE and in_scope(ctx, req, top.standard_id)):
+            ids[top.standard_id] = None
     for r in ctx.resolved.get(req.id, []):
         if r.standard_id:
             ids[r.standard_id] = None
     return [s for s in (standard_by_id(ctx, i) for i in ids) if s]
+
+
+def _ambiguous(ctx: ReasoningContext, req: StructuredRequirement, standard_id: str, parameter: str, q: Quantity) -> bool:
+    """v3 gate: a retrieval-only mapping does not raise a conflict when a close runner-up standard
+    that also governs the parameter accepts the value (e.g. 90 °C conductor temperature: PVC vs XLPE cable)."""
+    if not current().detector_gate:
+        return False
+    if any(r.standard_id == standard_id for r in ctx.resolved.get(req.id, [])):
+        return False  # cited explicitly: the purchaser chose this standard
+    mapping = ctx.mapping_for(req.id)
+    if not mapping or not mapping.hits:
+        return False
+    top = mapping.hits[0].confidence
+    for hit in mapping.hits[1:]:
+        if hit.standard_id == standard_id or hit.confidence < top - 0.15:
+            continue
+        other = ctx.corpus.standard(hit.standard_id)
+        for clause in other.clauses if other else []:
+            for c in clause.constraints:
+                if c.parameter == parameter and c.dimension == q.dimension and compare(q, c)[0] == "none":
+                    return True
+    return False
 
 
 def check_constraints(ctx: ReasoningContext) -> list[ConstraintCheck]:
@@ -130,6 +157,8 @@ def check_constraints(ctx: ReasoningContext) -> list[ConstraintCheck]:
                         if _qualifier_holds(ctx, constraint) is not True:
                             continue
                         violation, side = compare(q, constraint)
+                        if violation != "none" and _ambiguous(ctx, req, std.id, attr.parameter, q):
+                            continue
                         checks.append(ConstraintCheck(req, q, attr.parameter, std, clause, constraint, violation, side))
     return checks
 

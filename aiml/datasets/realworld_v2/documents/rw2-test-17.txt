@@ -1,0 +1,78 @@
+PUBLIC WORKS DEPARTMENT
+निविदा आमंत्रण सूचना
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. SE/ELE/22/2026-27
+Name of work: Hostel block construction — civil and internal electrical works.
+Estimated cost put to tender: Rs. 300,44,000/-
+Earnest Money Deposit: Rs. 1,48,000/-
+Period of completion: 12 months
+Last date of submission: 10.10.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+2. Conditional bids will be summarily rejected.
+3. The bidder must be registered with the Department in the appropriate class.
+4. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+5. The tender documents may be downloaded from the e-procurement portal of the Government.
+
+SCOPE OF WORK
+This specification covers hostel block construction — civil and internal electrical works complete in all respects.
+
+3 SITE CONDITIONS
+3.1 Exposure condition shall be considered as severe for all members.
+
+SECTION 4: CONCRETE AND REINFORCEMENT
+4.1 Design and construction of RCC shall be in accordance with IS 456:2000.
+4.2 Grade of concrete for all structural members shall be M 30.
+4.3 Clear cover to main reinforcement shall be 45mm for all members.
+4.4 Maximum free water cement ratio shall be 0.45.
+4.5 Cement content shall not be less than 320 Kg/cum of concrete.
+4.6 OPC 43 grade cement as per IS 269:2015 shall be used.
+4.7 Aggregates shall comply with the requirements of IS 383:2016.
+4.8 High strength deformed bars of grade Fe 500D as per IS 1786:2008 shall be used.
+4.9 Mix design shall be carried out in accordance with IS 10262:2019.
+4.10 Concrete shall be kept continuously moist for at least 10 days.
+4.11 Compaction shall be done by immersion vibrators.
+
+5 TECHNICAL SPECIFICATION — INTERNAL WIRING AND EARTHING
+5.1 The internal wiring installation shall comply with IS 732:2019.
+5.2 Earthing arrangement of the installation shall be TN-S system.
+5.3 All wiring shall be drawn through heavy gauge PVC conduits recessed in walls.
+5.4 Building wires shall be 450/750 V grade PVC insulated multistrand copper conductor as per IS 694:2010.
+5.5 Minimum conductor size shall be 1.5 sq.mm for lighting points and 4 sq.mm for power points.
+5.6 MCBs shall be C-curve, as per IS/IEC 60898-1, with rated short circuit capacity of 10 k.A..
+5.7 Final circuit MCBs shall be rated between 6 A and 32 A.
+5.8 Socket outlet circuits shall be protected by 30 mA RCCBs conforming to IS 12640 (Part 1).
+5.9 The earthing system shall be designed and installed as per IS 3043:1987.
+5.10 Main distribution board shall be earthed through two separate pipe earth electrodes.
+5.11 Combined resistance of the earthing system shall be less than 1 Ohm.
+
+6 TESTS AND INSPECTION
+6.1 Cube tests for compressive strength shall be done in accordance with IS 516 (Part 1/Sec 1):2021.
+6.2 Mill test certificates for steel and test certificates for cement shall be submitted for every consignment.
+6.3 Samples of wires shall be tested as per IS 10810 at the manufacturer's works.
+6.4 Tests shall be carried out on completion of the installation as per IS 732 and results recorded.
+6.5 Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.
+
+7 DOCUMENTATION, WARRANTY AND TRAINING
+7.1 Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.
+7.2 O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.
+7.3 The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.
+7.4 Training of two operators for one week shall be imparted by the supplier after commissioning.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | RCC M30 in superstructure | cum | 420
+2 | TMT reinforcement Fe 500D | MT | 58
+3 | Point wiring for light point with 1.5 sq mm FR PVC wire | Point | 240
+4 | 4 way SPN distribution board | No. | 16
+
+LIST OF APPROVED MAKES
+Cement: UltraTech / ACC / Ambuja; Steel: SAIL / TATA / JSW
+Wires: Polycab / Havells / Finolex; MCB/RCCB: Legrand / Schneider / Havells
+
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+Note: Drawings are indicative only and shall be verified at site.
+
+Signature of Bidder with seal
+Executive Engineer

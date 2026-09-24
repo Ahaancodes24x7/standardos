@@ -31,6 +31,7 @@ from . import models as m
 from .corpus import get_corpus
 from .db import session_scope
 from .errors import AppError, NotFound
+from .engine import pipeline_config
 
 log = logging.getLogger(__name__)
 
@@ -170,7 +171,7 @@ def execute_run(run_id: uuid.UUID, owner_id: Optional[uuid.UUID]) -> str:
                 )
                 db.commit()
 
-            result = run_pipeline(source, loaded.corpus, on_stage=on_stage)
+            result = run_pipeline(source, loaded.corpus, on_stage=on_stage, config=pipeline_config())
             result.repairs = polish_repairs(result.repairs)
             _persist_result(db, run_id, document_id, result, loaded.source)
             audit(db, actor_id=owner_id, document_id=document_id, entity_type="run", entity_id=str(run_id),

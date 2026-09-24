@@ -196,7 +196,8 @@ export type ChangeEvent = {
   change: string;
   summary: string;
   severity: Severity;
-  affected: Array<{ name: string; documentId: string | null }>;
+  /** `via`: set when the document is affected indirectly, through a standard that depends on this one. */
+  affected: Array<{ name: string; documentId: string | null; via?: string }>;
 };
 
 export type WorkspaceStats = {
@@ -242,4 +243,85 @@ export type AuditEntry = {
   entityId: string;
   action: string;
   detail: string;
+};
+
+/** GET /api/engine */
+export type EngineInfo = {
+  pipelineVersion: string;
+  config: string;
+  classifier: string;
+  dependencyMode: string;
+  flags: Record<string, unknown>;
+  presets: string[];
+  classifierAvailable?: boolean;
+};
+
+export type DagStandard = { id: string; number: string; title: string };
+
+/** GET /api/standards/{id}/dependencies */
+export type StandardDependencies = {
+  standard: DagStandard;
+  canonical: DagStandard | null;
+  layer: number;
+  dependsOn: Array<DagStandard & { depth: number; via: string[]; type: string }>;
+  requiredBy: DagStandard[];
+};
+
+/** GET /api/dependency-dag */
+export type DependencyDag = {
+  corpusVersion: string;
+  nodes: Array<{ id: string; number: string; layer: number }>;
+  edges: Array<{ from: string; to: string; type: string; relationship: string }>;
+  cycles: string[][];
+  contracted: Record<string, string>;
+  stats: {
+    nodes: number;
+    normative_edges: number;
+    closure_pairs: number;
+    transitive_only_pairs: number;
+    max_layer: number;
+    reduction_edges: number;
+  };
+};
+
+export type EvaluationDocumentRow = {
+  dataset: string;
+  split: string;
+  role: "open" | "contaminated" | "blind";
+  n: number;
+  metrics: Record<string, number>;
+  ci: Record<string, [number, number] | null>;
+};
+
+/** GET /api/evaluation/runs */
+export type EvaluationRun = {
+  runId: string;
+  label: string;
+  createdAt: string;
+  pipelineVersion: string;
+  config: string;
+  gitCommit: string | null;
+  blindScored: string[];
+  documents: EvaluationDocumentRow[];
+};
+
+type ClassifierScore = {
+  n: number;
+  cls_accuracy: number;
+  cls_macro_f1: number;
+  ci: Record<string, [number, number]>;
+  per_class_f1: Record<string, number>;
+};
+
+/** GET /api/evaluation/classifiers */
+export type ClassifierComparison = {
+  run_id: string;
+  meta: {
+    created_at: string;
+    encoder: string;
+    gate_tau: number;
+    training: { datasets: string[]; fit: number; validation: number };
+    hybrid: Record<string, number>;
+  };
+  results: Record<string, Record<string, ClassifierScore>>;
 };

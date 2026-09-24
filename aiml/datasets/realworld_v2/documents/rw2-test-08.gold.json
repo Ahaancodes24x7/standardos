@@ -1,0 +1,346 @@
+{
+ "id": "rw2-test-08",
+ "split": "test",
+ "name": "Supply, installation, testing and commissioning of LT electrical distribution system — CE/CIV/11/2026-27",
+ "organization": "CENTRAL PUBLIC WORKS DEPARTMENT",
+ "domain": "LT switchboard, LT power cables",
+ "plants": [
+  "panel.std.part2only",
+  "cable.size.omit",
+  "panel.ambient.hot"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} Volt",
+   "kV": "{n} kV",
+   "A": "{n} Amps",
+   "kA": "{n} kA",
+   "degC": "{n} deg C",
+   "mm2": "{n} sq mm",
+   "kW": "{n} kW",
+   "Hz": "{n} HZ",
+   "m3h": "{n} m3/hr",
+   "mgl": "{n} mg/litre",
+   "ohm": "{n} Ohm",
+   "mm": "{n} mm.",
+   "m": "{n} metres",
+   "pct": "{n} %",
+   "kVA": "{n} KVA",
+   "rpm": "{n} rpm",
+   "NTU": "{n} N.T.U.",
+   "dBA": "{n} dBA",
+   "kgm3": "{n} kg/m3",
+   "days": "{n} days"
+  },
+  "numbering": "paren_alpha",
+  "caps_rate": 0.08,
+  "merge_rate": 0.12
+ },
+ "requirements": [
+  {
+   "text": "All equipment shall be suitable for operation at an ambient air temperature of 50 deg C.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ambient_temperature",
+     "value": 50
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "The equipment shall be suitable for relative humidity up to 95 %.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "relative_humidity",
+     "value": 95
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Site altitude does not exceed 1000 metres above MSL.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "altitude",
+     "value": 1000000
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Switchboards shall be designed, manufactured and tested in accordance with IS/IEC 61439-2:2020.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Panels shall be free standing, totally enclosed, made of 2 mm. thick CRCA sheet with powder coated finish.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "The panel shall be suitable for 415 Volt ± 10 %, 50 HZ, 3 phase 4 wire system.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 415
+    },
+    {
+     "parameter": "frequency",
+     "value": 50
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "The horizontal busbar shall be high conductivity aluminium alloy of 1600 Amps rating.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 1600
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Short time withstand rating of the switchboard shall be 50 kA for 1 s.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 50000
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Enclosure protection class for the switchboard shall be IP 54.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ip_rating",
+     "text": "IP54"
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Internal separation of functional units shall be Form 4.",
+   "category": "electrical",
+   "attributes": [],
+   "standard": "is-iec-61439-2-2020"
+  },
+  {
+   "text": "Incoming breaker shall be 1600 Amps four pole draw-out ACB as per IS/IEC 60947-2:2003 with microprocessor release.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 1600
+    }
+   ]
+  },
+  {
+   "text": "All outgoing MCCBs shall have a rated service breaking capacity of not less than 36 kA.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 36000
+    }
+   ],
+   "standard": "is-iec-60947-2-2003"
+  },
+  {
+   "text": "EACH INCOMER SHALL BE PROVIDED WITH A DIGITAL MULTIFUNCTION METER WITH RS-485 PORT.",
+   "category": "electrical",
+   "attributes": []
+  },
+  {
+   "text": "Rated operational voltage: 415 Volt",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 415
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Busbar current rating: 1600 Amps",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 1600
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Rated short-time withstand current: 50 kA for 1 sec",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 50000
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Enclosure protection: IP54",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ip_rating",
+     "text": "IP54"
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "LT power cables shall be XLPE insulated 1.1 kV grade armoured cables with aluminium conductors as per IS 7098 (Part 1):1988.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 1100
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "aluminium"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "XLPE"
+    }
+   ]
+  },
+  {
+   "text": "Continuous conductor operating temperature of XLPE cables shall be 90 deg C.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_temperature",
+     "value": 90
+    }
+   ],
+   "standard": "is-7098-1-1988"
+  },
+  {
+   "text": "COPPER CONTROL CABLES OF 2.5 SQ MM SHALL BE PVC INSULATED HEAVY DUTY TYPE AS PER IS 1554 (PART 1).",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 2.5
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "Cable conductors shall meet the resistance requirements of IS 8130 for class 2 conductors.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Cables shall be laid directly in ground at a depth of 750 mm. with brick protection.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Terminations shall be made with brass double compression glands and tinned copper lugs.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Cable drums shall carry marking of size, type, length and manufacturer's name.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "EACH SWITCHBOARD SHALL BE SUBJECTED TO ROUTINE VERIFICATION TESTS AS PER IS/IEC 61439-2 AT THE WORKS.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "The bidder shall furnish type test reports of the switchboard and breakers from an NABL accredited laboratory.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Acceptance tests on cables shall be carried out as per IS 10810 in presence of the Engineer.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Manufacturer's test certificates shall accompany every cable drum supplied.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "O&M MANUALS, AS-BUILT DRAWINGS AND CATALOGUES SHALL BE FURNISHED IN TRIPLICATE AT THE TIME OF HANDING OVER.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "TRAINING OF TWO OPERATORS FOR ONE WEEK SHALL BE IMPARTED BY THE SUPPLIER AFTER COMMISSIONING.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "dependency",
+   "standardId": "is-iec-61439-1-2020",
+   "why": "Part 2 is read with Part 1, which is not cited"
+  },
+  {
+   "group": "gap",
+   "parameter": "conductor_size",
+   "why": "conductor size not stated"
+  },
+  {
+   "group": "conflict",
+   "standardId": "is-iec-61439-1-2020",
+   "parameter": "ambient_temperature",
+   "why": "above the 40 °C normal service limit"
+  }
+ ]
+}

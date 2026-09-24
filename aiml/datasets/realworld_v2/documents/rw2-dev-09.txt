@@ -1,0 +1,79 @@
+RURAL WATER SUPPLY DEPARTMENT
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. EE/ELE/48/2026-27
+Name of work: Rural piped water supply scheme — pumping and treated water supply.
+Estimated cost put to tender: Rs. 406,45,000/-
+Earnest Money Deposit: Rs. 5,17,000/-
+Period of completion: 18 months
+Last date of submission: 23.12.2026 up to 15:00 hrs
+
+INSTRUCTIONS TO BIDDERS
+1. The bidder must be registered with the Department in the appropriate class.
+2. The Department reserves the right to accept or reject any bid without assigning any reason.
+3. The tender documents may be downloaded from the e-procurement portal of the Government.
+4. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+5. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+
+SCOPE OF WORK
+This specification covers rural piped water supply scheme — pumping and treated water supply complete in all respects.
+
+SECTION 3: HORIZONTAL CENTRIFUGAL PUMPS
+3.1 Pumps shall conform to IS 1520:1980.
+3.2 Each pump shall deliver 250 m³/h against a total head of 45 metres.
+3.3 The pump efficiency at the duty point shall not be less than 78%. Casing shall be of cast iron and impeller shall be of bronze.
+3.4 Noise level at 1 metres from the pumpset shall not exceed 85 dBA.
+
+PUMP DATA SHEET
+Discharge: 250 m³/h
+Total head: 45 metres
+Make and type: (to be furnished by the bidder)
+
+SECTION 4: DRIVE MOTORS
+4.1 Motors shall be squirrel cage induction motors conforming to IS 325:1996.
+4.2 The rated output of the motor shall be 37kW.
+4.3 Motors shall be suitable for 415V ± 10%, 50 Hz ± 5%, 3 phase supply.
+4.4 Motors shall be of efficiency class IE3 as per IS 12615:2018.
+4.5 Degree of protection of the motor enclosure shall be IP55.
+4.6 Motors shall have class F insulation with temperature rise limited to class B and shall be suitable for S1 duty.
+4.7 Synchronous speed of the motor shall be 1500 RPM.
+
+PART E — TREATED WATER QUALITY
+5.1 Treated water supplied shall conform to IS 10500:2012.
+5.2 PH OF TREATED WATER SHALL BE BETWEEN 6.5 AND 8.5.
+5.3 TOTAL DISSOLVED SOLIDS SHALL NOT EXCEED 500 MG/L. Turbidity shall not be more than 1 NTU.
+5.4 Fluoride shall not exceed 1.0 mg/L.
+5.5 Nitrate shall not exceed 45 mg/L.
+5.6 Arsenic shall not exceed 0.01 mg/L.
+5.7 Total hardness as CaCO3 shall not exceed 200 mg/L.
+5.8 E. coli shall not be detectable in any 100 ml sample.
+
+6 TESTS AND INSPECTION
+6.1 Pumps shall be tested at the works in accordance with IS 9137.
+6.2 Pumps shall bear the ISI mark.
+6.3 Routine tests on motors shall be carried out as per IS 4029.
+6.4 Motors shall bear the ISI mark. Water samples shall be tested in a NABL accredited laboratory as per IS 3025 and IS 1622.
+6.5 The equipment shall be inspected by the Engineer-in-charge at the manufacturer's works before dispatch.
+
+7 DOCUMENTATION, WARRANTY AND TRAINING
+7.1 Test reports shall be submitted to the Engineer-in-charge for each source.
+7.2 The contractor shall submit detailed shop drawings for approval within 21 days of award of work.
+7.3 THREE SETS OF OPERATION AND MAINTENANCE MANUALS SHALL BE HANDED OVER ON COMPLETION.
+7.4 THE COMPLETE INSTALLATION SHALL BE GUARANTEED AGAINST DEFECTIVE DESIGN, MATERIAL AND WORKMANSHIP FOR A PERIOD OF 12 MONTHS FROM THE DATE OF HANDING OVER.
+7.5 The contractor shall train the Department's operating staff in operation and routine maintenance.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Horizontal centrifugal pumpset 250 m3/hr at 45 m | Set | 3
+2 | Squirrel cage induction motor 37 kW, 1500 rpm | No. | 3
+3 | Water quality testing (complete set of parameters) | Sample | 48
+
+LIST OF APPROVED MAKES
+Pumps: Kirloskar Brothers / KSB / Mather & Platt
+Motors: ABB / Siemens / Crompton Greaves / Kirloskar
+Testing laboratory: NABL accredited
+
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+Note: Drawings are indicative only and shall be verified at site.
+
+Signature of Bidder with seal
+Executive Engineer

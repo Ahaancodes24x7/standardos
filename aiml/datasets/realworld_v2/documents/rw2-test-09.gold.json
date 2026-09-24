@@ -1,0 +1,206 @@
+{
+ "id": "rw2-test-09",
+ "split": "test",
+ "name": "Internal electrification including wiring, distribution boards and earthing — CE/CIV/22/2026-27",
+ "organization": "PUBLIC WORKS DEPARTMENT",
+ "domain": "Internal electrification",
+ "plants": [
+  "wiring.wires.1100",
+  "wiring.isi.omit",
+  "wiring.completiontest.vague",
+  "vague.suitable_size"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} Volt",
+   "kV": "{n} KV",
+   "A": "{n} Amps",
+   "kA": "{n} kA",
+   "degC": "{n} Deg.C",
+   "mm2": "{n} Sq.mm",
+   "kW": "{n} Kw",
+   "Hz": "{n} HZ",
+   "m3h": "{n} m3/hr",
+   "mgl": "{n} mg/l",
+   "ohm": "{n} Ohm",
+   "mm": "{n}mm",
+   "m": "{n} M",
+   "pct": "{n} %",
+   "kVA": "{n} KVA",
+   "rpm": "{n} r.p.m.",
+   "NTU": "{n} N.T.U.",
+   "dBA": "{n} dB(A)",
+   "kgm3": "{n} kg/m3",
+   "days": "{n} days"
+  },
+  "numbering": "paren_alpha",
+  "caps_rate": 0,
+  "merge_rate": 0.2
+ },
+ "requirements": [
+  {
+   "text": "The internal wiring installation shall comply with IS 732:2019.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Earthing arrangement of the installation shall be TN-S system.",
+   "category": "safety",
+   "attributes": [
+    {
+     "parameter": "earthing_system",
+     "text": "TN-S"
+    }
+   ],
+   "standard": "is-3043-2018"
+  },
+  {
+   "text": "All wiring shall be drawn through heavy gauge PVC conduits recessed in walls.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "All enclosures shall be of adequate size to accommodate the equipment.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Building wires shall be 1100 V grade PVC insulated multistrand copper conductor as per IS 694:2010.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 1100
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "Minimum conductor size shall be 1.5 Sq.mm for lighting points and 4 Sq.mm for power points.",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 1.5
+    },
+    {
+     "parameter": "conductor_size",
+     "value": 4
+    }
+   ],
+   "standard": "is-694-2010"
+  },
+  {
+   "text": "MCBs shall be C-curve, as per IS/IEC 60898-1, with rated short circuit capacity of 10 kA.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 10000
+    }
+   ]
+  },
+  {
+   "text": "Final circuit MCBs shall be rated between 6 Amps and 32 Amps.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 6
+    }
+   ],
+   "standard": "is-iec-60898-1-2002"
+  },
+  {
+   "text": "Socket outlet circuits shall be protected by 30 mA RCCBs conforming to IS 12640 (Part 1).",
+   "category": "safety",
+   "attributes": []
+  },
+  {
+   "text": "The earthing system shall be designed and installed as per IS 3043:2018.",
+   "category": "safety",
+   "attributes": []
+  },
+  {
+   "text": "Main distribution board shall be earthed through two separate pipe earth electrodes.",
+   "category": "safety",
+   "attributes": [],
+   "standard": "is-3043-2018"
+  },
+  {
+   "text": "Combined resistance of the earthing system shall be less than 1 Ohm.",
+   "category": "safety",
+   "attributes": [
+    {
+     "parameter": "earth_resistance",
+     "value": 1
+    }
+   ],
+   "standard": "is-3043-2018"
+  },
+  {
+   "text": "Samples of wires shall be tested as per IS 10810 at the manufacturer's works.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "The complete wiring shall be tested before handing over.",
+   "category": "testing",
+   "attributes": [],
+   "standard": "is-732-2019"
+  },
+  {
+   "text": "Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Training of two operators for one week shall be imparted by the supplier after commissioning.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "conflict",
+   "standardId": "is-694-2010",
+   "parameter": "rated_voltage",
+   "why": "IS 694 covers cables up to 450/750 V"
+  },
+  {
+   "group": "certification",
+   "why": "no conformity evidence for wires and MCBs"
+  },
+  {
+   "group": "gap",
+   "parameter": "test_method",
+   "why": "completion testing without a method"
+  },
+  {
+   "group": "gap",
+   "why": "'of suitable size' is not measurable"
+  }
+ ]
+}

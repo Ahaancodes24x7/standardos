@@ -1,0 +1,210 @@
+{
+ "id": "rw2-test-13",
+ "split": "test",
+ "name": "Construction of RCC elevated service reservoir — SE/CIV/94/2026-27",
+ "organization": "WATER SUPPLY AND DRAINAGE BOARD",
+ "domain": "Reinforced concrete works",
+ "plants": [
+  "rcc.cover.low",
+  "rcc.cubes.old",
+  "rcc.steel.old",
+  "rcc.grade.low"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} Volt",
+   "kV": "{n} KV",
+   "A": "{n} Amps",
+   "kA": "{n}kA",
+   "degC": "{n} Deg.C",
+   "mm2": "{n} sq.mm",
+   "kW": "{n} Kw",
+   "Hz": "{n}Hz",
+   "m3h": "{n} m³/h",
+   "mgl": "{n} mg/L",
+   "ohm": "{n} Ohm",
+   "mm": "{n}mm",
+   "m": "{n} m",
+   "pct": "{n} percent",
+   "kVA": "{n} K.V.A.",
+   "rpm": "{n} rpm",
+   "NTU": "{n} NTU",
+   "dBA": "{n} dB(A)",
+   "kgm3": "{n} kg/m³",
+   "days": "{n} days"
+  },
+  "numbering": "paren_alpha",
+  "caps_rate": 0,
+  "merge_rate": 0
+ },
+ "requirements": [
+  {
+   "text": "Exposure condition shall be considered as severe for all members.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "exposure_condition",
+     "text": "severe"
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "Design and construction of RCC shall be in accordance with IS 456:2000.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Grade of concrete for all structural members shall be M 20.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "concrete_grade",
+     "value": 20
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "Clear cover to main reinforcement shall be 30mm for all members.",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "nominal_cover",
+     "value": 30
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "Maximum free water cement ratio shall be 0.45.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "water_cement_ratio",
+     "value": 0.45
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "Cement content shall not be less than 320 kg/m³ of concrete.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "cement_content",
+     "value": 320
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "OPC 43 grade cement as per IS 269:2015 shall be used.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "cement_type",
+     "text": "OPC 43 grade"
+    }
+   ]
+  },
+  {
+   "text": "Aggregates shall comply with the requirements of IS 383:2016.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "High strength deformed bars of grade Fe 500D as per IS 1786:1985 shall be used.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "steel_grade",
+     "text": "Fe 500D"
+    }
+   ]
+  },
+  {
+   "text": "Mix design shall be carried out in accordance with IS 10262:2019.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Concrete shall be kept continuously moist for at least 10 days.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Compaction shall be done by immersion vibrators.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Cube tests for compressive strength shall be done in accordance with IS 516:1959.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Mill test certificates for steel and test certificates for cement shall be submitted for every consignment.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Training of two operators for one week shall be imparted by the supplier after commissioning.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "conflict",
+   "standardId": "is-456-2000",
+   "parameter": "nominal_cover",
+   "why": "cover below 45 mm for severe exposure"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-516-1-1-2021",
+   "why": "IS 516:1959 superseded"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-1786-2008",
+   "why": "1985 edition cited"
+  },
+  {
+   "group": "conflict",
+   "standardId": "is-456-2000",
+   "parameter": "concrete_grade",
+   "why": "M20 below M30 minimum for severe exposure"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-456-2000",
+   "why": "amendments to confirm"
+  }
+ ]
+}

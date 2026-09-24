@@ -1,0 +1,78 @@
+RURAL WATER SUPPLY DEPARTMENT
+लोक निर्माण विभाग
+Office of the Executive Engineer, Project Division
+NOTICE INVITING e-TENDER No. EE/ELE/83/2026-27
+Name of work: Rural piped water supply scheme — pumping and treated water supply.
+Estimated cost put to tender: Rs. 299,24,000/-
+Earnest Money Deposit: Rs. 1,98,000/-
+Period of completion: 12 months
+Last date of submission: 12.12.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+2. Bids received after the due date and time shall not be considered.
+3. Conditional bids will be summarily rejected.
+4. The Department reserves the right to accept or reject any bid without assigning any reason.
+5. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+
+SPECIAL CONDITIONS OF CONTRACT
+1. Rates quoted shall be inclusive of all taxes, freight, insurance and transit risks.
+2. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+3. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+
+SCOPE OF WORK
+This specification covers rural piped water supply scheme — pumping and treated water supply complete in all respects.
+
+PART C — HORIZONTAL CENTRIFUGAL PUMPS
+1. Horizontal centrifugal pumps for clear cold water shall comply with IS 1520:1980. Duty point of each pump shall be 250 m³/h discharge at 45 M total dynamic head.
+2. PUMP CASING SHALL BE CI AND IMPELLER OF LEADED TIN BRONZE. Sound pressure level shall be limited to 85 db(A) at 1 M distance.
+
+PUMP DATA SHEET
+Rated discharge: 250 m³/h
+Total dynamic head: 45 M
+Make and type: (to be furnished by the bidder)
+
+PART D — DRIVE MOTORS
+1. The drive motor shall be a three phase TEFC squirrel cage induction motor as per IS 325:1996.
+2. Motor rating shall be 37 KW continuous. Motors shall operate satisfactorily on a supply of 415 Volts ± 10 percent and 50Hz ± 5 percent.
+3. The motor shall be premium efficiency IE3 conforming to IS 12615:2018.
+4. Insulation shall be class F and the motor shall be rated for S1 continuous duty.
+5. Motor speed shall be 1500 rpm (4 pole).
+
+PART E — TREATED WATER QUALITY
+1. The quality of water supplied shall meet IS 10500:2012.
+2. PH VALUE: 6.5 TO 8.5
+3. TDS of supplied water shall be within 500 mg/l. Turbidity of treated water shall be limited to 1 N.T.U..
+4. Fluoride content shall be within 1.0 mg/l.
+5. Nitrate as NO3 shall be less than 45 mg/l.
+6. Arsenic content in supplied water shall be less than 0.01 mg/l. Total hardness shall be within 200 mg/l as CaCO3.
+7. Total coliforms shall be absent in any 100 ml sample.
+
+6 TESTS AND INSPECTION
+1. Performance tests on each pump shall be conducted as per IS 9137 in the presence of the Engineer.
+2. PUMPS SHALL CARRY THE BIS STANDARD MARK.
+3. Motors shall be BIS certified and test certificates shall be furnished.
+4. Physico-chemical tests shall follow IS 3025 and bacteriological examination shall follow IS 1622.
+5. Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.
+
+7 DOCUMENTATION, WARRANTY AND TRAINING
+1. Monthly water quality reports shall be furnished to the Department. Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.
+2. O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over. The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.
+3. Training of two operators for one week shall be imparted by the supplier after commissioning.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Horizontal centrifugal pumpset 250 m3/hr at 45 m | Set | 3
+2 | Squirrel cage induction motor 37 kW, 1500 rpm | No. | 3
+3 | Water quality testing (complete set of parameters) | Sample | 48
+
+APPROVED MAKES OF MATERIALS
+Pumps: Kirloskar Brothers / KSB / Mather & Platt
+Motors: ABB / Siemens / Crompton Greaves / Kirloskar
+Testing laboratory: NABL accredited
+
+Note: Quantities are approximate and may vary during execution.
+Note: Drawings are indicative only and shall be verified at site.
+
+Signature of Bidder with seal
+Executive Engineer

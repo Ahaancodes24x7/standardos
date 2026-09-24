@@ -14,6 +14,7 @@ from standardos_aiml.samples import SAMPLE_DOCUMENTS
 
 from .corpus import get_corpus
 from .view import build_document_analysis, snapshot_from_result
+from .engine import pipeline_config
 
 _cache: dict[str, Any] = {}
 _lock = threading.Lock()
@@ -28,7 +29,7 @@ def sample_workspace() -> list[dict[str, Any]]:
         documents = [
             build_document_analysis(
                 snapshot_from_result(
-                    run_pipeline(sample.text, loaded.corpus),
+                    run_pipeline(sample.text, loaded.corpus, config=pipeline_config()),
                     documentId=sample.id,
                     name=sample.name,
                     organization=sample.organization,

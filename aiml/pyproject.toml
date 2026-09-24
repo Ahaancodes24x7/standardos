@@ -12,7 +12,7 @@ dependencies = [
 # Optional LLM copy-editing of repair wording (off by default).
 llm = ["anthropic>=0.70"]
 # Optional learned requirement classifier.
-ml = ["scikit-learn>=1.5", "numpy>=1.26", "joblib>=1.4"]
+ml = ["scikit-learn>=1.5", "numpy>=1.26", "joblib>=1.4", "torch>=2.4", "sentence-transformers>=3.0"]
 
 [build-system]
 requires = ["hatchling"]

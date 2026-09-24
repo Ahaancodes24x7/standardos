@@ -1,0 +1,86 @@
+PUBLIC WORKS DEPARTMENT
+कार्यपालक अभियंता
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. EE/CIV/21/2026-27
+Name of work: Hostel block construction — civil and internal electrical works.
+Estimated cost put to tender: Rs. 181,78,000/-
+Earnest Money Deposit: Rs. 1,42,000/-
+Period of completion: 18 months
+Last date of submission: 15.12.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+2. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+3. Bids received after the due date and time shall not be considered.
+4. The Department reserves the right to accept or reject any bid without assigning any reason.
+5. Conditional bids will be summarily rejected.
+6. The bidder must be registered with the Department in the appropriate class.
+7. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+
+SPECIAL CONDITIONS OF CONTRACT
+1. Rates quoted shall be inclusive of all taxes, freight, insurance and transit risks.
+2. Liquidated damages at 0.5 % per week of delay shall be levied, subject to a maximum of 10 % of the contract value.
+3. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+
+SCOPE OF WORK
+This specification covers hostel block construction — civil and internal electrical works complete in all respects.
+
+SITE CONDITIONS
+- Exposure condition shall be considered as severe for all members.
+
+SECTION 4: CONCRETE AND REINFORCEMENT
+- Design and construction of RCC shall be in accordance with IS 456:2000.
+- Grade of concrete for all structural members shall be M 30.
+- Clear cover to main reinforcement shall be 45mm for all members.
+- Maximum free water cement ratio shall be 0.55.
+- Cement content shall not be less than 320 Kg/cum of concrete.
+- OPC 43 grade cement as per IS 269:2015 shall be used.
+- Aggregates shall comply with the requirements of IS 383:2016.
+- High strength deformed bars of grade Fe 500D as per IS 1786:2008 shall be used.
+- Mix design shall be carried out in accordance with IS 10262:2019.
+- Concrete shall be kept continuously moist for at least 10 days.
+- Compaction shall be done by immersion vibrators.
+
+PART E — INTERNAL WIRING AND EARTHING
+- The internal wiring installation shall comply with IS 732:2019.
+- Earthing arrangement of the installation shall be TN-S system.
+- All wiring shall be drawn through heavy gauge PVC conduits recessed in walls.
+- Building wires shall be 450/750 V grade PVC insulated multistrand copper conductor as per IS 694:2010.
+- Minimum conductor size shall be 1.5 sq.mm for lighting points and 4 sq.mm for power points.
+- MCBs shall be C-curve, as per IS/IEC 60898-1, with rated short circuit capacity of 10 kA.
+- Final circuit MCBs shall be rated between 6A and 32A.
+- Socket outlet circuits shall be protected by 30 mA RCCBs conforming to IS 12640 (Part 1).
+- The earthing system shall be designed and installed as per IS 3043:2018.
+- Main distribution board shall be earthed through two separate pipe earth electrodes.
+- Combined resistance of the earthing system shall be less than 1 ohm.
+
+SECTION 6: TESTING, INSPECTION AND CERTIFICATION
+- Cube tests for compressive strength shall be done in accordance with IS 516 (Part 1/Sec 1):2021.
+- Mill test certificates for steel and test certificates for cement shall be submitted for every consignment.
+- Samples of wires shall be tested as per IS 10810 at the manufacturer's works.
+- Tests shall be carried out on completion of the installation as per IS 732 and results recorded.
+- All wires, MCBs and RCCBs shall bear the BIS Standard Mark.
+- Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.
+
+7 DOCUMENTATION, WARRANTY AND TRAINING
+- Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.
+- O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.
+- The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.
+- Training of two operators for one week shall be imparted by the supplier after commissioning.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | RCC M30 in superstructure | cum | 420
+2 | TMT reinforcement Fe 500D | MT | 58
+3 | Point wiring for light point with 1.5 sq mm FR PVC wire | Point | 240
+4 | 4 way SPN distribution board | No. | 16
+
+LIST OF APPROVED MAKES
+Cement: UltraTech / ACC / Ambuja; Steel: SAIL / TATA / JSW
+Wires: Polycab / Havells / Finolex; MCB/RCCB: Legrand / Schneider / Havells
+
+Note: Drawings are indicative only and shall be verified at site.
+Note: Quantities are approximate and may vary during execution.
+
+Signature of Bidder with seal
+Executive Engineer

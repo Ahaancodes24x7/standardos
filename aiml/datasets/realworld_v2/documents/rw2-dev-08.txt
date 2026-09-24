@@ -1,0 +1,100 @@
+URBAN DEVELOPMENT AUTHORITY
+लोक निर्माण विभाग
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. SE/CIV/84/2026-27
+Name of work: Electrical works for sewage treatment plant including motors and panels.
+Estimated cost put to tender: Rs. 326,29,000/-
+Earnest Money Deposit: Rs. 8,90,000/-
+Period of completion: 12 months
+Last date of submission: 25.10.2026 up to 15:00 hrs
+
+SECTION I — INSTRUCTIONS TO TENDERERS
+1. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+2. The tender documents may be downloaded from the e-procurement portal of the Government.
+3. Conditional bids will be summarily rejected.
+4. The Department reserves the right to accept or reject any bid without assigning any reason.
+5. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+6. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+
+COMMERCIAL TERMS AND CONDITIONS
+1. Liquidated damages at 0.5 % per week of delay shall be levied, subject to a maximum of 10 % of the contract value.
+2. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+3. The contractor shall indemnify the Department against all claims arising out of the work.
+4. Rates quoted shall be inclusive of all taxes, freight, insurance and transit risks.
+5. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+
+SCOPE OF WORK
+This specification covers electrical works for sewage treatment plant including motors and panels complete in all respects.
+
+SITE CONDITIONS
+- The equipment shall be designed for a maximum ambient temperature of 40 deg C.
+- Relative humidity at site may reach 95%.
+- The installation is at an altitude of less than 1000 m above mean sea level.
+
+SECTION 4: MAIN LT PANEL
+- The LT panel shall conform to IS/IEC 61439-1:2020 and IS/IEC 61439-2:2020.
+- The panel shall be cubicle type, floor mounted, fabricated from CRCA sheet steel of 2mm thickness.
+- The rated operational voltage shall be 415V, 3 phase, 4 wire, 50Hz.
+- Main busbars shall be of electrolytic grade aluminium rated for 1600A continuous current. The busbars and panel shall withstand a short circuit current of 50 kA for 1 second.
+- The degree of protection of the panel enclosure shall be IP54.
+- The switchboard shall have Form 3b internal separation.
+- Incomers shall be 1600A, 4 pole, electrically operated air circuit breakers conforming to IS/IEC 60947-2:2003.
+- Outgoing feeders shall be MCCBs with ultimate breaking capacity of 36 kA.
+- Multifunction meters of accuracy class 0.5 shall be provided on each incomer.
+
+GUARANTEED TECHNICAL PARTICULARS — LT PANEL
+Rated voltage: 415V
+Rated current of main busbar: 1600A
+Short time current rating: 50 kA for 1 s
+Degree of protection: IP54
+Make and type: (to be furnished by the bidder)
+
+5 TECHNICAL SPECIFICATION — DRIVE MOTORS
+- Motors shall be squirrel cage induction motors conforming to IS 325:1996.
+- The rated output of the motor shall be 37kW. Motors shall be suitable for 415V ± 10%, 50Hz ± 5%, 3 phase supply.
+- Motors shall be of efficiency class IE3 as per IS 12615:2018.
+- Degree of protection of the motor enclosure shall be IP55. Motors shall have class F insulation with temperature rise limited to class B and shall be suitable for S1 duty.
+- Synchronous speed of the motor shall be 1500 RPM.
+
+PART F — LT POWER AND CONTROL CABLES
+- Power cables shall be 1.1 kV grade, aluminium conductor, XLPE insulated, armoured and PVC sheathed, conforming to IS 7098 (Part 1):1988.
+- The main feeder cable shall be 3.5 core 300 sq mm.
+- The cables shall be suitable for a maximum continuous conductor temperature of 90 deg C.
+- Control cables shall be PVC insulated, copper conductor of 2.5 sq mm, 1.1 kV grade, conforming to IS 1554 (Part 1).
+- Conductors shall be stranded, class 2, conforming to IS 8130.
+- Cables shall be laid in RCC trenches or on perforated cable trays as shown in the drawings.
+- Cable ends shall be terminated using double compression glands and crimped lugs. Each drum shall be marked with the manufacturer's name, size, voltage grade and year of manufacture.
+
+SECTION 7: TESTING, INSPECTION AND CERTIFICATION
+- Routine verification of each assembly shall be carried out in accordance with IS/IEC 61439-1.
+- Type test certificates of the offered panel design from a NABL accredited laboratory shall be submitted.
+- Routine tests on motors shall be carried out as per IS 4029.
+- Motors shall bear the ISI mark.
+- Cables shall be tested in accordance with IS 10810.
+- Routine test certificates of cables shall be furnished with each consignment.
+- The equipment shall be inspected by the Engineer-in-charge at the manufacturer's works before dispatch.
+
+8 DOCUMENTATION, WARRANTY AND TRAINING
+- The contractor shall submit detailed shop drawings for approval within 21 days of award of work.
+- Three sets of operation and maintenance manuals shall be handed over on completion.
+- The complete installation shall be guaranteed against defective design, material and workmanship for a period of 12 months from the date of handing over.
+- The contractor shall train the Department's operating staff in operation and routine maintenance.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Main LT panel as per specification | Set | 1
+2 | Sub-distribution board, 12 way TPN | No. | 8
+3 | Squirrel cage induction motor 37 kW, 1500 rpm | No. | 3
+4 | 3.5C x 300 sq mm XLPE armoured cable | m | 350
+5 | Cable tray 300 mm wide | m | 120
+
+LIST OF APPROVED MAKES
+LT panel builder: as per approved list; ACB/MCCB: L&T / Siemens / Schneider / ABB
+Motors: ABB / Siemens / Crompton Greaves / Kirloskar
+Cables: Polycab / KEI / Havells / RR Kabel
+
+Note: Drawings are indicative only and shall be verified at site.
+Note: Quantities are approximate and may vary during execution.
+
+Signature of Bidder with seal
+Executive Engineer

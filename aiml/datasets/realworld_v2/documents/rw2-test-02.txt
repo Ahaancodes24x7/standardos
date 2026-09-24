@@ -1,0 +1,68 @@
+VIDYUT VITRAN NIGAM LIMITED
+कार्यपालक अभियंता
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. EE/WS/19/2026-27
+Name of work: Procurement of distribution transformers and LT cables.
+Estimated cost put to tender: Rs. 221,45,000/-
+Earnest Money Deposit: Rs. 9,94,000/-
+Period of completion: 18 months
+Last date of submission: 22.10.2026 up to 15:00 hrs
+
+SECTION I — INSTRUCTIONS TO TENDERERS
+1. The tender documents may be downloaded from the e-procurement portal of the Government.
+2. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+3. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+4. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+
+SPECIAL CONDITIONS OF CONTRACT
+1. Income tax and GST shall be deducted at source as applicable.
+2. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+3. Liquidated damages at 0.5 % per week of delay shall be levied, subject to a maximum of 10 % of the contract value.
+4. The contractor shall comply with all labour laws and the provisions of the Contract Labour Act.
+
+SCOPE OF WORK
+This specification covers procurement of distribution transformers and lt cables complete in all respects.
+
+PART C — DISTRIBUTION TRANSFORMERS
+(a) Distribution transformers shall be designed and manufactured to IS 1180 (Part 1):2014.
+(b) Transformer rating shall be 630 K.V.A., 11 kV / 433 V, Dyn11.
+(c) Transformers shall be outdoor type, mineral oil filled, naturally cooled, with copper windings.
+(d) Winding temperature rise shall be limited to 40 °C over a maximum ambient of 50 °C.
+(e) Transformer tank shall be fabricated from mild steel plates and epoxy painted.
+
+SECTION 4: LT POWER AND CONTROL CABLES
+(a) LT power cables shall be XLPE insulated 1.1 kV grade armoured cables with aluminium conductors as per IS 7098 (Part 1):1988.
+(b) Continuous conductor operating temperature of XLPE cables shall be 90 °C.
+(c) Copper control cables of 2.5 sq mm shall be PVC insulated heavy duty type as per IS 1554 (Part 1).
+(d) Cable conductors shall meet the resistance requirements of IS 8130 for class 2 conductors.
+(e) Cables shall be laid directly in ground at a depth of 750 mm. with brick protection.
+(f) Terminations shall be made with brass double compression glands and tinned copper lugs.
+(g) Cable drums shall carry marking of size, type, length and manufacturer's name.
+
+SECTION 5: TESTING, INSPECTION AND CERTIFICATION
+(a) Each transformer shall be subjected to routine tests in accordance with IS 2026 (Part 1):2011.
+(b) The bidder shall submit type test certificates from an NABL accredited laboratory for the offered rating.
+(c) Acceptance tests on cables shall be carried out as per IS 10810 in presence of the Engineer.
+(d) Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.
+
+6 DOCUMENTATION, WARRANTY AND TRAINING
+(a) Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.
+(b) O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.
+(c) The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.
+(d) Training of two operators for one week shall be imparted by the supplier after commissioning.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | 630 kVA 11/0.433 kV distribution transformer | No. | 4
+2 | 3.5C x 300 sq mm XLPE armoured cable | m | 350
+3 | Cable tray 300 mm wide | m | 120
+
+LIST OF APPROVED MAKES
+Transformers: as per approved vendor list of the utility
+Cables: Polycab / KEI / Havells / RR Kabel
+
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+Note: Quantities are approximate and may vary during execution.
+
+Signature of Bidder with seal
+Executive Engineer

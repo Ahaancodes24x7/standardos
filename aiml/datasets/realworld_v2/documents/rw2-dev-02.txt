@@ -1,0 +1,64 @@
+PUBLIC WORKS DEPARTMENT
+लोक निर्माण विभाग
+Office of the Executive Engineer, Circle I
+NOTICE INVITING e-TENDER No. CE/CIV/39/2026-27
+Name of work: Internal electrification including wiring, distribution boards and earthing.
+Estimated cost put to tender: Rs. 146,27,000/-
+Earnest Money Deposit: Rs. 2,99,000/-
+Period of completion: 6 months
+Last date of submission: 15.10.2026 up to 15:00 hrs
+
+INSTRUCTIONS TO BIDDERS
+1. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+2. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+3. The Department reserves the right to accept or reject any bid without assigning any reason.
+4. The tender documents may be downloaded from the e-procurement portal of the Government.
+5. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+6. The bidder must be registered with the Department in the appropriate class.
+
+COMMERCIAL TERMS AND CONDITIONS
+1. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+2. Income tax and GST shall be deducted at source as applicable.
+3. The contractor shall comply with all labour laws and the provisions of the Contract Labour Act.
+4. The contractor shall indemnify the Department against all claims arising out of the work.
+5. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+
+SCOPE OF WORK
+This specification covers internal electrification including wiring, distribution boards and earthing complete in all respects.
+
+PART C — INTERNAL WIRING AND EARTHING
+- Wiring shall be carried out as per IS 732:2019.
+- The supply system shall be TN-S earthing arrangement. Wiring shall be concealed in rigid PVC conduits of 1.5mm wall thickness.
+- Wires shall be FR PVC insulated, single core, stranded copper conductor of 450/750 V grade conforming to IS 694:2010.
+- Lighting circuits shall be wired with 1.5 mm² and power circuits with 4 mm² copper conductors.
+- Miniature circuit breakers shall conform to IS 8828 and shall have a breaking capacity of 10 kA. MCB ratings shall range from 6A to 32A as shown in the single line diagram.
+- RCCBs with rated residual operating current of 30 mA shall be provided for all socket outlet circuits and shall conform to IS 12640 (Part 1).
+- Earthing shall be carried out in accordance with IS 3043:2018.
+- Two numbers of pipe earth electrodes shall be provided for the main distribution board.
+- The earth resistance shall not exceed 1 ohms.
+
+4 TESTS AND INSPECTION
+- Wires shall be tested in accordance with IS 10810.
+- The installation shall be tested on completion.
+- Wires, MCBs and RCCBs shall be ISI marked.
+- The equipment shall be inspected by the Engineer-in-charge at the manufacturer's works before dispatch.
+
+5 DOCUMENTATION, WARRANTY AND TRAINING
+- The contractor shall submit detailed shop drawings for approval within 21 days of award of work.
+- Three sets of operation and maintenance manuals shall be handed over on completion.
+- The complete installation shall be guaranteed against defective design, material and workmanship for a period of 12 months from the date of handing over.
+- The contractor shall train the Department's operating staff in operation and routine maintenance.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Point wiring for light point with 1.5 sq mm FR PVC wire | Point | 240
+2 | 4 way SPN distribution board | No. | 16
+
+LIST OF APPROVED MAKES
+Wires: Polycab / Havells / Finolex; MCB/RCCB: Legrand / Schneider / Havells
+
+Note: Quantities are approximate and may vary during execution.
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+
+Signature of Bidder with seal
+Executive Engineer

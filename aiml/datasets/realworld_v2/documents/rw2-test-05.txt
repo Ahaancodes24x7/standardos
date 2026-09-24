@@ -1,0 +1,99 @@
+URBAN DEVELOPMENT AUTHORITY
+कार्यपालक अभियंता
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. EE/ELE/72/2026-27
+Name of work: Electrical works for sewage treatment plant including motors and panels.
+Estimated cost put to tender: Rs. 334,38,000/-
+Earnest Money Deposit: Rs. 6,91,000/-
+Period of completion: 18 months
+Last date of submission: 26.10.2026 up to 15:00 hrs
+
+INSTRUCTIONS TO BIDDERS
+1. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+2. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+3. Bids received after the due date and time shall not be considered.
+4. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+
+GENERAL CONDITIONS OF CONTRACT
+1. Liquidated damages at 0.5 % per week of delay shall be levied, subject to a maximum of 10 % of the contract value.
+2. The contractor shall indemnify the Department against all claims arising out of the work.
+3. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+4. Income tax and GST shall be deducted at source as applicable.
+
+SCOPE OF WORK
+This specification covers electrical works for sewage treatment plant including motors and panels complete in all respects.
+
+SITE CONDITIONS
+- ALL EQUIPMENT SHALL BE SUITABLE FOR OPERATION AT AN AMBIENT AIR TEMPERATURE NOT EXCEEDING 40 DEG C.
+- The equipment shall be suitable for relative humidity up to 95 percent.
+- Site altitude is 2600 m above MSL.
+
+SECTION 4: MAIN LT PANEL
+- Switchboards shall be designed, manufactured and tested in accordance with IS/IEC 61439-1:2020 and IS/IEC 61439-2:2020.
+- Panels shall be free standing, totally enclosed, made of 2 MM thick CRCA sheet with powder coated finish.
+- The panel shall be suitable for 415 V ± 10 percent, 50Hz, 3 phase 4 wire system.
+- The horizontal busbar shall be high conductivity aluminium alloy of 1600A rating.
+- Short time withstand rating of the switchboard shall be 50 k.A. for 1 s. Enclosure protection class for the switchboard shall be IP 54.
+- Internal separation of functional units shall be Form 4.
+- INCOMING BREAKER SHALL BE 1600A FOUR POLE DRAW-OUT ACB AS PER IS/IEC 60947-2:2003 WITH MICROPROCESSOR RELEASE.
+- All outgoing MCCBs shall have a rated service breaking capacity of not less than 36 k.A..
+- Each incomer shall be provided with a digital multifunction meter with RS-485 port.
+
+GUARANTEED TECHNICAL PARTICULARS — LT PANEL
+Rated operational voltage: 415 V
+Busbar current rating: 1600A
+Rated short-time withstand current: 50 k.A. for 1 sec
+Enclosure protection: IP54
+Make and type: (to be furnished by the bidder)
+
+PART E — DRIVE MOTORS
+- The drive motor shall be a three phase TEFC squirrel cage induction motor as per IS 325:1996.
+- Motor rating shall be 37 Kw continuous.
+- Motors shall operate satisfactorily on a supply of 415 V ± 10 percent and 50Hz ± 5 percent.
+- The motor shall be premium efficiency IE3 conforming to IS 12615:2018.
+- Motor enclosure shall be totally enclosed fan cooled with IP 55 protection.
+- Insulation shall be class F and the motor shall be rated for S1 continuous duty.
+- MOTOR SPEED SHALL BE 1500 RPM (4 POLE).
+
+6 TECHNICAL SPECIFICATION — LT POWER AND CONTROL CABLES
+- LT power cables shall be XLPE insulated 1.1 kV grade armoured cables with aluminium conductors as per IS 7098 (Part 1):1988.
+- Size of the incoming feeder cable shall be 3.5 core x 300 Sq.mm.
+- Continuous conductor operating temperature of XLPE cables shall be 90 deg C.
+- Copper control cables of 2.5 Sq.mm shall be PVC insulated heavy duty type as per IS 1554 (Part 1). Cable conductors shall meet the resistance requirements of IS 8130 for class 2 conductors.
+- Cables shall be laid directly in ground at a depth of 750 MM with brick protection.
+- Terminations shall be made with brass double compression glands and tinned copper lugs.
+- Cable drums shall carry marking of size, type, length and manufacturer's name.
+
+7 TESTS AND INSPECTION
+- Each switchboard shall be subjected to routine verification tests as per IS/IEC 61439-1 at the works.
+- The bidder shall furnish type test reports of the switchboard and breakers from an NABL accredited laboratory.
+- Each motor shall be subjected to routine tests in accordance with IS 4029.
+- Motors shall be BIS certified and test certificates shall be furnished.
+- Acceptance tests on cables shall be carried out as per IS 10810 in presence of the Engineer.
+- Manufacturer's test certificates shall accompany every cable drum supplied.
+- Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.
+
+8 DOCUMENTATION, WARRANTY AND TRAINING
+- Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.
+- O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.
+- The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.
+- Training of two operators for one week shall be imparted by the supplier after commissioning.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Main LT panel as per specification | Set | 1
+2 | Sub-distribution board, 12 way TPN | No. | 8
+3 | Squirrel cage induction motor 37 kW, 1500 rpm | No. | 3
+4 | 3.5C x 300 sq mm XLPE armoured cable | m | 350
+5 | Cable tray 300 mm wide | m | 120
+
+APPROVED MAKES OF MATERIALS
+LT panel builder: as per approved list; ACB/MCCB: L&T / Siemens / Schneider / ABB
+Motors: ABB / Siemens / Crompton Greaves / Kirloskar
+Cables: Polycab / KEI / Havells / RR Kabel
+
+Note: Quantities are approximate and may vary during execution.
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+
+Signature of Bidder with seal
+Executive Engineer

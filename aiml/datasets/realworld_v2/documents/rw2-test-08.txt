@@ -1,0 +1,87 @@
+CENTRAL PUBLIC WORKS DEPARTMENT
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. CE/CIV/11/2026-27
+Name of work: Supply, installation, testing and commissioning of LT electrical distribution system.
+Estimated cost put to tender: Rs. 349,19,000/-
+Earnest Money Deposit: Rs. 4,54,000/-
+Period of completion: 9 months
+Last date of submission: 27.12.2026 up to 15:00 hrs
+
+SECTION I — INSTRUCTIONS TO TENDERERS
+1. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+2. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+3. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+4. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+5. The Department reserves the right to accept or reject any bid without assigning any reason.
+6. The bidder must be registered with the Department in the appropriate class.
+7. Conditional bids will be summarily rejected.
+
+COMMERCIAL TERMS AND CONDITIONS
+1. Income tax and GST shall be deducted at source as applicable.
+2. The contractor shall comply with all labour laws and the provisions of the Contract Labour Act.
+3. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+4. The contractor shall indemnify the Department against all claims arising out of the work.
+
+SCOPE OF WORK
+This specification covers supply, installation, testing and commissioning of lt electrical distribution system complete in all respects.
+
+SITE CONDITIONS
+(a) All equipment shall be suitable for operation at an ambient air temperature of 50 deg C.
+(b) The equipment shall be suitable for relative humidity up to 95 %.
+(c) Site altitude does not exceed 1000 metres above MSL.
+
+SECTION 4: MAIN LT PANEL
+(a) Switchboards shall be designed, manufactured and tested in accordance with IS/IEC 61439-2:2020.
+(b) Panels shall be free standing, totally enclosed, made of 2 mm. thick CRCA sheet with powder coated finish.
+(c) The panel shall be suitable for 415 Volt ± 10 %, 50 HZ, 3 phase 4 wire system.
+(d) The horizontal busbar shall be high conductivity aluminium alloy of 1600 Amps rating. Short time withstand rating of the switchboard shall be 50 kA for 1 s.
+(e) Enclosure protection class for the switchboard shall be IP 54.
+(f) Internal separation of functional units shall be Form 4.
+(g) Incoming breaker shall be 1600 Amps four pole draw-out ACB as per IS/IEC 60947-2:2003 with microprocessor release.
+(h) All outgoing MCCBs shall have a rated service breaking capacity of not less than 36 kA.
+(i) EACH INCOMER SHALL BE PROVIDED WITH A DIGITAL MULTIFUNCTION METER WITH RS-485 PORT.
+
+GUARANTEED TECHNICAL PARTICULARS — LT PANEL
+Rated operational voltage: 415 Volt
+Busbar current rating: 1600 Amps
+Rated short-time withstand current: 50 kA for 1 sec
+Enclosure protection: IP54
+Make and type: (to be furnished by the bidder)
+
+PART E — LT POWER AND CONTROL CABLES
+(a) LT power cables shall be XLPE insulated 1.1 kV grade armoured cables with aluminium conductors as per IS 7098 (Part 1):1988.
+(b) Continuous conductor operating temperature of XLPE cables shall be 90 deg C. COPPER CONTROL CABLES OF 2.5 SQ MM SHALL BE PVC INSULATED HEAVY DUTY TYPE AS PER IS 1554 (PART 1).
+(c) Cable conductors shall meet the resistance requirements of IS 8130 for class 2 conductors.
+(d) Cables shall be laid directly in ground at a depth of 750 mm. with brick protection.
+(e) Terminations shall be made with brass double compression glands and tinned copper lugs.
+(f) Cable drums shall carry marking of size, type, length and manufacturer's name.
+
+SECTION 6: TESTING, INSPECTION AND CERTIFICATION
+(a) EACH SWITCHBOARD SHALL BE SUBJECTED TO ROUTINE VERIFICATION TESTS AS PER IS/IEC 61439-2 AT THE WORKS.
+(b) The bidder shall furnish type test reports of the switchboard and breakers from an NABL accredited laboratory.
+(c) Acceptance tests on cables shall be carried out as per IS 10810 in presence of the Engineer.
+(d) Manufacturer's test certificates shall accompany every cable drum supplied.
+(e) Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.
+
+7 DOCUMENTATION, WARRANTY AND TRAINING
+(a) Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.
+(b) O&M MANUALS, AS-BUILT DRAWINGS AND CATALOGUES SHALL BE FURNISHED IN TRIPLICATE AT THE TIME OF HANDING OVER.
+(c) The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.
+(d) TRAINING OF TWO OPERATORS FOR ONE WEEK SHALL BE IMPARTED BY THE SUPPLIER AFTER COMMISSIONING.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Main LT panel as per specification | Set | 1
+2 | Sub-distribution board, 12 way TPN | No. | 8
+3 | 3.5C x 300 sq mm XLPE armoured cable | m | 350
+4 | Cable tray 300 mm wide | m | 120
+
+LIST OF APPROVED MAKES
+LT panel builder: as per approved list; ACB/MCCB: L&T / Siemens / Schneider / ABB
+Cables: Polycab / KEI / Havells / RR Kabel
+
+Note: Quantities are approximate and may vary during execution.
+Note: Drawings are indicative only and shall be verified at site.
+
+Signature of Bidder with seal
+Executive Engineer

@@ -1,0 +1,358 @@
+{
+ "id": "rw2-test-06",
+ "split": "test",
+ "name": "Rural piped water supply scheme — pumping and treated water supply — CE/CIV/58/2026-27",
+ "organization": "RURAL WATER SUPPLY DEPARTMENT",
+ "domain": "Centrifugal pumps, Induction motors, Drinking water quality",
+ "plants": [
+  "pump.isi.omit",
+  "water.arsenic.high"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} Volt",
+   "kV": "{n} kV",
+   "A": "{n} A",
+   "kA": "{n} KA",
+   "degC": "{n} degree centigrade",
+   "mm2": "{n} sq.mm",
+   "kW": "{n} Kw",
+   "Hz": "{n} c/s",
+   "m3h": "{n} m³/h",
+   "mgl": "{n} mg/litre",
+   "ohm": "{n} ohm",
+   "mm": "{n} mm.",
+   "m": "{n} metres",
+   "pct": "{n} percent",
+   "kVA": "{n} K.V.A.",
+   "rpm": "{n} RPM",
+   "NTU": "{n} NTU",
+   "dBA": "{n} dB(A)",
+   "kgm3": "{n} kg/cum",
+   "days": "{n} days"
+  },
+  "numbering": "paren_alpha",
+  "caps_rate": 0.08,
+  "merge_rate": 0.2
+ },
+ "requirements": [
+  {
+   "text": "Horizontal centrifugal pumps for clear cold water shall comply with IS 1520:1980.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Duty point of each pump shall be 250 m³/h discharge at 45 metres total dynamic head.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "flow_rate",
+     "value": 250
+    },
+    {
+     "parameter": "pump_head",
+     "value": 45000
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Guaranteed pump efficiency at the rated duty shall be minimum 78 percent.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "efficiency",
+     "value": 78
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Pump casing shall be CI and impeller of leaded tin bronze.",
+   "category": "material",
+   "attributes": [],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Sound pressure level shall be limited to 85 dB(A) at 1 metres distance.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "noise_level",
+     "value": 85
+    }
+   ]
+  },
+  {
+   "text": "Rated discharge: 250 m³/h",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "flow_rate",
+     "value": 250
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Total dynamic head: 45 metres",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "pump_head",
+     "value": 45000
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "The drive motor shall be a three phase TEFC squirrel cage induction motor as per IS 325:1996.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "MOTOR RATING SHALL BE 37 KW CONTINUOUS.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "rated_power",
+     "value": 37000
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Motors shall operate satisfactorily on a supply of 415 Volt ± 10 percent and 50 c/s ± 5 percent.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 415
+    },
+    {
+     "parameter": "voltage_variation",
+     "value": 10
+    },
+    {
+     "parameter": "frequency",
+     "value": 50
+    },
+    {
+     "parameter": "frequency_variation",
+     "value": 5
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "The motor shall be premium efficiency IE3 conforming to IS 12615:2018.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "efficiency_class",
+     "text": "IE3"
+    }
+   ]
+  },
+  {
+   "text": "Motor enclosure shall be totally enclosed fan cooled with IP 55 protection.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ip_rating",
+     "text": "IP55"
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Insulation shall be class F and the motor shall be rated for S1 continuous duty.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "insulation_class",
+     "text": "Class F"
+    },
+    {
+     "parameter": "duty_type",
+     "text": "S1"
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Motor speed shall be 1500 RPM (4 pole).",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "speed",
+     "value": 1500
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "The quality of water supplied shall meet IS 10500:2012.",
+   "category": "quality",
+   "attributes": []
+  },
+  {
+   "text": "pH value: 6.5 to 8.5",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "ph",
+     "value": 6.5
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "TDS of supplied water shall be within 500 mg/litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "tds",
+     "value": 500
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Turbidity of treated water shall be limited to 1 NTU.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "turbidity",
+     "value": 1
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Fluoride content shall be within 1.0 mg/litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "fluoride",
+     "value": 1.0
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Nitrate as NO3 shall be less than 45 mg/litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "nitrate",
+     "value": 45
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Arsenic content in supplied water shall be less than 0.05 mg/litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "arsenic",
+     "value": 0.05
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Total hardness shall be within 200 mg/litre as CaCO3.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "total_hardness",
+     "value": 200
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Total coliforms shall be absent in any 100 ml sample.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "bacteriological_quality"
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Performance tests on each pump shall be conducted as per IS 9137 in the presence of the Engineer.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Each motor shall be subjected to routine tests in accordance with IS 4029.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Motors shall be BIS certified and test certificates shall be furnished.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Physico-chemical tests shall follow IS 3025 and bacteriological examination shall follow IS 1622.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "MONTHLY WATER QUALITY REPORTS SHALL BE FURNISHED TO THE DEPARTMENT.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Training of two operators for one week shall be imparted by the supplier after commissioning.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "certification",
+   "why": "no conformity evidence for pumps"
+  },
+  {
+   "group": "conflict",
+   "standardId": "is-10500-2012",
+   "parameter": "arsenic",
+   "why": "0.05 mg/l above 0.01 mg/l"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-10500-2012",
+   "why": "amendments to confirm"
+  }
+ ]
+}

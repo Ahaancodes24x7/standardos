@@ -1,52 +1,46 @@
-"""Evaluation regression gate.
+"""Regression gate: the default pipeline must hold its quality on the *open* splits.
 
-Fails if a change drops any headline metric below its floor. Floors sit a few
-points under the values in eval/results/latest.md, so they catch regressions
-without demanding perfection on small datasets. Raise them when the pipeline
-improves.
+Only open (development) splits are scored here — never blind ones — so running
+the test suite cannot leak test data into development. Thresholds sit a little
+below the v3 results recorded in results/runs; lower one only with a run record
+explaining why.
 """
-
-from __future__ import annotations
 
 import pytest
 
-from eval.evaluate import evaluate_all
+from evaluation import datasets as dsreg
+from evaluation.tasks import DOC_AGGREGATOR, evaluate_document
+from standardos_aiml.config import preset
+from standardos_aiml.standards.seed import seed_corpus
 
-FLOORS = {
-    "requirement_f1": 0.9,
-    "classification_accuracy": 0.72,
-    "attribute_f1": 0.88,
-    "standard_recall_at3": 0.95,
-    "standard_mrr": 0.9,
-    "clause_recall_at3": 0.9,
-    "resolution_accuracy": 0.95,
-    "relation_f1": 0.9,
-    "graph_typed_precision": 0.7,
-    "reasoning_f1": 0.9,
-}
+corpus = seed_corpus()
 
 
-@pytest.fixture(scope="module")
-def results():
-    return evaluate_all("all")
+def _score(dataset: str, split: str, config: str) -> dict[str, float]:
+    ds = dsreg.load(dataset)
+    assert ds.role(split) == "open", "the gate may only score open splits"
+    cfg = preset(config)
+    items = [evaluate_document(d, "txt", corpus, cfg) for d in ds.documents if d.split == split]
+    return DOC_AGGREGATOR(items)
 
 
-def test_phase1(results):
-    req = results["requirements"]
-    assert req["identification"]["f1"] >= FLOORS["requirement_f1"]
-    assert req["classification"]["accuracy"] >= FLOORS["classification_accuracy"]
-    assert req["attributes"]["f1"] >= FLOORS["attribute_f1"]
+def test_datasets_are_frozen():
+    assert dsreg.verify() == []
 
 
-def test_phase2(results):
-    retrieval = results["retrieval"]["bm25+rerank"]
-    assert retrieval["standard"]["recallAt3"] >= FLOORS["standard_recall_at3"]
-    assert retrieval["standard"]["mrr"] >= FLOORS["standard_mrr"]
-    assert retrieval["clause"]["recallAt3"] >= FLOORS["clause_recall_at3"]
-    assert results["resolution"]["accuracy"] >= FLOORS["resolution_accuracy"]
-    assert results["relations"]["typedRelation"]["f1"] >= FLOORS["relation_f1"]
-    assert results["graph"]["typed"]["precision"] >= FLOORS["graph_typed_precision"]
+@pytest.mark.parametrize(
+    "dataset,split,floors",
+    [
+        ("realworld_v2", "dev", {"id_f1": 0.97, "cls_macro_f1": 0.75, "attr_f1": 0.93, "map_accuracy": 0.92, "fnd_f1": 0.90}),
+        ("component", "dev", {"fnd_f1": 0.88}),
+    ],
+)
+def test_v3_quality_floor(dataset, split, floors):
+    m = _score(dataset, split, "v3")
+    for metric, floor in floors.items():
+        assert m[metric] >= floor, f"{dataset}/{split} {metric} = {m[metric]:.3f} < {floor}"
 
 
-def test_phase3(results):
-    assert results["reasoning"]["overall"]["f1"] >= FLOORS["reasoning_f1"]
+def test_v3_improves_on_legacy_findings():
+    """Every audit fix is behind a flag; the v3 preset must beat the 2.1 behaviour it replaced."""
+    assert _score("realworld_v2", "dev", "v3")["fnd_f1"] > _score("realworld_v2", "dev", "legacy-2.1")["fnd_f1"] + 0.1

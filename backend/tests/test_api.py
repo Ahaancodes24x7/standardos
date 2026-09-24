@@ -203,3 +203,53 @@ def test_sweeper(client: TestClient):
     assert client.get("/api/cron/analysis-sweeper").status_code == 401
     res = client.get("/api/cron/analysis-sweeper", headers={"Authorization": "Bearer cron-test-secret"})
     assert res.status_code == 200 and set(res.json()) == {"requeued", "failed", "executed"}
+
+
+def test_engine_dag_and_evaluation(client: TestClient):
+    engine = client.get("/api/engine").json()
+    assert engine["pipelineVersion"].startswith("standardos-pipeline/3.") and engine["config"] == "v3"
+
+    dag = client.get("/api/dependency-dag").json()
+    assert dag["cycles"] == [] and dag["stats"]["nodes"] > 0 and dag["edges"]
+    deps = client.get("/api/standards/is-456-2000/dependencies").json()
+    assert {"is-269-2015", "is-1786-2008"} <= {d["id"] for d in deps["dependsOn"]}
+    assert [d["id"] for d in client.get("/api/standards/is-269-2015/dependencies").json()["requiredBy"]] == ["is-456-2000"]
+    assert client.get("/api/standards/nope/dependencies").status_code == 404
+
+    runs = client.get("/api/evaluation/runs").json()
+    if runs:  # present in a checkout with aiml/results
+        assert runs[0]["documents"] and "fnd_f1" in runs[0]["documents"][0]["metrics"]
+        assert client.get(f"/api/evaluation/runs/{runs[0]['runId']}").json()["tasks"]
+    assert client.get("/api/evaluation/runs/..%2F..%2Fetc").status_code == 404
+
+
+def test_change_impact_follows_dag(client: TestClient):
+    sign_up(client, "Civil")
+    document_id, _ = analyse_text(
+        client,
+        "SPECIFICATION FOR RCC WORKS\n1. All reinforced concrete shall conform to IS 456:2000.\n"
+        "2. Concrete grade shall be M25 for moderate exposure.\n",
+    )
+    impact = {e["standardId"]: e for e in client.get("/api/change-impact").json()}
+    # Directly affected: the dependency-gap finding names IS 269 as evidence.
+    assert any(a["documentId"] == document_id for a in impact["is-269-2015"]["affected"])
+
+    # Indirect: a document that only maps to IS 456 is affected by an IS 269 change through the DAG.
+    from standardos_aiml.pipeline import get_engine
+
+    from app.corpus import get_corpus
+    from app.routers.standards import _affected
+
+    corpus = get_corpus().corpus
+    doc = {"name": "RCC spec", "id": "d1", "isSample": False, "runStatus": "succeeded",
+           "requirements": [{"standardId": "is-456-2000"}], "findings": []}
+    assert _affected([doc], "is-269-2015", get_engine(corpus).dag, corpus) == [
+        {"name": "RCC spec", "documentId": "d1", "via": "IS 456:2000"}
+    ]
+    assert _affected([doc], "is-3043-2018", get_engine(corpus).dag, corpus) == []
+
+
+def test_corpus_import_requires_admin(client: TestClient):
+    sign_up(client, "NotAdmin")
+    res = client.post("/api/admin/corpus/import", files={"file": ("c.json", b"{}", "application/json")})
+    assert res.status_code == 403

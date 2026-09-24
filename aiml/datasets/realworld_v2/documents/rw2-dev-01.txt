@@ -1,0 +1,84 @@
+CENTRAL PUBLIC WORKS DEPARTMENT
+निविदा आमंत्रण सूचना
+Office of the Executive Engineer, Project Division
+NOTICE INVITING e-TENDER No. CE/ELE/41/2026-27
+Name of work: Supply, installation, testing and commissioning of LT electrical distribution system.
+Estimated cost put to tender: Rs. 283,97,000/-
+Earnest Money Deposit: Rs. 9,70,000/-
+Period of completion: 18 months
+Last date of submission: 26.10.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+2. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+3. Conditional bids will be summarily rejected.
+4. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+
+SPECIAL CONDITIONS OF CONTRACT
+1. Liquidated damages at 0.5 % per week of delay shall be levied, subject to a maximum of 10 % of the contract value.
+2. Income tax and GST shall be deducted at source as applicable.
+3. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+
+SCOPE OF WORK
+This specification covers supply, installation, testing and commissioning of lt electrical distribution system complete in all respects.
+
+SITE CONDITIONS
+(a) The equipment shall be designed for a maximum ambient temperature of 40°C.
+(b) Relative humidity at site may reach 95 %.
+(c) The installation is at an altitude of 2600 m above mean sea level.
+
+PART D — MAIN LT PANEL
+(a) The LT panel shall conform to IS/IEC 61439-1:2020 and IS/IEC 61439-2:2020.
+(b) The panel shall be cubicle type, floor mounted, fabricated from CRCA sheet steel of 2mm thickness.
+(c) The rated operational voltage shall be 415 V, 3 phase, 4 wire, 50 Hz.
+(d) Main busbars shall be of electrolytic grade aluminium rated for 1600A continuous current.
+(e) The busbars and panel shall withstand a short circuit current of 50 kA for 1 second.
+(f) The degree of protection of the panel enclosure shall be IP54.
+(g) The switchboard shall have Form 3b internal separation.
+(h) Incomers shall be 1600A, 4 pole, electrically operated air circuit breakers conforming to IS/IEC 60947-2:2003.
+(i) Outgoing feeders shall be MCCBs with ultimate breaking capacity of 36 kA.
+(j) Multifunction meters of accuracy class 0.5 shall be provided on each incomer.
+
+GUARANTEED TECHNICAL PARTICULARS — LT PANEL
+Rated voltage: 415 V
+Rated current of main busbar: 1600A
+Short time current rating: 50 kA for 1 s
+Degree of protection: IP54
+Make and type: (to be furnished by the bidder)
+
+PART E — LT POWER AND CONTROL CABLES
+(a) Power cables shall be 1.1 kV grade, aluminium conductor, XLPE insulated, armoured and PVC sheathed, conforming to IS 7098 (Part 1):1988.
+(b) The cables shall be suitable for a maximum continuous conductor temperature of 90°C.
+(c) Control cables shall be PVC insulated, copper conductor of 2.5 sq mm, 1.1 kV grade, conforming to IS 1554 (Part 1).
+(d) Conductors shall be stranded, class 2, conforming to IS 8130.
+(e) Cables shall be laid in RCC trenches or on perforated cable trays as shown in the drawings.
+(f) Cable ends shall be terminated using double compression glands and crimped lugs.
+(g) Each drum shall be marked with the manufacturer's name, size, voltage grade and year of manufacture.
+
+6 TESTS AND INSPECTION
+(a) Routine verification of each assembly shall be carried out in accordance with IS/IEC 61439-1.
+(b) Routine test certificates of cables shall be furnished with each consignment.
+(c) The equipment shall be inspected by the Engineer-in-charge at the manufacturer's works before dispatch.
+
+7 DOCUMENTATION, WARRANTY AND TRAINING
+(a) The contractor shall submit detailed shop drawings for approval within 21 days of award of work.
+(b) Three sets of operation and maintenance manuals shall be handed over on completion.
+(c) The complete installation shall be guaranteed against defective design, material and workmanship for a period of 12 months from the date of handing over.
+(d) The contractor shall train the Department's operating staff in operation and routine maintenance.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Main LT panel as per specification | Set | 1
+2 | Sub-distribution board, 12 way TPN | No. | 8
+3 | 3.5C x 300 sq mm XLPE armoured cable | m | 350
+4 | Cable tray 300 mm wide | m | 120
+
+APPROVED MAKES OF MATERIALS
+LT panel builder: as per approved list; ACB/MCCB: L&T / Siemens / Schneider / ABB
+Cables: Polycab / KEI / Havells / RR Kabel
+
+Note: Drawings are indicative only and shall be verified at site.
+Note: Quantities are approximate and may vary during execution.
+
+Signature of Bidder with seal
+Executive Engineer

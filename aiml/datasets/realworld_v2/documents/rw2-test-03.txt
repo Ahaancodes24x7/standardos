@@ -1,0 +1,58 @@
+WATER SUPPLY AND DRAINAGE BOARD
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. SE/MM/53/2026-27
+Name of work: Construction of RCC elevated service reservoir.
+Estimated cost put to tender: Rs. 463,87,000/-
+Earnest Money Deposit: Rs. 8,53,000/-
+Period of completion: 9 months
+Last date of submission: 28.11.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. The bidder must be registered with the Department in the appropriate class.
+2. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+3. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+4. Conditional bids will be summarily rejected.
+
+SCOPE OF WORK
+This specification covers construction of rcc elevated service reservoir complete in all respects.
+
+SITE CONDITIONS
+- Exposure condition shall be considered as severe for all members.
+
+PART D — CONCRETE AND REINFORCEMENT
+- Design and construction of RCC shall be in accordance with IS 456:2000.
+- Grade of concrete for all structural members shall be M 30.
+- Clear cover to main reinforcement shall be 45 MM for all members.
+- Maximum free water cement ratio shall be 0.45.
+- Cement content shall not be less than 320 kg/m³ of concrete.
+- OPC 43 grade cement as per IS 269:2015 shall be used.
+- Aggregates shall comply with the requirements of IS 383:2016.
+- High strength deformed bars of grade Fe 500D as per IS 1786:2008 shall be used.
+- Mix design shall be carried out in accordance with IS 10262:2019.
+- Concrete shall be kept continuously moist for at least 10 days.
+- Compaction shall be done by immersion vibrators.
+
+5 TESTS AND INSPECTION
+- Cube tests for compressive strength shall be done in accordance with IS 516 (Part 1/Sec 1):2021.
+- Mill test certificates for steel and test certificates for cement shall be submitted for every consignment.
+- Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.
+
+6 DOCUMENTATION, WARRANTY AND TRAINING
+- Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.
+- O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.
+- The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.
+- Training of two operators for one week shall be imparted by the supplier after commissioning.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | RCC M30 in superstructure | cum | 420
+2 | TMT reinforcement Fe 500D | MT | 58
+
+APPROVED MAKES OF MATERIALS
+Cement: UltraTech / ACC / Ambuja; Steel: SAIL / TATA / JSW
+
+Note: Quantities are approximate and may vary during execution.
+Note: Drawings are indicative only and shall be verified at site.
+
+Signature of Bidder with seal
+Executive Engineer

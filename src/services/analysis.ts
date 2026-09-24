@@ -3,14 +3,19 @@ import { api, ApiError } from "@/lib/api";
 import type {
   AuditEntry,
   ChangeEvent,
+  ClassifierComparison,
   CorpusStatus,
+  DependencyDag,
   DocumentAnalysis,
+  EngineInfo,
+  EvaluationRun,
   ProcurementDocument,
   RepairStatus,
   ReviewStatus,
   RunState,
   SearchResult,
   Standard,
+  StandardDependencies,
   StandardSummary,
 } from "@/lib/contracts";
 import { buildComplianceReport } from "@/lib/report";
@@ -192,6 +197,34 @@ export const searchStandards = (
 ): Promise<SearchResult[]> => api.post("/api/standards/search", { query, ...filters });
 
 export const getCorpusStatus = (): Promise<CorpusStatus> => api.get("/api/corpus/status");
+
+export const getStandardDependencies = (id: string): Promise<StandardDependencies> =>
+  api.get(`/api/standards/${encodeURIComponent(id)}/dependencies`);
+
+export const getDependencyDag = (): Promise<DependencyDag> => api.get("/api/dependency-dag");
+
+export const getEngineInfo = (): Promise<EngineInfo> => api.get("/api/engine");
+
+export const listEvaluationRuns = (): Promise<EvaluationRun[]> => api.get("/api/evaluation/runs");
+
+export async function getClassifierComparison(): Promise<ClassifierComparison | null> {
+  try {
+    return await api.get<ClassifierComparison>("/api/evaluation/classifiers");
+  } catch (error) {
+    if (error instanceof ApiError && error.status === 404) return null;
+    throw error;
+  }
+}
+
+/** Replace the stored standards corpus with a JSON file (corpus administrators only). */
+export function importCorpus(file: File) {
+  const form = new FormData();
+  form.append("file", file);
+  return api.upload<{ version: string; standards: number; clauses: number; relationships: number }>(
+    "/api/admin/corpus/import",
+    form,
+  );
+}
 
 /** "Today, 10:42" / "Yesterday, 16:18" / "18 Sep 2026" in the viewer's timezone. */
 export function formatAnalyzedAt(iso: string): string {

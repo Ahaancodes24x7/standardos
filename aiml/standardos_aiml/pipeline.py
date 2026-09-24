@@ -6,6 +6,7 @@ import time
 from dataclasses import dataclass
 from typing import Callable, Optional, Union
 
+from .config import PipelineConfig, current, current as active_config, use_config
 from .ingest.parse import page_locator, parse_document
 from .ingest.sections import detect_sections
 from .nlp.requirements import extract_requirements
@@ -23,6 +24,7 @@ from .reasoning.gaps import checklist_gaps, vague_requirement_findings
 from .reasoning.repair import generate_repairs
 from .reasoning.verification import verification_findings
 from .reasoning.versions import version_findings
+from .standards.dag import DependencyDAG
 from .standards.graph import StandardsGraph, build_analysis_graph
 from .standards.resolve import ResolvedReference
 from .standards.retrieval import DEFAULT_RETRIEVAL, RetrievalOptions, StandardsIndex, document_context_terms
@@ -46,6 +48,7 @@ StageCallback = Callable[[str, int], None]
 class Engine:
     index: StandardsIndex
     graph: StandardsGraph
+    dag: DependencyDAG
 
 
 _engine_cache: dict[str, Engine] = {}
@@ -55,7 +58,8 @@ def get_engine(corpus: Corpus) -> Engine:
     """One index per corpus version; building it is the only non-trivial setup cost."""
     engine = _engine_cache.get(corpus.version)
     if engine is None:
-        engine = Engine(StandardsIndex(corpus), StandardsGraph(corpus))
+        graph = StandardsGraph(corpus)
+        engine = Engine(StandardsIndex(corpus), graph, DependencyDAG(corpus, graph))
         _engine_cache.clear()
         _engine_cache[corpus.version] = engine
     return engine
@@ -71,8 +75,21 @@ def run_pipeline(
     corpus: Corpus,
     retrieval: Optional[RetrievalOptions] = None,
     on_stage: Optional[StageCallback] = None,
+    config: Optional[PipelineConfig] = None,
 ) -> AnalysisResult:
-    options = retrieval or DEFAULT_RETRIEVAL
+    """Analyse one document. ``config`` defaults to the context's configuration (see config.py)."""
+    cfg = config or current()
+    with use_config(cfg):
+        return _run(source, corpus, retrieval or cfg.retrieval, on_stage, cfg)
+
+
+def _run(
+    source: PipelineInput,
+    corpus: Corpus,
+    options: RetrievalOptions,
+    on_stage: Optional[StageCallback],
+    cfg: PipelineConfig,
+) -> AnalysisResult:
     timings: dict[str, float] = {}
     tracker: dict[str, object] = {"current": None, "start": time.perf_counter()}
 
@@ -94,6 +111,10 @@ def run_pipeline(
     stage("extracting")
     sections = detect_sections(document.text, page_at)
     requirements = extract_requirements(document.text, sections, page_at)
+    if active_config().classifier != "lexicon":
+        from .ml.classifier import reclassify
+
+        reclassify(requirements, active_config().classifier)
 
     # 3. Categorise: document-level product context and qualifiers
     stage("categorising")
@@ -155,6 +176,9 @@ def run_pipeline(
         applicability=applicability,
         qualifiers=qualifiers,
         threshold=options.min_confidence,
+        index=index,
+        dag=engine.dag,
+        context_terms=context_terms,
     )
 
     # 6. Certifications
@@ -196,6 +220,7 @@ def run_pipeline(
 
     return AnalysisResult(
         pipeline_version=PIPELINE_VERSION,
+        config_name=cfg.name,
         corpus_version=corpus.version,
         document=document,
         sections=sections,

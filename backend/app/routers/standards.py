@@ -212,6 +212,25 @@ def _affects(doc: dict[str, Any], standard_id: str) -> bool:
     )
 
 
+def _affected(documents: list[dict[str, Any]], standard_id: str, dag: Any, corpus: Corpus) -> list[dict[str, Any]]:
+    """Documents that use the changed standard directly, or through a standard whose normative
+    obligations include it (dependency DAG ancestors: IS 269 changes → specs citing IS 456)."""
+    out = []
+    ancestors = sorted(dag.ancestors(standard_id)) if dag is not None else []
+    for d in documents:
+        if d["runStatus"] != "succeeded":
+            continue
+        entry = {"name": d["name"], "documentId": None if d["isSample"] else d["id"]}
+        if _affects(d, standard_id):
+            out.append(entry)
+            continue
+        via = next((a for a in ancestors if _affects(d, a)), None)
+        if via:
+            s = corpus.standard(via)
+            out.append({**entry, "via": s.number if s else via})
+    return out
+
+
 @router.get("/change-impact")
 def change_impact(
     scope: Literal["workspace", "sample"] = "workspace",
@@ -225,6 +244,7 @@ def change_impact(
         if not user_id:
             raise Unauthorized()
         documents = [build_document_analysis(s, corpus) for s in load_snapshots(db, user_id)]
+    dag = get_engine(corpus).dag
     events = []
     for e in corpus.events:
         s = corpus.standard(e.standard_id)
@@ -237,11 +257,7 @@ def change_impact(
                 "change": CHANGE_LABEL.get(e.kind, e.kind),
                 "summary": e.summary,
                 "severity": e.severity,
-                "affected": [
-                    {"name": d["name"], "documentId": None if d["isSample"] else d["id"]}
-                    for d in documents
-                    if d["runStatus"] == "succeeded" and _affects(d, e.standard_id)
-                ],
+                "affected": _affected(documents, e.standard_id, dag, corpus),
             }
         )
     rank = {"high": 0, "medium": 1, "low": 2}

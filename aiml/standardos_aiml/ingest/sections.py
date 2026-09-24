@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 from typing import Callable, Optional
 
+from ..config import current
 from ..types import Section, TextSpan
 
 MODAL = re.compile(r"\b(shall|must|should|will|may|is required|are required)\b", re.I)
@@ -23,8 +24,14 @@ def is_heading_text(title: str) -> bool:
     if MODAL.search(title):
         return False
     # "Rated voltage: 415 V" is a specification line, not a heading.
-    if re.search(r":\s*\S", title) or re.search(r"\d(?:[.,]\d+)?\s*(?:[A-Za-z°%µ]|$)", title):
+    if re.search(r":\s*\S", title):
         return False
+    if re.search(r"\d(?:[.,]\d+)?\s*(?:[A-Za-z°%µ]|$)", title):
+        # v2: an ALL-CAPS title ("SECTION IV – 11 kV POWER CABLES") is still a heading.
+        letters = re.sub(r"[^A-Za-z]", "", title)
+        caps = len(letters) >= 6 and sum(1 for ch in letters if ch.isupper()) / len(letters) > 0.8
+        if not (current().heading_v2 and caps):
+            return False
     return bool(re.match(r"[A-Z0-9]", title.strip()))
 
 
@@ -80,7 +87,13 @@ def detect_sections(text: str, page_at: Callable[[int], Optional[int]]) -> list[
             )
             continue
         labelled = LABELLED_HEADING.match(trimmed)
-        if labelled and is_heading_text(trimmed):
+        # v2: "SECTION 6: INTERNAL WIRING" — judge the title, not the colon after the label.
+        label_ok = labelled and (
+            is_heading_text(labelled.group("title"))
+            if current().heading_v2 and (labelled.group("title") or "").strip()
+            else is_heading_text(trimmed)
+        )
+        if labelled and label_ok:
             index += 1
             sections.append(
                 Section(

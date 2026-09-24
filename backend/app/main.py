@@ -18,7 +18,7 @@ from .config import get_settings
 from .corpus import get_corpus
 from .db import DatabaseNotConfigured, database_configured
 from .errors import AppError
-from .routers import analyses, auth, review, standards
+from .routers import analyses, auth, insights, review, standards
 from .security import SessionSecretMissing, cron_authorized
 from .store import sweep_runs
 
@@ -72,6 +72,7 @@ app.include_router(auth.router)
 app.include_router(analyses.router)
 app.include_router(review.router)
 app.include_router(standards.router)
+app.include_router(insights.router)
 
 
 @app.get("/api/health", tags=["system"])

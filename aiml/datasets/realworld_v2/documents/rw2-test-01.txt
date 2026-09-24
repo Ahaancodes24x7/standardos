@@ -1,0 +1,71 @@
+PUBLIC HEALTH ENGINEERING DEPARTMENT
+Office of the Executive Engineer, Electrical Division
+NOTICE INVITING e-TENDER No. EE/CIV/13/2026-27
+Name of work: Supply and installation of borewell submersible pumpsets and water quality testing.
+Estimated cost put to tender: Rs. 179,66,000/-
+Earnest Money Deposit: Rs. 5,29,000/-
+Period of completion: 12 months
+Last date of submission: 25.10.2026 up to 15:00 hrs
+
+PART A — INSTRUCTIONS TO BIDDERS
+1. Conditional bids will be summarily rejected.
+2. Bidders shall have completed at least one similar work of value not less than 40 % of the estimated cost during the last seven years.
+3. The Department reserves the right to accept or reject any bid without assigning any reason.
+4. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+5. The tender documents may be downloaded from the e-procurement portal of the Government.
+6. Bids received after the due date and time shall not be considered.
+7. The bidder must be registered with the Department in the appropriate class.
+
+SPECIAL CONDITIONS OF CONTRACT
+1. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+2. The contractor shall indemnify the Department against all claims arising out of the work.
+3. Rates quoted shall be inclusive of all taxes, freight, insurance and transit risks.
+4. Payment shall be made within 30 days of receipt of bills duly certified by the Engineer-in-charge.
+
+SCOPE OF WORK
+This specification covers supply and installation of borewell submersible pumpsets and water quality testing complete in all respects.
+
+3 TECHNICAL SPECIFICATION — BOREWELL SUBMERSIBLE PUMPSETS
+3.1 Submersible pumpsets shall be manufactured to IS 8034:2018.
+3.2 Duty point of each pumpset shall be 18 cum/hr at 90 m total head.
+3.3 Overall pumpset efficiency at duty point shall be minimum 52 per cent.
+3.4 The submersible motor shall be of rewindable wet type as per IS 9283:2013.
+3.5 Flat submersible cables of 3 core 6 sq mm copper, PVC insulated, shall comply with IS 694:2010 and be tested to IS 10810.
+3.6 The starter panel shall include dry run protection, overload relay and single phasing preventer.
+
+PART D — TREATED WATER QUALITY
+4.1 The quality of water supplied shall meet IS 10500:2012.
+4.2 pH value: 6.5 to 8.5
+4.3 TDS of supplied water shall be within 2000 mg/litre.
+4.4 Turbidity of treated water shall be limited to 1 N.T.U..
+4.5 Fluoride content shall be within 1.0 mg/litre.
+4.6 Nitrate as NO3 shall be less than 45 mg/litre.
+4.7 Arsenic content in supplied water shall be less than 0.01 mg/litre.
+4.8 Total hardness shall be within 200 mg/litre as CaCO3.
+4.9 Total coliforms shall be absent in any 100 ml sample.
+
+5 TESTS AND INSPECTION
+5.1 Physico-chemical tests on water samples shall follow IS 3025.
+5.2 Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.
+
+6 DOCUMENTATION, WARRANTY AND TRAINING
+6.1 Monthly water quality reports shall be furnished to the Department.
+6.2 Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.
+6.3 O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.
+6.4 The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.
+6.5 Training of two operators for one week shall be imparted by the supplier after commissioning.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Submersible pumpset 18 m3/hr at 90 m head | Set | 12
+2 | Water quality testing (complete set of parameters) | Sample | 48
+
+LIST OF APPROVED MAKES
+Submersible pumps: CRI / Kirloskar / Texmo
+Testing laboratory: NABL accredited
+
+Note: Quantities are approximate and may vary during execution.
+Note: Drawings are indicative only and shall be verified at site.
+
+Signature of Bidder with seal
+Executive Engineer

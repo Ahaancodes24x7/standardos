@@ -1,0 +1,242 @@
+{
+ "id": "rw2-dev-04",
+ "split": "dev",
+ "name": "Supply and installation of borewell submersible pumpsets and water quality testing — EE/CIV/19/2026-27",
+ "organization": "PUBLIC HEALTH ENGINEERING DEPARTMENT",
+ "domain": "Submersible pumpsets, Drinking water quality",
+ "plants": [
+  "water.turbidity.high",
+  "sub.eff.omit"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} volts",
+   "kV": "{n} kV",
+   "A": "{n}A",
+   "kA": "{n} kA",
+   "degC": "{n} deg C",
+   "mm2": "{n} mm²",
+   "kW": "{n} kW",
+   "Hz": "{n}Hz",
+   "m3h": "{n} m3/hr",
+   "mgl": "{n} mg/l",
+   "ohm": "{n} ohm",
+   "mm": "{n}mm",
+   "m": "{n} m",
+   "pct": "{n}%",
+   "kVA": "{n}kVA",
+   "rpm": "{n} rpm",
+   "NTU": "{n} NTU",
+   "dBA": "{n} dB(A)",
+   "kgm3": "{n} kg/m³",
+   "days": "{n} days"
+  },
+  "numbering": "paren_alpha",
+  "caps_rate": 0,
+  "merge_rate": 0.2
+ },
+ "requirements": [
+  {
+   "text": "Borewell submersible pumpsets shall conform to IS 8034:2018.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Each pumpset shall deliver 18 m3/hr against a total head of 90 m.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "flow_rate",
+     "value": 18
+    },
+    {
+     "parameter": "pump_head",
+     "value": 90000
+    }
+   ],
+   "standard": "is-8034-2018"
+  },
+  {
+   "text": "Motors shall be water filled, wet type, conforming to IS 9283:2013.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Submersible flat cables shall be 3 core, 6 mm², copper conductor, PVC insulated, conforming to IS 694:2010 and tested as per IS 10810.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 6
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "Each pumpset shall be provided with an automatic starter with single phasing preventer and dry run protection.",
+   "category": "electrical",
+   "attributes": []
+  },
+  {
+   "text": "Treated water supplied shall conform to IS 10500:2012.",
+   "category": "quality",
+   "attributes": []
+  },
+  {
+   "text": "pH of treated water shall be between 6.5 and 8.5.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "ph",
+     "value": 6.5
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Total dissolved solids shall not exceed 500 mg/l.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "tds",
+     "value": 500
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Turbidity shall not be more than 5 NTU.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "turbidity",
+     "value": 5
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Fluoride shall not exceed 1.0 mg/l.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "fluoride",
+     "value": 1.0
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Nitrate shall not exceed 45 mg/l.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "nitrate",
+     "value": 45
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Arsenic shall not exceed 0.01 mg/l.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "arsenic",
+     "value": 0.01
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Total hardness as CaCO3 shall not exceed 200 mg/l.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "total_hardness",
+     "value": 200
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "E. coli shall not be detectable in any 100 ml sample.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "bacteriological_quality"
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Pumpsets shall bear the BIS Standard Mark.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Water samples shall be tested in a NABL accredited laboratory as per IS 3025 and IS 1622.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "The equipment shall be inspected by the Engineer-in-charge at the manufacturer's works before dispatch.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Test reports shall be submitted to the Engineer-in-charge for each source.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall submit detailed shop drawings for approval within 21 days of award of work.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Three sets of operation and maintenance manuals shall be handed over on completion.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The complete installation shall be guaranteed against defective design, material and workmanship for a period of 12 months from the date of handing over.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall train the Department's operating staff in operation and routine maintenance.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "conflict",
+   "standardId": "is-10500-2012",
+   "parameter": "turbidity",
+   "why": "5 NTU above 1 NTU"
+  },
+  {
+   "group": "gap",
+   "parameter": "efficiency",
+   "why": "overall efficiency not stated"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-10500-2012",
+   "why": "amendments to confirm"
+  }
+ ]
+}

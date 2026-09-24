@@ -1,0 +1,433 @@
+{
+ "id": "rw2-test-15",
+ "split": "test",
+ "name": "Electrical works for sewage treatment plant including motors and panels — EE/MM/60/2026-27",
+ "organization": "URBAN DEVELOPMENT AUTHORITY",
+ "domain": "LT switchboard, Induction motors, LT power cables",
+ "plants": [
+  "motor.cert.omit",
+  "cable.test.omit",
+  "panel.cert.omit",
+  "motor.ie.vague"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} volts",
+   "kV": "{n} kV",
+   "A": "{n} A",
+   "kA": "{n} KA",
+   "degC": "{n} °C",
+   "mm2": "{n} sqmm",
+   "kW": "{n} KW",
+   "Hz": "{n} c/s",
+   "m3h": "{n} m3/h",
+   "mgl": "{n} ppm",
+   "ohm": "{n} Ohm",
+   "mm": "{n} mm.",
+   "m": "{n} M",
+   "pct": "{n} per cent",
+   "kVA": "{n}kVA",
+   "rpm": "{n} RPM",
+   "NTU": "{n} N.T.U.",
+   "dBA": "{n} dBA",
+   "kgm3": "{n} kg/m3",
+   "days": "{n} days"
+  },
+  "numbering": "dash",
+  "caps_rate": 0,
+  "merge_rate": 0.2
+ },
+ "requirements": [
+  {
+   "text": "All equipment shall be suitable for operation at an ambient air temperature not exceeding 40 °C.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ambient_temperature",
+     "value": 40
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "The equipment shall be suitable for relative humidity up to 95 per cent.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "relative_humidity",
+     "value": 95
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Site altitude does not exceed 1000 M above MSL.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "altitude",
+     "value": 1000000
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Switchboards shall be designed, manufactured and tested in accordance with IS/IEC 61439-1:2020 and IS/IEC 61439-2:2020.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Panels shall be free standing, totally enclosed, made of 2 mm. thick CRCA sheet with powder coated finish.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "The panel shall be suitable for 415 volts ± 10 per cent, 50 c/s, 3 phase 4 wire system.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 415
+    },
+    {
+     "parameter": "frequency",
+     "value": 50
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "The horizontal busbar shall be high conductivity aluminium alloy of 1600 A rating.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 1600
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Short time withstand rating of the switchboard shall be 50 KA for 1 s.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 50000
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Enclosure protection class for the switchboard shall be IP 54.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ip_rating",
+     "text": "IP54"
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Internal separation of functional units shall be Form 4.",
+   "category": "electrical",
+   "attributes": [],
+   "standard": "is-iec-61439-2-2020"
+  },
+  {
+   "text": "Incoming breaker shall be 1600 A four pole draw-out ACB as per IS/IEC 60947-2:2003 with microprocessor release.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 1600
+    }
+   ]
+  },
+  {
+   "text": "All outgoing MCCBs shall have a rated service breaking capacity of not less than 36 KA.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 36000
+    }
+   ],
+   "standard": "is-iec-60947-2-2003"
+  },
+  {
+   "text": "Each incomer shall be provided with a digital multifunction meter with RS-485 port.",
+   "category": "electrical",
+   "attributes": []
+  },
+  {
+   "text": "Rated operational voltage: 415 volts",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 415
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Busbar current rating: 1600 A",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 1600
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Rated short-time withstand current: 50 KA for 1 sec",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 50000
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Enclosure protection: IP54",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ip_rating",
+     "text": "IP54"
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "The drive motor shall be a three phase TEFC squirrel cage induction motor as per IS 325:1996.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Motor rating shall be 37 KW continuous.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "rated_power",
+     "value": 37000
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Motors shall operate satisfactorily on a supply of 415 volts ± 10 per cent and 50 c/s ± 5 per cent.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 415
+    },
+    {
+     "parameter": "voltage_variation",
+     "value": 10
+    },
+    {
+     "parameter": "frequency",
+     "value": 50
+    },
+    {
+     "parameter": "frequency_variation",
+     "value": 5
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "The motor shall be of high efficiency design.",
+   "category": "performance",
+   "attributes": [],
+   "standard": "is-12615-2018"
+  },
+  {
+   "text": "Motor enclosure shall be totally enclosed fan cooled with IP 55 protection.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ip_rating",
+     "text": "IP55"
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Insulation shall be class F and the motor shall be rated for S1 continuous duty.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "insulation_class",
+     "text": "Class F"
+    },
+    {
+     "parameter": "duty_type",
+     "text": "S1"
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Motor speed shall be 1500 RPM (4 pole).",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "speed",
+     "value": 1500
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "LT power cables shall be XLPE insulated 1.1 kV grade armoured cables with aluminium conductors as per IS 7098 (Part 1):1988.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 1100
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "aluminium"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "XLPE"
+    }
+   ]
+  },
+  {
+   "text": "Size of the incoming feeder cable shall be 3.5 core x 300 sqmm.",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 300
+    }
+   ],
+   "standard": "is-7098-1-1988"
+  },
+  {
+   "text": "Continuous conductor operating temperature of XLPE cables shall be 90 °C.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_temperature",
+     "value": 90
+    }
+   ],
+   "standard": "is-7098-1-1988"
+  },
+  {
+   "text": "Copper control cables of 2.5 sqmm shall be PVC insulated heavy duty type as per IS 1554 (Part 1).",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 2.5
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "Cable conductors shall meet the resistance requirements of IS 8130 for class 2 conductors.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Cables shall be laid directly in ground at a depth of 750 mm. with brick protection.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Terminations shall be made with brass double compression glands and tinned copper lugs.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Cable drums shall carry marking of size, type, length and manufacturer's name.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Each switchboard shall be subjected to routine verification tests as per IS/IEC 61439-1 at the works.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Each motor shall be subjected to routine tests in accordance with IS 4029.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Manufacturer's test certificates shall accompany every cable drum supplied.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Training of two operators for one week shall be imparted by the supplier after commissioning.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "certification",
+   "why": "no conformity evidence for motors"
+  },
+  {
+   "group": "dependency",
+   "standardId": "is-10810",
+   "why": "cable test method not named"
+  },
+  {
+   "group": "certification",
+   "why": "no conformity evidence for the circuit breakers"
+  },
+  {
+   "group": "gap",
+   "parameter": "efficiency_class",
+   "why": "efficiency class not measurable"
+  }
+ ]
+}

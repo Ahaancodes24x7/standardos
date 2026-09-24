@@ -11,6 +11,7 @@ import re
 from dataclasses import dataclass
 from typing import Optional
 
+from ..config import current
 from ..provenance import fmt_num
 
 
@@ -187,7 +188,7 @@ UNIT_PATTERN = "|".join(re.escape(form) for form in SORTED_FORMS)
 
 
 def lookup_unit(surface: str) -> Optional[UnitDef]:
-    direct = SURFACE_FORMS.get(surface)
+    direct = SURFACE_FORMS.get(surface) or (EXTRA_V2.get(surface) if current().units_v2 else None)
     if direct:
         return direct
     collapsed = re.sub(r"\s+", " ", surface)
@@ -197,7 +198,26 @@ def lookup_unit(surface: str) -> Optional[UnitDef]:
     if lower in CASE_INSENSITIVE:
         key = next((form for form in SORTED_FORMS if form.lower() == lower), None)
         return SURFACE_FORMS[key] if key else None
+    if current().units_v2 and collapsed.isupper():
+        # ALL-CAPS clauses ("1 OHMS", "40 DEG C", "300 SQ MM"): match forms case-insensitively,
+        # preferring the lower-case spelling ("MM" → mm, not a mega-unit).
+        key = next((form for form in sorted(SORTED_FORMS, key=lambda f: (f != f.lower(), -len(f))) if form.lower() == lower), None)
+        return SURFACE_FORMS[key] if key else None
     return None
+
+
+# v2 surface forms: flow in million/kilo litres per day (water supply tenders).
+EXTRA_V2: dict[str, UnitDef] = {
+    "MLD": _u("m3/h", "flow", 1000 / 24),
+    "KLD": _u("m3/h", "flow", 1 / 24),
+}
+
+
+def unit_pattern_v2() -> str:
+    """Unit alternation including ALL-CAPS variants of every form and the v2 extras."""
+    forms = set(SURFACE_FORMS) | set(EXTRA_V2)
+    forms |= {f.upper() for f in SURFACE_FORMS if f.upper() != f}
+    return "|".join(re.escape(f) for f in sorted(forms, key=len, reverse=True))
 
 
 def to_canonical(value: float, unit: UnitDef) -> float:

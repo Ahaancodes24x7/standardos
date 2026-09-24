@@ -1,0 +1,62 @@
+VIDYUT VITRAN NIGAM LIMITED
+Office of the Executive Engineer, Project Division
+NOTICE INVITING e-TENDER No. EE/WS/96/2026-27
+Name of work: Procurement of distribution transformers and LT cables.
+Estimated cost put to tender: Rs. 219,47,000/-
+Earnest Money Deposit: Rs. 6,78,000/-
+Period of completion: 9 months
+Last date of submission: 20.11.2026 up to 15:00 hrs
+
+SECTION I — INSTRUCTIONS TO TENDERERS
+1. Conditional bids will be summarily rejected.
+2. The tender documents may be downloaded from the e-procurement portal of the Government.
+3. The bidder shall upload scanned copies of GST registration, PAN and audited balance sheets.
+4. The successful bidder shall furnish a performance guarantee of 5 % of the contract value within 15 days.
+5. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+
+SCOPE OF WORK
+This specification covers procurement of distribution transformers and lt cables complete in all respects.
+
+SECTION 3: DISTRIBUTION TRANSFORMERS
+- The transformers shall conform to IS 1180 (Part 1):2014.
+- Rating: 630 kVA, 11/0.433 kV, Dyn11 vector group.
+- The transformers shall meet energy efficiency level 2 as specified in IS 1180 (Part 1).
+- Type: outdoor, oil immersed, ONAN cooled, copper wound.
+- Temperature rise of top oil shall not exceed 35 °C over an ambient of 50 °C.
+- The tank shall be of welded mild steel and painted with epoxy based paint.
+
+SECTION 4: LT POWER AND CONTROL CABLES
+- Power cables shall be 1.1 kV grade, aluminium conductor, XLPE insulated, armoured and PVC sheathed, conforming to IS 7098 (Part 1):1988.
+- The cables shall be suitable for a maximum continuous conductor temperature of 90 °C.
+- Control cables shall be PVC insulated, copper conductor of 2.5 sq mm, 1.1 kV grade, conforming to IS 1554 (Part 1).
+- Conductors shall be stranded, class 2, conforming to IS 8130.
+- Cables shall be laid in RCC trenches or on perforated cable trays as shown in the drawings.
+- Cable ends shall be terminated using double compression glands and crimped lugs.
+- Each drum shall be marked with the manufacturer's name, size, voltage grade and year of manufacture.
+
+5 TESTS AND INSPECTION
+- All routine tests shall be carried out on each transformer as per IS 2026 (Part 1):1977.
+- Type test reports of the offered design from a NABL accredited laboratory shall be submitted with the bid.
+- The equipment shall be inspected by the Engineer-in-charge at the manufacturer's works before dispatch.
+
+6 DOCUMENTATION, WARRANTY AND TRAINING
+- The contractor shall submit detailed shop drawings for approval within 21 days of award of work.
+- Three sets of operation and maintenance manuals shall be handed over on completion.
+- The complete installation shall be guaranteed against defective design, material and workmanship for a period of 12 months from the date of handing over.
+- The contractor shall train the Department's operating staff in operation and routine maintenance.
+
+BILL OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | 630 kVA 11/0.433 kV distribution transformer | No. | 4
+2 | 3.5C x 300 sq mm XLPE armoured cable | m | 350
+3 | Cable tray 300 mm wide | m | 120
+
+LIST OF APPROVED MAKES
+Transformers: as per approved vendor list of the utility
+Cables: Polycab / KEI / Havells / RR Kabel
+
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+Note: Drawings are indicative only and shall be verified at site.
+
+Signature of Bidder with seal
+Executive Engineer

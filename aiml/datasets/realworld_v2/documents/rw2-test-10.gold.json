@@ -1,0 +1,331 @@
+{
+ "id": "rw2-test-10",
+ "split": "test",
+ "name": "Design, supply and commissioning of raw water pumping machinery — SE/CIV/23/2026-27",
+ "organization": "JAL NIGAM",
+ "domain": "Centrifugal pumps, Induction motors, LT power cables",
+ "plants": [
+  "pump.eff.omit",
+  "motor.cert.omit"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} V",
+   "kV": "{n} KV",
+   "A": "{n}A",
+   "kA": "{n}kA",
+   "degC": "{n} Deg.C",
+   "mm2": "{n} sq mm",
+   "kW": "{n} KW",
+   "Hz": "{n} Hz",
+   "m3h": "{n} m3/hr",
+   "mgl": "{n} ppm",
+   "ohm": "{n} ohm",
+   "mm": "{n} mm.",
+   "m": "{n} mtrs",
+   "pct": "{n} per cent",
+   "kVA": "{n} KVA",
+   "rpm": "{n} r.p.m.",
+   "NTU": "{n} NTU",
+   "dBA": "{n} dB(A)",
+   "kgm3": "{n} kg/m3",
+   "days": "{n} days"
+  },
+  "numbering": "plain_number",
+  "caps_rate": 0,
+  "merge_rate": 0.2
+ },
+ "requirements": [
+  {
+   "text": "Horizontal centrifugal pumps for clear cold water shall comply with IS 1520:1980.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Duty point of each pump shall be 250 m3/hr discharge at 45 mtrs total dynamic head.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "flow_rate",
+     "value": 250
+    },
+    {
+     "parameter": "pump_head",
+     "value": 45000
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Pump casing shall be CI and impeller of leaded tin bronze.",
+   "category": "material",
+   "attributes": [],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Sound pressure level shall be limited to 85 dB(A) at 1 mtrs distance.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "noise_level",
+     "value": 85
+    }
+   ]
+  },
+  {
+   "text": "Rated discharge: 250 m3/hr",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "flow_rate",
+     "value": 250
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "Total dynamic head: 45 mtrs",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "pump_head",
+     "value": 45000
+    }
+   ],
+   "standard": "is-1520-1980"
+  },
+  {
+   "text": "The drive motor shall be a three phase TEFC squirrel cage induction motor as per IS 325:1996.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Motor rating shall be 37 KW continuous.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "rated_power",
+     "value": 37000
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Motors shall operate satisfactorily on a supply of 415 V ± 10 per cent and 50 Hz ± 5 per cent.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 415
+    },
+    {
+     "parameter": "voltage_variation",
+     "value": 10
+    },
+    {
+     "parameter": "frequency",
+     "value": 50
+    },
+    {
+     "parameter": "frequency_variation",
+     "value": 5
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "The motor shall be premium efficiency IE3 conforming to IS 12615:2018.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "efficiency_class",
+     "text": "IE3"
+    }
+   ]
+  },
+  {
+   "text": "Motor enclosure shall be totally enclosed fan cooled with IP 55 protection.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ip_rating",
+     "text": "IP55"
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Insulation shall be class F and the motor shall be rated for S1 continuous duty.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "insulation_class",
+     "text": "Class F"
+    },
+    {
+     "parameter": "duty_type",
+     "text": "S1"
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "Motor speed shall be 1500 r.p.m. (4 pole).",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "speed",
+     "value": 1500
+    }
+   ],
+   "standard": "is-325-1996"
+  },
+  {
+   "text": "LT power cables shall be XLPE insulated 1.1 kV grade armoured cables with aluminium conductors as per IS 7098 (Part 1):1988.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 1100
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "aluminium"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "XLPE"
+    }
+   ]
+  },
+  {
+   "text": "Size of the incoming feeder cable shall be 3.5 core x 300 sq mm.",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 300
+    }
+   ],
+   "standard": "is-7098-1-1988"
+  },
+  {
+   "text": "Continuous conductor operating temperature of XLPE cables shall be 90 Deg.C.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_temperature",
+     "value": 90
+    }
+   ],
+   "standard": "is-7098-1-1988"
+  },
+  {
+   "text": "Copper control cables of 2.5 sq mm shall be PVC insulated heavy duty type as per IS 1554 (Part 1).",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 2.5
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "Cable conductors shall meet the resistance requirements of IS 8130 for class 2 conductors.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Cables shall be laid directly in ground at a depth of 750 mm. with brick protection.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Terminations shall be made with brass double compression glands and tinned copper lugs.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Cable drums shall carry marking of size, type, length and manufacturer's name.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Performance tests on each pump shall be conducted as per IS 9137 in the presence of the Engineer.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Pumps shall carry the BIS Standard Mark.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Each motor shall be subjected to routine tests in accordance with IS 4029.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Acceptance tests on cables shall be carried out as per IS 10810 in presence of the Engineer.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Manufacturer's test certificates shall accompany every cable drum supplied.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Training of two operators for one week shall be imparted by the supplier after commissioning.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "gap",
+   "parameter": "efficiency",
+   "why": "efficiency not stated"
+  },
+  {
+   "group": "certification",
+   "why": "no conformity evidence for motors"
+  }
+ ]
+}

@@ -34,6 +34,7 @@ from ..store import (
     queue_rerun,
 )
 from ..view import build_document_analysis, snapshot_from_result, summary_of
+from ..engine import pipeline_config
 
 router = APIRouter(prefix="/api", tags=["analysis"])
 
@@ -178,7 +179,7 @@ def analyze_stateless(upload: Upload = Depends(read_upload)):
     loaded = get_corpus()
     source = (upload.data, upload.filename or "document.txt") if upload.data is not None else (upload.text or "")
     try:
-        result = run_pipeline(source, loaded.corpus)
+        result = run_pipeline(source, loaded.corpus, config=pipeline_config())
     except ParseError as exc:
         raise AppError(exc.message) from exc
     return build_document_analysis(

@@ -1,0 +1,197 @@
+{
+ "id": "rw2-dev-06",
+ "split": "dev",
+ "name": "Construction of RCC elevated service reservoir — CE/MM/94/2026-27",
+ "organization": "WATER SUPPLY AND DRAINAGE BOARD",
+ "domain": "Reinforced concrete works",
+ "plants": [
+  "rcc.cubes.omit",
+  "rcc.cover.low"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} volts",
+   "kV": "{n} kV",
+   "A": "{n}A",
+   "kA": "{n} kA",
+   "degC": "{n} deg C",
+   "mm2": "{n} mm²",
+   "kW": "{n}kW",
+   "Hz": "{n} Hz",
+   "m3h": "{n} m³/h",
+   "mgl": "{n} mg/L",
+   "ohm": "{n} ohms",
+   "mm": "{n}mm",
+   "m": "{n} metres",
+   "pct": "{n} %",
+   "kVA": "{n}kVA",
+   "rpm": "{n} rpm",
+   "NTU": "{n} NTU",
+   "dBA": "{n} dB(A)",
+   "kgm3": "{n} kg/m3",
+   "days": "{n} days"
+  },
+  "numbering": "roman",
+  "caps_rate": 0,
+  "merge_rate": 0.12
+ },
+ "requirements": [
+  {
+   "text": "The structure shall be designed for the exposure condition severe as defined in IS 456:2000.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "exposure_condition",
+     "text": "severe"
+    }
+   ]
+  },
+  {
+   "text": "All plain and reinforced concrete work shall conform to IS 456:2000.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "All RCC work shall be of grade M30.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "concrete_grade",
+     "value": 30
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "Nominal cover to reinforcement shall be 30mm.",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "nominal_cover",
+     "value": 30
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "The free water-cement ratio shall not exceed 0.45.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "water_cement_ratio",
+     "value": 0.45
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "Minimum cement content shall be 320 kg/m3.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "cement_content",
+     "value": 320
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "Cement shall be ordinary Portland cement 43 grade conforming to IS 269:2015.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "cement_type",
+     "text": "OPC 43 grade"
+    }
+   ]
+  },
+  {
+   "text": "Coarse and fine aggregates shall conform to IS 383:2016.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Reinforcement shall be Fe 500D TMT bars conforming to IS 1786:2008.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "steel_grade",
+     "text": "Fe 500D"
+    }
+   ]
+  },
+  {
+   "text": "Concrete shall be design mix proportioned as per IS 10262:2019.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Curing shall be continued for a minimum period of 10 days.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Concrete shall be compacted with mechanical needle vibrators.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Cube tests for compressive strength shall be carried out at 7 and 28 days.",
+   "category": "testing",
+   "attributes": [],
+   "standard": "is-516-1-1-2021"
+  },
+  {
+   "text": "Manufacturer's test certificates shall be furnished for each lot of cement and reinforcement steel.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "The equipment shall be inspected by the Engineer-in-charge at the manufacturer's works before dispatch.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall submit detailed shop drawings for approval within 21 days of award of work.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Three sets of operation and maintenance manuals shall be handed over on completion.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The complete installation shall be guaranteed against defective design, material and workmanship for a period of 12 months from the date of handing over.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall train the Department's operating staff in operation and routine maintenance.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "dependency",
+   "standardId": "is-516-1-1-2021",
+   "why": "strength test method not named"
+  },
+  {
+   "group": "conflict",
+   "standardId": "is-456-2000",
+   "parameter": "nominal_cover",
+   "why": "cover below 45 mm for severe exposure"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-456-2000",
+   "why": "amendments to confirm"
+  }
+ ]
+}

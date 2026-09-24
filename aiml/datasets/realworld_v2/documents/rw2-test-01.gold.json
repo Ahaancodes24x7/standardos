@@ -1,0 +1,249 @@
+{
+ "id": "rw2-test-01",
+ "split": "test",
+ "name": "Supply and installation of borewell submersible pumpsets and water quality testing — EE/CIV/13/2026-27",
+ "organization": "PUBLIC HEALTH ENGINEERING DEPARTMENT",
+ "domain": "Submersible pumpsets, Drinking water quality",
+ "plants": [
+  "water.tds.high",
+  "sub.bis.omit",
+  "water.tests.no1622"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} Volt",
+   "kV": "{n} K.V.",
+   "A": "{n} Amp",
+   "kA": "{n} kA",
+   "degC": "{n} degree centigrade",
+   "mm2": "{n} sq mm",
+   "kW": "{n} KW",
+   "Hz": "{n} c/s",
+   "m3h": "{n} cum/hr",
+   "mgl": "{n} mg/litre",
+   "ohm": "{n} ohms",
+   "mm": "{n} MM",
+   "m": "{n} m",
+   "pct": "{n} per cent",
+   "kVA": "{n} KVA",
+   "rpm": "{n} rpm",
+   "NTU": "{n} N.T.U.",
+   "dBA": "{n} dBA",
+   "kgm3": "{n} kg/m³",
+   "days": "{n} days"
+  },
+  "numbering": "decimal",
+  "caps_rate": 0,
+  "merge_rate": 0
+ },
+ "requirements": [
+  {
+   "text": "Submersible pumpsets shall be manufactured to IS 8034:2018.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Duty point of each pumpset shall be 18 cum/hr at 90 m total head.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "flow_rate",
+     "value": 18
+    },
+    {
+     "parameter": "pump_head",
+     "value": 90000
+    }
+   ],
+   "standard": "is-8034-2018"
+  },
+  {
+   "text": "Overall pumpset efficiency at duty point shall be minimum 52 per cent.",
+   "category": "performance",
+   "attributes": [
+    {
+     "parameter": "efficiency",
+     "value": 52
+    }
+   ],
+   "standard": "is-8034-2018"
+  },
+  {
+   "text": "The submersible motor shall be of rewindable wet type as per IS 9283:2013.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Flat submersible cables of 3 core 6 sq mm copper, PVC insulated, shall comply with IS 694:2010 and be tested to IS 10810.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 6
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "The starter panel shall include dry run protection, overload relay and single phasing preventer.",
+   "category": "electrical",
+   "attributes": []
+  },
+  {
+   "text": "The quality of water supplied shall meet IS 10500:2012.",
+   "category": "quality",
+   "attributes": []
+  },
+  {
+   "text": "pH value: 6.5 to 8.5",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "ph",
+     "value": 6.5
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "TDS of supplied water shall be within 2000 mg/litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "tds",
+     "value": 2000
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Turbidity of treated water shall be limited to 1 N.T.U..",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "turbidity",
+     "value": 1
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Fluoride content shall be within 1.0 mg/litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "fluoride",
+     "value": 1.0
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Nitrate as NO3 shall be less than 45 mg/litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "nitrate",
+     "value": 45
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Arsenic content in supplied water shall be less than 0.01 mg/litre.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "arsenic",
+     "value": 0.01
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Total hardness shall be within 200 mg/litre as CaCO3.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "total_hardness",
+     "value": 200
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Total coliforms shall be absent in any 100 ml sample.",
+   "category": "quality",
+   "attributes": [
+    {
+     "parameter": "bacteriological_quality"
+    }
+   ],
+   "standard": "is-10500-2012"
+  },
+  {
+   "text": "Physico-chemical tests on water samples shall follow IS 3025.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Monthly water quality reports shall be furnished to the Department.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Training of two operators for one week shall be imparted by the supplier after commissioning.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "conflict",
+   "standardId": "is-10500-2012",
+   "parameter": "tds",
+   "why": "2000 mg/l above 500 mg/l acceptable limit"
+  },
+  {
+   "group": "certification",
+   "why": "no conformity evidence for pumpsets"
+  },
+  {
+   "group": "dependency",
+   "standardId": "is-1622-1981",
+   "why": "bacteriological test method not named"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-10500-2012",
+   "why": "amendments to confirm"
+  }
+ ]
+}

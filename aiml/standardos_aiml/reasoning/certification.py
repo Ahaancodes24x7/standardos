@@ -12,6 +12,8 @@ from __future__ import annotations
 
 import dataclasses
 
+from ..config import current
+from ..nlp.entities import extract_product_terms
 from ..provenance import provenance
 from ..types import CorpusStandard, Evidence, ReasoningFinding
 from .context import (
@@ -25,8 +27,30 @@ from .context import (
 )
 
 
+def _covered(ctx: ReasoningContext, std: CorpusStandard, evidence_reqs: list) -> bool:
+    """v3: does some conformity-evidence requirement cover this product standard?
+
+    Covered when an evidence requirement cites it, maps to it, names a product the
+    standard covers, or names no product at all ("all equipment shall be ISI marked").
+    """
+    for req in evidence_reqs:
+        if any(r.standard_id == std.id for r in ctx.resolved.get(req.id, [])):
+            return True
+        m = ctx.mapping_for(req.id)
+        if m and m.hits and m.hits[0].standard_id == std.id:
+            return True
+        terms = req.terms or extract_product_terms(req.text)
+        if not terms:
+            return True
+        if ctx.index is not None and any(ctx.index.matches_product(std, t) for t in terms):
+            return True
+    return False
+
+
 def certification_findings(ctx: ReasoningContext) -> list[ReasoningFinding]:
-    if any(has_value(attr) for _, attr in document_attributes(ctx, "conformity_evidence")):
+    evidence_reqs = [req for req, attr in document_attributes(ctx, "conformity_evidence") if has_value(attr)]
+    scoped = current().certification_scope
+    if evidence_reqs and not scoped:
         return []
     products: list[tuple[CorpusStandard, list[str]]] = []
     for app in strong_applicable(ctx):
@@ -36,7 +60,13 @@ def certification_findings(ctx: ReasoningContext) -> list[ReasoningFinding]:
         if std and std.status in ("superseded", "withdrawn"):
             latest = ctx.graph.latest_replacement(std.id)
             std = standard_by_id(ctx, latest.id) if latest else None
-        if std and std.kind == "product" and std.certification.scheme and not any(p.id == std.id for p, _ in products):
+        if (
+            std
+            and std.kind == "product"
+            and std.certification.scheme
+            and not any(p.id == std.id for p, _ in products)
+            and not (scoped and _covered(ctx, std, evidence_reqs))
+        ):
             products.append((std, app.requirement_ids))
     if not products:
         return []

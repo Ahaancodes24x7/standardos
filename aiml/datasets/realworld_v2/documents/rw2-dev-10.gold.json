@@ -1,0 +1,320 @@
+{
+ "id": "rw2-dev-10",
+ "split": "dev",
+ "name": "Hostel block construction — civil and internal electrical works — CE/CIV/54/2026-27",
+ "organization": "PUBLIC WORKS DEPARTMENT",
+ "domain": "Reinforced concrete works, Internal electrification",
+ "plants": [
+  "vague.suitable_size",
+  "wiring.code.old"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} V",
+   "kV": "{n} kV",
+   "A": "{n}A",
+   "kA": "{n}kA",
+   "degC": "{n} deg C",
+   "mm2": "{n} sq mm",
+   "kW": "{n} kW",
+   "Hz": "{n} Hz",
+   "m3h": "{n} m³/h",
+   "mgl": "{n} mg/L",
+   "ohm": "{n} ohms",
+   "mm": "{n}mm",
+   "m": "{n} m",
+   "pct": "{n} %",
+   "kVA": "{n}kVA",
+   "rpm": "{n} RPM",
+   "NTU": "{n} NTU",
+   "dBA": "{n} dBA",
+   "kgm3": "{n} kg/m³",
+   "days": "{n} days"
+  },
+  "numbering": "plain_number",
+  "caps_rate": 0,
+  "merge_rate": 0.12
+ },
+ "requirements": [
+  {
+   "text": "The structure shall be designed for the exposure condition severe as defined in IS 456:2000.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "exposure_condition",
+     "text": "severe"
+    }
+   ]
+  },
+  {
+   "text": "All plain and reinforced concrete work shall conform to IS 456:2000.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "All RCC work shall be of grade M30.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "concrete_grade",
+     "value": 30
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "Nominal cover to reinforcement shall be 45mm.",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "nominal_cover",
+     "value": 45
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "The free water-cement ratio shall not exceed 0.45.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "water_cement_ratio",
+     "value": 0.45
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "Minimum cement content shall be 320 kg/m³.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "cement_content",
+     "value": 320
+    }
+   ],
+   "standard": "is-456-2000"
+  },
+  {
+   "text": "Cement shall be ordinary Portland cement 43 grade conforming to IS 269:2015.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "cement_type",
+     "text": "OPC 43 grade"
+    }
+   ]
+  },
+  {
+   "text": "Coarse and fine aggregates shall conform to IS 383:2016.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Reinforcement shall be Fe 500D TMT bars conforming to IS 1786:2008.",
+   "category": "material",
+   "attributes": [
+    {
+     "parameter": "steel_grade",
+     "text": "Fe 500D"
+    }
+   ]
+  },
+  {
+   "text": "Concrete shall be design mix proportioned as per IS 10262:2019.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Distribution boards and enclosures shall be of suitable size.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Curing shall be continued for a minimum period of 10 days.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Concrete shall be compacted with mechanical needle vibrators.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Wiring shall be carried out as per IS 732:1989.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "The supply system shall be TN-S earthing arrangement.",
+   "category": "safety",
+   "attributes": [
+    {
+     "parameter": "earthing_system",
+     "text": "TN-S"
+    }
+   ],
+   "standard": "is-3043-2018"
+  },
+  {
+   "text": "Wiring shall be concealed in rigid PVC conduits of 1.5mm wall thickness.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Wires shall be FR PVC insulated, single core, stranded copper conductor of 450/750 V grade conforming to IS 694:2010.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 750
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "Lighting circuits shall be wired with 1.5 sq mm and power circuits with 4 sq mm copper conductors.",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 1.5
+    },
+    {
+     "parameter": "conductor_size",
+     "value": 4
+    }
+   ],
+   "standard": "is-694-2010"
+  },
+  {
+   "text": "Miniature circuit breakers shall conform to IS/IEC 60898-1 and shall have a breaking capacity of 10kA.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 10000
+    }
+   ]
+  },
+  {
+   "text": "MCB ratings shall range from 6A to 32A as shown in the single line diagram.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 6
+    }
+   ],
+   "standard": "is-iec-60898-1-2002"
+  },
+  {
+   "text": "RCCBs with rated residual operating current of 30 mA shall be provided for all socket outlet circuits and shall conform to IS 12640 (Part 1).",
+   "category": "safety",
+   "attributes": []
+  },
+  {
+   "text": "Earthing shall be carried out in accordance with IS 3043:2018.",
+   "category": "safety",
+   "attributes": []
+  },
+  {
+   "text": "Two numbers of pipe earth electrodes shall be provided for the main distribution board.",
+   "category": "safety",
+   "attributes": [],
+   "standard": "is-3043-2018"
+  },
+  {
+   "text": "The earth resistance shall not exceed 1 ohms.",
+   "category": "safety",
+   "attributes": [
+    {
+     "parameter": "earth_resistance",
+     "value": 1
+    }
+   ],
+   "standard": "is-3043-2018"
+  },
+  {
+   "text": "Compressive strength tests shall be carried out as per IS 516 (Part 1/Sec 1):2021.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Manufacturer's test certificates shall be furnished for each lot of cement and reinforcement steel.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Wires shall be tested in accordance with IS 10810.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "On completion, insulation resistance and earth continuity tests shall be carried out in accordance with IS 732.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Wires, MCBs and RCCBs shall be ISI marked.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "The equipment shall be inspected by the Engineer-in-charge at the manufacturer's works before dispatch.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall submit detailed shop drawings for approval within 21 days of award of work.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Three sets of operation and maintenance manuals shall be handed over on completion.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The complete installation shall be guaranteed against defective design, material and workmanship for a period of 12 months from the date of handing over.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall train the Department's operating staff in operation and routine maintenance.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "gap",
+   "why": "'of suitable size' is not measurable"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-732-2019",
+   "why": "IS 732:1989 revised as IS 732:2019"
+  },
+  {
+   "group": "outdated",
+   "standardId": "is-456-2000",
+   "why": "amendments to confirm"
+  }
+ ]
+}

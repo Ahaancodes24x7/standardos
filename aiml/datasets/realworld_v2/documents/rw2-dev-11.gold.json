@@ -1,0 +1,339 @@
+{
+ "id": "rw2-dev-11",
+ "split": "dev",
+ "name": "Supply, installation, testing and commissioning of LT electrical distribution system — CE/MM/34/2026-27",
+ "organization": "CENTRAL PUBLIC WORKS DEPARTMENT",
+ "domain": "LT switchboard, LT power cables",
+ "plants": [
+  "cable.test.omit"
+ ],
+ "style": {
+  "units": {
+   "V": "{n}V",
+   "kV": "{n}kV",
+   "A": "{n} A",
+   "kA": "{n}kA",
+   "degC": "{n}°C",
+   "mm2": "{n} sq mm",
+   "kW": "{n}kW",
+   "Hz": "{n} Hz",
+   "m3h": "{n} m3/hr",
+   "mgl": "{n} mg/l",
+   "ohm": "{n} ohms",
+   "mm": "{n} mm",
+   "m": "{n} m",
+   "pct": "{n}%",
+   "kVA": "{n} kVA",
+   "rpm": "{n} RPM",
+   "NTU": "{n} NTU",
+   "dBA": "{n} dBA",
+   "kgm3": "{n} kg/m³",
+   "days": "{n} days"
+  },
+  "numbering": "roman",
+  "caps_rate": 0,
+  "merge_rate": 0.12
+ },
+ "requirements": [
+  {
+   "text": "The equipment shall be designed for a maximum ambient temperature of 40°C.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ambient_temperature",
+     "value": 40
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Relative humidity at site may reach 95%.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "relative_humidity",
+     "value": 95
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "The installation is at an altitude of less than 1000 m above mean sea level.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "altitude",
+     "value": 1000000
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "The LT panel shall conform to IS/IEC 61439-1:2020 and IS/IEC 61439-2:2020.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "The panel shall be cubicle type, floor mounted, fabricated from CRCA sheet steel of 2 mm thickness.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "The rated operational voltage shall be 415V, 3 phase, 4 wire, 50 Hz.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 415
+    },
+    {
+     "parameter": "frequency",
+     "value": 50
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Main busbars shall be of electrolytic grade aluminium rated for 1600 A continuous current.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 1600
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "The busbars and panel shall withstand a short circuit current of 50kA for 1 second.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 50000
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "The degree of protection of the panel enclosure shall be IP54.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ip_rating",
+     "text": "IP54"
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "The switchboard shall have Form 3b internal separation.",
+   "category": "electrical",
+   "attributes": [],
+   "standard": "is-iec-61439-2-2020"
+  },
+  {
+   "text": "Incomers shall be 1600 A, 4 pole, electrically operated air circuit breakers conforming to IS/IEC 60947-2:2003.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 1600
+    }
+   ]
+  },
+  {
+   "text": "Outgoing feeders shall be MCCBs with ultimate breaking capacity of 36kA.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 36000
+    }
+   ],
+   "standard": "is-iec-60947-2-2003"
+  },
+  {
+   "text": "Multifunction meters of accuracy class 0.5 shall be provided on each incomer.",
+   "category": "electrical",
+   "attributes": []
+  },
+  {
+   "text": "Rated voltage: 415V",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 415
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Rated current of main busbar: 1600 A",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_current",
+     "value": 1600
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Short time current rating: 50kA for 1 s",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "short_circuit_rating",
+     "value": 50000
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Degree of protection: IP54",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ip_rating",
+     "text": "IP54"
+    }
+   ],
+   "standard": "is-iec-61439-1-2020"
+  },
+  {
+   "text": "Power cables shall be 1.1 kV grade, aluminium conductor, XLPE insulated, armoured and PVC sheathed, conforming to IS 7098 (Part 1):1988.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 1100
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "aluminium"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "XLPE"
+    }
+   ]
+  },
+  {
+   "text": "The main feeder cable shall be 3.5 core 300 sq mm.",
+   "category": "dimensional",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 300
+    }
+   ],
+   "standard": "is-7098-1-1988"
+  },
+  {
+   "text": "The cables shall be suitable for a maximum continuous conductor temperature of 90°C.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_temperature",
+     "value": 90
+    }
+   ],
+   "standard": "is-7098-1-1988"
+  },
+  {
+   "text": "Control cables shall be PVC insulated, copper conductor of 2.5 sq mm, 1.1 kV grade, conforming to IS 1554 (Part 1).",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 2.5
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "Conductors shall be stranded, class 2, conforming to IS 8130.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Cables shall be laid in RCC trenches or on perforated cable trays as shown in the drawings.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Cable ends shall be terminated using double compression glands and crimped lugs.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Each drum shall be marked with the manufacturer's name, size, voltage grade and year of manufacture.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Routine verification of each assembly shall be carried out in accordance with IS/IEC 61439-1.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Type test certificates of the offered panel design from a NABL accredited laboratory shall be submitted.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Routine test certificates of cables shall be furnished with each consignment.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "The equipment shall be inspected by the Engineer-in-charge at the manufacturer's works before dispatch.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall submit detailed shop drawings for approval within 21 days of award of work.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Three sets of operation and maintenance manuals shall be handed over on completion.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The complete installation shall be guaranteed against defective design, material and workmanship for a period of 12 months from the date of handing over.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "The contractor shall train the Department's operating staff in operation and routine maintenance.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "dependency",
+   "standardId": "is-10810",
+   "why": "cable test method not named"
+  }
+ ]
+}

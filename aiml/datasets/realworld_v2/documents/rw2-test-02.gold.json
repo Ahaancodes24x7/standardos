@@ -1,0 +1,204 @@
+{
+ "id": "rw2-test-02",
+ "split": "test",
+ "name": "Procurement of distribution transformers and LT cables — EE/WS/19/2026-27",
+ "organization": "VIDYUT VITRAN NIGAM LIMITED",
+ "domain": "Distribution transformers, LT power cables",
+ "plants": [
+  "tx.eel.omit",
+  "cable.size.omit",
+  "cable.certs.omit"
+ ],
+ "style": {
+  "units": {
+   "V": "{n} Volts",
+   "kV": "{n} kV",
+   "A": "{n} Amps",
+   "kA": "{n} KA",
+   "degC": "{n} °C",
+   "mm2": "{n} sq mm",
+   "kW": "{n} Kw",
+   "Hz": "{n}Hz",
+   "m3h": "{n} cum/hr",
+   "mgl": "{n} mg/litre",
+   "ohm": "{n} ohm",
+   "mm": "{n} mm.",
+   "m": "{n} M",
+   "pct": "{n}%",
+   "kVA": "{n} K.V.A.",
+   "rpm": "{n} rpm",
+   "NTU": "{n} NTU",
+   "dBA": "{n} db(A)",
+   "kgm3": "{n} Kg/cum",
+   "days": "{n} days"
+  },
+  "numbering": "paren_alpha",
+  "caps_rate": 0,
+  "merge_rate": 0
+ },
+ "requirements": [
+  {
+   "text": "Distribution transformers shall be designed and manufactured to IS 1180 (Part 1):2014.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Transformer rating shall be 630 K.V.A., 11 kV / 433 V, Dyn11.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "apparent_power",
+     "value": 630000
+    }
+   ],
+   "standard": "is-1180-1-2014"
+  },
+  {
+   "text": "Transformers shall be outdoor type, mineral oil filled, naturally cooled, with copper windings.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Winding temperature rise shall be limited to 40 °C over a maximum ambient of 50 °C.",
+   "category": "environmental",
+   "attributes": [
+    {
+     "parameter": "ambient_temperature",
+     "value": 50
+    }
+   ]
+  },
+  {
+   "text": "Transformer tank shall be fabricated from mild steel plates and epoxy painted.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "LT power cables shall be XLPE insulated 1.1 kV grade armoured cables with aluminium conductors as per IS 7098 (Part 1):1988.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "rated_voltage",
+     "value": 1100
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "aluminium"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "XLPE"
+    }
+   ]
+  },
+  {
+   "text": "Continuous conductor operating temperature of XLPE cables shall be 90 °C.",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_temperature",
+     "value": 90
+    }
+   ],
+   "standard": "is-7098-1-1988"
+  },
+  {
+   "text": "Copper control cables of 2.5 sq mm shall be PVC insulated heavy duty type as per IS 1554 (Part 1).",
+   "category": "electrical",
+   "attributes": [
+    {
+     "parameter": "conductor_size",
+     "value": 2.5
+    },
+    {
+     "parameter": "conductor_material",
+     "text": "copper"
+    },
+    {
+     "parameter": "insulation_material",
+     "text": "PVC"
+    }
+   ]
+  },
+  {
+   "text": "Cable conductors shall meet the resistance requirements of IS 8130 for class 2 conductors.",
+   "category": "material",
+   "attributes": []
+  },
+  {
+   "text": "Cables shall be laid directly in ground at a depth of 750 mm. with brick protection.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Terminations shall be made with brass double compression glands and tinned copper lugs.",
+   "category": "installation",
+   "attributes": []
+  },
+  {
+   "text": "Cable drums shall carry marking of size, type, length and manufacturer's name.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "Each transformer shall be subjected to routine tests in accordance with IS 2026 (Part 1):2011.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "The bidder shall submit type test certificates from an NABL accredited laboratory for the offered rating.",
+   "category": "certification",
+   "attributes": [
+    {
+     "parameter": "conformity_evidence"
+    }
+   ]
+  },
+  {
+   "text": "Acceptance tests on cables shall be carried out as per IS 10810 in presence of the Engineer.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.",
+   "category": "testing",
+   "attributes": []
+  },
+  {
+   "text": "Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.",
+   "category": "documentation",
+   "attributes": []
+  },
+  {
+   "text": "The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.",
+   "category": "general",
+   "attributes": []
+  },
+  {
+   "text": "Training of two operators for one week shall be imparted by the supplier after commissioning.",
+   "category": "general",
+   "attributes": []
+  }
+ ],
+ "findings": [
+  {
+   "group": "gap",
+   "parameter": "efficiency_class",
+   "why": "energy efficiency level not stated"
+  },
+  {
+   "group": "gap",
+   "parameter": "conductor_size",
+   "why": "conductor size not stated"
+  },
+  {
+   "group": "certification",
+   "why": "no conformity evidence for cables"
+  }
+ ]
+}

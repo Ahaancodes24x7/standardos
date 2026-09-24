@@ -8,6 +8,7 @@
 
 from __future__ import annotations
 
+from ..config import current
 from ..provenance import provenance
 from ..types import Evidence, ReasoningFinding
 from .context import ReasoningContext, requirement_evidence, standard_by_id
@@ -22,6 +23,7 @@ def companion_parts(ctx: ReasoningContext, standard_id: str) -> str:
 def version_findings(ctx: ReasoningContext) -> list[ReasoningFinding]:
     out: list[ReasoningFinding] = []
     seen: set[str] = set()
+    amended: dict[str, ReasoningFinding] = {}
     for req in ctx.requirements:
         for r in ctx.resolved.get(req.id, []):
             if not r.standard_id:
@@ -147,6 +149,10 @@ def version_findings(ctx: ReasoningContext) -> list[ReasoningFinding]:
                 continue
 
             amendment = next((e for e in events if e.kind == "amendment"), None)
+            if amendment and current().amendment_dedupe and std.id in amended:
+                # v3: one reminder per standard per document; later citations become evidence.
+                amended[std.id].evidence.append(requirement_evidence(req, "Also cites it"))
+                continue
             if amendment:
                 out.append(
                     ReasoningFinding(
@@ -166,4 +172,5 @@ def version_findings(ctx: ReasoningContext) -> list[ReasoningFinding]:
                         provenance=provenance("reasoning.versions", "rule", 0.6, [f"amendment record {amendment.id}"]),
                     )
                 )
+                amended[std.id] = out[-1]
     return out

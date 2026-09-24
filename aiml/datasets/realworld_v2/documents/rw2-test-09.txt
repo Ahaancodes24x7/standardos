@@ -1,0 +1,59 @@
+PUBLIC WORKS DEPARTMENT
+Office of the Executive Engineer, Division No. 2
+NOTICE INVITING e-TENDER No. CE/CIV/22/2026-27
+Name of work: Internal electrification including wiring, distribution boards and earthing.
+Estimated cost put to tender: Rs. 261,21,000/-
+Earnest Money Deposit: Rs. 4,55,000/-
+Period of completion: 18 months
+Last date of submission: 14.10.2026 up to 15:00 hrs
+
+INSTRUCTIONS TO BIDDERS
+1. The tender documents may be downloaded from the e-procurement portal of the Government.
+2. The bidder shall submit the EMD in the form of online payment or bank guarantee from a scheduled bank.
+3. Conditional bids will be summarily rejected.
+4. The bid shall remain valid for 90 days from the date of opening of the technical bid.
+
+GENERAL CONDITIONS OF CONTRACT
+1. The contractor shall comply with all labour laws and the provisions of the Contract Labour Act.
+2. Liquidated damages at 0.5 % per week of delay shall be levied, subject to a maximum of 10 % of the contract value.
+3. All disputes shall be subject to arbitration under the Arbitration and Conciliation Act, 1996.
+
+SCOPE OF WORK
+This specification covers internal electrification including wiring, distribution boards and earthing complete in all respects.
+
+PART C — INTERNAL WIRING AND EARTHING
+(a) The internal wiring installation shall comply with IS 732:2019.
+(b) Earthing arrangement of the installation shall be TN-S system.
+(c) All wiring shall be drawn through heavy gauge PVC conduits recessed in walls. All enclosures shall be of adequate size to accommodate the equipment.
+(d) Building wires shall be 1100 V grade PVC insulated multistrand copper conductor as per IS 694:2010.
+(e) Minimum conductor size shall be 1.5 Sq.mm for lighting points and 4 Sq.mm for power points.
+(f) MCBs shall be C-curve, as per IS/IEC 60898-1, with rated short circuit capacity of 10 kA.
+(g) Final circuit MCBs shall be rated between 6 Amps and 32 Amps.
+(h) Socket outlet circuits shall be protected by 30 mA RCCBs conforming to IS 12640 (Part 1). The earthing system shall be designed and installed as per IS 3043:2018.
+(i) Main distribution board shall be earthed through two separate pipe earth electrodes.
+(j) Combined resistance of the earthing system shall be less than 1 Ohm.
+
+4 TESTS AND INSPECTION
+(a) Samples of wires shall be tested as per IS 10810 at the manufacturer's works.
+(b) The complete wiring shall be tested before handing over.
+(c) Pre-dispatch inspection shall be offered to the Department's authorised representative with 15 days notice.
+
+5 DOCUMENTATION, WARRANTY AND TRAINING
+(a) Shop drawings and schematic diagrams shall be got approved from the Engineer-in-charge before manufacture.
+(b) O&M manuals, as-built drawings and catalogues shall be furnished in triplicate at the time of handing over.
+(c) The supplier shall replace free of cost any part found defective within the defect liability period of 24 months.
+(d) Training of two operators for one week shall be imparted by the supplier after commissioning.
+
+SCHEDULE OF QUANTITIES
+Sl. No. | Description | Unit | Qty
+1 | Point wiring for light point with 1.5 sq mm FR PVC wire | Point | 240
+2 | 4 way SPN distribution board | No. | 16
+
+LIST OF APPROVED MAKES
+Wires: Polycab / Havells / Finolex; MCB/RCCB: Legrand / Schneider / Havells
+
+Note: In case of any discrepancy between drawings and specifications, the decision of the Engineer-in-charge shall be final.
+Note: Drawings are indicative only and shall be verified at site.
+
+Signature of Bidder with seal
+Executive Engineer

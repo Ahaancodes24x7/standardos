@@ -17,8 +17,12 @@ from __future__ import annotations
 
 from ..provenance import provenance
 from ..types import ReasoningFinding
+from ..config import current
 from .context import (
+    DOCUMENT_LEVEL,
     ReasoningContext,
+    requirements_for,
+    standard_family,
     clause_by_id,
     clause_evidence,
     clause_label,
@@ -28,6 +32,18 @@ from .context import (
     standard_by_id,
     strong_applicable,
 )
+
+
+def _governed(ctx: ReasoningContext, app) -> set[str]:
+    """Requirements a code of practice governs: those mapped to it, plus (v3, when the
+    purchaser cites it) every requirement about a product in its scope — "wiring as per
+    IS 732" governs the MCB, RCCB and earthing clauses even when each maps to its own
+    product standard."""
+    ids = set(app.requirement_ids)
+    if current().detector_gate and app.explicit and ctx.index is not None:
+        std = ctx.corpus.standard(app.standard_id)
+        ids |= {r.id for r in ctx.requirements if r.terms and std and any(ctx.index.matches_product(std, t) for t in r.terms)}
+    return ids
 
 
 def checklist_gaps(ctx: ReasoningContext) -> list[ReasoningFinding]:
@@ -40,7 +56,7 @@ def checklist_gaps(ctx: ReasoningContext) -> list[ReasoningFinding]:
         # A single passing reference to a code of practice (e.g. "earthing to
         # IS 3043") does not make the specification responsible for everything
         # the code leaves to the designer; require it to govern ≥ 2 requirements.
-        if std.kind == "code_of_practice" and len(app.requirement_ids) < 2:
+        if std.kind == "code_of_practice" and len(_governed(ctx, app)) < 2:
             continue
         has_test_dependency = len(ctx.graph.outgoing(std.id, ["TESTED_BY"])) > 0
         anchor = next((r for r in ctx.requirements if r.id in app.requirement_ids), None)
@@ -51,7 +67,7 @@ def checklist_gaps(ctx: ReasoningContext) -> list[ReasoningFinding]:
                 continue
             if item.parameter in reported:
                 continue
-            attrs = document_attributes(ctx, item.parameter)
+            attrs = _checklist_attributes(ctx, std.id, app.requirement_ids, item.parameter)
             if any(has_value(attr) for _, attr in attrs):
                 continue
             mentioned = attrs[0][0] if attrs else None
@@ -103,6 +119,42 @@ def checklist_gaps(ctx: ReasoningContext) -> list[ReasoningFinding]:
                 )
             )
     return out
+
+
+def _checklist_attributes(ctx: ReasoningContext, standard_id: str, requirement_ids: list[str], parameter: str):
+    """Attributes that can satisfy a standard's checklist item.
+
+    2.1: any requirement in the document. v3 (scoped): requirements that cite or map
+    to the standard, plus whole-supply parameters (voltage, frequency, site
+    conditions) stated anywhere — so a control cable's size no longer hides a
+    missing power-cable size.
+    """
+    everything = document_attributes(ctx, parameter)
+    if not current().scoped_checklists:
+        return everything
+    if parameter in DOCUMENT_LEVEL:
+        return everything
+    family = standard_family(ctx, standard_id)
+    own = set(requirement_ids)
+    for sid in family:
+        own |= {r.id for r in requirements_for(ctx, sid)}
+    std = ctx.corpus.standard(standard_id)
+    cited_kinds = {}
+    for req in ctx.requirements:
+        cited_kinds[req.id] = {
+            s.kind for r in ctx.resolved.get(req.id, []) if r.standard_id and (s := ctx.corpus.standard(r.standard_id))
+        }
+    for req in ctx.requirements:
+        # An uncited requirement about a product the standard covers counts too
+        # (e.g. "lighting circuits … 1.5 sq mm" for IS 694), unless it cites another
+        # standard of the same kind (a control cable to IS 1554 says nothing about IS 7098 cables).
+        if req.id in own or std is None or ctx.index is None:
+            continue
+        if std.kind in cited_kinds.get(req.id, set()):
+            continue
+        if any(ctx.index.matches_product(std, t) for t in req.terms):
+            own.add(req.id)
+    return [(req, attr) for req, attr in everything if req.id in own]
 
 
 def vague_requirement_findings(ctx: ReasoningContext, covered: set[str]) -> list[ReasoningFinding]:

@@ -7,6 +7,7 @@ import re
 from dataclasses import dataclass
 from typing import Callable, Optional
 
+from ..config import current
 from ..ingest.sections import locate
 from ..provenance import provenance
 from ..types import Attribute, Entity, Quantity, Section, StandardReference, StructuredRequirement, TextSpan
@@ -23,6 +24,8 @@ ENUMERATOR = re.compile(r"^(?:\d{1,2}(?:\.\d{1,3}){0,4}[.)]?|\(?[a-z]\)|\(?[ivx]
 ABBREVIATIONS = re.compile(
     r"(?:\b(?:No|Nos|approx|min|max|Cl|cl|i\.e|e\.g|etc|viz|Fig|Sr|Dt|Rs|sq|Pt|Sec|deg|hr|Ltd|Co|St|Amd|Dept|Govt|incl|Max|Min|Approx|Ref|vol|Vol|kg|Hz|E|Nr)|\b[A-Z])\.$"
 )
+# v2: "… 90 deg C. Next clause" — the capital before the period is a unit, not an initial.
+ENDS_WITH_UNIT = re.compile(r"\d\s*(?:[°º]\s*)?(?:deg\.?\s*)?[A-Za-z/²³]*[A-Z]\.$")
 BOUNDARY = re.compile(r"[.!?](?=\s+[\"'(]?[A-Z0-9•])")
 
 
@@ -60,7 +63,7 @@ def segment(text: str) -> list[Segment]:
         cursor = 0
         for m in BOUNDARY.finditer(body):
             candidate = body[cursor : m.start() + 1]
-            if ABBREVIATIONS.search(candidate) or (
+            if (ABBREVIATIONS.search(candidate) and not (current().segmentation_v2 and ENDS_WITH_UNIT.search(candidate))) or (
                 re.search(r"\d\.$", candidate.strip()) and re.match(r"\s+\d", body[m.start() + 1 :])
             ):
                 continue
@@ -92,6 +95,23 @@ VAGUE = re.compile(
     r"\b(suitable|adequate|appropriate|good quality|best quality|standard make|reputed make|approved make|as required|as per requirement|energy[\s-]efficient|sufficient|high quality|proper|reliable|robust|latest technology|state[\s-]of[\s-]the[\s-]art|heavy duty|efficient|relevant (?:IS|standards?|codes?))\b",
     re.I,
 )
+# v2 zoning: text under these headings is bidding/commercial material, not specification.
+EXCLUDED_ZONE = re.compile(
+    r"instructions?\s+to\s+(?:bidders|tenderers)|invitation\s+for\s+bids|general\s+conditions|special\s+conditions|"
+    r"conditions\s+of\s+contract|commercial\s+terms|terms\s+and\s+conditions|eligibility|qualification\s+criteria|"
+    r"schedule\s+of\s+quantities|bill\s+of\s+quantities|approved\s+makes|price\s+bid|financial\s+bid|notice\s+inviting",
+    re.I,
+)
+BOILERPLATE_V2 = re.compile(
+    r"^(?:name\s+of\s+(?:the\s+)?work|estimated\s+cost|earnest\s+money|period\s+of\s+completion|last\s+date|"
+    r"tender\s+(?:fee|no)|bid\s+security|subject\s*:|enquiry\s+no|notice\s+inviting|annexure)\b",
+    re.I,
+)
+PLACEHOLDER = re.compile(r"\bto\s+be\s+(?:furnished|filled|quoted|specified|offered)\s+by\s+the\s+(?:bidder|tenderer|supplier)", re.I)
+TABLE_ROW = re.compile(r"(?:[^|]*\|){2,}")
+SUITABLE_FOR = re.compile(r"\bsuitable\s+for\s+(?!.*\b(?:purpose|use|site|requirement)s?\b)", re.I)
+VAGUE_V2_EXTRA = re.compile(r"\bas\s+(?:low|high|far|much)\s+as\s+possible\b", re.I)
+
 STANDARDS_HEADING = re.compile(r"\b(standards?|codes?|references?|specifications? applicable|applicable)\b", re.I)
 
 
@@ -148,6 +168,7 @@ def _mention_re(cue: str) -> re.Pattern[str]:
     return pattern
 
 
+TEST_MENTION = re.compile(r"\b(test|tested|testing|tests|verification|verified|inspection|inspected)\b")
 _CABLE_CONTEXT = re.compile(r"\b(cable|conductor|wire|wiring)\b", re.I)
 
 
@@ -220,6 +241,12 @@ def build_attributes(
     for tp in extract_text_parameters(text):
         attributes.append(Attribute(tp.parameter, None, tp.value))
 
+    # v2: "Routine verification … in accordance with IS/IEC 61439-1" states its test method.
+    if current().attributes_v2 and references and TEST_MENTION.search(lower):
+        if not any(a.parameter == "test_method" and a.text for a in attributes):
+            attributes = [a for a in attributes if a.parameter != "test_method"]
+            attributes.append(Attribute("test_method", None, ", ".join(r.designation for r in references)))
+
     # Parameters mentioned without any value → recorded as unvalued attributes
     # so gap detection can report them as insufficiently specified.
     valued = {a.parameter for a in attributes}
@@ -278,6 +305,7 @@ def extract_requirements(
     heading_starts = {s.span.start for s in sections if s.heading}
     headed = [s for s in sections if s.heading]
 
+    cfg = current()
     for seg in segment(text):
         # A heading line is context, never a requirement.
         if seg.line_start in heading_starts or seg.start in heading_starts:
@@ -294,6 +322,12 @@ def extract_requirements(
         section, label = locate(sections, seg.start)
         prior_headings = [s for s in headed if s.span.start <= seg.start]
         heading = prior_headings[-1].heading if prior_headings else ""
+        zone = "specification"
+        if cfg.zoning:
+            if heading and EXCLUDED_ZONE.search(heading):
+                continue  # instructions to bidders, commercial conditions, BOQ, approved makes …
+            if BOILERPLATE_V2.search(seg.text) or PLACEHOLDER.search(seg.text) or TABLE_ROW.match(seg.text):
+                continue
         candidate = identify(seg.text, has_value, len(references) > 0, bool(STANDARDS_HEADING.search(heading)))
         if not candidate:
             continue
@@ -307,6 +341,10 @@ def extract_requirements(
         attributes = build_attributes(seg.text, seg.start, quantities, entities, references, signals)
         cls = classify_requirement(seg.text, quantities, entities, attributes)
         vague_match = VAGUE.search(seg.text)
+        if cfg.vague_version >= 2:
+            if vague_match and vague_match.group(0).lower() == "suitable" and SUITABLE_FOR.search(seg.text):
+                vague_match = None  # "suitable for star-delta starting" names what it is suitable for
+            vague_match = vague_match or VAGUE_V2_EXTRA.search(seg.text)
         vague = (
             bool(vague_match)
             and not quantities
@@ -332,14 +370,26 @@ def extract_requirements(
                 references=references,
                 entities=entities,
                 attributes=attributes,
-                terms=extract_product_terms(seg.text),
+                terms=_terms(seg.text, heading if cfg.product_terms_v2 else ""),
                 vague=vague,
                 provenance=provenance(
                     "nlp.requirements",
                     "rule",
                     candidate.confidence,
-                    [*signals, f"category {cls.category} (confidence {cls.confidence:.2f})"],
+                    [
+                        *signals,
+                        f"category {cls.category} (confidence {cls.confidence:.2f}, {cls.method})",
+                        *([f"zone {zone} under heading '{heading[:60]}'"] if cfg.zoning and heading else []),
+                    ],
                 ),
             )
         )
     return out
+
+
+def _terms(text: str, heading: str) -> list[str]:
+    """Product terms of the requirement; v2 inherits its section heading's products when it names none."""
+    terms = extract_product_terms(text)
+    if not terms and heading:
+        terms = extract_product_terms(heading)
+    return terms

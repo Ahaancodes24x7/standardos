@@ -391,3 +391,4 @@ class AnalysisResult:
     repairs: list[RepairProposal]
     readiness: Readiness
     timings_ms: dict[str, float]
+    config_name: str = "v3"

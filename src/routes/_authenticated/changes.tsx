@@ -63,13 +63,15 @@ function ChangeImpact() {
                   No analysed specification in this workspace maps to this standard.
                 </p>
               )}
-              {event.affected.map(({ name, documentId }) => (
+              {event.affected.map(({ name, documentId, via }) => (
                 <div key={name} className="thin-row flex flex-wrap items-center gap-4 py-4">
                   <FileText className="size-5 text-accent-foreground" />
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold text-primary">{name}</p>
                     <p className="mt-1 text-xs text-muted-foreground">
-                      Review the mapped requirement and confirm the amended evidence basis.
+                      {via
+                        ? `Indirect: the specification relies on ${via}, which normatively depends on ${event.standard}.`
+                        : "Review the mapped requirement and confirm the amended evidence basis."}
                     </p>
                   </div>
                   {documentId ? (
