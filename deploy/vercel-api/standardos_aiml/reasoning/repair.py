@@ -142,7 +142,7 @@ def generate_repairs(
                 if std:
                     per = f" per {std.number}" + (f" ({clause.heading})" if clause else "")
                 recommended = (
-                    f"{re.sub(r'\.$', '', req.text)} — [state the measurable value or acceptance criterion{per}]."
+                    re.sub(r"\.$", "", req.text) + f" — [state the measurable value or acceptance criterion{per}]."
                 )
                 reason = "Qualitative wording cannot be verified. The reviewer must supply the measurable criterion."
 

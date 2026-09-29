@@ -1,406 +1,525 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import type { LucideIcon } from "lucide-react";
 import {
-  AlertTriangle,
+  AlertOctagon,
   ArrowRight,
-  BarChart3,
-  CheckCircle2,
+  BookOpenCheck,
   FileSearch,
-  FileText,
+  FileSpreadsheet,
   Files,
+  Gauge,
+  Landmark,
   Layers,
+  PackageCheck,
+  Search,
   ShieldAlert,
-  ShieldCheck,
-  TrendingUp,
+  Sparkles,
 } from "lucide-react";
 import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Cell,
-  Line,
-  LineChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+  ActivityChart,
+  AlertsFeed,
+  CategoryBars,
+  CompactFindingList,
+  DomainCoverage,
+  FindingsDonut,
+  KpiTile,
+  Panel,
+  PriorityQueue,
+  RankedList,
+  ReadinessGauge,
+  StandardsNetwork,
+  TopStandards,
+} from "@/components/dashboard/widgets";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/auth-context";
-import { workspaceStats } from "@/lib/analysis-view";
-import { formatAnalyzedAt, listDocuments } from "@/services/analysis";
-import { MetricCard } from "@/components/shared/metric-card";
-import { StatusBadge } from "@/components/shared/status-badge";
-import { PageHeader } from "@/components/shared/page-header";
+import type { DocumentAnalysis, DocumentTypeKey } from "@/lib/contracts";
+import { buildInsights, inr, istDate, istGreeting } from "@/lib/dashboard-insights";
+import {
+  formatAnalyzedAt,
+  getChangeImpact,
+  getCorpusStatus,
+  listDocuments,
+} from "@/services/analysis";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
-  loader: () => listDocuments(),
+  loader: async () => {
+    const [documents, events, corpus] = await Promise.all([
+      listDocuments(),
+      getChangeImpact().catch(() => []),
+      getCorpusStatus().catch(() => null),
+    ]);
+    return { documents, events, corpus };
+  },
   head: () => ({
     meta: [
       { title: "Workspace Overview — STANDARDOS" },
       {
         name: "description",
-        content: "Procurement specification readiness and recent compliance intelligence.",
+        content:
+          "Procurement specification readiness, IS standards coverage and compliance actions.",
       },
-      { property: "og:title", content: "Workspace Overview — STANDARDOS" },
-      {
-        property: "og:description",
-        content: "Review procurement specifications and compliance readiness.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: DashboardIndex,
+  component: Dashboard,
 });
 
-function DashboardIndex() {
-  const documents = Route.useLoaderData();
+const QUICK_ACTIONS: Array<{
+  title: string;
+  text: string;
+  icon: LucideIcon;
+  type?: DocumentTypeKey;
+  to?: "/search";
+}> = [
+  {
+    title: "Analyse a tender / NIT",
+    text: "CPWD, PWD, DISCOM, JJM…",
+    icon: Landmark,
+    type: "tender",
+  },
+  { title: "Check a BOQ", text: "Schedule of quantities", icon: FileSpreadsheet, type: "boq" },
+  {
+    title: "Verify a vendor datasheet",
+    text: "GTP against IS limits",
+    icon: PackageCheck,
+    type: "datasheet",
+  },
+  { title: "Look up an IS standard", text: "Clause-level search", icon: Search, to: "/search" },
+];
+
+function Dashboard() {
+  const { documents, events, corpus } = Route.useLoaderData();
   const { profile, isDemo } = useAuth();
+  const insights = buildInsights(documents, corpus, events);
   const first = profile?.full_name.split(" ")[0] ?? "there";
-  const hour = new Date().getHours();
-  const greeting = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
-  const stats = workspaceStats(documents);
-
-  // Compute workspace aggregate data
-  const totalRequirements = documents.reduce(
-    (sum, d) => sum + (d.requirementCount ?? d.requirements?.length ?? 0),
-    0,
-  );
-  const allFindings = documents.flatMap((d) => d.findings ?? []);
-  const totalFindings = allFindings.length;
-  // "Flagged" = needs attention; verified matches are shown separately in the breakdown.
-  const openFindings = allFindings.filter((f) => f.status !== "verified").length;
-
-  const conflictsCount = allFindings.filter((f) => f.status === "conflicting").length;
-  const gapsCount = allFindings.filter((f) => f.status === "missing").length;
-  const outdatedCount = allFindings.filter((f) => f.status === "outdated").length;
-  const certCount = allFindings.filter((f) => f.status === "certification").length;
-  const verifiedCount = allFindings.filter((f) => f.status === "verified").length;
-
-  // Chart data 1: Findings breakdown
-  const findingBreakdownData = [
-    { name: "Conflicts", count: conflictsCount, fill: "var(--destructive)" },
-    { name: "Gaps / Missing", count: gapsCount, fill: "var(--warning)" },
-    {
-      name: "Outdated",
-      count: outdatedCount,
-      fill: "color-mix(in oklab, var(--warning) 80%, black)",
-    },
-    { name: "Certification", count: certCount, fill: "var(--accent-foreground)" },
-    { name: "Verified", count: verifiedCount, fill: "var(--success)" },
-  ];
-
-  // Chart data 2: Readiness index trend across recent documents
-  const readinessTrendData = [...documents]
-    .slice(0, 7)
-    .reverse()
-    .map((doc, idx) => ({
-      name: doc.name.length > 14 ? `${doc.name.slice(0, 12)}…` : doc.name,
-      readiness: doc.runStatus === "succeeded" ? doc.readiness : 0,
-      standards: doc.standards,
-      issues: doc.issues,
-    }));
+  const now = new Date();
+  const hasData = insights.analysed.length > 0;
 
   return (
-    <div className="reveal space-y-8">
-      {/* Page Header */}
-      <PageHeader
-        eyebrow={`Workspace Overview${isDemo ? " · Demonstration Account" : ""}`}
-        title={`${greeting}, ${first}.`}
-        description="Real-time compliance readiness, standards mapping, and actionable findings across your specifications."
-      >
-        <Button asChild size="lg" className="gap-2 shadow-xs">
-          <Link to="/analyze">
-            <FileSearch className="size-4" />
-            <span>Analyze New Specification</span>
-          </Link>
-        </Button>
-      </PageHeader>
-
-      {/* KPI Metric Strip */}
-      <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <MetricCard
-          label="Documents Analyzed"
-          value={stats.documents}
-          icon={Files}
-          subtitle={`${stats.standardsMapped} standards mapped`}
-          trend={{ value: `${documents.length} active in workspace`, neutral: true }}
-        />
-        <MetricCard
-          label="Extracted Requirements"
-          value={totalRequirements}
-          icon={Layers}
-          subtitle="Governing clause linkages"
-          trend={{ value: "Indexed in Graph", neutral: true }}
-        />
-        <MetricCard
-          label="Findings Flagged"
-          value={openFindings}
-          icon={ShieldAlert}
-          subtitle={`${conflictsCount} conflicts · ${gapsCount} gaps`}
-          trend={{
-            value:
-              stats.requireAttention > 0
-                ? `${stats.requireAttention} docs need review`
-                : "All clear",
-            positive: stats.requireAttention === 0,
-          }}
-        />
-        <MetricCard
-          label="Average Readiness"
-          value={stats.averageReadiness === null ? "—" : `${stats.averageReadiness}%`}
-          icon={ShieldCheck}
-          subtitle="Severity-weighted compliance score"
-          trend={{
-            value: (stats.averageReadiness ?? 0) >= 80 ? "High compliance" : "Review advised",
-            positive: (stats.averageReadiness ?? 0) >= 80,
-          }}
-        />
-      </section>
-
-      {/* Visual Analytics Row */}
-      <section className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-        {/* Compliance Readiness Chart */}
-        <div className="intel-card p-5 lg:col-span-7">
-          <div className="flex items-center justify-between border-b border-border/70 pb-3">
-            <div>
-              <p className="eyebrow">Specification Readiness</p>
-              <h2 className="text-base font-bold text-primary">Readiness by Specification (%)</h2>
-            </div>
-            <span className="flex items-center gap-1.5 text-xs text-muted-foreground font-semibold">
-              <TrendingUp className="size-3.5 text-accent-foreground" />
-              <span>Recent runs</span>
-            </span>
-          </div>
-
-          <div className="mt-4 h-64 w-full">
-            {readinessTrendData.length > 0 ? (
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart
-                  data={readinessTrendData}
-                  margin={{ top: 10, right: 10, left: -20, bottom: 20 }}
+    <div className="reveal space-y-6">
+      {/* ---------- Header ---------- */}
+      <header className="intel-card overflow-hidden p-0">
+        <div className="relative grid gap-6 p-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 left-0 w-1.5"
+            style={{
+              background:
+                "linear-gradient(180deg, var(--chart-saffron) 0 33%, var(--card) 33% 66%, var(--chart-verified) 66% 100%)",
+            }}
+          />
+          <div className="min-w-0 pl-2">
+            <p className="eyebrow">
+              {istDate(now, { weekday: "long", day: "numeric", month: "long", year: "numeric" })} ·
+              IST{isDemo ? " · Demo workspace" : ""}
+            </p>
+            <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-primary sm:text-4xl">
+              {istGreeting(now)}, {first}
+              <span className="ml-3 align-middle text-lg font-semibold text-muted-foreground">
+                नमस्ते
+              </span>
+            </h1>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              {profile?.organization ? (
+                <b className="text-primary">{profile.organization}</b>
+              ) : (
+                "Your workspace"
+              )}{" "}
+              —{" "}
+              {hasData
+                ? `${inr(insights.analysed.length)} documents analysed against ${inr(
+                    insights.standardsReferenced,
+                  )} Indian Standards; ${inr(insights.openFindings)} findings await review.`
+                : "analyse your first tender to see readiness, IS coverage and compliance actions here."}
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
+              {corpus && (
+                <Link
+                  to="/admin"
+                  className="rounded-full border border-border bg-background/70 px-2.5 py-1 font-semibold text-primary hover:bg-accent/30"
                 >
-                  <CartesianGrid
-                    strokeDasharray="3 3"
-                    vertical={false}
-                    stroke="color-mix(in oklab, var(--border) 60%, transparent)"
-                  />
-                  <XAxis
-                    dataKey="name"
-                    tick={{ fill: "var(--muted-foreground)", fontSize: 11 }}
-                    interval={0}
-                    angle={-15}
-                    textAnchor="end"
-                  />
-                  <YAxis
-                    domain={[0, 100]}
-                    tick={{ fill: "var(--muted-foreground)", fontSize: 11 }}
-                    tickFormatter={(v) => `${v}%`}
-                  />
-                  <Tooltip
-                    content={({ active, payload }) => {
-                      const data = active ? payload?.[0]?.payload : undefined;
-                      if (!data) return null;
-                      return (
-                        <div className="rounded-lg border border-border bg-popover p-3 text-xs shadow-lg">
-                          <p className="font-bold text-popover-foreground">{data.name}</p>
-                          <p className="mt-1 text-primary">
-                            Readiness:{" "}
-                            <span className="font-mono font-bold">{data.readiness}%</span>
-                          </p>
-                          <p className="text-muted-foreground">
-                            {data.standards} standards · {data.issues} issues
-                          </p>
-                        </div>
-                      );
-                    }}
-                  />
-                  <Bar dataKey="readiness" radius={[4, 4, 0, 0]} fill="var(--primary)">
-                    {readinessTrendData.map((entry, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={
-                          entry.readiness >= 80
-                            ? "var(--success-foreground)"
-                            : entry.readiness >= 50
-                              ? "var(--warning-foreground)"
-                              : "var(--destructive)"
-                        }
-                      />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
-            ) : (
-              <div className="grid h-full place-items-center text-xs text-muted-foreground">
-                No specification data available to chart.
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Finding Distribution Chart */}
-        <div className="intel-card p-5 lg:col-span-5 flex flex-col justify-between">
-          <div className="border-b border-border/70 pb-3">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="eyebrow">Audit Categorization</p>
-                <h2 className="text-base font-bold text-primary">Findings by Severity</h2>
-              </div>
-              <Link
-                to="/compliance"
-                className="text-xs font-bold text-accent-foreground hover:underline"
-              >
-                View all ({totalFindings})
-              </Link>
+                  BIS corpus {corpus.version} · {corpus.standards.length} standards ·{" "}
+                  {inr(corpus.clauses)} clauses
+                </Link>
+              )}
+              {insights.processing > 0 && (
+                <span className="rounded-full bg-accent/40 px-2.5 py-1 font-semibold text-accent-foreground">
+                  {insights.processing} analysis running
+                </span>
+              )}
+              {insights.failed > 0 && (
+                <Link
+                  to="/documents"
+                  className="rounded-full bg-destructive/10 px-2.5 py-1 font-semibold text-destructive"
+                >
+                  {insights.failed} failed — retry from Documents
+                </Link>
+              )}
             </div>
           </div>
-
-          <div className="mt-4 grid gap-2.5">
-            {findingBreakdownData.map((item) => (
-              <div
-                key={item.name}
-                className="flex items-center justify-between rounded-lg border border-border/60 bg-background/50 px-3.5 py-2.5 text-xs"
-              >
-                <div className="flex items-center gap-2.5">
-                  <span className="size-2.5 rounded-full" style={{ backgroundColor: item.fill }} />
-                  <span className="font-semibold text-primary">{item.name}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="font-mono font-bold text-foreground">{item.count}</span>
-                  <span className="text-[10px] text-muted-foreground">
-                    ({totalFindings > 0 ? Math.round((item.count / totalFindings) * 100) : 0}%)
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-4 rounded-lg border border-border/70 bg-accent/20 p-3 text-xs text-muted-foreground">
-            <p className="font-semibold text-primary flex items-center gap-1.5">
-              <ShieldCheck className="size-3.5 text-accent-foreground" />
-              <span>Evidence Traceability</span>
-            </p>
-            <p className="mt-0.5 text-[11px] leading-relaxed">
-              Every flagged finding connects the requirement to its governing clause in the official
-              Indian Standard.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Recent Specifications Table */}
-      <section className="intel-card p-6">
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border/70 pb-4">
-          <div>
-            <p className="eyebrow">Active Specifications</p>
-            <h2 className="text-xl font-bold text-primary">Recent Analyses</h2>
-          </div>
-          <Button asChild variant="outline" size="sm" className="gap-1.5 text-xs">
-            <Link to="/documents">
-              <span>View all documents</span>
-              <ArrowRight className="size-3.5" />
+          <Button asChild size="lg" className="gap-2 self-start lg:self-end">
+            <Link to="/analyze">
+              <FileSearch className="size-4" /> New analysis
             </Link>
           </Button>
         </div>
-
-        <div className="mt-4 overflow-x-auto">
-          {!documents.length ? (
-            <div className="py-12 text-center text-sm text-muted-foreground">
-              No specifications analysed yet.{" "}
-              <Link to="/analyze" className="font-bold text-accent-foreground hover:underline">
-                Analyze your first specification
+        <nav
+          aria-label="Quick actions"
+          className="grid grid-cols-2 border-t border-border/60 bg-background/40 lg:grid-cols-4"
+        >
+          {QUICK_ACTIONS.map((a) => {
+            const body = (
+              <>
+                <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-primary/8 text-accent-foreground ring-1 ring-border">
+                  <a.icon className="size-4" />
+                </span>
+                <span className="min-w-0">
+                  <b className="block truncate text-sm text-primary">{a.title}</b>
+                  <span className="block truncate text-[11px] text-muted-foreground">{a.text}</span>
+                </span>
+              </>
+            );
+            const cls =
+              "flex items-center gap-3 border-border/60 p-4 transition hover:bg-accent/25 [&:not(:last-child)]:border-r max-lg:[&:nth-child(2)]:border-r-0 max-lg:[&:nth-child(-n+2)]:border-b";
+            return a.to ? (
+              <Link key={a.title} to={a.to} className={cls}>
+                {body}
               </Link>
-              .
-            </div>
-          ) : (
-            <table className="w-full min-w-[700px] text-left text-sm">
-              <thead>
-                <tr className="border-b border-border/60 text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
-                  <th className="py-3 pr-4">Specification</th>
-                  <th className="py-3 px-3">Status</th>
-                  <th className="py-3 px-3">Standards</th>
-                  <th className="py-3 px-3">Issues</th>
-                  <th className="py-3 px-3">Readiness</th>
-                  <th className="py-3 pl-4 text-right">Analyzed</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border/50">
-                {documents.slice(0, 6).map((doc) => (
-                  <tr
-                    key={doc.id}
-                    className="group transition-colors hover:bg-accent/20 cursor-pointer"
-                    onClick={() => {
-                      window.location.href = `/documents/${doc.id}`;
-                    }}
-                  >
-                    <td className="py-3.5 pr-4">
-                      <Link
-                        to="/documents/$documentId"
-                        params={{ documentId: doc.id }}
-                        className="font-bold text-primary hover:text-accent-foreground block"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {doc.name}
-                      </Link>
-                      <span className="text-xs text-muted-foreground">
-                        {doc.documentTypeLabel} · {doc.organization}
-                      </span>
-                    </td>
-                    <td className="py-3.5 px-3">
-                      <span
-                        className={`inline-flex items-center rounded-md px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
-                          doc.status === "Analyzed"
-                            ? "bg-success/20 text-success-foreground"
-                            : doc.status === "Failed"
-                              ? "bg-destructive/20 text-destructive"
-                              : "bg-warning/20 text-warning-foreground"
-                        }`}
-                      >
-                        {doc.status}
-                      </span>
-                    </td>
-                    <td className="py-3.5 px-3 font-mono text-xs font-semibold text-foreground">
-                      {doc.standards}
-                    </td>
-                    <td className="py-3.5 px-3">
-                      <span
-                        className={`font-mono text-xs font-bold ${
-                          doc.issues > 2 ? "text-destructive" : "text-muted-foreground"
-                        }`}
-                      >
-                        {doc.issues}
-                      </span>
-                    </td>
-                    <td className="py-3.5 px-3">
-                      <div className="flex items-center gap-2">
-                        <div className="h-2 w-16 overflow-hidden rounded-full bg-secondary">
-                          <div
-                            className={`h-full ${
-                              doc.readiness >= 80
-                                ? "bg-success-foreground"
-                                : doc.readiness >= 50
-                                  ? "bg-warning-foreground"
-                                  : "bg-destructive"
-                            }`}
-                            style={{ width: `${doc.readiness}%` }}
-                          />
-                        </div>
-                        <span className="font-mono text-xs font-bold text-primary">
-                          {doc.runStatus === "succeeded" ? `${doc.readiness}%` : "—"}
-                        </span>
-                      </div>
-                    </td>
-                    <td className="py-3.5 pl-4 text-right text-xs text-muted-foreground">
-                      {formatAnalyzedAt(doc.analyzedAt)}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
-        </div>
+            ) : (
+              <Link
+                key={a.title}
+                to="/analyze"
+                search={a.type ? { type: a.type } : {}}
+                className={cls}
+              >
+                {body}
+              </Link>
+            );
+          })}
+        </nav>
+      </header>
+
+      {/* ---------- KPIs ---------- */}
+      <section
+        className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6"
+        aria-label="Key figures"
+      >
+        <KpiTile
+          label="Documents"
+          value={inr(insights.analysed.length)}
+          hint={`${documents.length} in library`}
+          icon={Files}
+          to="/documents"
+        />
+        <KpiTile
+          label="Requirements"
+          value={inr(insights.requirements)}
+          hint="extracted & classified"
+          icon={Layers}
+          to="/documents"
+        />
+        <KpiTile
+          label="IS standards"
+          value={inr(insights.standardsReferenced)}
+          hint="referenced by your docs"
+          icon={BookOpenCheck}
+          to="/standards"
+        />
+        <KpiTile
+          label="Open findings"
+          value={inr(insights.openFindings)}
+          hint="awaiting reviewer decision"
+          icon={ShieldAlert}
+          to="/compliance"
+          tone={insights.openFindings ? "alert" : "good"}
+        />
+        <KpiTile
+          label="High severity"
+          value={inr(insights.highSeverity)}
+          hint="fix before bid issue"
+          icon={AlertOctagon}
+          to="/compliance"
+          tone={insights.highSeverity ? "alert" : "good"}
+        />
+        <KpiTile
+          label="Avg. readiness"
+          value={insights.averageReadiness === null ? "—" : `${insights.averageReadiness}%`}
+          hint="severity-weighted score"
+          icon={Gauge}
+          to="/documents"
+          tone={(insights.averageReadiness ?? 0) >= 80 ? "good" : "default"}
+        />
       </section>
+
+      {!hasData && <Onboarding />}
+
+      {/* ---------- Readiness · findings · alerts ---------- */}
+      <div className="grid gap-4 lg:grid-cols-12">
+        <Panel
+          eyebrow="Bid readiness"
+          title="How ready are your specifications?"
+          action={{ label: "Documents", to: "/documents" }}
+          className="lg:col-span-5"
+        >
+          <ReadinessGauge insights={insights} />
+        </Panel>
+        <Panel
+          eyebrow="Compliance audit"
+          title="What the checks found"
+          action={{ label: "Review", to: "/compliance" }}
+          info="Open findings by kind, plus requirements verified against the standard."
+          className="lg:col-span-4"
+        >
+          <FindingsDonut insights={insights} />
+        </Panel>
+        <Panel
+          eyebrow="Standards watch"
+          title="IS amendments & revisions"
+          action={{ label: "Impact", to: "/changes" }}
+          className="lg:col-span-3"
+        >
+          <AlertsFeed events={insights.alerts} />
+        </Panel>
+      </div>
+
+      {/* ---------- Network ---------- */}
+      <Panel
+        eyebrow="Connections"
+        title="Your specifications ↔ the Indian Standards they rely on"
+        action={{ label: "Dependency DAG", to: "/standards" }}
+        info="Each line joins a document to an IS standard its requirements map to. Colour shows whether that link has an open issue."
+      >
+        <StandardsNetwork insights={insights} />
+      </Panel>
+
+      {/* ---------- Actions ---------- */}
+      <div className="grid gap-4 lg:grid-cols-12">
+        <Panel
+          eyebrow="Do this next"
+          title="Priority review queue"
+          action={{ label: "All findings", to: "/compliance" }}
+          className="lg:col-span-5"
+        >
+          <PriorityQueue items={insights.priority} />
+        </Panel>
+        <Panel
+          eyebrow="Most relied on"
+          title="Top IS standards in your documents"
+          action={{ label: "Catalogue", to: "/standards" }}
+          className="lg:col-span-4"
+        >
+          <TopStandards standards={insights.standards} />
+        </Panel>
+        <div className="grid gap-4 lg:col-span-3">
+          <Panel eyebrow="BIS conformity" title="ISI mark / certification gaps">
+            <CompactFindingList
+              items={insights.certification}
+              empty="Every product standard has a conformity-evidence route."
+            />
+          </Panel>
+          <Panel eyebrow="Outdated references" title="Superseded IS editions cited">
+            <CompactFindingList
+              items={insights.outdatedReferences}
+              empty="No superseded or withdrawn IS cited."
+            />
+          </Panel>
+        </div>
+      </div>
+
+      {/* ---------- Composition ---------- */}
+      <div className="grid gap-4 lg:grid-cols-12">
+        <Panel
+          eyebrow="Requirement mix"
+          title="What your documents ask for"
+          className="lg:col-span-4"
+        >
+          <CategoryBars insights={insights} />
+        </Panel>
+        <Panel
+          eyebrow="Coverage"
+          title="Requirements by IS domain"
+          action={{ label: "Standards", to: "/standards" }}
+          className="lg:col-span-4"
+        >
+          <DomainCoverage insights={insights} />
+        </Panel>
+        <Panel eyebrow="Workload" title="Activity & sources" className="lg:col-span-4">
+          <ActivityChart insights={insights} />
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <div>
+              <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                Document types
+              </p>
+              <RankedList items={insights.documentTypes.slice(0, 4)} unit="docs" />
+            </div>
+            <div>
+              <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                Needs most attention
+              </p>
+              <RankedList
+                items={[...insights.analysed]
+                  .filter((d) => d.issues > 0)
+                  .sort((a, b) => b.issues - a.issues)
+                  .slice(0, 4)
+                  .map((d) => ({ name: d.name, count: d.issues, note: `${d.readiness}%` }))}
+                unit="issues"
+              />
+            </div>
+          </div>
+        </Panel>
+      </div>
+
+      {/* ---------- Recent ---------- */}
+      <Panel
+        eyebrow="Library"
+        title="Recent analyses"
+        action={{ label: "All documents", to: "/documents" }}
+      >
+        <RecentTable documents={documents} />
+      </Panel>
+    </div>
+  );
+}
+
+function Onboarding() {
+  const steps = [
+    {
+      title: "Upload a tender, BOQ or datasheet",
+      text: "PDF, DOCX or pasted text — Hindi header lines are fine.",
+      to: "/analyze" as const,
+    },
+    {
+      title: "Review the findings",
+      text: "Confirm or dismiss each conflict and gap; every decision is audited.",
+      to: "/compliance" as const,
+    },
+    {
+      title: "Apply the repairs",
+      text: "Accept suggested clause wording and export the compliance report.",
+      to: "/documents" as const,
+    },
+  ];
+  return (
+    <section className="intel-card grid gap-4 p-5 md:grid-cols-[auto_minmax(0,1fr)] md:items-center">
+      <span className="grid size-12 place-items-center rounded-xl bg-accent/40 text-accent-foreground">
+        <Sparkles className="size-6" />
+      </span>
+      <ol className="grid gap-3 md:grid-cols-3">
+        {steps.map((s, i) => (
+          <li key={s.title}>
+            <Link
+              to={s.to}
+              className="block rounded-lg border border-border/60 p-3 hover:bg-accent/20"
+            >
+              <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                Step {i + 1}
+              </span>
+              <b className="block text-sm text-primary">{s.title}</b>
+              <span className="text-[11px] text-muted-foreground">{s.text}</span>
+            </Link>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+function RecentTable({ documents }: { documents: DocumentAnalysis[] }) {
+  if (!documents.length)
+    return (
+      <p className="py-8 text-center text-sm text-muted-foreground">
+        No documents yet.{" "}
+        <Link to="/analyze" className="font-bold text-accent-foreground hover:underline">
+          Analyse your first tender
+        </Link>
+      </p>
+    );
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr className="border-b border-border/60 text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
+            <th className="py-2.5 pr-4">Document</th>
+            <th className="px-3 py-2.5">Type</th>
+            <th className="px-3 py-2.5">Status</th>
+            <th className="px-3 py-2.5 text-right">IS</th>
+            <th className="px-3 py-2.5 text-right">Issues</th>
+            <th className="px-3 py-2.5">Readiness</th>
+            <th className="py-2.5 pl-3 text-right">Analysed</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-border/50">
+          {documents.slice(0, 8).map((doc) => {
+            const ready = doc.runStatus === "succeeded";
+            const color =
+              doc.readiness >= 80
+                ? "var(--chart-verified)"
+                : doc.readiness >= 50
+                  ? "var(--chart-gap)"
+                  : "var(--chart-conflict)";
+            return (
+              <tr key={doc.id} className="hover:bg-accent/15">
+                <td className="max-w-xs py-3 pr-4">
+                  <Link
+                    to="/documents/$documentId"
+                    params={{ documentId: doc.id }}
+                    className="block truncate font-bold text-primary hover:text-accent-foreground"
+                  >
+                    {doc.name}
+                  </Link>
+                  <span className="block truncate text-[11px] text-muted-foreground">
+                    {doc.organization}
+                  </span>
+                </td>
+                <td className="px-3 py-3 text-xs">
+                  <span className="rounded-md border border-border/70 bg-background/60 px-1.5 py-0.5">
+                    {doc.documentTypeLabel}
+                  </span>
+                </td>
+                <td className="px-3 py-3">
+                  <span
+                    className={
+                      "rounded-md px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider " +
+                      (doc.status === "Analyzed"
+                        ? "bg-success/25 text-success-foreground"
+                        : doc.status === "Failed"
+                          ? "bg-destructive/15 text-destructive"
+                          : "bg-warning/25 text-warning-foreground")
+                    }
+                  >
+                    {doc.status}
+                  </span>
+                </td>
+                <td className="px-3 py-3 text-right font-mono text-xs">{doc.standards}</td>
+                <td className="px-3 py-3 text-right font-mono text-xs font-bold">{doc.issues}</td>
+                <td className="px-3 py-3">
+                  <div className="flex items-center gap-2">
+                    <div className="h-1.5 w-20 overflow-hidden rounded-full bg-muted">
+                      <div
+                        className="h-full rounded-full"
+                        style={{ width: `${ready ? doc.readiness : 0}%`, background: color }}
+                      />
+                    </div>
+                    <span className="font-mono text-xs font-bold">
+                      {ready ? `${doc.readiness}%` : "—"}
+                    </span>
+                  </div>
+                </td>
+                <td className="py-3 pl-3 text-right text-xs text-muted-foreground">
+                  {formatAnalyzedAt(doc.analyzedAt)}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      {documents.length > 8 && (
+        <Link
+          to="/documents"
+          className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-accent-foreground"
+        >
+          {inr(documents.length - 8)} more <ArrowRight className="size-3" />
+        </Link>
+      )}
     </div>
   );
 }

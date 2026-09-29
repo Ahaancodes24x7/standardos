@@ -17,7 +17,7 @@ def _esc(text: str) -> str:
 
 
 def report_filename(doc: dict[str, Any]) -> str:
-    return f"{re.sub(r'[^\w.-]+', '_', doc['name'])[:80]}-compliance-report.md"
+    return re.sub(r"[^\w.-]+", "_", doc["name"])[:80] + "-compliance-report.md"
 
 
 def _prov(p: dict[str, Any], confidence: bool) -> str:

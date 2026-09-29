@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   AlertTriangle,
   ArrowRight,
@@ -39,10 +40,20 @@ export const Route = createFileRoute("/_authenticated/changes")({
 });
 
 function ChangeImpact() {
-  const changeEvents = Route.useLoaderData();
+  const allEvents = Route.useLoaderData();
+  const affecting = allEvents.filter((e) => e.affected.length > 0);
+  const [view, setView] = useState<"affecting" | "high" | "all">(
+    affecting.length ? "affecting" : "all",
+  );
+  const [query, setQuery] = useState("");
+  const changeEvents = allEvents.filter(
+    (e) =>
+      (view === "all" || (view === "affecting" ? e.affected.length > 0 : e.severity === "high")) &&
+      (e.standard + " " + e.summary).toLowerCase().includes(query.trim().toLowerCase()),
+  );
 
-  const totalAffectedDocs = changeEvents.reduce((sum, e) => sum + e.affected.length, 0);
-  const highSeverityEvents = changeEvents.filter((e) => e.severity === "high").length;
+  const totalAffectedDocs = allEvents.reduce((sum, e) => sum + e.affected.length, 0);
+  const highSeverityEvents = allEvents.filter((e) => e.severity === "high").length;
 
   return (
     <div className="reveal space-y-8">
@@ -57,7 +68,7 @@ function ChangeImpact() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div className="intel-card p-5">
           <p className="eyebrow">Tracked Amendments</p>
-          <p className="mt-2 text-3xl font-extrabold text-primary">{changeEvents.length}</p>
+          <p className="mt-2 text-3xl font-extrabold text-primary">{allEvents.length}</p>
           <p className="mt-1 text-xs text-muted-foreground">Version records in knowledge corpus</p>
         </div>
         <div className="intel-card p-5">
@@ -75,6 +86,44 @@ function ChangeImpact() {
           </p>
         </div>
       </div>
+
+      {/* Filters */}
+      <div className="flex flex-wrap items-center gap-2 border-y border-border/60 py-3">
+        {(
+          [
+            ["affecting", `Affecting my documents (${affecting.length})`],
+            ["high", `High priority (${allEvents.filter((e) => e.severity === "high").length})`],
+            ["all", `All IS changes (${allEvents.length})`],
+          ] as const
+        ).map(([key, label]) => (
+          <button
+            key={key}
+            type="button"
+            onClick={() => setView(key)}
+            aria-pressed={view === key}
+            className={
+              "rounded-full px-3 py-1.5 text-xs font-bold transition " +
+              (view === key
+                ? "bg-primary text-primary-foreground"
+                : "border border-border bg-background/60 text-primary hover:bg-accent/30")
+            }
+          >
+            {label}
+          </button>
+        ))}
+        <input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Filter by IS number or text…"
+          aria-label="Filter changes"
+          className="ml-auto h-9 w-full rounded-md border border-input bg-background/70 px-3 text-sm sm:w-64"
+        />
+      </div>
+      {!changeEvents.length && (
+        <p className="py-10 text-center text-sm text-muted-foreground">
+          No standard changes match this filter.
+        </p>
+      )}
 
       {/* Timeline of Amendment Events */}
       <div className="space-y-6">

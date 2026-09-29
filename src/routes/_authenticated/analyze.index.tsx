@@ -1,4 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { DOCUMENT_TYPES } from "@/lib/document-types";
+import type { DocumentTypeKey } from "@/lib/contracts";
 import {
   AlertCircle,
   ArrowRight,
@@ -23,7 +25,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { PageHeader } from "@/components/shared/page-header";
 
+const TYPE_KEYS = DOCUMENT_TYPES.map((t) => t.key) as string[];
+
 export const Route = createFileRoute("/_authenticated/analyze/")({
+  // ?type=boq opens the analyser with that document type selected (dashboard quick actions).
+  validateSearch: (search: Record<string, unknown>): { type?: DocumentTypeKey } =>
+    typeof search["type"] === "string" && TYPE_KEYS.includes(search["type"])
+      ? { type: search["type"] as DocumentTypeKey }
+      : {},
   head: () => ({
     meta: [
       { title: "Analyze a Specification — STANDARDOS" },
@@ -61,8 +70,9 @@ function AnalyzePage() {
   const [error, setError] = useState("");
   const [progress, setProgress] = useState(0);
   const [running, setRunning] = useState(false);
+  const { type: presetType } = Route.useSearch();
   const [docType, setDocType] = useState<DocumentTypeValue>({
-    documentType: "specification",
+    documentType: presetType ?? "specification",
     documentTypeLabel: "",
   });
 

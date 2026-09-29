@@ -207,7 +207,7 @@ TEXT_PARAMS: list[_TextParamRule] = [
             r"\b(E\.?\s?coli|(?:total|thermotolerant)\s+coliforms?)\b[^.]{0,60}?\b(not\s+(?:be\s+)?detectable|absent|nil|shall not be detected)",
             re.I,
         ),
-        lambda m: f"{re.sub(r'\s+', ' ', m.group(1))} not detectable",
+        lambda m: re.sub(r"\s+", " ", m.group(1)) + " not detectable",
     ),
 ]
 
@@ -246,7 +246,7 @@ _CUE_AND_VALUE: list[tuple[str, re.Pattern[str], re.Pattern[str], Callable[[re.M
         "bacteriological_quality",
         re.compile(r"\b(?:e\.?\s?coli|coliforms?)\b", re.I),
         re.compile(r"\b(?:no|nil|zero|absence\s+of|free\s+(?:of|from))\b[^.]{0,40}?\b(e\.?\s?coli|(?:total\s+|thermotolerant\s+)?coliforms?)\b|\b(e\.?\s?coli|coliforms?)\b[^.]{0,40}?\b(?:not|nil|absent|zero)\b", re.I),
-        lambda m: f"{re.sub(r'\s+', ' ', (m.group(1) or m.group(2)))} not detectable",
+        lambda m: re.sub(r"\s+", " ", (m.group(1) or m.group(2))) + " not detectable",
     ),
 ]
 
