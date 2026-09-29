@@ -20,6 +20,7 @@ import { Brand } from "@/components/brand";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { useAuth } from "@/contexts/auth-context";
+import { useTour } from "@/components/tour/product-tour";
 
 const navSections = [
   {
@@ -48,6 +49,7 @@ function SidebarContent() {
   const path = useRouterState({ select: (state) => state.location.pathname });
   const { profile, isDemo, signOut } = useAuth();
   const navigate = useNavigate();
+  const tour = useTour();
 
   return (
     <div className="flex h-full flex-col">
@@ -68,6 +70,7 @@ function SidebarContent() {
       {/* Global Quick Search Shortcut */}
       <button
         type="button"
+        data-tour="command"
         onClick={() => {
           const event = new KeyboardEvent("keydown", { key: "k", metaKey: true, ctrlKey: true });
           window.dispatchEvent(event);
@@ -97,6 +100,7 @@ function SidebarContent() {
                   <Link
                     key={to}
                     to={to}
+                    data-tour={`nav-${to.slice(1)}`}
                     className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs font-semibold transition-all ${
                       active
                         ? "bg-accent/40 text-primary shadow-xs font-bold"
@@ -116,7 +120,7 @@ function SidebarContent() {
       </nav>
 
       {/* Footer Navigation */}
-      <div className="mt-auto border-t border-border/80 pt-3">
+      <div className="mt-auto border-t border-border/80 pt-3" data-tour="account">
         <div className="grid gap-0.5">
           <Link
             to="/admin"
@@ -136,6 +140,14 @@ function SidebarContent() {
             <Settings className="size-3.5" />
             <span>Settings</span>
           </Link>
+          <button
+            type="button"
+            onClick={() => tour.start()}
+            className="flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-left text-xs font-medium text-muted-foreground hover:bg-accent/20 hover:text-primary"
+          >
+            <Sparkles className="size-3.5" />
+            <span>Product tour</span>
+          </button>
           <a
             href="mailto:support@standardos.in"
             className="flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent/20 hover:text-primary"

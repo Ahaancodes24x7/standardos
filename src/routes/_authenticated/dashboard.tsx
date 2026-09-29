@@ -163,6 +163,7 @@ function Dashboard() {
           </Button>
         </div>
         <nav
+          data-tour="quick-actions"
           aria-label="Quick actions"
           className="grid grid-cols-2 border-t border-border/60 bg-background/40 lg:grid-cols-4"
         >
@@ -200,6 +201,7 @@ function Dashboard() {
 
       {/* ---------- KPIs ---------- */}
       <section
+        data-tour="kpis"
         className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6"
         aria-label="Key figures"
       >
@@ -282,14 +284,16 @@ function Dashboard() {
       </div>
 
       {/* ---------- Network ---------- */}
-      <Panel
-        eyebrow="Connections"
-        title="Your specifications ↔ the Indian Standards they rely on"
-        action={{ label: "Dependency DAG", to: "/standards" }}
-        info="Each line joins a document to an IS standard its requirements map to. Colour shows whether that link has an open issue."
-      >
-        <StandardsNetwork insights={insights} />
-      </Panel>
+      <div data-tour="network">
+        <Panel
+          eyebrow="Connections"
+          title="Your specifications ↔ the Indian Standards they rely on"
+          action={{ label: "Dependency DAG", to: "/standards" }}
+          info="Each line joins a document to an IS standard its requirements map to. Colour shows whether that link has an open issue."
+        >
+          <StandardsNetwork insights={insights} />
+        </Panel>
+      </div>
 
       {/* ---------- Actions ---------- */}
       <div className="grid gap-4 lg:grid-cols-12">
