@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import dataclasses
 import time
 from dataclasses import dataclass
 from typing import Callable, Optional, Union
@@ -105,6 +106,11 @@ def _run(
     # 1. Read
     stage("reading")
     document = source if isinstance(source, ParsedDocument) else parse_document(source)
+    if cfg.tables_v2:
+        from .ingest.tables import linearize_tables
+
+        pages = [dataclasses.replace(p, text=linearize_tables(p.text)) for p in document.pages]
+        document = dataclasses.replace(document, pages=pages, text="\n\n".join(p.text for p in pages))
     page_at = page_locator(document)
 
     # 2. Extract requirements
@@ -181,23 +187,39 @@ def _run(
         context_terms=context_terms,
     )
 
+    report = cfg.document_role == "report"
+    # Completeness checks belong to specifications: a report records results and a BOQ
+    # (schedule) points to the specification for them.
+    completeness = cfg.document_role not in ("report", "schedule")
+
     # 6. Certifications
     stage("certifications")
-    certification = certification_findings(ctx)
+    # A test or inspection report is not a specification: completeness checks
+    # (checklist, dependencies, conformity route, vague wording) do not apply to it.
+    certification = certification_findings(ctx) if completeness else []
 
     # 7. Conflicts, gaps, dependencies, versions
     stage("conflicts")
-    checks = check_constraints(ctx)
-    conflicts = [
-        *constraint_conflict_findings(checks),
-        *intra_document_conflicts(ctx),
-        *reference_edition_conflicts(ctx),
-    ]
+    if report:
+        from .reasoning.observations import observation_findings, observed_only, reword_for_report
+
+        checks = check_constraints(observed_only(ctx))
+        standard_conflicts = reword_for_report(constraint_conflict_findings(checks))
+        covered = {(f.requirement_id, f.parameter) for f in standard_conflicts}
+        results = [f for f in observation_findings(ctx) if (f.requirement_id, f.parameter) not in covered]
+        conflicts = [*standard_conflicts, *results, *reference_edition_conflicts(ctx)]
+    else:
+        checks = check_constraints(ctx)
+        conflicts = [
+            *constraint_conflict_findings(checks),
+            *intra_document_conflicts(ctx),
+            *reference_edition_conflicts(ctx),
+        ]
     versions = version_findings(ctx)
-    gaps = checklist_gaps(ctx)
+    gaps = checklist_gaps(ctx) if completeness else []
     consumed = {g.requirement_id for g in gaps if g.requirement_id}
-    dependencies = dependency_gaps(ctx, consumed)
-    vague = vague_requirement_findings(ctx, consumed)
+    dependencies = dependency_gaps(ctx, consumed) if completeness else []
+    vague = vague_requirement_findings(ctx, consumed) if completeness else []
     problems = [*conflicts, *versions, *gaps, *dependencies, *certification, *vague]
     flagged = {f.requirement_id for f in problems if f.kind in ("conflicting", "outdated") and f.requirement_id}
     verified = verification_findings(ctx, checks, flagged)
@@ -214,6 +236,8 @@ def _run(
         r.id = f"rp-{i + 1}"
     graph_out = build_analysis_graph(corpus, graph, requirements, mappings, applicable_ids)
     readiness = compute_readiness(len(requirements), mappings, findings, options.min_confidence)
+    if report:
+        readiness = cap_for_nonconformities(readiness, findings)
     current = tracker["current"]
     if current:
         timings[str(current)] = js_round((time.perf_counter() - float(tracker["start"])) * 1000, 1)
@@ -232,6 +256,22 @@ def _run(
         repairs=repairs,
         readiness=readiness,
         timings_ms=timings,
+    )
+
+
+REPORT_CAPS = {"high": 40, "medium": 70, "low": 90}
+
+
+def cap_for_nonconformities(readiness: Readiness, findings: list[ReasoningFinding]) -> Readiness:
+    """A report with a failed result is not acceptable however few its findings: cap the score
+    at 40 / 70 / 90 for the most severe open nonconformity (high / medium / low)."""
+    severities = {f.severity for f in findings if f.kind == "conflicting"}
+    cap = min((REPORT_CAPS[s] for s in severities), default=100)
+    return dataclasses.replace(
+        readiness,
+        score=min(readiness.score, cap),
+        formula=readiness.formula + " capped at 40 / 70 / 90 for a high / medium / low result nonconformity",
+        inputs={**readiness.inputs, "cap": cap},
     )
 
 

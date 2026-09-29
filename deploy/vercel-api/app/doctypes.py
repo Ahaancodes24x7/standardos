@@ -28,6 +28,7 @@ class DocumentType:
     label: str
     description: str
     zoning: bool  # exclude ITB / commercial / schedule zones (specification-style documents)
+    role: str = "specification"  # engine document_role: specification | schedule | declaration | report
 
 
 DOCUMENT_TYPES: dict[str, DocumentType] = {
@@ -35,10 +36,12 @@ DOCUMENT_TYPES: dict[str, DocumentType] = {
     for t in [
         DocumentType("specification", "Technical specification", "Technical specification or requirements section.", True),
         DocumentType("tender", "Tender document", "Complete tender / NIT with bidding and commercial sections.", True),
-        DocumentType("boq", "Bill of quantities", "Schedule of quantities with item descriptions.", False),
-        DocumentType("datasheet", "Vendor datasheet", "Manufacturer datasheet or guaranteed technical particulars.", False),
-        DocumentType("test_report", "Test report", "Type, routine or laboratory test report.", False),
-        DocumentType("inspection_report", "Inspection report", "Site or pre-dispatch inspection report.", False),
+        DocumentType("boq", "Bill of quantities", "Schedule of quantities with item descriptions.", False, "schedule"),
+        DocumentType(
+            "datasheet", "Vendor datasheet", "Manufacturer datasheet or guaranteed technical particulars.", False, "declaration"
+        ),
+        DocumentType("test_report", "Test report", "Type, routine or laboratory test report.", False, "report"),
+        DocumentType("inspection_report", "Inspection report", "Site or pre-dispatch inspection report.", False, "report"),
         DocumentType("other", "Other", "Any other document; name its type.", False),
     ]
 }
@@ -64,8 +67,12 @@ def display_label(key: str, label: Optional[str]) -> str:
 
 
 def config_for(base: PipelineConfig, key: str) -> PipelineConfig:
+    """Specifications and tenders run the preset unchanged; every other type turns off zoning and
+    reads tables row by row; reports are judged as results (see standardos_aiml.reasoning.observations)."""
     doc_type = DOCUMENT_TYPES.get(key, DOCUMENT_TYPES[DEFAULT_TYPE])
-    return base if doc_type.zoning or not base.zoning else base.with_(zoning=False)
+    if doc_type.zoning:
+        return base
+    return base.with_(zoning=False, tables_v2=True, reports_v1=True, document_role=doc_type.role)
 
 
 def catalogue() -> list[dict[str, str]]:

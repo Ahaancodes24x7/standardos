@@ -100,6 +100,9 @@ def extract_quantities(text: str, base: int = 0) -> list[Quantity]:
         return any(s < b and e > a for a, b in taken)
 
     for m in PH_RE.finditer(text):
+        # reports_v1: "pH … (IS 10500:2012)" — the digits belong to a standard number, not a pH value.
+        if current().reports_v1 and text[m.end("a") : m.end("a") + 1].isdigit():
+            continue
         a = float(m.group("a"))
         b = float(m.group("b")) if m.group("b") is not None else None
         if not (0 <= a <= 14) or (b is not None and not (0 <= b <= 14)):
@@ -236,6 +239,17 @@ EXTRA_CUES_V2: dict[str, tuple[str, ...]] = {
     "rated_power": ("rated output", "output of the motor", "motor output", "shaft power"),
 }
 
+TEST_VOLTAGE_CUE = re.compile(
+    r"(withstand|high[\s-]voltage test|hv test|test voltage|impulse|power[\s-]frequency|tested at|test at)"
+)
+OTHER_RESISTANCE_CUE = re.compile(
+    r"(insulation resistance|conductor resistance|resistance of (the )?conductor|protective circuit|loop impedance)"
+)
+TEMPERATURE_RISE_CUE = re.compile(r"temperature rise|\brise\b")
+LOSS_CUE = re.compile(r"\blosse?s?\b")
+IMPEDANCE_CUE = re.compile(r"impedance")
+WITHSTAND_DURATION = re.compile(r"^\s*(?:\(?rms\)?\s*)?for\s+\d+(?:\.\d+)?\s*(?:s|sec|secs|second|seconds)\b")
+
 _SHORT_CIRCUIT_CUE = re.compile(r"\b(short[\s-]?circuit|fault|withstand|breaking capacity|icu|ics)\b")
 _CUE_RES: dict[str, re.Pattern[str]] = {}
 
@@ -258,6 +272,25 @@ def infer_parameter(text: str, quantity: Quantity, base: int = 0) -> Optional[In
     q_start = quantity.span.start - base
     q_end = quantity.span.end - base
     best: Optional[tuple[str, float, str]] = None
+
+    if current().reports_v1:
+        before = re.split(r"(?<=[a-z\)])\.\s", lower[max(0, q_start - 140) : q_start])[-1]
+        # A test voltage ("withstand 2.5 kV", "HV test 3 kV") is not the equipment's rating.
+        if quantity.dimension == "voltage" and TEST_VOLTAGE_CUE.search(before):
+            return None
+        # Insulation / conductor / protective-circuit resistance is not earth resistance.
+        if quantity.dimension == "resistance" and OTHER_RESISTANCE_CUE.search(before):
+            return None
+        # Temperature rise, losses and impedance voltage are not ambient temperature, power rating or tolerance.
+        if quantity.dimension == "temperature" and TEMPERATURE_RISE_CUE.search(before):
+            return None
+        if quantity.dimension == "power" and LOSS_CUE.search(before):
+            return None
+        if quantity.dimension == "percent" and IMPEDANCE_CUE.search(before):
+            return None
+        # "50 kA for 1 s" is a short-time withstand rating.
+        if quantity.dimension == "current" and WITHSTAND_DURATION.match(lower[q_end:]):
+            return InferredParameter("short_circuit_rating", f"current {quantity.raw} with a withstand duration")
 
     extra = EXTRA_CUES_V2 if current().text_attrs_v2 else {}
     for param in PARAMETERS:

@@ -251,11 +251,18 @@ _CUE_AND_VALUE: list[tuple[str, re.Pattern[str], re.Pattern[str], Callable[[re.M
 ]
 
 
+EFFICIENCY_LEVEL_V2 = re.compile(r"energy\s+efficiency\s+level[^.;\n]{0,40}?[:\-]\s*level\s*([1-5])\b", re.I)
+
+
 def extract_text_parameters(text: str) -> list[TextParameter]:
     out: list[TextParameter] = []
     for rule in TEXT_PARAMS:
         for m in rule.pattern.finditer(text):
             out.append(TextParameter(rule.parameter, rule.value(m), m.group(0)))
+    if current().reports_v1 and not any(p.parameter == "efficiency_class" for p in out):
+        m = EFFICIENCY_LEVEL_V2.search(text)
+        if m:
+            out.append(TextParameter("efficiency_class", f"Level {m.group(1)}", m.group(0)))
     if current().text_attrs_v2:
         found = {p.parameter for p in out}
         for parameter, cue, value_re, value in _CUE_AND_VALUE:

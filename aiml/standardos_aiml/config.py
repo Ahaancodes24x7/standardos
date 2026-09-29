@@ -46,6 +46,10 @@ class PipelineConfig:
     units_v3: bool = False  # spelling-robust units: any case, dotted, spelled out, "per" forms, carets; "415-volt"; "V AC ± 10 %"
     text_attrs_v2: bool = False  # categorical values (TN-S, severe, class F …) anywhere in a sentence that names the parameter
     identify_v2: bool = False  # obligations phrased "is to be", "are to operate", "will be", and declarative statements of a value
+    # Non-specification documents (set per document type by the API; off for specifications)
+    document_role: str = "specification"  # specification | schedule (BOQ) | declaration (datasheet) | report (test / inspection)
+    tables_v2: bool = False  # pipe tables become one statement per row, units carried from the unit column
+    reports_v1: bool = False  # test voltages are not ratings; "50 kA for 1 s" is a withstand rating; IR is not earth resistance
     reasoning_v31: bool = False  # dependency gaps only for cited standards; "approved make" is not vague; sample/source tests are not product evidence
 
     # Phase 2 — retrieval

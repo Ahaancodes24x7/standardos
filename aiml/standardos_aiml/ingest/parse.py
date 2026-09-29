@@ -7,6 +7,7 @@ import io
 import re
 from typing import Callable, Optional, Union
 
+from ..config import current
 from ..types import ParsedDocument, ParsedPage
 from .normalize import normalize_characters, reflow_lines, strip_repeated_lines
 
@@ -119,7 +120,12 @@ def decode_text(data: bytes) -> str:
 
 
 def _assemble(fmt: str, parser: str, raw_pages: list[str], warnings: list[str]) -> ParsedDocument:
-    cleaned = [reflow_lines(p) for p in strip_repeated_lines([normalize_characters(p) for p in raw_pages])]
+    normalized = strip_repeated_lines([normalize_characters(p) for p in raw_pages])
+    if current().tables_v2:
+        from .tables import linearize_tables
+
+        normalized = [linearize_tables(p) for p in normalized]
+    cleaned = [reflow_lines(p) for p in normalized]
     pages = [ParsedPage(number=i + 1, text=t) for i, t in enumerate(cleaned)]
     text = "\n\n".join(p.text for p in pages)
     if not text.strip():

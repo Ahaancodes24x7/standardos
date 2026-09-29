@@ -175,6 +175,7 @@ def _mention_re(cue: str) -> re.Pattern[str]:
     return pattern
 
 
+TEST_NAME = re.compile(r"power[\s-]frequency|high[\s-]voltage test|impulse (withstand )?test")
 TEST_MENTION = re.compile(r"\b(test|tested|testing|tests|verification|verified|inspection|inspected)\b")
 _CABLE_CONTEXT = re.compile(r"\b(cable|conductor|wire|wiring)\b", re.I)
 
@@ -257,6 +258,9 @@ def build_attributes(
     # Parameters mentioned without any value → recorded as unvalued attributes
     # so gap detection can report them as insufficiently specified.
     valued = {a.parameter for a in attributes}
+    # reports_v1: test names are not parameter mentions ("power-frequency withstand test").
+    if current().reports_v1:
+        lower = TEST_NAME.sub(" ", lower)
     for param in PARAMETERS:
         if param.key in valued or not param.mention_cues:
             continue
